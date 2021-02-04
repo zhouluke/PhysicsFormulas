@@ -169,6 +169,11 @@ Gradient
 Laplacien
 \[ \nabla^2 V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} \]
 
+Éléments différentiels
+\[ \overrightarrow{dl} = dx\,\hat{x} + dy\,\hat{y} + dz\,\hat{z} \]
+\[\overrightarrow{ds} = dy\,dz\,\hat{x} + dx\,dz\,\hat{y} + dx\,dy\,\hat{z} \]
+\[dv = dx\,dy\,dz\]
+
 \subsection{Coordonnées cylindriques $(\rho, \phi, z)$}
 
 Restrictions: $\qquad \phi\in[0,2\pi]$
@@ -214,9 +219,16 @@ Laplacien
 + \frac{1}{\rho^2}\frac{\partial^2 V}{\partial \phi^2}
 + \frac{\partial^2 V}{\partial z^2} \]
 
+Éléments différentiels
+\[ \overrightarrow{dl} = d\rho\,\hat{\rho} + \rho\,d\phi\,\hat{\phi} + dz\,\hat{z} \]
+\[\overrightarrow{ds} = \rho\,d\phi\,dz\,\hat{\rho} + d\rho\,dz\,\hat{\phi} + \rho\,d\rho\,d\phi\,\hat{z} \]
+\[dv = \rho\,d\rho\,d\phi\,dz\]
+
 \subsection{Coordonnées sphériques $(r, \theta, \phi)$}
 
-Restrictions: $\qquad\theta\in[0,\pi] \qquad \phi\in[0,2\pi]$
+Restrictions: $\qquad\theta\in[0,\pi] \qquad \phi\in[0,2\pi]$ \\
+$\phi$ est l'angle formé dans le plan $xy$. \\
+$\theta$ est l'angle entre le vecteur de position et l'axe des $z$.
 %
 \[ x = r\sin\theta\cos\phi \qquad y =  r\sin\theta\sin\phi \qquad z= r\cos\theta  \]
 \[ r = \sqrt{x^2 + y^2 + z^2} \qquad \theta = \arccos\left(\frac{z}{r}\right) \qquad \phi = \arctan\left(\frac{y}{x}\right) \]
@@ -259,9 +271,15 @@ Laplacien
 + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta} \left( \sin\theta \frac{\partial V}{\partial\theta} \right)
 + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 V}{\partial \phi^2} \]
 
+Éléments différentiels
+\[ \overrightarrow{dl} = dr\,\hat{r} + r\,d\theta\,\hat{\theta} + r\sin\theta\,d\phi\,\hat{\phi} \]
+\[\overrightarrow{ds} = r^2\sin\theta\,d\theta\,\hat{r} + r\,dr\sin\theta\,d\phi\,\hat{\theta} + r\,dr\,d\theta\,\hat{\phi} \]
+\[dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi \]
+
+
 \hrulefill
 
-\section{Rappel de calcul}
+\section{Rappel mathématique}
 
 \subsection{Intégrales résolus}
 \begin{multicols}{2}
@@ -281,10 +299,12 @@ Laplacien
 \[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
 \[ \int \frac{dx}{(a+bx)^2} = -\frac{1}{b(a+bx)} \]
 \end{multicols}
-\[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert\]
-\[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bu}}{b^2} \]
 
-\extraline
+\[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
+\[ \int \frac{x^2\,dx}{\sqrt{x^2+a^2}} =  \frac{u}{2}\sqrt{x^2+a^2} - \frac{a^2}{2}\ln(x+\sqrt{x^2+a^2}) \]
+\[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bu}}{b^2} \]
+\[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert\]
+
 \hrulefill
 
 
