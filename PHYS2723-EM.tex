@@ -96,7 +96,7 @@ Densité de flux électrique (Champ $\vec{D}$)  [N$\cdot$F/C$\cdot$m, V$\cdot$F/
 \[ \vec{D} = \epsilon\vec{E}
 \qquad \nabla \cdot \vec{D} = \rho_v \]
 
-Flux électrique
+Flux électrique [C/m${}^2$]
 \[ \Psi = \int_{S} \vec{D} \cdot d\vec{s} = \epsilon \int_{S} \vec{E} \cdot d\vec{s} \]
 
 Théorème de Gauss
@@ -152,7 +152,7 @@ $E_\text{total} = \frac{\sigma}{\epsilon_0} \qquad E = -\frac{\Delta V}{d}
 \extraline
 \begin{tabular}{@{}ll@{}}
 	Condensateurs en parallèle  & $C_\text{total} = C_1 + C_2 + \dots$ \\
-	Condensateurs en série & $\frac{1}{C_\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots
+	Condensateurs en série & $\frac{1}{C_\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $
 \end{tabular}
 
 \extraline
@@ -160,12 +160,110 @@ $E_\text{total} = \frac{\sigma}{\epsilon_0} \qquad E = -\frac{\Delta V}{d}
 
 
 
-%\section{Systèmes de coordonnées}
+\section{Systèmes de coordonnées}
+
+\subsection{Coordonnées cylindriques $(\rho, \phi, z)$}
+
+Restrictions: $\qquad \phi\in[0,2\pi]$
+\[ x = \rho\cos\phi \qquad y = \rho\sin\phi \qquad z=z  \]
+\[ \rho = \sqrt{x^2 + y^2} \qquad \phi = \arctan\left(\frac{y}{x}\right) \]
+%
+\[
+\begin{bmatrix}
+	A_x \\ A_y \\ A_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+	\cos\phi & -\sin\phi & 0 \\
+	\sin\phi & \cos\phi & 0 \\
+	0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+	A_\rho \\ A_\phi \\ A_z
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+	A_\rho \\ A_\phi \\ A_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+	\cos\phi & \sin\phi & 0 \\
+	-\sin\phi & \cos\phi & 0 \\
+	0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+	A_x \\ A_y \\ A_z
+\end{bmatrix}
+\]
+
+\subsection{Coordonnées sphériques $(r, \theta, \phi)$}
+
+Restrictions: $\qquad\theta\in[0,\pi] \qquad \phi\in[0,2\pi]$
+%
+\[ x = r\sin\theta\cos\phi \qquad y =  r\sin\theta\sin\phi \qquad z= r\cos\theta  \]
+\[ r = \sqrt{x^2 + y^2 + z^2} \qquad \theta = \arccos\left(\frac{z}{r}\right) \qquad \phi = \arctan\left(\frac{y}{x}\right) \]
+%
+\[
+\begin{bmatrix}
+	A_x \\ A_y \\ A_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+	\sin\theta\cos\phi & \cos\theta\cos\phi & -\sin\phi \\
+	\sin\theta\sin\phi & \cos\theta\sin\phi & \cos\phi \\
+	\cos\theta & -\sin\theta  & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+	A_r \\ A_\theta \\ A_\phi
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+	A_r \\ A_\theta \\ A_\phi
+\end{bmatrix}
+=
+\begin{bmatrix}
+	\sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta\\
+	\cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta\\
+	-\sin\phi & \cos\phi  & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+	A_x \\ A_y \\ A_z
+\end{bmatrix}
+\]
+
+\hrulefill
+
+\section{Rappel de calcul}
+
+\subsection{Intégrales résolus}
+\[ \int x^n \,dx =  \frac{x^{n+ 1}}{n+1} \text{\quad pour $n\neq1$} \]
+\[ \int e^{ax}\,dx = \frac{1}{a}e^{ax}
+\qquad \int \frac{dx}{x} = \ln \lvert x \rvert \]
+\[ \int \sin(ax) =-\frac{1}{a} \cos(ax)
+\qquad \int \cos(ax) =\frac{1}{a} \sin(ax) \]
+\[ \int \ln(ax) = x\ln(ax) - x \]
+%
+\[ \int \frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\left(\frac{x}{a}\right) \]
+\[ \int \frac{dx}{\sqrt{x^2+a^2}} = \ln \lvert x + \sqrt{x^2+a^2} \rvert \]
+\[ \int \frac{dx}{(x^2+a^2)^{3/2}} = \frac{x}{a^2\sqrt{x^2+a^2}} \]
+\[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert\]
+\[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bu}}{b^2} \]
+
+\extraline
+\hrulefill
 
 
 
+\section{Constantes}
+\[ \epsilon_0 = 8,85\times10^{-12} \frac{\text{F}}{\text{m}} =  8,85\times10^{-12} \frac{\text{C}^2}{\text{N$\cdot$m${}^2$}} \]
+\[ q_e = |e| = 1,6 \times 10^{-19} \text{ C}
+\qquad m_e = 9,11 \times 10^{-31} \text{ kg} \]
+\[ \mu_0 = 4\pi \times 10^{-7} \text{ H/m}
+\qquad c = 3 \times 10^{8} \text{ m/s} \]
 
-%hrulefill
+\hrulefill
 \scriptsize
 
 \href{https://github.com/zhouluke/PhysicsFormulas}{Cheatsheet}  \copyright\ 2021 Luke Zhou \\
