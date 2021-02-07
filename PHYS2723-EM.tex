@@ -92,37 +92,37 @@
 \section{Électrostatique}
 
 Loi de Coulomb : force électrique [N]
- \[ \vv{F} = q\vv{E}(r) = \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \hat{r}  \]
+ \[ \vv{F} = q\vv{E}(r) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \hat{r}  \]
 
 Charge  [C] ($'$: point de source; sans $'$: point d'observation)
-\[  Q = \int_{l'} \rho_l(\vv{r}') \,dl'  \qquad  Q = \int_{s'} \rho_s(\vv{r}') \,ds'  \qquad Q = \int_{v'} \rho_v(\vv{r}') \,dv'  \]
+\[  Q = \int_{l} \rho_l(\vv{r}') \,dl'  \qquad  Q = \int_{s} \rho_s(\vv{r}') \,ds'  \qquad Q = \int_{v} \rho_v(\vv{r}') \,dv'  \]
 
 Champ électrique [N/C, V/m]
-\[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l'} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
+\[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
 %
-\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s'} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \]
+\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \]
 %
-\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v'} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  \]
+\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  \]
 
 Densité de flux électrique (Champ $\vv{D}$)  [C/m${}^2$]
 \[ \vv{D} = \epsilon\vv{E}
 \qquad \nabla \cdot \vv{D} = \rho_v \]
 
 Flux électrique [C]
-\[ \Psi = \int_{S} \vv{D} \cdot d\vv{s} = \epsilon \int_{S} \vv{E} \cdot d\vv{s} \]
+\[ \Psi = \int_{s} \vv{D} \cdot d\vv{s} = \epsilon \int_{s} \vv{E} \cdot d\vv{s} \]
 
 Théorème de Gauss
-\[ \oint_S \vv{E}\cdot d\vv{s} = \frac{Q_\text{int}}{\epsilon}
-\qquad  \oint_S \vv{D}\cdot d\vv{s} = Q_\text{int} \]
+\[ \oint_s \vv{E}\cdot d\vv{s} = \frac{Q_\text{int}}{\epsilon}
+\qquad  \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
 Potentiel [V = N$\cdot$m/C]
-\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l'} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl'
-\qquad  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s'} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
+\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl'
+\qquad  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
 %
-\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v'} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
+\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
 
 Potentiel et champ électrique
-\[ \Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \qquad \vv{E} = -\nabla V 
+\[ \Delta V = V_b - V_a  = -\int_a^b \vv{E}\cdot d\vv{l} \qquad \vv{E} = -\nabla V 
  \qquad \oint_C \vv{E}\cdot d\vv{l}  = 0 \]
 
 $\vv{E}$ conservatif $\Leftrightarrow \nabla \times \vv{E} = 0$.
@@ -133,17 +133,17 @@ Travail effectué par une force extérieure en déplaçant une charge
 \[ W_{a\rightarrow b} = -q\int_{a}^{b} \vv{E}\cdot d\vv{l} = q\Delta V \]
 
 Dipôle électrique
-\[ V(\vv{r}) = \frac{q}{4\pi\epsilon_0} \frac{d\cos\theta}{r^2} = \frac{\vv{p}\cdot\hat{r}}{4\pi\epsilon|r|^2} \]
+\[ V(\vv{r}) = \frac{q}{4\pi\epsilon_0} \frac{d\cos\theta}{r^2} = \frac{\vv{p}\cdot\hat{r}}{4\pi\epsilon|\vv{r}|^2} \]
 
-Moment dipolaire
-\[ \vv{p} = qd\cdot \hat{p} \qquad \text{($\hat{p}$ pointe de $q-$ vers $q+$; souvent $\hat{z}$)} \]
+Moment dipolaire [C$\cdot$m]
+\[ \vv{p} = qd\cdot \hat{p} \qquad \text{($\hat{p}$ pointe de $q-$ vers $q+$;  $\hat{p}\parallel\hat{z}$ souvent)} \]
 
 Conditions aux limites: conducteurs
-\[ E_n = \frac{\rho_s}{\epsilon} \qquad E_t = 0 \qquad \vv{E} = 0 \qquad \rho_v = 0 \]
+\[ E_n = \frac{\rho_s}{\epsilon} \qquad E_t = 0 \qquad \vv{E}_\text{int} = 0 \qquad \rho_v = 0 \]
 
 Conditions aux limites: diélectriques
-\[ E_{1t} = E_{2t}  \]
-\[ (\vv{D}_1 - \vv{D}_2) \cdot \hat{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 E_{1n} = \epsilon_2 E_{2n}) \] 
+\[ \vv{E}_{1t} =\vv{ E}_{2t}  \]
+\[ ({D}_1 - {D}_2) \cdot \hat{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 {E}_{1n} = \epsilon_2 {E}_{2n}) \] 
 
 \extraline
 Propriétés des diélectriques
@@ -297,24 +297,27 @@ Laplacien
 \begin{multicols}{2}
 \[ \int x^n \,dx =  \frac{x^{n+ 1}}{n+1} \quad (n\neq 1) \]
 \[ \int e^{ax}\,dx = \frac{1}{a}e^{ax} \]
-\[ \int \frac{dx}{x} = \ln \lvert x \rvert \]
 \[ \int \ln(ax) = x\ln(ax) - x \]
-\[ \int \frac{dx}{a+bx} = \frac{1}{b}\ln\lvert a+bx\rvert \]
 \[ \int \sin(ax)\,dx =-\frac{1}{a} \cos(ax) \]
 \[ \int \cos(ax)\,dx =\frac{1}{a} \sin(ax) \]
 \[ \int \sin^2(ax)\,dx = \frac{x}{2} - \frac{\sin(2ax)}{4a} \]
 \[ \int \cos^2(ax)\,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \]
 %
+\[ \int \frac{dx}{x} = \ln \lvert x \rvert \]
+\[ \int \frac{dx}{a+bx} = \frac{1}{b}\ln\lvert a+bx\rvert \]
 \[ \int \frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\left(\frac{x}{a}\right) \]
 \[\int \frac{dx}{\sqrt{x^2+a^2}} = \ln \lvert x + \sqrt{x^2+a^2} \rvert \]
 \[ \int \frac{dx}{(x^2+a^2)^{3/2}} = \frac{x}{a^2\sqrt{x^2+a^2}} \]
-\[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
 \[ \int \frac{dx}{(a+bx)^2} = -\frac{1}{b(a+bx)} \]
+%
+\[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
 \end{multicols}
 
 \[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
+\[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
+
 \[ \int \frac{x^2\,dx}{\sqrt{x^2+a^2}} =  \frac{u}{2}\sqrt{x^2+a^2} - \frac{a^2}{2}\ln(x+\sqrt{x^2+a^2}) \]
-\[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bu}}{b^2} \]
+
 \[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert\]
 
 \hrulefill
@@ -322,11 +325,11 @@ Laplacien
 
 
 \section{Constantes}
-\[ \epsilon_0 = 8,85\times10^{-12} \frac{\text{F}}{\text{m}} =  8,85\times10^{-12} \frac{\text{C}^2}{\text{N$\cdot$m${}^2$}} \]
-\[ q_e = |e| = 1,6 \times 10^{-19} \text{ C}
-\qquad m_e = 9,11 \times 10^{-31} \text{ kg} \]
-\[ \mu_0 = 4\pi \times 10^{-7} \text{ H/m}
-\qquad c = 3 \times 10^{8} \text{ m/s} \]
+\[ \epsilon_0 = \SI{8,85E-12}{\frac{\farad}{\meter}} =  \SI{8,85E-12}{\frac{\coulomb^2}{\newton\cdot\meter^2}} \]
+\[ q_e = |e| = \SI{1,6E-19}{\coulomb}
+\qquad m_e = \SI{9,11E-31}{\kilogram} \]
+\[ \mu_0 = \SI{4\pi E-7}{H/\meter}
+\qquad c = \SI{3E8}{\meter/\second} \]
 
 \hrulefill
 \scriptsize
