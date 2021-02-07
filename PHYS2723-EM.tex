@@ -1,3 +1,4 @@
+% !TeX spellcheck = fr_FR
 \documentclass[10pt,landscape]{article}
 \usepackage{multicol}
 \usepackage{calc}
@@ -5,7 +6,18 @@
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage[h]{esvect}
 
+\usepackage{siunitx}
+\usepackage{physics}
+
+% French spacing
+\usepackage{icomma}
+\frenchspacing
+\usepackage[french]{babel}
+ \sisetup{output-decimal-marker = {,}}
+ 
+ 
 % To make this come out properly in landscape mode, do one of the following
 % 1.
 %  pdflatex latexsheet.tex
@@ -79,77 +91,77 @@
 
 \section{Électrostatique}
 
-Loi de Coulomb  
- \[ \vec{F} = q\vec{E}(r) = \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \hat{r}  \]
+Loi de Coulomb : force électrique [N]
+ \[ \vv{F} = q\vv{E}(r) = \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \hat{r}  \]
 
 Charge  [C] ($'$: point de source; sans $'$: point d'observation)
-\[  Q = \int_{l'} \rho_l(\vec{r}') \,dl'  \qquad  Q = \int_{s'} \rho_s(\vec{r}') \,ds'  \qquad Q = \int_{v'} \rho_v(\vec{r}') \,dv'  \]
+\[  Q = \int_{l'} \rho_l(\vv{r}') \,dl'  \qquad  Q = \int_{s'} \rho_s(\vv{r}') \,ds'  \qquad Q = \int_{v'} \rho_v(\vv{r}') \,dv'  \]
 
 Champ électrique [N/C, V/m]
-\[ \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l'} \frac{\rho_l(\vec{r}')}{| \vec{r} - \vec{r}' |^3 } (\vec{r} - \vec{r}' )\,dl'  \]
+\[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l'} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
 %
-\[\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s'} \frac{\rho_s(\vec{r}')}{| \vec{r} - \vec{r}'|^3 } (\vec{r} - \vec{r}' )\,ds' \]
+\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s'} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \]
 %
-\[\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v'} \frac{\rho_v(\vec{r}')}{| \vec{r} - \vec{r}' |^3 } (\vec{r} - \vec{r}' )\,dv'  \]
+\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v'} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  \]
 
-Densité de flux électrique (Champ $\vec{D}$)  [N$\cdot$F/C$\cdot$m, V$\cdot$F/m${}^2$]
-\[ \vec{D} = \epsilon\vec{E}
-\qquad \nabla \cdot \vec{D} = \rho_v \]
+Densité de flux électrique (Champ $\vv{D}$)  [C/m${}^2$]
+\[ \vv{D} = \epsilon\vv{E}
+\qquad \nabla \cdot \vv{D} = \rho_v \]
 
-Flux électrique [C/m${}^2$]
-\[ \Psi = \int_{S} \vec{D} \cdot d\vec{s} = \epsilon \int_{S} \vec{E} \cdot d\vec{s} \]
+Flux électrique [C]
+\[ \Psi = \int_{S} \vv{D} \cdot d\vv{s} = \epsilon \int_{S} \vv{E} \cdot d\vv{s} \]
 
 Théorème de Gauss
-\[ \oint_S \vec{E}\cdot d\vec{s} = \frac{Q_\text{int}}{\epsilon}
-\qquad  \oint_S \vec{D}\cdot d\vec{s} = Q_\text{int} \]
+\[ \oint_S \vv{E}\cdot d\vv{s} = \frac{Q_\text{int}}{\epsilon}
+\qquad  \oint_S \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
 Potentiel [V = N$\cdot$m/C]
-\[ {V}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l'} \frac{\rho_l(\vec{r}')}{| \vec{r} - \vec{r}' | } \,dl'
-\qquad  {V}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s'} \frac{\rho_s(\vec{r}')}{| \vec{r} - \vec{r}'| } \,ds'  \]
+\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l'} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl'
+\qquad  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s'} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
 %
-\[ {V}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v'} \frac{\rho_v(\vec{r}')}{| \vec{r} - \vec{r}' | } \,dv'  \]
+\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v'} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
 
 Potentiel et champ électrique
-\[ \Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{l} \qquad \vec{E} = -\nabla V 
- \qquad \oint_C \vec{E}\cdot d\vec{l}  = 0 \]
+\[ \Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \qquad \vv{E} = -\nabla V 
+ \qquad \oint_C \vv{E}\cdot d\vv{l}  = 0 \]
 
-$\vec{E}$ conservatif $\Leftrightarrow \nabla \times \vec{E} = 0$.
-Électrostatique $\Rightarrow \vec{E}$ conservatif.\\ 
+$\vv{E}$ conservatif $\Leftrightarrow \nabla \times \vv{E} = 0$.
+Électrostatique $\Rightarrow \vv{E}$ conservatif.\\ 
 
 \extraline
 Travail effectué par une force extérieure en déplaçant une charge
-\[ W_{a\rightarrow b} = -q\int_{a}^{b} \vec{E}\cdot d\vec{l} = q\Delta V \]
+\[ W_{a\rightarrow b} = -q\int_{a}^{b} \vv{E}\cdot d\vv{l} = q\Delta V \]
 
 Dipôle électrique
-\[ V(\vec{r}) = \frac{q}{4\pi\epsilon_0} \frac{d\cos\theta}{r^2} = \frac{\vec{p}\cdot\hat{r}}{4\pi\epsilon|r|^2} \]
+\[ V(\vv{r}) = \frac{q}{4\pi\epsilon_0} \frac{d\cos\theta}{r^2} = \frac{\vv{p}\cdot\hat{r}}{4\pi\epsilon|r|^2} \]
 
-Moment dipolaire: pointe de $q-$ vers $q+$ ($\hat{p}$ est souvent $\hat{z}$)
-\[ \vec{p} = qd\cdot \hat{p} \]
+Moment dipolaire
+\[ \vv{p} = qd\cdot \hat{p} \qquad \text{($\hat{p}$ pointe de $q-$ vers $q+$; souvent $\hat{z}$)} \]
 
 Conditions aux limites: conducteurs
-\[ E_n = \frac{\rho_s}{\epsilon} \qquad E_t = 0 \qquad \vec{E} = 0 \qquad \rho_v = 0 \]
+\[ E_n = \frac{\rho_s}{\epsilon} \qquad E_t = 0 \qquad \vv{E} = 0 \qquad \rho_v = 0 \]
 
 Conditions aux limites: diélectriques
 \[ E_{1t} = E_{2t}  \]
-\[ (\vec{D}_1 - \vec{D}_2) \cdot \hat{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 E_{1n} = \epsilon_2 E_{2n}) \] 
+\[ (\vv{D}_1 - \vv{D}_2) \cdot \hat{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 E_{1n} = \epsilon_2 E_{2n}) \] 
 
 \extraline
 Propriétés des diélectriques
-\[ \vec{D} = \epsilon_0\vec{E} + \vec{P} = \epsilon_0(1+\chi)\vec{E} = \epsilon_0\epsilon_r\vec{E} = \epsilon\vec{E}
+\[ \vv{D} = \epsilon_0\vv{E} + \vv{P} = \epsilon_0(1+\chi)\vv{E} = \epsilon_0\epsilon_r\vv{E} = \epsilon\vv{E}
 \qquad   \]
 \begin{tabular}{@{}ll@{}}
-	Polarisation  & $\vec{P} = \epsilon_0\chi\vec{E}$ \\
+	Polarisation  & $\vv{P} = \epsilon_0\chi\vv{E}$ \\
 	Susceptibilité diélectrique  & $\chi$ \\
 	Permittivité relative &  $\epsilon_r=1+\chi$
 \end{tabular}
 
 \extraline
-Propriétés des condensateurs 
-$ E_\text{total} = \frac{\sigma}{\epsilon_0} \qquad E = -\frac{\Delta V}{d} 
-\qquad C = \frac{Q}{\Delta V} = \frac{A\epsilon}{d} $
-
-%extraline
+Propriétés des condensateurs  \\
+\extraline
 \begin{tabular}{@{}ll@{}}
+	Champ électrique & $ E = {\sigma}/{\epsilon_0}  = -{\Delta V}/{d} $ \\
+	Capacitance [F] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
+	Condensateur à électrodes parallèles & $C = {A\epsilon}/{d} $ \\
 	Condensateurs en parallèle  & $C_\text{total} = C_1 + C_2 + \dots$ \\
 	Condensateurs en série & $\frac{1}{C_\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $
 \end{tabular}
@@ -170,8 +182,8 @@ Laplacien
 \[ \nabla^2 V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} \]
 
 Éléments différentiels
-\[ \overrightarrow{dl} = dx\,\hat{x} + dy\,\hat{y} + dz\,\hat{z} \]
-\[\overrightarrow{ds} = dy\,dz\,\hat{x} + dx\,dz\,\hat{y} + dx\,dy\,\hat{z} \]
+\[ \vv{dl} = dx\,\hat{x} + dy\,\hat{y} + dz\,\hat{z} \]
+\[\vv{ds} = dy\,dz\,\hat{x} + dx\,dz\,\hat{y} + dx\,dy\,\hat{z} \]
 \[dv = dx\,dy\,dz\]
 
 \subsection{Coordonnées cylindriques $(\rho, \phi, z)$}
@@ -220,8 +232,8 @@ Laplacien
 + \frac{\partial^2 V}{\partial z^2} \]
 
 Éléments différentiels
-\[ \overrightarrow{dl} = d\rho\,\hat{\rho} + \rho\,d\phi\,\hat{\phi} + dz\,\hat{z} \]
-\[\overrightarrow{ds} = \rho\,d\phi\,dz\,\hat{\rho} + d\rho\,dz\,\hat{\phi} + \rho\,d\rho\,d\phi\,\hat{z} \]
+\[ \vv{dl} = d\rho\,\hat{\rho} + \rho\,d\phi\,\hat{\phi} + dz\,\hat{z} \]
+\[\vv{ds} = \rho\,d\phi\,dz\,\hat{\rho} + d\rho\,dz\,\hat{\phi} + \rho\,d\rho\,d\phi\,\hat{z} \]
 \[dv = \rho\,d\rho\,d\phi\,dz\]
 
 \subsection{Coordonnées sphériques $(r, \theta, \phi)$}
@@ -272,8 +284,8 @@ Laplacien
 + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 V}{\partial \phi^2} \]
 
 Éléments différentiels
-\[ \overrightarrow{dl} = dr\,\hat{r} + r\,d\theta\,\hat{\theta} + r\sin\theta\,d\phi\,\hat{\phi} \]
-\[\overrightarrow{ds} = r^2\sin\theta\,d\theta\,\hat{r} + r\,dr\sin\theta\,d\phi\,\hat{\theta} + r\,dr\,d\theta\,\hat{\phi} \]
+\[ \vv{dl} = dr\,\hat{r} + r\,d\theta\,\hat{\theta} + r\sin\theta\,d\phi\,\hat{\phi} \]
+\[\vv{ds} = r^2\sin\theta\,d\theta\,\hat{r} + r\,dr\sin\theta\,d\phi\,\hat{\theta} + r\,dr\,d\theta\,\hat{\phi} \]
 \[dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi \]
 
 
