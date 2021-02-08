@@ -67,6 +67,8 @@
 \setlength{\parskip}{0pt plus 0.5ex}
 
 \newcommand{\extraline}{\vspace{1em}}
+\newcommand{\halfline}{\vspace{0.5em}}
+\newcommand{\deriv}{\ensuremath{\derivative{}{x}{}}}
 % -----------------------------------------------------------------------
 
 \begin{document}
@@ -293,8 +295,45 @@ Laplacien
 
 \section{Rappel mathématique}
 
-\subsection{Intégrales résolus}
+\subsection{Identités trigonométriques}
+\halfline
 \begin{multicols}{2}
+\noindent
+\[ \sin^2\theta +  \cos^2\theta = 1 \]
+\begin{align*}
+\cos 2\theta 
+&=\cos^2\theta - \sin^2\theta \\
+&=2\cos^2\theta - 1 \\
+&=1  - 2\sin^2\theta 
+\end{align*}
+\[ \sin 2\theta  = 2\sin\theta\cos\theta  \]
+\[ \sec^2\theta  = 1+ \tan^2\theta \]
+\[ \tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta} \]
+\[ \tan \theta = \pm\sqrt{\frac{1-\cos 2\theta}{1+\cos 2\theta}} \]
+\end{multicols}
+\[ \sin(A\pm B) = \sin A\cos B \pm \cos A\sin B\]
+\[ \cos(A\pm B) = \cos A\cos B \mp \sin A\sin B\]
+
+\subsection{Quelques dérivées}
+\halfline
+\begin{multicols}{2}
+\noindent
+\[ \deriv (ax^n) = nax^{n-1}\]
+\[ \deriv (e^{ax}) = ae^{ax}\]
+\[ \deriv (\ln ax) = \frac{a}{x} \]
+\[ \deriv (\sin ax) = a\cos ax\]
+\[ \deriv (\cos ax) = -a\sin ax\]
+\[ \deriv (\tan ax) = a\sec^2 ax\]
+\[ \deriv (\sec x) = \tan x \sec x \]
+\[ \deriv (\cot x) = -a\csc^2 ax \]
+\[ \deriv (\csc x) = -\cot x \csc x \]
+\end{multicols}
+
+
+\subsection{Intégrales résolus}
+\halfline
+\begin{multicols}{2}
+\noindent
 \[ \int x^n \,dx =  \frac{x^{n+ 1}}{n+1} \quad (n\neq 1) \]
 \[ \int e^{ax}\,dx = \frac{1}{a}e^{ax} \]
 \[ \int \ln(ax) = x\ln(ax) - x \]
