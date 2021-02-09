@@ -118,8 +118,8 @@ Théorème de Gauss
 \qquad  \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
 Potentiel [V = N$\cdot$m/C]
-\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl'
-\qquad  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
+\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl' \]
+\[  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
 %
 \[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
 
@@ -165,8 +165,15 @@ Propriétés des condensateurs  \\
 	Capacitance [F] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
 	Condensateur à électrodes parallèles & $C = {A\epsilon}/{d} $ \\
 	Condensateurs en parallèle  & $C_\text{total} = C_1 + C_2 + \dots$ \\
-	Condensateurs en série & $\frac{1}{C_\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $
+	Condensateurs en série & $\frac{1}{C_\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
 \end{tabular}
+
+
+\extraline
+Énergie emmagasinée dans un champ électrique
+\[ W_E = \frac{1}{2} \int_v  \rho_v(\vv{r})  \, V(\vv{r}) \, dv 
+= \frac{1}{2} \int_v  \vv{D}\cdot\vv{E} \, dv \]
+\[ W_E = \frac{1}{2} QV = \frac{1}{2} CV^2 = \frac{1}{2}\frac{Q^2}{C} \quad\text{(condensateur)} \]
 
 \extraline
 \hrulefill
@@ -293,6 +300,7 @@ Laplacien
 
 \hrulefill
 
+
 \section{Rappel mathématique}
 
 \subsection{Identités trigonométriques}
@@ -309,7 +317,7 @@ Laplacien
 \[ \sin 2\theta  = 2\sin\theta\cos\theta  \]
 \[ \sec^2\theta  = 1+ \tan^2\theta \]
 \[ \tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta} \]
-\[ \tan \theta = \pm\sqrt{\frac{1-\cos 2\theta}{1+\cos 2\theta}} \]
+\[ \tan \theta = \pm\sqrt{\frac{1-\cos 2\theta}{1+\cos 2\theta}} = \frac{\sin\theta}{\cos\theta} \]
 \end{multicols}
 \[ \sin(A\pm B) = \sin A\cos B \pm \cos A\sin B\]
 \[ \cos(A\pm B) = \cos A\cos B \mp \sin A\sin B\]
@@ -361,8 +369,6 @@ Laplacien
 
 \hrulefill
 
-
-
 \section{Constantes}
 \[ \epsilon_0 = \SI{8,85E-12}{\frac{\farad}{\meter}} =  \SI{8,85E-12}{\frac{\coulomb^2}{\newton\cdot\meter^2}} \]
 \[ q_e = |e| = \SI{1,6E-19}{\coulomb}
@@ -371,6 +377,8 @@ Laplacien
 \qquad c = \SI{3E8}{\meter/\second} \]
 
 \hrulefill
+
+
 \scriptsize
 
 \href{https://github.com/zhouluke/PhysicsFormulas}{Formula sheet}  \copyright\ 2021 Luke Zhou \\
