@@ -97,9 +97,11 @@ Loi de Coulomb : force électrique [N]
  \[ \vv{F} = q\vv{E}(r) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \hat{r}  \]
 
 Charge  [C] ($'$: point de source; sans $'$: point d'observation)
-\[  Q = \int_{l} \rho_l(\vv{r}') \,dl'  \qquad  Q = \int_{s} \rho_s(\vv{r}') \,ds'  \qquad Q = \int_{v} \rho_v(\vv{r}') \,dv'  \]
+\[  dq = \rho_l(\vv{r}') \,dl'  \qquad  dq = \rho_s(\vv{r}') \,ds'  \qquad dq = \rho_v(\vv{r}') \,dv'  \]
+\[  Q = \int dq \]
 
 Champ électrique [N/C, V/m]
+\[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' |^2 }  \]
 \[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
 %
 \[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \]
@@ -118,39 +120,47 @@ Théorème de Gauss
 \qquad  \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
 Potentiel [V = N$\cdot$m/C]
+\[ V(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' | }  \]
 \[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl' \]
 \[  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
 %
 \[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
 
 Potentiel et champ électrique
-\[ \Delta V = V_b - V_a  = -\int_a^b \vv{E}\cdot d\vv{l} \qquad \vv{E} = -\nabla V 
+\[ \Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \]
+\[ \vv{E} = -\nabla V 
  \qquad \oint_C \vv{E}\cdot d\vv{l}  = 0 \]
 
-$\vv{E}$ conservatif $\Leftrightarrow \nabla \times \vv{E} = 0$.
-Électrostatique $\Rightarrow \vv{E}$ conservatif.\\ 
+Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
 
 \extraline
-Travail effectué par une force extérieure en déplaçant une charge
-\[ W_{A\rightarrow B} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
+Travail effectué par une force extérieure en déplaçant une charge [J]
+\[ W_{A\rightarrow B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
 
 Dipôle électrique
-\[ V(\vv{r}) = \frac{q}{4\pi\epsilon_0} \frac{d\cos\theta}{r^2} = \frac{\vv{p}\cdot\hat{r}}{4\pi\epsilon|\vv{r}|^2} \]
+\[ V(\vv{r}) = \frac{q}{4\pi\epsilon} \frac{d\cos\theta}{r^2} =
+\frac{\vv{p}\cdot\hat{r}}{4\pi\epsilon|\vv{r}|^2} =
+\frac{\vv{p}\cdot\vv{r}}{4\pi\epsilon|\vv{r}|^3} \]
 
 Moment dipolaire [C$\cdot$m]
 \[ \vv{p} = qd\cdot \hat{p} \qquad \text{($\hat{p}$ pointe de $q-$ vers $q+$;  $\hat{p}\parallel\hat{z}$ souvent)} \]
 
-Conditions aux limites: conducteurs
-\[ E_n = \frac{\rho_s}{\epsilon} \qquad E_t = 0 \qquad \vv{E}_\text{int} = 0 \qquad \rho_v = 0 \]
-
-Conditions aux limites: diélectriques
-\[ \vv{E}_{1t} =\vv{ E}_{2t}  \]
-\[ ({D}_1 - {D}_2) \cdot \hat{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 {E}_{1n} = \epsilon_2 {E}_{2n}) \] 
+\halfline
+Conditions aux limites: un conducteur, un diélectrique  \\
+\halfline
+\begin{tabular}{@{}ll@{}}
+	Pour le diélectrique & $ E_n = {\rho_s}/{\epsilon} \qquad E_t = 0 $ \\
+	Pour le conducteur  & $\vv{E} = 0 \qquad\qquad \rho_v = 0 $ \\
+\end{tabular}
 
 \extraline
+Conditions aux limites: deux diélectriques
+\[ \vv{E}_{1t} =\vv{ E}_{2t}  \]
+\[ (\vv{D}_1 - \vv{D}_2) \cdot \hat{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 \vv{E}_{1n} = \epsilon_2 \vv{E}_{2n}) \] 
+
+\halfline
 Propriétés des diélectriques
-\[ \vv{D} = \epsilon_0\vv{E} + \vv{P} = \epsilon_0(1+\chi)\vv{E} = \epsilon_0\epsilon_r\vv{E} = \epsilon\vv{E}
-\qquad   \]
+\[ \vv{D} = \epsilon_0\vv{E} + \vv{P} = \epsilon_0(1+\chi)\vv{E} = \epsilon_0\epsilon_r\vv{E} = \epsilon\vv{E}  \]
 \begin{tabular}{@{}ll@{}}
 	Polarisation  & $\vv{P} = \epsilon_0\chi\vv{E}$ \\
 	Susceptibilité diélectrique  & $\chi$ \\
@@ -159,23 +169,33 @@ Propriétés des diélectriques
 
 \extraline
 Propriétés des condensateurs  \\
-\extraline
+\halfline
 \begin{tabular}{@{}ll@{}}
 	Champ électrique & $ E = {\sigma}/{\epsilon_0}  = -{\Delta V}/{d} $ \\
-	Capacitance [F] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
-	Condensateur à électrodes parallèles & $C = {A\epsilon}/{d} $ \\
-	Condensateurs en parallèle  & $C_\text{total} = C_1 + C_2 + \dots$ \\
-	Condensateurs en série & $\frac{1}{C_\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
+	Capacitance, cas général [F] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
+	Condens. à électrodes parallèles & $C = {A\epsilon}/{d} $ \\
+	Condensateurs en parallèle  & $C_\text{éq} = C_1 + C_2 + \dots$ \\
+	Condensateurs en série & $\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
 \end{tabular}
 
 
-\extraline
+\halfline
 Énergie emmagasinée dans un champ électrique
 \[ W_E = \frac{1}{2} \int_v  \rho_v(\vv{r})  \, V(\vv{r}) \, dv 
 = \frac{1}{2} \int_v  \vv{D}\cdot\vv{E} \, dv 
 = \frac{1}{2} \int_v  \epsilon E^2 \, dv 
 \frac{}{}\]
 \[ W_E = \frac{1}{2} QV = \frac{1}{2} CV^2 = \frac{1}{2}\frac{Q^2}{C} \quad\text{(condensateur)} \]
+
+\halfline
+Potentiel dans un matériau quelconque \\
+\halfline
+\begin{tabular}{@{}ll@{}}
+	Cas général & $\epsilon\nabla^2 V + \nabla V\cdot\nabla\epsilon = -\rho_v$ \\
+	Équation de Poisson ($\epsilon$ const) & $\nabla^2 V = -{\nabla\rho_v}/{\epsilon}$ \\
+	Équation de Laplace ($\rho_v=0$) & $\nabla^2 V = 0$ \\ 
+\end{tabular}
+
 
 \extraline
 \hrulefill
@@ -338,7 +358,8 @@ Laplacien
 \[ \deriv (\cot x) = -a\csc^2 ax \]
 \[ \deriv (\csc x) = -\cot x \csc x \]
 \end{multicols}
-
+\[ \deriv [f(x)g(x)] = f(x)g'(x) + g(x)f'(x)  \]
+\[ \deriv \left[ \frac{f(x)}{g(x)} \right] = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}  \]
 
 \subsection{Intégrales résolus}
 \halfline
