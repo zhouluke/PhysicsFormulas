@@ -93,14 +93,14 @@
 
 \section{Électrostatique}
 
-Loi de Coulomb : force électrique [N]
+Loi de Coulomb : force électrique [\si{\newton}]
  \[ \vv{F} = q\vv{E}(r) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \hat{r}  \]
 
-Charge  [C] ($'$: point de source; sans $'$: point d'observation)
+Charge  [\si{\coulomb}] ($'$: point de source; sans $'$: point d'observation)
 \[  dq = \rho_l(\vv{r}') \,dl'  \qquad  dq = \rho_s(\vv{r}') \,ds'  \qquad dq = \rho_v(\vv{r}') \,dv'  \]
 \[  Q = \int dq \]
 
-Champ électrique [N/C, V/m]
+Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
 \[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' |^2 }  \]
 \[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
 %
@@ -108,18 +108,18 @@ Champ électrique [N/C, V/m]
 %
 \[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  \]
 
-Densité de flux électrique (Champ $\vv{D}$)  [C/m${}^2$]
+Densité de flux électrique (Champ $\vv{D}$)  [$\si{\coulomb/\metre^2}$]
 \[ \vv{D} = \epsilon\vv{E}
 \qquad \nabla \cdot \vv{D} = \rho_v \]
 
-Flux électrique [C]
+Flux électrique [\si{\coulomb}]
 \[ \Psi = \int_{s} \vv{D} \cdot d\vv{s} = \epsilon \int_{s} \vv{E} \cdot d\vv{s} \]
 
 Théorème de Gauss
 \[ \oint_s \vv{E}\cdot d\vv{s} = \frac{Q_\text{int}}{\epsilon}
 \qquad  \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
-Potentiel [V = N$\cdot$m/C]
+Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \[ V(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' | }  \]
 \[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl' \]
 \[  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
@@ -134,7 +134,7 @@ Potentiel et champ électrique
 Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
 
 \extraline
-Travail effectué par une force extérieure en déplaçant une charge [J]
+Travail effectué par une force extérieure en déplaçant une charge [\si{\joule}]
 \[ W_{A\rightarrow B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
 
 Dipôle électrique
@@ -142,7 +142,7 @@ Dipôle électrique
 \frac{\vv{p}\cdot\hat{r}}{4\pi\epsilon|\vv{r}|^2} =
 \frac{\vv{p}\cdot\vv{r}}{4\pi\epsilon|\vv{r}|^3} \]
 
-Moment dipolaire [C$\cdot$m]
+Moment dipolaire [$\si{\coulomb\cdot\meter}$]
 \[ \vv{p} = qd\cdot \hat{p} \qquad \text{($\hat{p}$ pointe de $q-$ vers $q+$;  $\hat{p}\parallel\hat{z}$ souvent)} \]
 
 \halfline
@@ -172,7 +172,7 @@ Propriétés des condensateurs  \\
 \halfline
 \begin{tabular}{@{}ll@{}}
 	Champ électrique & $ E = {\sigma}/{\epsilon_0}  = -{\Delta V}/{d} $ \\
-	Capacitance, cas général [F] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
+	Capacitance, cas général [\si{\farad}] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
 	Condens. à électrodes parallèles & $C = {A\epsilon}/{d} $ \\
 	Condensateurs en parallèle  & $C_\text{éq} = C_1 + C_2 + \dots$ \\
 	Condensateurs en série & $\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
