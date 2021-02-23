@@ -96,12 +96,20 @@
 \section{Électrostatique}
 
 Loi de Coulomb : force électrique [\si{\newton}]
- \[ \vv{F} = q\vv{E}(r) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
+ \[ \vv{F} = q\vv{E}(\vv{r}) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
 
-Charge  [\si{\coulomb}] ($'$: point de source; sans $'$: point d'observation)
-\[  dq = \rho_l(\vv{r}') \,dl'  \qquad  dq = \rho_s(\vv{r}') \,ds'  \qquad dq = \rho_v(\vv{r}') \,dv'  \]
-\[  Q = \int dq \]
+Charge  [\si{\coulomb}]
+\[  dq = \rho_l(\vv{r}) \,dl  \qquad  dq = \rho_s(\vv{r}) \,ds  \qquad dq = \rho_v(\vv{r}) \,dv  \]
+\[  \textstyle Q = \int dq \]
 
+Convention notationnelle \\
+\halfline
+\begin{tabular}{@{\tableindent}ll@{}}
+	Avec $'$ & Point de source\\
+	Sans $'$ & Point d'observation \\
+\end{tabular}
+
+\extraline
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
 \[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' |^2 }  \]
 \[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
@@ -115,11 +123,11 @@ Densité de flux électrique (Champ $\vv{D}$)  [$\si{\coulomb/\metre^2}$]
 \qquad \nabla \cdot \vv{D} = \rho_v \]
 
 Flux électrique [\si{\coulomb}]
-\[ \Psi = \int_{s} \vv{D} \cdot d\vv{s} = \epsilon \int_{s} \vv{E} \cdot d\vv{s} \]
+\[  \Psi = \int_{s} \vv{D} \cdot d\vv{s} = \epsilon \int_{s} \vv{E} \cdot d\vv{s} \]
 
 Théorème de Gauss
 \[ \oint_s \vv{E}\cdot d\vv{s} = \frac{Q_\text{int}}{\epsilon}
-\qquad  \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
+\qquad  \Psi = \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
 Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \[ V(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' | }  \]
@@ -129,8 +137,8 @@ Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}
 \[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
 
 Potentiel et champ électrique
-\[ \Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \]
-\[ \vv{E} = -\nabla V 
+\[ \textstyle \Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \]
+\[  \vv{E} = -\nabla V 
  \qquad \oint_C \vv{E}\cdot d\vv{l}  = 0 \]
 
 Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
@@ -215,9 +223,11 @@ Laplacien
 \[ \nabla^2 V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} \]
 
 Éléments différentiels
-\[ \vv{dl} = dx\,\uvec{x} + dy\,\uvec{y} + dz\,\uvec{z} \]
-\[\vv{ds} = dy\,dz\,\uvec{x} + dx\,dz\,\uvec{y} + dx\,dy\,\uvec{z} \]
-\[dv = dx\,dy\,dz\]
+\begin{gather*}
+	\vv{dl} = dx\,\uvec{x} + dy\,\uvec{y} + dz\,\uvec{z} \\
+	\vv{ds} = dy\,dz\,\uvec{x} + dx\,dz\,\uvec{y} + dx\,dy\,\uvec{z} \\
+	dv = dx\,dy\,dz
+\end{gather*}
 
 \subsection{Coordonnées cylindriques $(\rho, \phi, z)$}
 
@@ -265,9 +275,11 @@ Laplacien
 + \frac{\partial^2 V}{\partial z^2} \]
 
 Éléments différentiels
-\[ \vv{dl} = d\rho\,\uvec{\rho} + \rho\,d\phi\,\uvec{\phi} + dz\,\uvec{z} \]
-\[\vv{ds} = \rho\,d\phi\,dz\,\uvec{\rho} + d\rho\,dz\,\uvec{\phi} + \rho\,d\rho\,d\phi\,\uvec{z} \]
-\[dv = \rho\,d\rho\,d\phi\,dz\]
+\begin{gather*}
+\vv{dl} = d\rho\,\uvec{\rho} + \rho\,d\phi\,\uvec{\phi} + dz\,\uvec{z} \\
+\vv{ds} = \rho\,d\phi\,dz\,\uvec{\rho} + d\rho\,dz\,\uvec{\phi} + \rho\,d\rho\,d\phi\,\uvec{z} \\
+dv = \rho\,d\rho\,d\phi\,dz
+\end{gather*}
 
 \subsection{Coordonnées sphériques $(r, \theta, \phi)$}
 
@@ -317,9 +329,11 @@ Laplacien
 + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 V}{\partial \phi^2} \]
 
 Éléments différentiels
-\[ \vv{dl} = dr\,\uvec{r} + r\,d\theta\,\uvec{\theta} + r\sin\theta\,d\phi\,\uvec{\phi} \]
-\[\vv{ds} = r^2\sin\theta\,d\theta\,\uvec{r} + r\,dr\sin\theta\,d\phi\,\uvec{\theta} + r\,dr\,d\theta\,\uvec{\phi} \]
-\[dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi \]
+\begin{gather*}
+\vv{dl} = dr\,\uvec{r} + r\,d\theta\,\uvec{\theta} + r\sin\theta\,d\phi\,\uvec{\phi} \\
+\vv{ds} = r^2\sin\theta\,d\theta\,\uvec{r} + r\,dr\sin\theta\,d\phi\,\uvec{\theta} + r\,dr\,d\theta\,\uvec{\phi} \\
+dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
+\end{gather*}
 
 
 \hrulefill
@@ -394,9 +408,11 @@ Laplacien
 
 \subsection{Autres formules}
 Lois des logarithmes
-\[ \log_a (xy) = \log_a x + \log_a y \]
-\[  \log_a (x/y) = \log_a x - \log_a y \]
-\[ \log_a (x^r) = r\log_a x \]
+\begin{gather*}
+\log_a (xy) = \log_a x + \log_a y \\
+ \log_a (x/y) = \log_a x - \log_a y \\
+\log_a (x^r) = r\log_a x
+\end{gather*}
 
 Géométrie \\
 \halfline
