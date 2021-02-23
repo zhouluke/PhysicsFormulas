@@ -174,10 +174,11 @@ Propriétés des diélectriques
 Propriétés des condensateurs  \\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
-	Capacitance, général [\si{\farad}] & $C \equiv  | {Q}/{\Delta V} | > 0 $ \\
+	Capacitance, général [\si{\farad}] & $C \equiv  {Q}/{\Delta V}  > 0 $ \\
 	Potentiel  & $\Delta V = V_+ - V_-$ \\
-	Champ électrique, général & $ E = -{\Delta V}/{d} $, $\uvec{E}: + \rightarrow -$ \\
-	Électrodes parallèles & $C = {A\epsilon}/{d}$, $E = {\sigma}/{\epsilon_0}$ \\
+	Direction du champ $\vv{E}$ & $\uvec{E}: + \rightarrow -$ \\
+	Électrodes parallèles & $C = {A\epsilon}/{d}$ \\
+	Électrodes parallèles & $E = {\sigma}/{\epsilon_0} = -{\Delta V}/{d}$ \\
 	Condensateurs en parallèle  & $C_\text{éq} = C_1 + C_2 + \dots$ \\
 	Condensateurs en série & $\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
 \end{tabular}
@@ -362,7 +363,7 @@ Laplacien
 \[ \deriv [f(x)g(x)] = f(x)g'(x) + g(x)f'(x)  \]
 \[ \deriv \left[ \frac{f(x)}{g(x)} \right] = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}  \]
 
-\subsection{Intégrales résolus}
+\subsection{Intégrales résolues}
 \halfline
 \begin{multicols}{2}
 \noindent
@@ -403,11 +404,10 @@ Géométrie \\
 	Cercle & $C = 2\pi r $, $A =\pi r^2$ \\
 	Sphère & $A = 4\pi r^2$, $V = \frac{4}{3}\pi r^3 $ \\
 \end{tabular}
-%\end{multicols}
 
 \extraline
 
-Théorème fondamentaux \\
+Théorèmes fondamentaux \\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
 	Théorème du gradient & $\int_{\vv{a}}^{\vv{b}} (\nabla f)\cdot d\vv{l} = f(\vv{b}) - f(\vv{a})$ \\
