@@ -150,7 +150,7 @@ Potentiel et champ électrique
 Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
 \[  \oint_C \vv{E}\cdot d\vv{l}  = 0 \qquad \text{(électrostatique)}\]
 
-Travail effectué par une force extérieure en déplaçant une charge [\si{\joule}]
+Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vv{E}$
 \[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
 
 Dipôle électrique
@@ -183,7 +183,8 @@ Propriétés des diélectriques
 	Polarisation  & $\vv{P} \equiv \lim_{\text{volume}\to 0} \vv{p}/\text{volume}$ \\
 	Polarisation  & $\vv{P} = \epsilon_0\chi\vv{E}$ \\
 	Susceptibilité diélectrique  & $\chi$ \\
-	Permittivité relative &  $\epsilon_r=1+\chi$
+	Permittivité relative &  $\epsilon_r=1+\chi$ \\
+	Permittivité & $\epsilon = \epsilon_0\epsilon_r$
 \end{tabular}
 
 \extraline
@@ -404,7 +405,8 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \[ \int \sin^2(ax)\,dx = \frac{x}{2} - \frac{\sin(2ax)}{4a} \]
 \[ \int \cos^2(ax)\,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \]
 %
-Formes avec numérateur $dx$:
+\[ \int_a^b u\,dv = uv|_a^b - \int_a^b v\,du  \]
+%
 \[ \int \frac{dx}{x} = \ln \lvert x \rvert \]
 \[ \int \frac{dx}{a+bx} = \frac{1}{b}\ln\lvert a+bx\rvert \]
 \[ \int \frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\left(\frac{x}{a}\right) \]
@@ -416,8 +418,8 @@ Formes avec numérateur $dx$:
 
 \extraline
 Formes avec numérateur $x\,dx$
+\[ \int \frac{x\,dx}{(x^2 \pm a^2)^{1/2}} = \sqrt{x^2 \pm a^2} \]
 \[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
-%
 \[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
 \[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
 
@@ -441,8 +443,10 @@ Géométrie \\
 	Cercle & $C = 2\pi r $, $A =\pi r^2$ \\
 	Sphère & $A = 4\pi r^2$, $V = \frac{4}{3}\pi r^3 $ \\
 \end{tabular}
-
 \extraline
+
+Résolution d'une équation quadratique
+\[ ax^2 + bx + c = 0 \Longrightarrow x = \frac{-b \pm \sqrt{b^2-4ac} }{2a} \]
 
 Théorèmes fondamentaux
 \begin{gather*}
