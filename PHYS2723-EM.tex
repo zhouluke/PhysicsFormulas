@@ -99,10 +99,12 @@ Loi de Coulomb : force électrique [\si{\newton}]
  \[ \vv{F} = q\vv{E}(\vv{r}) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
 
 Charge  [\si{\coulomb}]
-\[  dq = \rho_l(\vv{r}) \,dl  \qquad  dq = \rho_s(\vv{r}) \,ds  \qquad dq = \rho_v(\vv{r}) \,dv  \]
-\[  \textstyle Q = \int dq \]
+\begin{gather*} 
+dq = \rho_l(\vv{r}) \,dl  \qquad  dq = \rho_s(\vv{r}) \,ds  \qquad dq = \rho_v(\vv{r}) \,dv  \\
+ \textstyle Q = \int dq 
+\end{gather*}
 
-Convention notationnelle \\
+Conventions de notation  \\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
 	Avec $'$ & Point de source\\
@@ -111,13 +113,16 @@ Convention notationnelle \\
 
 \extraline
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
-\[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' |^2 }  \]
-\[ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \]
+\begin{gather*}
+\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' |^2 }  \\
 %
-\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \]
+ \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \\
 %
-\[\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  \]
-
+\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \\
+%
+\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  
+\end{gather*}
+	
 Densité de flux électrique (Champ $\vv{D}$)  [$\si{\coulomb/\metre^2}$]
 \[ \vv{D} = \epsilon\vv{E}
 \qquad \nabla \cdot \vv{D} = \rho_v \]
@@ -130,18 +135,21 @@ Théorème de Gauss
 \qquad  \Psi = \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
 
 Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
-\[ V(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' | }  \]
-\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl' \]
-\[  {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \]
-%
-\[ {V}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  \]
+\begin{gather*}
+V(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' | }  \\
+V(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl'  \\
+V(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \\
+V(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  
+\end{gather*}
 
 Potentiel et champ électrique
-\[ \textstyle \Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \]
-\[  \vv{E} = -\nabla V 
- \qquad \oint_C \vv{E}\cdot d\vv{l}  = 0 \]
+\begin{gather*}
+\Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \\
+ \vv{E} = -\nabla V
+\end{gather*}
 
 Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
+\[  \oint_C \vv{E}\cdot d\vv{l}  = 0 \qquad \text{(électrostatique)}\]
 
 \extraline
 Travail effectué par une force extérieure en déplaçant une charge [\si{\joule}]
