@@ -79,7 +79,6 @@
 \footnotesize
 \begin{multicols}{3}
 
-
 % multicol parameters
 % These lengths are set only within the two main columns
 %\setlength{\columnseprule}{0.25pt}
@@ -151,9 +150,8 @@ Potentiel et champ électrique
 Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
 \[  \oint_C \vv{E}\cdot d\vv{l}  = 0 \qquad \text{(électrostatique)}\]
 
-\extraline
 Travail effectué par une force extérieure en déplaçant une charge [\si{\joule}]
-\[ W_{A\rightarrow B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
+\[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
 
 Dipôle électrique
 \[ V(\vv{r}) = \frac{q}{4\pi\epsilon} \frac{d\cos\theta}{r^2} =
@@ -161,10 +159,10 @@ Dipôle électrique
 \frac{\vv{p}\cdot\vv{r}}{4\pi\epsilon|\vv{r}|^3} \]
 
 Moment dipolaire [$\si{\coulomb\cdot\meter}$]
-\[ \vv{p} = qd\cdot \uvec{p} \qquad \text{($\uvec{p}: q- \rightarrow q+$;  $\uvec{p}\parallel\uvec{z}$ souvent)} \]
+\[ \vv{p} = qd\cdot \uvec{p} \qquad \text{($\uvec{p}: q- \to q+$;  $\uvec{p}\parallel\uvec{z}$ souvent)} \]
 
 \halfline
-Conditions aux limites: un conducteur et un diélectrique  \\
+Conditions aux limites entre un conducteur et un diélectrique  (ou le vide)\\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
 	Pour le diélectrique & $ E_n = {\rho_s}/{\epsilon} \qquad E_t = 0 $ \\
@@ -172,15 +170,17 @@ Conditions aux limites: un conducteur et un diélectrique  \\
 \end{tabular}
 
 \extraline
-Conditions aux limites: deux diélectriques
-\[ \vv{E}_{1t} =\vv{ E}_{2t}  \]
-\[ (\vv{D}_1 - \vv{D}_2) \cdot \uvec{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 \vv{E}_{1n} = \epsilon_2 \vv{E}_{2n}) \] 
+Conditions aux limites entre deux diélectriques (ou un diélectrique et le vide)
+\begin{gather*}
+\vv{E}_{1t} =\vv{ E}_{2t}  \\
+ (\vv{D}_1 - \vv{D}_2) \cdot \uvec{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 \vv{E}_{1n} = \epsilon_2 \vv{E}_{2n})
+\end{gather*}
 
 \halfline
 Propriétés des diélectriques
 \[ \vv{D} = \epsilon_0\vv{E} + \vv{P} = \epsilon_0(1+\chi)\vv{E} = \epsilon_0\epsilon_r\vv{E} = \epsilon\vv{E}  \]
 \begin{tabular}{@{\tableindent}ll@{}}
-	Polarisation  & $\vv{P} \equiv \lim_{\text{volume}\rightarrow 0} \vv{p}/\text{volume}$ \\
+	Polarisation  & $\vv{P} \equiv \lim_{\text{volume}\to 0} \vv{p}/\text{volume}$ \\
 	Polarisation  & $\vv{P} = \epsilon_0\chi\vv{E}$ \\
 	Susceptibilité diélectrique  & $\chi$ \\
 	Permittivité relative &  $\epsilon_r=1+\chi$
@@ -190,13 +190,13 @@ Propriétés des diélectriques
 Propriétés des condensateurs  \\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
-	Capacitance, général [\si{\farad}] & $C \equiv  {Q}/{\Delta V}  > 0 $ \\
+	Capacitance, général [\si{\farad}] & $\displaystyle C \equiv  {Q}{\Delta V}  > 0 $ \\
 	Potentiel  & $\Delta V = V_+ - V_-$ \\
-	Direction du champ $\vv{E}$ & $\uvec{E}: + \rightarrow -$ \\
+	Direction du champ $\vv{E}$ & $\uvec{E}: + \to -$ \\
 	Électrodes parallèles & $C = {A\epsilon}/{d}$ \\
-	Électrodes parallèles & $E = {\sigma}/{\epsilon_0} = -{\Delta V}/{d}$ \\
+	Électrodes parallèles & $\displaystyle E = {\sigma}/{\epsilon_0} = -{\Delta V}/{d}$ \\
 	Condensateurs en parallèle  & $C_\text{éq} = C_1 + C_2 + \dots$ \\
-	Condensateurs en série & $\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
+	Condensateurs en série & $\displaystyle\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
 \end{tabular}
 
 
@@ -229,6 +229,12 @@ Gradient
 
 Laplacien
 \[ \nabla^2 V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} \]
+
+Rotationnel
+\[ \nabla\times \vv{E} =
+\left( \frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z}\right)\uvec{x}
++ \left( \frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x}\right)\uvec{y}
++ \left( \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}\right)\uvec{z} \]
 
 Éléments différentiels
 \begin{gather*}
@@ -385,6 +391,7 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \[ \deriv [f(x)g(x)] = f(x)g'(x) + g(x)f'(x)  \]
 \[ \deriv \left[ \frac{f(x)}{g(x)} \right] = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}  \]
 
+
 \subsection{Intégrales résolues}
 \halfline
 \begin{multicols}{2}
@@ -397,6 +404,7 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \[ \int \sin^2(ax)\,dx = \frac{x}{2} - \frac{\sin(2ax)}{4a} \]
 \[ \int \cos^2(ax)\,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \]
 %
+Formes avec numérateur $dx$:
 \[ \int \frac{dx}{x} = \ln \lvert x \rvert \]
 \[ \int \frac{dx}{a+bx} = \frac{1}{b}\ln\lvert a+bx\rvert \]
 \[ \int \frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\left(\frac{x}{a}\right) \]
@@ -404,15 +412,20 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \[ \int \frac{dx}{(x^2+a^2)^{3/2}} = \frac{x}{a^2\sqrt{x^2+a^2}} \]
 \[ \int \frac{dx}{(a+bx)^2} = -\frac{1}{b(a+bx)} \]
 %
-\[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
 \end{multicols}
 
+\extraline
+Formes avec numérateur $x\,dx$
+\[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
+%
 \[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
 \[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
 
+Formes avec numérateur $x^2\,dx$
 \[ \int \frac{x^2\,dx}{\sqrt{x^2+a^2}} =  \frac{u}{2}\sqrt{x^2+a^2} - \frac{a^2}{2}\ln(x+\sqrt{x^2+a^2}) \]
+%
+\[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert \]
 
-\[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert\]
 
 \subsection{Autres formules}
 Lois des logarithmes
@@ -431,25 +444,30 @@ Géométrie \\
 
 \extraline
 
-Théorèmes fondamentaux \\
-\halfline
-\begin{tabular}{@{\tableindent}ll@{}}
-	Théorème du gradient & $\int_{\vv{a}}^{\vv{b}} (\nabla f)\cdot d\vv{l} = f(\vv{b}) - f(\vv{a})$ \\
-	Théorème de la divergence & $\int (\nabla \cdot \vv{A}) \, dv = \oint \vv{A}\cdot d\vv{s} $ \\
-	Théorème du rotationnel & $\int (\nabla\times\vv{A})\cdot d\vv{s} = \oint \vv{A}\cdot d\vv{l}$ \\
-\end{tabular}
+Théorèmes fondamentaux
+\begin{gather*}
+\int_{\vv{a}}^{\vv{b}} (\nabla f)\cdot d\vv{l} = f(\vv{b}) - f(\vv{a}) 
+\qquad\text{(Théorème du gradient)} \\
+\int (\nabla \cdot \vv{A}) \, dv = \oint \vv{A}\cdot d\vv{s}
+\qquad\text{(Théorème de la divergence)} \\
+\int (\nabla\times\vv{A})\cdot d\vv{s} = \oint \vv{A}\cdot d\vv{l}
+\qquad\text{(Théorème du rotationnel)}
+\end{gather*}
+
 
 
 
 \hrulefill
 
 \section{Constantes}
-\[ \epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} =  \SI{8,85E-12}{{\coulomb^2}/{(\newton\cdot\meter^2)}} \]
-\[ k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2} \]
-\[ q_e = |e| = \SI{1,6E-19}{\coulomb}
-\qquad m_e = \SI{9,11E-31}{\kilogram} \]
-\[ \mu_0 = \SI{4\pi E-7}{H/\meter}
-\qquad c = \SI{3E8}{\meter/\second} \]
+\begin{gather*}
+\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} =  \SI{8,85E-12}{{\coulomb^2}/{(\newton\cdot\meter^2)}} \\
+k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2} \\
+q_e = |e| = \SI{1,6E-19}{\coulomb}
+\qquad m_e = \SI{9,11E-31}{\kilogram} \\
+\mu_0 = \SI{4\pi E-7}{H/\meter}
+\qquad c = \SI{3E8}{\meter/\second} 
+\end{gather*}
 
 \hrulefill
 
