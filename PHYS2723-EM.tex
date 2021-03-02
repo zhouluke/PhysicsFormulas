@@ -6,7 +6,7 @@
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
 \usepackage{amsmath}
-\usepackage[h]{esvect}
+%\usepackage[h]{esvect}
 
 \usepackage{siunitx}
 \usepackage{physics}
@@ -95,11 +95,11 @@
 \section{Électrostatique}
 
 Loi de Coulomb : force électrique [\si{\newton}]
- \[ \vv{F} = q\vv{E}(\vv{r}) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
+ \[ \vec{F} = q\vec{E}(\vec{r}) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
 
 Charge  [\si{\coulomb}]
 \begin{gather*} 
-dq = \rho_l(\vv{r}) \,dl  \qquad  dq = \rho_s(\vv{r}) \,ds  \qquad dq = \rho_v(\vv{r}) \,dv  \\
+dq = \rho_l(\vec{r}) \,dl  \qquad  dq = \rho_s(\vec{r}) \,ds  \qquad dq = \rho_v(\vec{r}) \,dv  \\
  \textstyle Q = \int dq 
 \end{gather*}
 
@@ -113,75 +113,75 @@ Conventions de notation  \\
 \extraline
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
 \begin{gather*}
-\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' |^2 }  \\
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}' |^2 }  \\
 %
- \vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dl'  \\
+ \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}')}{| \vec{r} - \vec{r}' |^3 } (\vec{r} - \vec{r}' )\,dl'  \\
 %
-\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'|^3 } (\vv{r} - \vv{r}' )\,ds' \\
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}')}{| \vec{r} - \vec{r}'|^3 } (\vec{r} - \vec{r}' )\,ds' \\
 %
-\vv{E}(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' |^3 } (\vv{r} - \vv{r}' )\,dv'  
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}')}{| \vec{r} - \vec{r}' |^3 } (\vec{r} - \vec{r}' )\,dv'  
 \end{gather*}
 	
-Densité de flux électrique (Champ $\vv{D}$)  [$\si{\coulomb/\metre^2}$]
-\[ \vv{D} = \epsilon\vv{E}
-\qquad \nabla \cdot \vv{D} = \rho_v \]
+Densité de flux électrique (Champ $\vec{D}$)  [$\si{\coulomb/\metre^2}$]
+\[ \vec{D} = \epsilon\vec{E}
+\qquad \nabla \cdot \vec{D} = \rho_v \]
 
 Flux électrique [\si{\coulomb}]
-\[  \Psi = \int_{s} \vv{D} \cdot d\vv{s} = \epsilon \int_{s} \vv{E} \cdot d\vv{s} \]
+\[  \Psi = \int_{s} \vec{D} \cdot d\vec{s} = \epsilon \int_{s} \vec{E} \cdot d\vec{s} \]
 
 Théorème de Gauss
-\[ \oint_s \vv{E}\cdot d\vv{s} = \frac{Q_\text{int}}{\epsilon}
-\qquad  \Psi = \oint_s \vv{D}\cdot d\vv{s} = Q_\text{int} \]
+\[ \oint_s \vec{E}\cdot d\vec{s} = \frac{Q_\text{int}}{\epsilon}
+\qquad  \Psi = \oint_s \vec{D}\cdot d\vec{s} = Q_\text{int} \]
 
 Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \begin{gather*}
-V(\vv{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vv{r} - \vv{r}' | }  \\
-V(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dl'  \\
-V(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vv{r}')}{| \vv{r} - \vv{r}'| } \,ds'  \\
-V(\vv{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vv{r}')}{| \vv{r} - \vv{r}' | } \,dv'  
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}' | }  \\
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}')}{| \vec{r} - \vec{r}' | } \,dl'  \\
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}')}{| \vec{r} - \vec{r}'| } \,ds'  \\
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}')}{| \vec{r} - \vec{r}' | } \,dv'  
 \end{gather*}
 
 Potentiel et champ électrique
 \begin{gather*}
-\Delta V = V_B - V_A  = -\int_A^B \vv{E}\cdot d\vv{l} \\
- \vv{E} = -\nabla V
+\Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{l} \\
+ \vec{E} = -\nabla V
 \end{gather*}
 
-Équilibre électrostatique $\Rightarrow \vv{E}$ conservatif  $\Rightarrow \nabla \times \vv{E} = 0$
-\[  \oint_C \vv{E}\cdot d\vv{l}  = 0 \qquad \text{(électrostatique)}\]
+Équilibre électrostatique $\Rightarrow \vec{E}$ conservatif  $\Rightarrow \nabla \times \vec{E} = 0$
+\[  \oint_C \vec{E}\cdot d\vec{l}  = 0 \qquad \text{(électrostatique)}\]
 
-Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vv{E}$
-\[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vv{E}\cdot d\vv{l} = q\Delta V \]
+Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vec{E}$
+\[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vec{E}\cdot d\vec{l} = q\Delta V \]
 
 Dipôle électrique
-\[ V(\vv{r}) = \frac{q}{4\pi\epsilon} \frac{d\cos\theta}{r^2} =
-\frac{\vv{p}\cdot\uvec{r}}{4\pi\epsilon|\vv{r}|^2} =
-\frac{\vv{p}\cdot\vv{r}}{4\pi\epsilon|\vv{r}|^3} \]
+\[ V(\vec{r}) = \frac{q}{4\pi\epsilon} \frac{d\cos\theta}{r^2} =
+\frac{\vec{p}\cdot\uvec{r}}{4\pi\epsilon|\vec{r}|^2} =
+\frac{\vec{p}\cdot\vec{r}}{4\pi\epsilon|\vec{r}|^3} \]
 
 Moment dipolaire [$\si{\coulomb\cdot\meter}$]
-\[ \vv{p} = qd\cdot \uvec{p} \qquad \text{($\uvec{p}: q- \to q+$;  $\uvec{p}\parallel\uvec{z}$ souvent)} \]
+\[ \vec{p} = qd\cdot \uvec{p} \qquad \text{($\uvec{p}: q- \to q+$;  $\uvec{p}\parallel\uvec{z}$ souvent)} \]
 
 \halfline
 Conditions aux limites entre un conducteur et un diélectrique  (ou le vide)\\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
 	Pour le diélectrique & $ E_n = {\rho_s}/{\epsilon} \qquad E_t = 0 $ \\
-	Pour le conducteur  & $\vv{E} = 0 \qquad\qquad \rho_v = 0 $ \\
+	Pour le conducteur  & $\vec{E} = 0 \qquad\qquad \rho_v = 0 $ \\
 \end{tabular}
 
 \extraline
 Conditions aux limites entre deux diélectriques (ou un diélectrique et le vide)
 \begin{gather*}
-\vv{E}_{1t} =\vv{ E}_{2t}  \\
- (\vv{D}_1 - \vv{D}_2) \cdot \uvec{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 \vv{E}_{1n} = \epsilon_2 \vv{E}_{2n})
+\vec{E}_{1t} =\vec{ E}_{2t}  \\
+ (\vec{D}_1 - \vec{D}_2) \cdot \uvec{n} = \rho_s  \qquad (\rho_s=0 \Rightarrow \epsilon_1 \vec{E}_{1n} = \epsilon_2 \vec{E}_{2n})
 \end{gather*}
 
 \halfline
 Diélectriques linéaires
-\[ \vv{D} = \epsilon_0\vv{E} + \vv{P} = \epsilon_0(1+\chi)\vv{E} = \epsilon_0\epsilon_r\vv{E} = \epsilon\vv{E}  \]
+\[ \vec{D} = \epsilon_0\vec{E} + \vec{P} = \epsilon_0(1+\chi)\vec{E} = \epsilon_0\epsilon_r\vec{E} = \epsilon\vec{E}  \]
 \begin{tabular}{@{\tableindent}ll@{}}
-	Polarisation  & $\vv{P} \equiv d\vv{p}/dv \quad (\text{$v$: volume})$ \\
-	  & $\vv{P} = \epsilon_0\chi\vv{E}$ \\
+	Polarisation  & $\vec{P} \equiv d\vec{p}/dv \quad (\text{$v$: volume})$ \\
+	  & $\vec{P} = \epsilon_0\chi\vec{E}$ \\
 	Susceptibilité diélectrique  & $\chi$ \\
 	Permittivité relative &  $\epsilon_r=1+\chi$ \\
 	Permittivité & $\epsilon = \epsilon_0\epsilon_r$
@@ -193,19 +193,19 @@ Condensateurs  \\
 \begin{tabular}{@{\tableindent}ll@{}}
 	Capacitance, général [\si{\farad}] & $\displaystyle C \equiv {Q}/{\Delta V}  > 0 $ \\
 	Potentiel  & $\Delta V = V_+ - V_-$ \\
-	Direction du champ $\vv{E}$ & $\uvec{E}: +Q \to -Q$ \\
+	Direction du champ $\vec{E}$ & $\uvec{E}: +Q \to -Q$ \\
 	Électrodes parallèles & $C = {A\epsilon}/{d}$ \\
 	 & $E = {\sigma}/{\epsilon_0}$ \\
 	 & $E =  -{\Delta V}/{d}$ \\
 	Condensateurs en parallèle  & $C_\text{éq} = C_1 + C_2 + \dots$ \\
-	Condensateurs en série & $\displaystyle\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
+	Condensateurs en série & $\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots $\\
 \end{tabular}
 
 
 \halfline
 Énergie emmagasinée dans un champ électrique
-\[ W_E = \frac{1}{2} \int_v  \rho_v(\vv{r})  \, V(\vv{r}) \, dv 
-= \frac{1}{2} \int_v  \vv{D}\cdot\vv{E} \, dv 
+\[ W_E = \frac{1}{2} \int_v  \rho_v(\vec{r})  \, V(\vec{r}) \, dv 
+= \frac{1}{2} \int_v  \vec{D}\cdot\vec{E} \, dv 
 = \frac{1}{2} \int_v  \epsilon E^2 \, dv 
 \frac{}{}\]
 \[ W_E = \frac{1}{2} QV = \frac{1}{2} CV^2 = \frac{1}{2}\frac{Q^2}{C} \quad\text{(condensateur)} \]
@@ -233,15 +233,15 @@ Laplacien
 \[ \nabla^2 V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} \]
 
 Rotationnel
-\[ \nabla\times \vv{E} =
+\[ \nabla\times \vec{E} =
 \left( \frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z}\right)\uvec{x}
 + \left( \frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x}\right)\uvec{y}
 + \left( \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}\right)\uvec{z} \]
 
 Éléments différentiels
 \begin{gather*}
-	\vv{dl} = dx\,\uvec{x} + dy\,\uvec{y} + dz\,\uvec{z} \\
-	\vv{ds} = dy\,dz\,\uvec{x} + dx\,dz\,\uvec{y} + dx\,dy\,\uvec{z} \\
+	d\vec{l} = dx\,\uvec{x} + dy\,\uvec{y} + dz\,\uvec{z} \\
+	d\vec{s} = dy\,dz\,\uvec{x} + dx\,dz\,\uvec{y} + dx\,dy\,\uvec{z} \\
 	dv = dx\,dy\,dz
 \end{gather*}
 
@@ -292,8 +292,8 @@ Laplacien
 
 Éléments différentiels
 \begin{gather*}
-\vv{dl} = d\rho\,\uvec{\rho} + \rho\,d\phi\,\uvec{\phi} + dz\,\uvec{z} \\
-\vv{ds} = \rho\,d\phi\,dz\,\uvec{\rho} + d\rho\,dz\,\uvec{\phi} + \rho\,d\rho\,d\phi\,\uvec{z} \\
+d\vec{l} = d\rho\,\uvec{\rho} + \rho\,d\phi\,\uvec{\phi} + dz\,\uvec{z} \\
+d\vec{s} = \rho\,d\phi\,dz\,\uvec{\rho} + d\rho\,dz\,\uvec{\phi} + \rho\,d\rho\,d\phi\,\uvec{z} \\
 dv = \rho\,d\rho\,d\phi\,dz
 \end{gather*}
 
@@ -346,13 +346,61 @@ Laplacien
 
 Éléments différentiels
 \begin{gather*}
-\vv{dl} = dr\,\uvec{r} + r\,d\theta\,\uvec{\theta} + r\sin\theta\,d\phi\,\uvec{\phi} \\
-\vv{ds} = r^2\sin\theta\,d\theta\,d\phi\,\uvec{r} 
+d\vec{l} = dr\,\uvec{r} + r\,d\theta\,\uvec{\theta} + r\sin\theta\,d\phi\,\uvec{\phi} \\
+d\vec{s} = r^2\sin\theta\,d\theta\,d\phi\,\uvec{r} 
 + r\,dr\sin\theta\,d\phi\,\uvec{\theta}
 + r\,dr\,d\theta\,\uvec{\phi} \\
 dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \end{gather*}
 
+
+\hrulefill
+\section{Courant électrique}
+
+Courant [$\si{\ampere} = \si{\coulomb/\sec}$]
+\[ I = \frac{dQ}{dt} \]
+
+Densité de courant [$\si{\ampere/\metre^2}$]
+\begin{gather*}
+ \vec{J} = \rho_v \vec{v} = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
+ \qquad
+ \nabla\cdot\vec{J} = -\frac{\partial\rho_v}{\partial t}
+ \\
+ \textstyle
+ I =\int \vec{J}_v \cdot d\vec{s} \qquad
+ I = \int \vec{J}_s \cdot d\vec{l}
+\end{gather*}
+%
+\begin{tabular}{@{\tableindent}ll@{}}
+	Densité de charge volumique & $\rho_v$ \\
+	Vitesse de dérive & $\vec{v}$\\
+	Conductivité électrique & $\sigma$  \\
+	Résistivité électrique  & $\rho = 1/\sigma$ \\
+\end{tabular}
+
+\extraline
+Résistance [$\si{\ohm} = \si{\volt/\ampere}$]
+\begin{gather*}
+R = \frac{L}{\sigma A} = \frac{V}{I}
+= \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma\vec{E}\cdot{d\vec{s}}}
+= \int\frac{dl}{\sum_i \sigma_i A_i}
+\end{gather*}
+%
+\begin{tabular}{@{\tableindent}ll@{}}
+	Résistances en série & $R_\text{tot} = R_1 + R_2 + \dots$ \\
+	Résistances en parallèle & $ \frac{1}{R_\text{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$\\
+\end{tabular}
+
+\extraline
+Loi de Joule pour la puissance [$\si{\watt}$]
+\[ P = \int \vec{E}\cdot \vec{J} \,dv 
+= \int \frac{1}{\sigma}\, J^2\,dv
+= VI \]
+
+
+%\hrulefill
+%\section{Magnétostatique}
+%Théorème de Biot-Savart
 
 \hrulefill
 
@@ -453,11 +501,11 @@ Résolution d'une équation quadratique
 
 Théorèmes fondamentaux
 \begin{gather*}
-\int_{\vv{a}}^{\vv{b}} (\nabla f)\cdot d\vv{l} = f(\vv{b}) - f(\vv{a}) 
+\int_{\vec{a}}^{\vec{b}} (\nabla f)\cdot d\vec{l} = f(\vec{b}) - f(\vec{a}) 
 \qquad\text{(Théorème du gradient)} \\
-\int (\nabla \cdot \vv{A}) \, dv = \oint \vv{A}\cdot d\vv{s}
+\int (\nabla \cdot \vec{A}) \, dv = \oint \vec{A}\cdot d\vec{s}
 \qquad\text{(Théorème de la divergence)} \\
-\int (\nabla\times\vv{A})\cdot d\vv{s} = \oint \vv{A}\cdot d\vv{l}
+\int (\nabla\times\vec{A})\cdot d\vec{s} = \oint \vec{A}\cdot d\vec{l}
 \qquad\text{(Théorème du rotationnel)}
 \end{gather*}
 
@@ -465,6 +513,7 @@ Théorèmes fondamentaux
 
 
 \hrulefill
+
 
 \section{Constantes}
 \begin{gather*}
