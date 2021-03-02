@@ -358,16 +358,15 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \section{Courant électrique}
 
 Courant [$\si{\ampere} = \si{\coulomb/\sec}$]
-\[ I = \frac{dQ}{dt}
-\qquad \textstyle
+\[ I \equiv \frac{dQ}{dt}
+\qquad
 I =\int \vec{J}_v \cdot d\vec{s} \qquad
-I = \int \vec{J}_s \cdot d\vec{l} \]
+I = \int \vec{J}_s \cdot d\vec{l}
+\]
 
 Densité de courant [$\si{\ampere/\metre^2}$]
 \begin{gather*}
- \vec{J} = \rho_v \vec{v} = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
- \qquad
- \nabla\cdot\vec{J} = -\frac{\partial\rho_v}{\partial t}
+ \vec{J} = \vec{J}_v = \rho_v \vec{v} = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
 \end{gather*}
 %
 \begin{tabular}{@{\tableindent}ll@{}}
@@ -384,17 +383,23 @@ R \equiv \frac{L}{\sigma A} = \frac{V}{I}
 = \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma\vec{E}\cdot{d\vec{s}}}
 = \int\frac{dl}{\sum_i \sigma_i A_i} > 0
 \end{gather*}
-%
+\tableindent ($L$ doit être dans la même direction de $\vec{E}$) \\
+\halfline
 \begin{tabular}{@{\tableindent}ll@{}}
 	Résistances en série & $R_\text{tot} = R_1 + R_2 + \dots$ \\
 	Résistances en parallèle & $ \frac{1}{R_\text{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$\\
 \end{tabular}
 
-\extraline
-Loi de Joule pour la puissance [$\si{\watt}$]
-\[ P = \int \vec{E}\cdot \vec{J} \,dv 
+Équation de continuité et temps de relaxation [$\si{\sec}$]
+\[ \nabla\cdot\vec{J} = -\frac{\partial\rho_v}{\partial t} 
+\qquad \tau = \frac{\epsilon}{\sigma} \]
+
+Loi de Joule : puissance [$\si{\watt} = \si{\joule/\sec}$]
+\[ P 
+\equiv \frac{dW}{dt}
+= \int \vec{E}\cdot \vec{J} \,dv 
 = \int \frac{1}{\sigma}\, J^2\,dv
-= VI \]
+= VI = I^2 R\]
 
 
 \hrulefill
@@ -454,6 +459,18 @@ EMF et règle de flux
 \qquad
 \varepsilon = -N\frac{d\Phi}{dt} \]
 
+
+
+\hrulefill
+\section{Constantes}
+\begin{gather*}
+	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} =  \SI{8,85E-12}{{\coulomb^2}/{(\newton\cdot\meter^2)}} \\
+	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2} \\
+	q_e = |e| = \SI{1,6E-19}{\coulomb}
+	\qquad m_e = \SI{9,11E-31}{\kilogram} \\
+	\mu_0 = \SI{4\pi E-7}{H/\meter}
+	\qquad c = \SI{3E8}{\meter/\second} 
+\end{gather*}
 
 \hrulefill
 
@@ -565,18 +582,7 @@ Théorèmes fondamentaux
 
 
 
-\hrulefill
 
-
-\section{Constantes}
-\begin{gather*}
-\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} =  \SI{8,85E-12}{{\coulomb^2}/{(\newton\cdot\meter^2)}} \\
-k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2} \\
-q_e = |e| = \SI{1,6E-19}{\coulomb}
-\qquad m_e = \SI{9,11E-31}{\kilogram} \\
-\mu_0 = \SI{4\pi E-7}{H/\meter}
-\qquad c = \SI{3E8}{\meter/\second} 
-\end{gather*}
 
 \hrulefill
 
