@@ -68,7 +68,7 @@
 
 \newcommand{\extraline}{\vspace{1em}}
 \newcommand{\halfline}{\vspace{0.5em}}
-\newcommand{\deriv}{\ensuremath{\derivative{}{x}{}}}
+\newcommand{\deriv}{\ensuremath{\frac{d}{dx}}}
 \newcommand{\tableindent}{\hspace{1.5em}}
 \newcommand{\uvec}[1]{\ensuremath{\boldsymbol{\hat{#1}}}}
 % -----------------------------------------------------------------------
@@ -113,13 +113,13 @@ Conventions de notation  \\
 \extraline
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
 \begin{gather*}
-\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}' |^2 }  \\
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}\,' |^2 }  \\
 %
- \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}')}{| \vec{r} - \vec{r}' |^3 } (\vec{r} - \vec{r}' )\,dl'  \\
+ \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dl'  \\
 %
-\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}')}{| \vec{r} - \vec{r}'|^3 } (\vec{r} - \vec{r}' )\,ds' \\
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}\,')}{| \vec{r} - \vec{r}\,'|^3 } (\vec{r} - \vec{r}\,' )\,ds' \\
 %
-\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}')}{| \vec{r} - \vec{r}' |^3 } (\vec{r} - \vec{r}' )\,dv'  
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dv'  
 \end{gather*}
 	
 Densité de flux électrique (Champ $\vec{D}$)  [$\si{\coulomb/\metre^2}$]
@@ -135,15 +135,15 @@ Théorème de Gauss
 
 Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \begin{gather*}
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}' | }  \\
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}')}{| \vec{r} - \vec{r}' | } \,dl'  \\
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}')}{| \vec{r} - \vec{r}'| } \,ds'  \\
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}')}{| \vec{r} - \vec{r}' | } \,dv'  
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}\,' | }  \qquad
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}\,')}{| \vec{r} - \vec{r}\,' | } \,dl'  \\
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}\,')}{| \vec{r} - \vec{r}\,'| } \,ds'  \qquad
+V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' | } \,dv'  
 \end{gather*}
 
 Potentiel et champ électrique
 \begin{gather*}
-\Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{l} \\
+\Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{l} \qquad
  \vec{E} = -\nabla V
 \end{gather*}
 
@@ -358,17 +358,16 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \section{Courant électrique}
 
 Courant [$\si{\ampere} = \si{\coulomb/\sec}$]
-\[ I = \frac{dQ}{dt} \]
+\[ I = \frac{dQ}{dt}
+\qquad \textstyle
+I =\int \vec{J}_v \cdot d\vec{s} \qquad
+I = \int \vec{J}_s \cdot d\vec{l} \]
 
 Densité de courant [$\si{\ampere/\metre^2}$]
 \begin{gather*}
  \vec{J} = \rho_v \vec{v} = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
  \qquad
  \nabla\cdot\vec{J} = -\frac{\partial\rho_v}{\partial t}
- \\
- \textstyle
- I =\int \vec{J}_v \cdot d\vec{s} \qquad
- I = \int \vec{J}_s \cdot d\vec{l}
 \end{gather*}
 %
 \begin{tabular}{@{\tableindent}ll@{}}
@@ -381,9 +380,9 @@ Densité de courant [$\si{\ampere/\metre^2}$]
 \extraline
 Résistance [$\si{\ohm} = \si{\volt/\ampere}$]
 \begin{gather*}
-R = \frac{L}{\sigma A} = \frac{V}{I}
+R \equiv \frac{L}{\sigma A} = \frac{V}{I}
 = \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma\vec{E}\cdot{d\vec{s}}}
-= \int\frac{dl}{\sum_i \sigma_i A_i}
+= \int\frac{dl}{\sum_i \sigma_i A_i} > 0
 \end{gather*}
 %
 \begin{tabular}{@{\tableindent}ll@{}}
@@ -398,9 +397,63 @@ Loi de Joule pour la puissance [$\si{\watt}$]
 = VI \]
 
 
-%\hrulefill
-%\section{Magnétostatique}
-%Théorème de Biot-Savart
+\hrulefill
+\section{Magnétostatique}
+
+Théorème de Biot-Savart : champ magnétique
+\[ 
+\vec{B} = \frac{\mu}{4\pi} \int \frac{I\,d\vec{l}\,'\times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3}
+\qquad
+( I\,d\vec{l}\,' \sim  \vec{J}_v\,dv \sim \vec{J}_s\,ds)
+ \]
+
+Solénoïde infini
+\[ \vec{B} = \mu n I \]
+
+Force magnétique
+\[ \vec{F}_m = q\vec{v} \times \vec{B} 
+\qquad
+\vec{F}_m = \int I\,d\vec{l} \times \vec{B}  \]
+
+Théorème de Gauss pour champs magnétiques
+\[ \oint \vec{B}\cdot d\vec{s} = 0 \qquad
+\nabla\cdot \vec{B} = 0 \]
+
+Moment de force et dipoles magnétiques
+\[
+\vec{\tau} = \vec{r}\times\vec{F} \qquad 
+\vec{\tau} = \vec{m}\times\vec{B} \qquad
+\textstyle 
+\vec{m} = I\int d\vec{s} = IA\,\uvec{a}_n
+\]
+
+Flux magnétique
+\[ \Phi = \int \vec{B}\cdot d\vec{s}\]
+
+Loi d'Ampère
+\[ \oint_C \vec{H}\cdot d\vec{l} = I_\text{enc}
+\qquad \nabla\times\vec{H} = \vec{J}_v   \]
+
+Magnétisation
+\[ \vec{B} = \mu_0(\vec{H}+\vec{M}) = \mu\vec{H}\]
+\[ \vec{M} = \chi_m \vec{H}
+\qquad
+\mu = \mu_0(1+\chi_m)
+ \]
+
+Conditions aux limites
+\[ B_{n_1} = B_{n_2} \qquad B_{t_1} = H_{t_2} = J_s \]
+
+Loi de Faraday
+\[ \oint_C \vec{E} \cdot d\vec{l} = - \frac{d\Phi}{dt}
+\qquad
+\nabla\times\vec{E} = -\frac{\partial\vec{B}}{\partial t} \]
+
+EMF et règle de flux
+\[ \varepsilon = \int(\vec{v}\times\vec{B})\cdot d\vec{l} 
+\qquad
+\varepsilon = -N\frac{d\Phi}{dt} \]
+
 
 \hrulefill
 
@@ -469,8 +522,8 @@ Loi de Joule pour la puissance [$\si{\watt}$]
 
 \extraline
 Formes avec numérateur $x\,dx$
-\[ \int \frac{x\,dx}{(x^2 \pm a^2)^{1/2}} = \sqrt{x^2 \pm a^2} \]
-\[ \int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
+\[ \int \frac{x\,dx}{(x^2 \pm a^2)^{1/2}} = \sqrt{x^2 \pm a^2} \qquad
+\int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
 \[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
 \[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
 
