@@ -70,7 +70,7 @@
 \newcommand{\halfline}{\vspace{0.5em}}
 \newcommand{\deriv}{\ensuremath{\frac{d}{dx}}}
 \newcommand{\tableindent}{\hspace{1.5em}}
-\newcommand{\uvec}[1]{\ensuremath{\boldsymbol{\hat{#1}}}}
+\newcommand{\uvec}[1]{\ensuremath{{\hat{#1}}}}
 % -----------------------------------------------------------------------
 
 \begin{document}
@@ -357,7 +357,7 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 \hrulefill
 \section{Courant électrique}
 
-Courant [$\si{\ampere} = \si{\coulomb/\sec}$]
+Courant [$\si{\ampere} = \si{\coulomb}/\si{\sec}$]
 \[ I \equiv \frac{dQ}{dt}
 \qquad
 I =\int \vec{J}_v \cdot d\vec{s} \qquad
@@ -366,14 +366,14 @@ I = \int \vec{J}_s \cdot d\vec{l}
 
 Densité de courant [$\si{\ampere/\metre^2}$]
 \begin{gather*}
- \vec{J} = \vec{J}_v = \rho_v \vec{v} = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
+\vec{J}_v \equiv \rho_v \vec{v} = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
 \end{gather*}
 %
 \begin{tabular}{@{\tableindent}ll@{}}
 	Densité de charge volumique & $\rho_v$ \\
 	Vitesse de dérive & $\vec{v}$\\
 	Conductivité électrique & $\sigma$  \\
-	Résistivité électrique  & $\rho = 1/\sigma$ \\
+	Résistivité électrique  [$\si{\ohm\cdot\meter}$] & $\rho \equiv 1/\sigma$ \\
 \end{tabular}
 
 \extraline
@@ -383,7 +383,8 @@ R \equiv \frac{L}{\sigma A} = \frac{V}{I}
 = \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma\vec{E}\cdot{d\vec{s}}}
 = \int\frac{dl}{\sum_i \sigma_i A_i} > 0
 \end{gather*}
-\tableindent ($L$ doit être dans la même direction de $\vec{E}$) \\
+\tableindent ($L$ doit être mesuré dans la même direction de $\vec{E}$) \\
+\tableindent ($A$ doit être mesuré sur un plan $\perp$ à $\vec{E}$) \\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
 	Résistances en série & $R_\text{tot} = R_1 + R_2 + \dots$ \\
@@ -391,53 +392,67 @@ R \equiv \frac{L}{\sigma A} = \frac{V}{I}
 \end{tabular}
 
 Équation de continuité et temps de relaxation [$\si{\sec}$]
-\[ \nabla\cdot\vec{J} = -\frac{\partial\rho_v}{\partial t} 
-\qquad \tau = \frac{\epsilon}{\sigma} \]
+\[ \nabla\cdot\vec{J}_v = -\frac{\partial\rho_v}{\partial t} 
+\qquad
+\rho_v(t) = \rho_v(0) \, e^{-t/\tau}
+\qquad
+\tau = \frac{\epsilon}{\sigma} \]
 
-Loi de Joule : puissance [$\si{\watt} = \si{\joule/\sec}$]
+Loi de Joule : puissance [$\si{\watt} = \si{\joule}/\si{\sec}$]
 \[ P 
 \equiv \frac{dW}{dt}
-= \int \vec{E}\cdot \vec{J} \,dv 
-= \int \frac{1}{\sigma}\, J^2\,dv
+= \int \vec{E}\cdot \vec{J}_v \,dv 
+= \int \frac{1}{\sigma}\, J_v^2\,dv
 = VI = I^2 R\]
 
 
 \hrulefill
 \section{Magnétostatique}
 
-Théorème de Biot-Savart : champ magnétique
-\[ 
-\vec{B} = \frac{\mu}{4\pi} \int \frac{I\,d\vec{l}\,'\times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3}
-\qquad
-( I\,d\vec{l}\,' \sim  \vec{J}_v\,dv \sim \vec{J}_s\,ds)
- \]
+Loi de Biot-Savart : champ induction magnétique (``magnetic flux density") [$\si{\tesla} = \si{(\newton\cdot\sec)/(\coulomb\cdot\metre)}$]
+\begin{align*}
+\vec{B} &= \frac{\mu}{4\pi} \int_l \frac{I\,d\vec{l}\,' \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3}
+ \qquad  \\
+\vec{B} &= \frac{\mu}{4\pi} \int_s \frac{\vec{J}_s \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, ds'
+\qquad (\vec{J}_s: \si{\ampere/\metre}) \\ 
+\vec{B} &= \frac{\mu}{4\pi} \int_v \frac{\vec{J}_v \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, dv'
+\qquad (\vec{J}_v: \si{\ampere/\metre^2})
+\end{align*}
+
+Champ magnétique [$\si{\ampere/\meter}$]
+\[ \vec{H} = \frac{\vec{B}}{\mu} \]
+
+Loi d'Ampère
+\[ \oint_C \vec{H}\cdot d\vec{l} = I_\text{encerclé}
+\qquad \nabla\times\vec{H} = \vec{J}_v   \]
 
 Solénoïde infini
-\[ \vec{B} = \mu n I \]
+\[ \vec{B} = \mu n I  \qquad \text{(intérieur)} \qquad
+\vec{B} = 0  \qquad \text{(extérieur)} \]
+\[ |\vec{J}_s | = nI \]
+\tableindent ($n$: nombre de tours par longueur) \\
 
-Force magnétique
+\extraline
+Force magnétique [\si{\newton}]
 \[ \vec{F}_m = q\vec{v} \times \vec{B} 
 \qquad
-\vec{F}_m = \int I\,d\vec{l} \times \vec{B}  \]
+\vec{F}_m = \int I\,d\vec{l} \times \vec{B}_\text{ext}  \]
+
+Flux magnétique
+\[ \Phi = \int \vec{B}\cdot d\vec{s}\]
+
 
 Théorème de Gauss pour champs magnétiques
 \[ \oint \vec{B}\cdot d\vec{s} = 0 \qquad
 \nabla\cdot \vec{B} = 0 \]
 
-Moment de force et dipoles magnétiques
+Moment de force et dipôles magnétiques
 \[
 \vec{\tau} = \vec{r}\times\vec{F} \qquad 
 \vec{\tau} = \vec{m}\times\vec{B} \qquad
 \textstyle 
 \vec{m} = I\int d\vec{s} = IA\,\uvec{a}_n
 \]
-
-Flux magnétique
-\[ \Phi = \int \vec{B}\cdot d\vec{s}\]
-
-Loi d'Ampère
-\[ \oint_C \vec{H}\cdot d\vec{l} = I_\text{enc}
-\qquad \nabla\times\vec{H} = \vec{J}_v   \]
 
 Magnétisation
 \[ \vec{B} = \mu_0(\vec{H}+\vec{M}) = \mu\vec{H}\]
@@ -460,17 +475,32 @@ EMF et règle de flux
 \varepsilon = -N\frac{d\Phi}{dt} \]
 
 
+\hrulefill
+\section{Équations de Maxwell}
+\begin{gather*}
+\nabla \cdot \vec{D} = \rho_v \qquad
+\nabla \cdot \vec{B} = 0 \\
+\nabla \cdot \vec{E} = -\frac{\partial \vec{B}}{\partial t} \qquad
+\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}
+\end{gather*}
 
 \hrulefill
 \section{Constantes}
+Permittivité du vide
+\[ 	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} =  \SI{8,85E-12}{{\coulomb^2}/{(\newton\cdot\meter^2)}} \]
+\[	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2}\]
+
+Perméabilité du vide
+\[ \mu_0 = \SI{4\pi E-7}{H/\meter} = \SI{4\pi E-7}{\tesla\cdot\meter/\ampere} \]
+
+Charge et masse de l'électron
 \begin{gather*}
-	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} =  \SI{8,85E-12}{{\coulomb^2}/{(\newton\cdot\meter^2)}} \\
-	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2} \\
-	q_e = |e| = \SI{1,6E-19}{\coulomb}
-	\qquad m_e = \SI{9,11E-31}{\kilogram} \\
-	\mu_0 = \SI{4\pi E-7}{H/\meter}
-	\qquad c = \SI{3E8}{\meter/\second} 
+q_e = |e| = \SI{1,6E-19}{\coulomb}
+\qquad m_e = \SI{9,11E-31}{\kilogram}
 \end{gather*}
+
+Vitesse de la lumière
+\[ c = \SI{3E8}{\meter/\second}  \]
 
 \hrulefill
 
