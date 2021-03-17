@@ -6,6 +6,7 @@
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{mathtools}
 %\usepackage[h]{esvect}
 
 \usepackage{siunitx}
@@ -92,7 +93,7 @@
      \small{Luke Zhou $\cdot$ PHY 2723 $\cdot$ Hiver 2021}
 \end{center}
 
-\section{Électrostatique}
+\section{Électrostatique $\left(\frac{\partial\rho}{\partial t} = 0 \right)$}
 
 Loi de Coulomb : force électrique [\si{\newton}]
  \[ \vec{F} = q\vec{E}(\vec{r}) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
@@ -102,7 +103,12 @@ Charge  [\si{\coulomb}]
 dq = \rho_l(\vec{r}) \,dl  \qquad  dq = \rho_s(\vec{r}) \,ds  \qquad dq = \rho_v(\vec{r}) \,dv  \\
  \textstyle Q = \int dq 
 \end{gather*}
+\begin{tabular}{@{\tableindent}ll@{}}
+	$\rho_v$ & Densité de charge volumique [$\si{\coulomb/\metre^3}$] \\
+	$\rho_s$ & Densité de charge surfacique [$\si{\coulomb/\metre^2}$] \\
+\end{tabular}
 
+\extraline
 Conventions de notation  \\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
@@ -112,15 +118,20 @@ Conventions de notation  \\
 
 \extraline
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
-\begin{gather*}
-\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}\,' |^2 }  \\
+\begin{align*}
+&\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \frac{q'}{| \vec{r} - \vec{r}\,' |^2 }  
+\quad \text{(charge ponctuelle)}\\
 %
- \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dl'  \\
+&\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq'}{| \vec{r} - \vec{r}\,' |^2 } \quad \text{(distribution continue)}\\
 %
-\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}\,')}{| \vec{r} - \vec{r}\,'|^3 } (\vec{r} - \vec{r}\,' )\,ds' \\
+& \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dl'  \\
 %
-\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dv'  
-\end{gather*}
+&\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}\,')}{| \vec{r} - \vec{r}\,'|^3 } (\vec{r} - \vec{r}\,' )\,ds'  \\
+%
+&\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dv'  \qquad
+%
+\hat{E}: + \to - 
+\end{align*}
 	
 Densité de flux électrique (Champ $\vec{D}$)  [$\si{\coulomb/\metre^2}$]
 \[ \vec{D} = \epsilon\vec{E}
@@ -130,16 +141,19 @@ Flux électrique [\si{\coulomb}]
 \[  \Psi = \int_{s} \vec{D} \cdot d\vec{s} = \epsilon \int_{s} \vec{E} \cdot d\vec{s} \]
 
 Théorème de Gauss
-\[ \oint_s \vec{E}\cdot d\vec{s} = \frac{Q_\text{int}}{\epsilon}
-\qquad  \Psi = \oint_s \vec{D}\cdot d\vec{s} = Q_\text{int} \]
+\[ \oint_s \vec{E}\cdot d\vec{s} = \frac{Q_\text{intérieur}}{\epsilon}
+\qquad  \Psi = \oint_s \vec{D}\cdot d\vec{s} = Q_\text{intérieur} \]
 
 Potentiel [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
-\begin{gather*}
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int \frac{dq}{| \vec{r} - \vec{r}\,' | }  \qquad
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}\,')}{| \vec{r} - \vec{r}\,' | } \,dl'  \\
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}\,')}{| \vec{r} - \vec{r}\,'| } \,ds'  \qquad
-V(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' | } \,dv'  
-\end{gather*}
+\begin{align*}
+V(\vec{r}) &= \frac{1}{4\pi\epsilon}  \frac{q'}{| \vec{r} - \vec{r}\,' | }  \quad \text{(charge ponctuelle)}\\
+V(\vec{r}) &= \frac{1}{4\pi\epsilon} \int \frac{dq'}{| \vec{r} - \vec{r}\,' | }  \quad \text{(distribution continue)} \\
+% 
+V(\vec{r}) &= \frac{1}{4\pi\epsilon} \int_{l} \frac{\rho_l(\vec{r}\,')}{| \vec{r} - \vec{r}\,' | } \,dl' 
+\\ 
+V(\vec{r}) &= \frac{1}{4\pi\epsilon} \int_{s} \frac{\rho_s(\vec{r}\,')}{| \vec{r} - \vec{r}\,'| } \,ds'  \\
+V(\vec{r}) &= \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' | } \,dv'  
+\end{align*}
 
 Potentiel et champ électrique
 \begin{gather*}
@@ -188,18 +202,10 @@ Diélectriques linéaires
 \end{tabular}
 
 \extraline
-Capacitance [\si{\farad}] 
-\[ C \equiv \frac{Q}{\Delta V}  > 0 \]
+Condensateurs : capacitance [\si{\farad}] 
+\[ C \equiv \frac{Q}{\Delta V} \equiv \frac{Q}{V_+ - V_-} > 0 
+\qquad \uvec{E}: +Q \to -Q \]
 
-\halfline	
-Condensateurs : propriétés et conventions  \\
-\halfline
-\begin{tabular}{@{\tableindent}ll@{}}
-	Potentiel  & $\Delta V = V_+ - V_- > 0$ \\
-	Direction du champ $\vec{E}$ & $\uvec{E}: +Q \to -Q$ \\
-\end{tabular}
-
-\extraline
 Condensateur aux électrodes parallèles \[ C = \frac{A\epsilon}{d} 
 \qquad 
 E = \frac{\sigma}{\epsilon_0}
@@ -365,36 +371,39 @@ dv = r^2\,dr\,\sin\theta\,d\theta\,d\phi
 
 
 \hrulefill
-\section{Courant électrique}
+\section{Courant électrique ($I$ constant)}
 
 Courant [$\si{\ampere} = \si{\coulomb}/\si{\sec}$]
-\[ I \equiv \frac{dQ}{dt}
+\[ I \equiv \frac{dq}{dt}
 \qquad
 I =\int \vec{J}_v \cdot d\vec{s} \qquad
 I = \int \vec{J}_s \cdot d\vec{l}
 \]
 
-Densité de courant [$\si{\ampere/\metre^2}$]
+Densité de courant [$\vec{J}_v: \si{\ampere/\metre^2}$, $\vec{J}_s: \si{\ampere/\metre}$]
 \begin{gather*}
-\vec{J}_v \equiv \rho_v \vec{v}_e = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
+\vec{J}_v = \rho_v \vec{v}_e = \sigma\vec{E} = \frac{1}{\rho} \vec{E} 
+\qquad
+\vec{J}_s  = \rho_s \vec{v}_e
 \end{gather*}
 %
 \begin{tabular}{@{\tableindent}ll@{}}
-	$\rho_v$ & Densité de charge volumique [$\si{\coulomb/\metre^3}$] \\
 	$\vec{v}_e$ & Vitesse de dérive [$\si{\metre/\sec}$] \\
 	$\sigma$ & Conductivité électrique [$\si{\ohm^{-1}\cdot\meter^{-1}}$] \\
 	$\rho \equiv 1/\sigma$ & Résistivité électrique  [$\si{\ohm\cdot\meter}$] \\
 \end{tabular}
 
 \extraline
-Résistance [$\si{\ohm} = \si{\volt/\ampere}$]
+Résistance [$\si{\ohm} = \si{\volt/\ampere}$] pour un conducteur rectiligne
 \begin{gather*}
-R \equiv \frac{L}{\sigma A} = \frac{V}{I}
-= \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma\vec{E}\cdot{d\vec{s}}}
-= \int\frac{dl}{\sum_i \sigma_i A_i} > 0
+R = \frac{V}{I}
+= \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma \vec{E}\cdot{d\vec{s}}} > 0  \\
+R = \frac{L}{\sigma A} 
+= \int \frac{dl_\text{tranche}}
+{\sum\limits_{{{\substack{\text{bloc $i$}}}}} \sigma_i A_i} > 0
 \end{gather*}
-\tableindent ($L$ doit être mesuré dans la même direction de $\vec{E}$) \\
-\tableindent ($A$ doit être mesuré sur un plan $\perp$ à $\vec{E}$) \\
+\tableindent ($L$ est mesuré dans la même direction de $\vec{E}$) \\
+\tableindent ($A$ est mesuré sur un plan $\perp$ à $\vec{E}$) \\
 
 \extraline
 Combinaisons de résistances
@@ -419,16 +428,13 @@ Loi de Joule : puissance [$\si{\watt} = \si{\joule}/\si{\sec}$]
 
 
 \hrulefill
-\section{Magnétostatique}
+\section{Magnétostatique $\left(\frac{\partial J_v}{\partial t} = 0 \right)$}
 
 Loi de Biot-Savart : champ induction magnétique [$\si{\tesla} = \si{(\newton\cdot\sec)/(\coulomb\cdot\metre)}$]
 \begin{align*}
-\vec{B} &= \frac{\mu}{4\pi} \int_l \frac{I\,d\vec{l}\,' \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3}
- \qquad  \\
-\vec{B} &= \frac{\mu}{4\pi} \int_s \frac{\vec{J}_s \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, ds'
-\qquad [\vec{J}_s: \si{\ampere/\metre}] \\ 
-\vec{B} &= \frac{\mu}{4\pi} \int_v \frac{\vec{J}_v \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, dv'
-\qquad [\vec{J}_v: \si{\ampere/\metre^2}]
+\vec{B} &= \frac{\mu}{4\pi} \int_l \frac{I\,d\vec{l}\,' \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3}  \\
+\vec{B} &= \frac{\mu}{4\pi} \int_s \frac{\vec{J}_s \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, ds' \\
+\vec{B} &= \frac{\mu}{4\pi} \int_v \frac{\vec{J}_v \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, dv' 
 \end{align*}
 
 Champ magnétique [$\si{\ampere/\meter}$]
@@ -463,8 +469,7 @@ Théorème de Gauss pour champs magnétiques
 Moment de force et dipôles magnétiques
 \[
 \vec{\tau} = \vec{r}\times\vec{F} \qquad 
-\vec{\tau} = \vec{m}\times\vec{B} \qquad
-\textstyle 
+\vec{\tau} = \vec{m}\times\vec{B} \qquad 
 \vec{m} = I\int d\vec{s} = IA\,\uvec{a}_n
 \]
 
@@ -575,7 +580,8 @@ Vitesse de la lumière
 \end{multicols}
 
 %
-Formes avec numérateur $dx$
+Formes avec numérateur $dx$ 
+\halfline
 \begin{multicols}{2}
 \noindent
 \[ \int \frac{dx}{x} = \ln \lvert x \rvert \]
