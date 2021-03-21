@@ -162,7 +162,7 @@ Potentiel et champ électrique
 \end{gather*}
 
 Équilibre électrostatique $\Rightarrow \vec{E}$ conservatif  $\Rightarrow \nabla \times \vec{E} = 0$
-\[  \oint_C \vec{E}\cdot d\vec{l}  = 0 \qquad \text{(électrostatique)}\]
+\[  \oint_c \vec{E}\cdot d\vec{l}  = 0 \qquad \text{(électrostatique)}\]
 
 Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vec{E}$
 \[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vec{E}\cdot d\vec{l} = q\Delta V \]
@@ -441,8 +441,10 @@ Champ magnétique [$\si{\ampere/\meter}$]
 \[ \vec{H} = \frac{\vec{B}}{\mu} \]
 
 Loi d'Ampère
-\[ \oint_C \vec{H}\cdot d\vec{l} = I_\text{encerclé}
+\[ \oint_c \vec{H}\cdot d\vec{l} = I_\text{encerclé}
 \qquad \nabla\times\vec{H} = \vec{J}_v   \]
+
+%Dipôle magnétique d'une boucle de courant
 
 Solénoïde infini
 \[\vec{B} = 
@@ -466,25 +468,28 @@ Théorème de Gauss pour champs magnétiques
 \[ \oint \vec{B}\cdot d\vec{s} = 0 \qquad
 \nabla\cdot \vec{B} = 0 \]
 
-Moment de force et dipôles magnétiques
+Dipôles magnétique [$\si{\ampere\cdot\metre^2}$] et moment de force [$\si{\newton\cdot\metre}$]
 \[
+\vec{m} = I\int d\vec{s} = IA\,\uvec{n} \qquad
 \vec{\tau} = \vec{r}\times\vec{F} \qquad 
-\vec{\tau} = \vec{m}\times\vec{B} \qquad 
-\vec{m} = I\int d\vec{s} = IA\,\uvec{a}_n
+\vec{\tau} = \vec{m}\times\vec{B}  
 \]
 
-Magnétisation
-\[ \vec{B} = \mu_0(\vec{H}+\vec{M}) = \mu\vec{H}\]
-\[ \vec{M} = \chi_m \vec{H}
-\qquad
-\mu = \mu_0(1+\chi_m)
- \]
+Magnétisme dans les matériaux
+\[ \vec{B} = \mu_0(\vec{H}+\vec{M}) = \mu_0(1+\chi_m)\vec{H} = \mu_0\mu_r\vec{H} = \mu\vec{H}\]
+\begin{tabular}{@{\tableindent}ll@{}}
+	Magnétisation  & $\vec{M} = \chi_m \vec{H}$ \\
+	Susceptibilité magnétique  & $\chi_m$ \\
+	Perméabilité relative &  $\mu_r=1+\chi_m$ \\
+	Perméabilité du matériau & $\mu = \mu_0\mu_r$
+\end{tabular}
 
+\halfline
 Conditions aux limites
 \[ B_{n_1} = B_{n_2} \qquad B_{t_1} = H_{t_2} = J_s \]
 
 Loi de Faraday
-\[ \oint_C \vec{E} \cdot d\vec{l} = - \frac{d\Phi}{dt}
+\[ \oint_c \vec{E} \cdot d\vec{l} = - \frac{d\Phi}{dt}
 \qquad
 \nabla\times\vec{E} = -\frac{\partial\vec{B}}{\partial t} \]
 
@@ -507,11 +512,11 @@ EMF et règle de flux
 \hrulefill
 \section{Constantes}
 Permittivité du vide
-\[ 	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} \qquad [\text{ou } \si{{\coulomb^2}/{(\newton\cdot\meter^2)}}] \]
+\[ 	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} \quad [\text{ou } \si{{\coulomb^2}/{(\newton\cdot\meter^2)}}] \]
 \[	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2}\]
 
 Perméabilité du vide
-\[ \mu_0 = \SI{4\pi E-7}{H/\meter} \qquad [\text{ou }\si{\tesla\cdot\meter/\ampere}] \]
+\[ \mu_0 = \SI{4\pi E-7}{H/\meter} \quad [\text{ou }\si{\tesla\cdot\meter/\ampere}] \]
 
 Charge et masse de l'électron
 \begin{gather*}
@@ -540,6 +545,7 @@ Vitesse de la lumière
 \end{align*}
 \[ \sin 2\theta  = 2\sin\theta\cos\theta  \]
 \[ \sec^2\theta  = 1+ \tan^2\theta \]
+\[ \csc^2\theta  = 1+ \cot^2\theta \]
 \[ \tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta} \]
 \[ \tan \theta = \pm\sqrt{\frac{1-\cos 2\theta}{1+\cos 2\theta}} = \frac{\sin\theta}{\cos\theta} \]
 \end{multicols}
