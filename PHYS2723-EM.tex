@@ -93,7 +93,7 @@
      \small{Luke Zhou $\cdot$ PHY 2723 $\cdot$ Hiver 2021}
 \end{center}
 
-\section{Électrostatique $\left(\frac{\partial\rho}{\partial t} = 0 \right)$}
+\section{Électrostatique $\left(\frac{\partial\rho_v}{\partial t} = 0 \right)$}
 
 Loi de Coulomb : force électrique [\si{\newton}]
  \[ \vec{F} = q\vec{E}(\vec{r}) \] %= \frac{1}{4\pi\epsilon} \frac{kq_1q_2}{|r|^2} \uvec{r}  \]
@@ -130,7 +130,7 @@ Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$]
 %
 &\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon} \int_{v} \frac{\rho_v(\vec{r}\,')}{| \vec{r} - \vec{r}\,' |^3 } (\vec{r} - \vec{r}\,' )\,dv'  \qquad
 %
-\hat{E}: + \to - 
+\uvec{E}: + \to - 
 \end{align*}
 	
 Densité de flux électrique (Champ $\vec{D}$)  [$\si{\coulomb/\metre^2}$]
@@ -172,10 +172,10 @@ Dipôle électrique
 \frac{\vec{p}\cdot\uvec{r}}{4\pi\epsilon|\vec{r}|^2} =
 \frac{\vec{p}\cdot\vec{r}}{4\pi\epsilon|\vec{r}|^3} \]
 
-Moment dipolaire [$\si{\coulomb\cdot\meter}$]
+Moment dipolaire électrique [$\si{\coulomb\cdot\meter}$] et moment de force [\si{\newton\cdot\metre}]
 \[ \vec{p} = qd\cdot \uvec{p} \qquad \text{($\uvec{p}: q- \to q+$;  $\uvec{p}\parallel\uvec{z}$ souvent)} \]
+\[ \vec\tau = \vec{r}\times\vec{F} = \vec{p}\times\vec{E} \]
 
-\halfline
 Conditions aux limites entre un conducteur et un diélectrique  (ou le vide)\\
 \halfline
 \begin{tabular}{@{\tableindent}ll@{}}
@@ -434,7 +434,8 @@ Loi de Biot-Savart : champ induction magnétique [$\si{\tesla} = \si{(\newton\cd
 \begin{align*}
 \vec{B} &= \frac{\mu}{4\pi} \int_l \frac{I\,d\vec{l}\,' \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3}  \\
 \vec{B} &= \frac{\mu}{4\pi} \int_s \frac{\vec{J}_s \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, ds' \\
-\vec{B} &= \frac{\mu}{4\pi} \int_v \frac{\vec{J}_v \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, dv' 
+\vec{B} &= \frac{\mu}{4\pi} \int_v \frac{\vec{J}_v \times(\vec{r}-\vec{r}\,')}{|\vec{r}-\vec{r}\,'|^3} \, dv'  \qquad
+\uvec{B}: \text{N} \rightarrow \text{S}
 \end{align*}
 
 Champ magnétique [$\si{\ampere/\meter}$]
@@ -444,15 +445,15 @@ Loi d'Ampère
 \[ \oint_c \vec{H}\cdot d\vec{l} = I_\text{encerclé}
 \qquad \nabla\times\vec{H} = \vec{J}_v   \]
 
-%Dipôle magnétique d'une boucle de courant
-
 Solénoïde infini
-\[\vec{B} = 
+\[
+\vec{J}_s = nI\uvec{\phi} \qquad 
+\vec{B} = 
 \begin{cases} 
 	\mu n I  & \text{(à l'intérieur)} \\
 	0 & \text{(à l'extérieur)}
 \end{cases}\]
-\[ |\vec{J}_s | = nI \qquad \text{($n$: nombre de tours par longueur)} \]
+\[ \text{($n$: nombre de tours par longueur)} \]
 
 \extraline
 Force magnétique [\si{\newton}]
@@ -463,16 +464,15 @@ Force magnétique [\si{\newton}]
 Flux magnétique
 \[ \Phi = \int \vec{B}\cdot d\vec{s}\]
 
-
 Théorème de Gauss pour champs magnétiques
 \[ \oint \vec{B}\cdot d\vec{s} = 0 \qquad
 \nabla\cdot \vec{B} = 0 \]
 
-Dipôles magnétique [$\si{\ampere\cdot\metre^2}$] et moment de force [$\si{\newton\cdot\metre}$]
+Moment dipolaire magnétique [$\si{\ampere\cdot\metre^2}$] et moment de force [$\si{\newton\cdot\metre}$]
 \[
 \vec{m} = I\int d\vec{s} = IA\,\uvec{n} \qquad
-\vec{\tau} = \vec{r}\times\vec{F} \qquad 
-\vec{\tau} = \vec{m}\times\vec{B}  
+\vec{\tau} = \vec{r}\times\vec{F}
+= \vec{m}\times\vec{B}  
 \]
 
 Magnétisme dans les matériaux
@@ -486,7 +486,7 @@ Magnétisme dans les matériaux
 
 \halfline
 Conditions aux limites
-\[ B_{n_1} = B_{n_2} \qquad B_{t_1} = H_{t_2} = J_s \]
+\[ \vec{B}_{n_1} = \vec{B}_{n_2} \qquad H_{t_1} - H_{t_2} = J_s \qquad \vec{H}_{t_1} \parallel \vec{H}_{t_2} \]
 
 Loi de Faraday
 \[ \oint_c \vec{E} \cdot d\vec{l} = - \frac{d\Phi}{dt}
