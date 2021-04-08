@@ -397,13 +397,13 @@ Densité de courant [$\vec{J}_v: \si{\ampere/\metre^2}$, $\vec{J}_s: \si{\ampere
 Résistance [$\si{\ohm} = \si{\volt/\ampere}$] pour un conducteur rectiligne
 \begin{gather*}
 R = \frac{V}{I}
-= \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma \vec{E}\cdot{d\vec{s}}} > 0  \\
+= \frac{-\int \vec{E}\cdot{d\vec{l}}}{\int \sigma \vec{E}\cdot{d\vec{s}}} > 0  
+\\
 R = \frac{L}{\sigma A} 
 = \int \frac{dl_\text{tranche}}
-{\sum\limits_{{{\substack{\text{bloc $i$}}}}} \sigma_i A_i} > 0
+{\sum\limits_{{{\substack{\text{bloc $i$}}}}} \sigma_i A_i} > 0 
 \end{gather*}
-\tableindent ($L$ est mesuré dans la même direction de $\vec{E}$) \\
-\tableindent ($A$ est mesuré sur un plan $\perp$ à $\vec{E}$) \\
+\tableindent($L$ est mesuré dans la même direction de $\vec{E}$) \\ \tableindent($A$ est mesuré sur un plan $\perp$ à $\vec{E}$)
 
 \extraline
 Combinaisons de résistances
@@ -461,7 +461,7 @@ Force magnétique [\si{\newton}]
 \qquad
 \vec{F}_m = \int I\,d\vec{l} \times \vec{B}_\text{ext}  \]
 
-Flux magnétique
+Flux magnétique [$\si{\weber} = \si{\tesla \cdot \meter^2}$]
 \[ \Phi = \int \vec{B}\cdot d\vec{s}\]
 
 Théorème de Gauss pour champs magnétiques
@@ -470,9 +470,12 @@ Théorème de Gauss pour champs magnétiques
 
 Moment dipolaire magnétique [$\si{\ampere\cdot\metre^2}$] et moment de force [$\si{\newton\cdot\metre}$]
 \[
-\vec{m} = I\int d\vec{s} = IA\,\uvec{n} \qquad
+\vec{m} = NI\int d\vec{s} =N IA\,\uvec{n} \qquad \text{($N$: nombre de spires)} \]
+\[
 \vec{\tau} = \vec{r}\times\vec{F}
 = \vec{m}\times\vec{B}  
+\qquad
+\uvec{m}: \text{S} \rightarrow \text{N}
 \]
 
 Magnétisme dans les matériaux
@@ -488,12 +491,14 @@ Magnétisme dans les matériaux
 Conditions aux limites
 \[ \vec{B}_{n_1} = \vec{B}_{n_2} \qquad H_{t_1} - H_{t_2} = J_s \qquad \vec{H}_{t_1} \parallel \vec{H}_{t_2} \]
 
+\hrulefill
+\section{Électrodynamique}
 Loi de Faraday
 \[ \oint_c \vec{E} \cdot d\vec{l} = - \frac{d\Phi}{dt}
 \qquad
 \nabla\times\vec{E} = -\frac{\partial\vec{B}}{\partial t} \]
 
-EMF et règle de flux
+FÉM et règle de flux
 \[ \varepsilon = \int(\vec{v}\times\vec{B})\cdot d\vec{l} 
 \qquad
 \varepsilon = -N\frac{d\Phi}{dt} \]
@@ -501,13 +506,15 @@ EMF et règle de flux
 
 \hrulefill
 \section{Équations de Maxwell}
-%\begin{multicols}{2}
+\begin{align*}
 %\noindent
-\[ \nabla \cdot \vec{D} = \rho_v \]
-\[ \nabla \cdot \vec{B} = 0 \]
-\[ \nabla \cdot \vec{E} = -\frac{\partial \vec{B}}{\partial t} \] 
-\[ \nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t} \]
-%\end{multicols}
+ \nabla \cdot \vec{D} = \rho_v
+ \qquad\qquad&
+\nabla \cdot \vec{B} = 0  \\
+\nabla \cdot \vec{E} = -\frac{\partial \vec{B}}{\partial t} 
+\qquad\qquad&
+\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}
+\end{align*}
 
 \hrulefill
 \section{Constantes}
@@ -585,7 +592,7 @@ Vitesse de la lumière
 \[ \int_a^b u\,dv = uv|_a^b - \int_a^b v\,du  \]
 \end{multicols}
 
-%
+\extraline
 Formes avec numérateur $dx$ 
 \halfline
 \begin{multicols}{2}
@@ -607,6 +614,8 @@ Formes avec numérateur $x\,dx$
 \[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
 \[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
 
+%\extraline
+\columnbreak
 Formes avec numérateur $x^2\,dx$
 \[ \int \frac{x^2\,dx}{\sqrt{x^2+a^2}} =  \frac{u}{2}\sqrt{x^2+a^2} - \frac{a^2}{2}\ln(x+\sqrt{x^2+a^2}) \]
 %
@@ -652,7 +661,8 @@ Théorèmes fondamentaux
 
 \scriptsize
 
-\href{https://github.com/zhouluke/PhysicsFormulas}{Feuille de formules}  \copyright\ 2021 Luke Zhou. \\
+\href{https://github.com/zhouluke/PhysicsFormulas}{Dactylographie}  \copyright\ 2021 Luke Zhou. \\
+D'après le cours PHY 2723 Hiver 2021 de l'Université d'Ottawa. \\
 \href{http://wch.github.io/latexsheet/}{Modèle de document}  \copyright\ 2014 Winston Chang.
 
 
