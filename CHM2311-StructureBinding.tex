@@ -8,6 +8,7 @@
 \usepackage{amsmath, amsfonts}
 \usepackage{mathtools}
 \usepackage {graphicx}
+\usepackage {textcomp}
 
 \usepackage{siunitx}
 \usepackage{physics}
@@ -106,7 +107,6 @@ Energy emitted by a hydrogen atom: Bohr model
  \[ \Delta E = E_{h} - E_{l} = R_H \left(  \frac{1}{n_l^2} - \frac{1}{n_h^2} \right) \] 
  \[ R_H =  \SI{2.179E-18}{\joule} \]
 
-\extraline
 Hydrogen emission spectra series \\
 \begin{tabular}{@{\tableindent}ll@{}}
 	Lyman series & $n_l = 1$ \\
@@ -169,7 +169,15 @@ Electron configurations
 \begin{tabular}{@{\tableindent}p{2.5cm}p{4.5cm}@{}}
 Aufbau Principle & Fill lower energy levels first: 1s, 2s, 2p, 3s, 3p, \textbf{4s}, \textbf{3d}, 4p, 5s, 4d, 5p, \ldots\\
 Pauli Exclusion Principle & No two e- can have the same set of quantum numbers. \\
-Hund's Rule & Fill degenerate levels separately w/ spins parallel -- i.e. maximize spin (lower Exchange Energy), minimize e- pairing (Columbic Energy of Repulsion) \\
+Hund's Rule & Fill degenerate levels separately w/ spins parallel -- minimize energies below \\
+\end{tabular}
+\extraline
+
+Energies to be minimized
+
+\begin{tabular}{@{\tableindent}ll@{}}
+	Coulombic Energy of Repulsion & \textdownarrow{} e- pairing = \textdownarrow{} $E$ \\
+	Exchange Energy & \textuparrow{} spin = \textdownarrow{} $E$
 \end{tabular}
 \extraline
 
@@ -183,8 +191,13 @@ Dimagnetism & Slightly repelled by a magnetic field; elements w/ no unpaired e-
 
 Transition Metals
 \begin{itemize}
-\item e- are first removed from orbitals w/ density farthest from nucleus; i.e. from $ns$ before $(n-1)s$
+\item In ionization, e- are first removed from orbitals w/ density farthest from nucleus; i.e. from $ns$ before $(n-1)s$
+\item Half- and fully-filled shells minimize exchange energy \& e- pairing: e.g., Cr ([Ar]4s$^1$3d$^{5}$) \& Cu  ([Ar]4s$^1$3d$^{10}$) 
+\item All $M^{2+}$ ions are 3d-only; e.g.,  Fe$^{2+}$ ([Ar]$3d^{6}$) 
+%\& Fe ([Ar]$4s^23d^{6}$)
 \end{itemize}  
+
+\extraline
 
 Effective nuclear charge
 \[ Z_\text{eff} = Z_\text{actual} - S \]
@@ -209,7 +222,7 @@ Slater's screening constant \& rules
 
 \end{enumerate}
 
-\extraline
+
 
 Periodic trends
 
@@ -217,6 +230,15 @@ Periodic trends
 \includegraphics[width=8cm]{./chm2311/periodic-table-trends.png}
 \end{center}
  
+\begin{itemize} 
+\item Atomic radius: size of outermost orbital containing e-. Larger $n$ or higher $Z_\text{eff}$ = lower radius.
+\item Ionization energy: for removal of an e-. Always endothermic. Larger atomic radius  = lower IE.
+\item Second IE is much higher than the first.
+\item Electron affinity: energy in adding an e- to an isolated atom. Usually exothermic (i.e. negative). Larger atomic radius = less attraction to nucleus = less-negative EA.
+\item Second EA is always endothermic. 
+\item Electronegativity: ability of a bonded atom to attracted shared electrons. EN is relative.
+\end{itemize}
+
 \hrulefill
 
 
