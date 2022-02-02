@@ -7,7 +7,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath, amsfonts}
 \usepackage{mathtools}
-%\usepackage[h]{esvect}
+\usepackage {graphicx}
 
 \usepackage{siunitx}
 \usepackage{physics}
@@ -93,7 +93,7 @@
      \small{Luke Zhou $\cdot$ CHM 2311 $\cdot$ Winter 2022}
 \end{center}
 
-\section{Chapter 2}
+\section{Atomic Structure \& Quantum Theory}
 
 Wavelength, frequency and the speed of light
 \[ c = \lambda\nu  = \SI{2.998E8}{\meter/\second}  \]
@@ -102,7 +102,7 @@ Energy quantization
 \[E = \frac{hc}{\lambda} = h\nu  \qquad
  h = \SI{6.626E-34}{\joule\cdot\second}  \]
 
-Energy emitted by a hydrogen atom
+Energy emitted by a hydrogen atom: Bohr model
  \[ \Delta E = E_{h} - E_{l} = R_H \left(  \frac{1}{n_l^2} - \frac{1}{n_h^2} \right) \] 
  \[ R_H =  \SI{2.179E-18}{\joule} \]
 
@@ -144,27 +144,79 @@ Hydrogenic wave functions
 
 Quantum numbers \\
 \extraline
-\begin{tabular}{@{\tableindent}lp{1.5cm}lp{3cm}@{}}
-$n$ & Principal & $1, 2, 3, 4, \ldots $ & orbital size \\
-$l$ & Angular momentum & $0, 1, 2 \dots  n-1 $ & orbital shape \\
-$m_l$ & Magnetic & $0, \pm 1, \pm 2, \ldots \pm l $ & orbital orientation \\
+\begin{tabular}{@{\tableindent}lp{1.5cm}lp{2.3cm}@{}}
+$n$ & Principal & $1, 2, 3, 4, \ldots $ & \scriptsize{orbital size} \\
+$l$ & Angular momentum & $0, 1, 2 \dots  n-1 $ & \scriptsize{orbital shape} \\
+$m_l$ & Magnetic & $0, \pm 1, \pm 2, \ldots \pm l $ & \scriptsize{orbital orientation} \\
 $m_s$ & Spin & $-\frac{1}{2}, +\frac{1}{2} $ &  \\
 \end{tabular}
 
+\extraline
 \tableindent $l$ can also be described with the letters $s, p, d, f, g, \ldots$
 \extraline
 
 Radial \& angular nodes
 
-\begin{tabular}{@{\tableindent}lll@{}}
+\begin{tabular}{@{\tableindent}llp{2.4cm}@{}}
 \# of radial nodes & $n-l-1$ & $R(r) = 0$ \scriptsize{(spheres)}\\
 \# of angular nodes & $l$ &  $Y(\theta,\phi)=0$ \scriptsize{(planes, cones)} \\
 Total \# of nodes & $n-1$ & 
 \end{tabular}
+\extraline
+
+Electron configurations
+
+\begin{tabular}{@{\tableindent}p{2.5cm}p{4.5cm}@{}}
+Aufbau Principle & Fill lower energy levels first: 1s, 2s, 2p, 3s, 3p, \textbf{4s}, \textbf{3d}, 4p, 5s, 4d, 5p, \ldots\\
+Pauli Exclusion Principle & No two e- can have the same set of quantum numbers. \\
+Hund's Rule & Fill degenerate levels separately w/ spins parallel -- i.e. maximize spin (lower Exchange Energy), minimize e- pairing (Columbic Energy of Repulsion) \\
+\end{tabular}
+\extraline
 
 
+Magnetism
+
+\begin{tabular}{@{\tableindent}lp{5cm}@{}}
+Paramagnetism & Attracted by a magnetic field; elements w/ unpaired e- \\
+Dimagnetism & Slightly repelled by a magnetic field; elements w/ no unpaired e-
+\end{tabular}
+
+Transition Metals
+\begin{itemize}
+\item e- are first removed from orbitals w/ density farthest from nucleus; i.e. from $ns$ before $(n-1)s$
+\end{itemize}  
+
+Effective nuclear charge
+\[ Z_\text{eff} = Z_\text{actual} - S \]
+
+Slater's screening constant \& rules
+\begin{enumerate}
+\item List orbitals in groups, merging s \& p: (1s) (2s, 2p) (3s, 3p) (3d) (4s, 4p) (4d) (5s, 5p), \ldots 
+\item For e- in $ns$ or $np$ orbitals:
+
+	\begin{enumerate}
+	\item Each e- in the same $ns$ or $np$ (i.e. same grouping) as the one of interest contributes 0.35 (except 1s: 0.30)
+	\item Each in the $(n-1)$ level: 0.85
+	\item Each in the $(n-2)$ levels or lower: 1.00
+	\end{enumerate}
+
+\item For e- in $nd$ or $nf$ orbitals:
+
+	\begin{enumerate}
+	\item Each e- in the same $nd$ or $nf$  orbital as the e- of interest contributes 0.35
+	\item Each in the groupings to the left: 1.00
+	\end{enumerate}
+
+\end{enumerate}
 
 \extraline
+
+Periodic trends
+
+\begin{center}
+\includegraphics[width=8cm]{./chm2311/periodic-table-trends.png}
+\end{center}
+ 
 \hrulefill
 
 
