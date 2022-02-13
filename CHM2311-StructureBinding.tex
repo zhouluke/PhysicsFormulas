@@ -5,7 +5,7 @@
 \usepackage{ifthen}
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
-\usepackage{amsmath, amsfonts}
+\usepackage{amsmath, amsfonts, amssymb}
 \usepackage{mathtools}
 \usepackage {graphicx}
 \usepackage {textcomp}
@@ -220,8 +220,6 @@ Slater's screening constant \& rules
 
 \end{enumerate}
 
-
-\columnbreak
 Periodic trends
 
 \begin{center}
@@ -293,27 +291,46 @@ Lewis structures: formal charge
 \]
 \[ \text{Total charge on molecule or ion} = \text{sum of formal charges} \]
 
+\extraline
+
 Lewis structures: chemical properties
 
 \begin{tabular}{@{\tableindent}lp{2.8cm}p{2.5cm}@{}}
  Lewis base & Nucleophile (e- pair donor) & -ve formal charges \& lone pairs \\
-Lewis acid & Electroophile (e- pair acceptor) & atoms lacking full octets
+Lewis acid & Electrophile (e- pair acceptor) & atoms lacking full octets
 \end{tabular}
+\extraline
+
+VSEPR notation
+\[ \text{AX}_n\text{E}_m \]
+\tableindent (A: central atom, $n$: \# of bonding pairs, $m$: \# of lone pairs) \\
 \extraline
 
 
 VSEPR (Valence Shell Electron Pair Repulsion Theory): geometries \& shapes
 
-\begin{tabular}{@{\tableindent}lp{1.7cm}p{4cm}@{}}
+\begin{tabular}{@{}cp{2.4cm}p{3.6cm}@{}}
 Steric \# & Geometry & Shapes \\ \hline
-2 & Linear & Linear \\
-3 & Trigonal planar & Trigonal planar, bent / V-shaped \\
-4 & Tetrahedral & Tetrahedral, trigonal pyramidal, bent / V-shaped  \\
-5 & Trigonal bipyramidal & Trigonal bipyramidal, see-saw, t-shaped, linear  \\
-6 & Octahedral & Octahedral, square pyramidal, square planar
+2 & Linear (180°) 
+	& Linear \\
+3 & Trigonal Planar (120°)
+	& Trigonal Planar, Bent / V-shaped \\
+4 & Tetrahedral (109.5°)
+	& Tetrahedral, Trigonal Pyramidal, Bent / V-shaped  \\
+5 & Trigonal Bipyramidal (120°, 90°)
+	& Trigonal Bipyramidal, See-saw, T-shaped, Linear  \\
+6 & Octahedral (90°)
+	& Octahedral, Square Pyramidal, Square Planar \\
 \end{tabular}
 \extraline
-\tableindent Lone pairs go in positions w/ fewest nearest neighbours
+
+
+Lone pair placement:  $\downarrow$ \# of nearest neighbours (in terms of angle)
+\begin{itemize}
+	\item Trigonal bipyramidal: LP occupy equatorial slots (nearest neighbours are axial \& 90° away, rather than the 120° equatorial ones)
+	\item Octahedral: LP occupy axial slots (all neighbours 90° away)
+\end{itemize}
+
 
 VSEPR: degree of repulsion
 \[ \text{BP/BP} < \text{BP/LP} < \text{LP/LP} \]
@@ -321,12 +338,29 @@ VSEPR: degree of repulsion
 
 VSEPR: bond angle trends
 \begin{itemize}
-\item Central atom: $\uparrow$ size or $\downarrow$ EN = $\downarrow$ e- density on central atom = $\downarrow$ repulsion b/w bonding pairs = $\downarrow$ bond angles
-\item Terminal atoms: $\uparrow$ size or $\downarrow$ EN = $\downarrow$ e- density on central atom = $\downarrow$ repulsion b/w bonding pairs = $\downarrow$ bond angles
+\item General principle:
+	\begin{itemize}
+		\item  $\downarrow$ e- density on A = $\uparrow$ space occupied by LPs = $\downarrow$ repulsion b/w BP 
+		\item $\therefore$ $\downarrow$ bond angles
+	\end{itemize}
+
+\item Central atom A: 
+	\begin{itemize}
+		\item $\downarrow$ EN  = $\downarrow$ e- density on A = $\downarrow$ bond angles
+		\item $\uparrow$ size =  $\downarrow$ e- density on A = $\downarrow$ bond angles
+		%\item $\uparrow$ bond length
+	\end{itemize}
+
+\item Terminal atoms X: 
+	\begin{itemize}
+		\item $\uparrow$ EN  = $\downarrow$ e- density on A = $\downarrow$ bond angles
+		\item $\downarrow$ size = $\downarrow$ space needed by X = $\downarrow$ bond angles
+		%\item $\downarrow$ bond length
+	\end{itemize}
 \end{itemize}
 
 Dipole moments \\
-\tableindent Direction: (less EN) $\delta + \rightarrow \delta -$ (more EN)
+\tableindent Direction: $\delta + \rightarrow \delta -$ (less EN $\rightarrow$ more EN)
 
 \hrulefill
 
