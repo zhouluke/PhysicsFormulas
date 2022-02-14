@@ -1,0 +1,361 @@
+% !TeX spellcheck = fr_FR
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{mathtools}
+%\usepackage[h]{esvect}
+
+\usepackage{siunitx}
+\usepackage{physics}
+
+% French spacing
+\usepackage{icomma}
+\frenchspacing
+\usepackage[french]{babel}
+ \sisetup{output-decimal-marker = {,}}
+ 
+ 
+% To make this come out properly in landscape mode, do one of the following
+% 1.
+%  pdflatex latexsheet.tex
+%
+% 2.
+%  latex latexsheet.tex
+%  dvips -P pdf  -t landscape latexsheet.dvi
+%  ps2pdf latexsheet.ps
+
+
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+% Turn off header and footer
+\pagestyle{empty}
+ 
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+\newcommand{\extraline}{\vspace{1em}}
+\newcommand{\halfline}{\vspace{0.5em}}
+\newcommand{\deriv}{\ensuremath{\frac{d}{dx}}}
+\newcommand{\tableindent}{\hspace{1.5em}}
+\newcommand{\uvec}[1]{\ensuremath{{\hat{#1}}}}
+% -----------------------------------------------------------------------
+
+\begin{document}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\textbf{Principes de physique II}} \\
+     \small{Luke Zhou $\cdot$ PHY 1522 $\cdot$ Hiver 2022}
+\end{center}
+
+\section{Cinématique et énergie}
+\begin{multicols}{2}
+\noindent
+\begin{gather*}
+v = v_{0} + a\Delta t \\
+\Delta x = \frac{1}{2}(v_0+v)\Delta t \\
+v^2 = v_0^2 + 2a\Delta x 
+\end{gather*}
+\begin{gather*}
+\Delta x = v_0 \Delta t + \frac{1}{2} a(\Delta t)^2 \\
+\Delta x = v_0\Delta t - \frac{1}{2} a(\Delta t)^2 \\
+KE = \frac{1}{2} mv^2
+\end{gather*}
+\end{multicols}
+
+\section{Électrostatique $\left(\frac{\partial q}{\partial t} = 0 \right)$}
+
+Loi de Coulomb : force électrique [\si{\newton}] (charge ponctuelle)
+ \[ \vec{F} 
+ = \frac{k}{\kappa} \frac{qQ}{r^2} \uvec{r}  
+\quad \text{(charge ponctuelle)}
+ \]
+\tableindent ($\uvec r$ pointe de la charge source $q$ à la charge cible $Q$)
+\extraline
+
+Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$] 
+\[
+\vec{E} = \frac{\vec{F}}{Q} 
+= \frac{k}{\kappa} \frac{q}{r^2 }  \uvec{r} \quad \text{(charge ponctuelle)}
+%\qquad 
+%\vec{u} = \uvec{i}\cos\theta + \uvec{j}\sin\theta 
+\]
+
+Distributions continues
+\[ dq = \lambda\, dl
+\qquad
+dq = \sigma\, dA
+\qquad 
+dq = \rho\, dV
+ \qquad
+ d\vec{E} = \frac{k}{\kappa} \frac{dq}{r^2 }  \uvec{r} \]
+\[ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infinie)} \]
+
+
+Flux électrique [$\si{\newton\cdot\metre}$] et théorème de Gauss
+\[ 
+\Phi_E = \int \vec{E}\cdot d\vec{A}
+\qquad\quad
+\Phi_E = \oint \vec{E}\cdot d\vec{A} = \frac{Q_\text{intérieur}}{\kappa \epsilon_0} \]
+
+Potentiel électrique [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
+\begin{gather*}
+\Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{r} \\
+ \vec{E} = -\vec\nabla V = - \left( \frac{\partial V}{\partial x}\uvec{i} + \frac{\partial V}{\partial y}\uvec{j} + \frac{\partial V}{\partial z}\uvec{k} \right) \\
+V(r) = \frac{k}{\kappa}  \frac{q}{r } \quad \text{(charge ponctuelle)}
+\end{gather*}
+
+Énergie potentielle de deux charges ponctuelles
+\[ U_q = qV = \frac{k}{\kappa}  \frac{qQ}{r} = U_Q\]
+
+Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vec{E}$
+\[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vec{E}\cdot d\vec{l} = q\Delta V \]
+
+Principes de superposition: à un point d'observation...
+\[ \vec{E} = \sum \vec{E}_i 
+\qquad\quad
+V = \sum \vec{V}_i 
+\]
+
+Matériaux diélectriques
+\[ \epsilon = \kappa \epsilon_0 
+\qquad\quad
+\kappa = 1 \text{ {(vide, conducteurs)}}\]
+
+Condensateurs : capacitance [\si{\farad}] 
+\[ C \equiv \frac{Q}{\Delta V} \equiv \frac{Q}{V_+ - V_-} > 0 
+\qquad \uvec{E}: +Q \to -Q \]
+
+Condensateur plan \[ C = \frac{A\kappa\epsilon_0}{d} 
+\qquad 
+E = \frac{\sigma}{\kappa\epsilon_0}
+\qquad
+E =  -\frac{\Delta V}{d} 
+\qquad
+C = \kappa C_0 \]
+
+Combinaisons de condensateurs \begin{align*}
+C_\text{éq} = C_1 + C_2 + \dots  \qquad &\text{(parallèle)} \\
+\frac{1}{C_\text{éq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots \qquad &\text{(série)}
+\end{align*}
+
+
+Énergie emmagasinée dans un condensateur
+\[ U = \frac{1}{2} QV = \frac{1}{2} CV^2 = \frac{1}{2}\frac{Q^2}{C} \]
+
+
+\hrulefill
+
+\section{Courant électrique ($I$ constant)}
+
+Courant [$\si{\ampere} = \si{\coulomb}/\si{\sec}$]
+\[ I \equiv \frac{dq}{dt} \]
+
+Résistance [$\si{\ohm} = \si{\volt/\ampere}$] pour un conducteur rectiligne
+\begin{gather*}
+R = \frac{V}{I}  > 0   
+\end{gather*}
+
+Combinaisons de résistances
+\begin{align*}
+R_\text{tot} = R_1 + R_2 + \dots \qquad & \text{(série)} \\
+\frac{1}{R_\text{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots \qquad & \text{(parallèle)}
+\end{align*}
+
+Loi de Joule : puissance [$\si{\watt} = \si{\joule}/\si{\sec}$]
+\[ P \equiv \frac{dW}{dt} = VI = I^2 R = \frac{V^2}{R}\]
+
+Loi des nœuds de Kirchoff
+\[ \sum I = 0 \]
+
+Loi des mailles de Kirchoff
+\[ \sum V = 0 \]
+
+
+\hrulefill
+\section{Constantes}
+Permittivité du vide
+\[ 	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} \quad [\text{ou } \si{{\coulomb^2}/{(\newton\cdot\meter^2)}}] \]
+\[	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2}\]
+
+Perméabilité du vide
+\[ \mu_0 = \SI{4\pi E-7}{H/\meter} \quad [\text{ou }\si{\tesla\cdot\meter/\ampere}] \]
+
+Charge et masse de l'électron
+\begin{gather*}
+q_e = |e| = \SI{1,6E-19}{\coulomb}
+\qquad m_e = \SI{9,11E-31}{\kilogram}
+\end{gather*}
+
+Vitesse de la lumière
+\[ c = \SI{3E8}{\meter/\second}  \]
+
+\hrulefill
+
+
+\section{Rappel mathématique}
+
+\subsection{Identités trigonométriques}
+\halfline
+\begin{multicols}{2}
+\noindent
+\[ \sin^2\theta +  \cos^2\theta = 1 \]
+\begin{align*}
+\cos 2\theta 
+&=\cos^2\theta - \sin^2\theta \\
+&=2\cos^2\theta - 1 \\
+&=1  - 2\sin^2\theta 
+\end{align*}
+\[ \sin 2\theta  = 2\sin\theta\cos\theta  \]
+\[ \sec^2\theta  = 1+ \tan^2\theta \]
+\[ \csc^2\theta  = 1+ \cot^2\theta \]
+\[ \tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta} \]
+\[ \tan \theta = \pm\sqrt{\frac{1-\cos 2\theta}{1+\cos 2\theta}} = \frac{\sin\theta}{\cos\theta} \]
+\end{multicols}
+\[ \sin(A\pm B) = \sin A\cos B \pm \cos A\sin B\]
+\[ \cos(A\pm B) = \cos A\cos B \mp \sin A\sin B\]
+
+\subsection{Quelques dérivées}
+\halfline
+\begin{multicols}{2}
+\noindent
+\[ \deriv (ax^n) = nax^{n-1}\]
+\[ \deriv (e^{ax}) = ae^{ax}\]
+\[ \deriv (\ln ax) = \frac{a}{x} \]
+\[ \deriv (\sin ax) = a\cos ax\]
+\[ \deriv (\cos ax) = -a\sin ax\]
+\[ \deriv (\tan ax) = a\sec^2 ax\]
+\[ \deriv (\sec x) = \tan x \sec x \]
+\[ \deriv (\cot x) = -a\csc^2 ax \]
+\[ \deriv (\csc x) = -\cot x \csc x \]
+\end{multicols}
+\[ \deriv [f(x)\,g(x)] = f(x)g'(x) + g(x)f'(x)  \]
+\[ \deriv \left[ \frac{f(x)}{g(x)} \right] = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}  \]
+\[ \deriv [f(g(x))] = f'(g(x)) \, g'(x) \]
+
+\subsection{Intégrales résolues}
+\halfline
+\begin{multicols}{2}
+\noindent
+\[ \int x^n \,dx =  \frac{x^{n+ 1}}{n+1} \quad (n\neq 1) \]
+\[ \int e^{ax}\,dx = \frac{1}{a}e^{ax} \]
+\[ \int \ln(ax) = x\ln(ax) - x \]
+\[ \int \sin(ax)\,dx =-\frac{1}{a} \cos(ax) \]
+\[ \int \cos(ax)\,dx =\frac{1}{a} \sin(ax) \]
+\[ \int \sin^2(ax)\,dx = \frac{x}{2} - \frac{\sin(2ax)}{4a} \]
+\[ \int \cos^2(ax)\,dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \]
+%
+\[ \int_a^b u\,dv = uv|_a^b - \int_a^b v\,du  \]
+\end{multicols}
+
+\extraline
+Formes avec numérateur $dx$ 
+\halfline
+\begin{multicols}{2}
+\noindent
+\[ \int \frac{dx}{x} = \ln \lvert x \rvert \]
+\[ \int \frac{dx}{a+bx} = \frac{1}{b}\ln\lvert a+bx\rvert \]
+\[ \int \frac{dx}{x^2+a^2} = \frac{1}{a}\arctan\left(\frac{x}{a}\right) \]
+\[\int \frac{dx}{\sqrt{x^2+a^2}} = \ln \lvert x + \sqrt{x^2+a^2} \rvert \]
+\[ \int \frac{dx}{(x^2+a^2)^{3/2}} = \frac{x}{a^2\sqrt{x^2+a^2}} \]
+\[ \int \frac{dx}{(a+bx)^2} = -\frac{1}{b(a+bx)} \]
+\end{multicols}
+%
+
+
+\extraline
+Formes avec numérateur $x\,dx$
+\[ \int \frac{x\,dx}{(x^2 \pm a^2)^{1/2}} = \sqrt{x^2 \pm a^2} \]
+\[\int \frac{x\,dx}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}} \]
+\[ \int \frac{x\,dx}{(x^2+a^2)^n} = -\frac{1}{2(n-1)} \frac{1}{(x^2+a^2)^{n-1}} \quad (n>0)  \]
+\[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
+
+%\extraline
+\columnbreak
+Formes avec numérateur $x^2\,dx$
+\[ \int \frac{x^2\,dx}{\sqrt{x^2+a^2}} =  \frac{u}{2}\sqrt{x^2+a^2} - \frac{a^2}{2}\ln(x+\sqrt{x^2+a^2}) \]
+%
+\[ \int \frac{x^2\,dx}{(x^2+a^2)^{3/2}} = -\frac{x}{\sqrt{x^2+a^2}} + \ln \lvert x + \sqrt{x^2+a^2} \rvert \]
+
+
+\subsection{Autres formules}
+Lois des logarithmes
+\begin{gather*}
+\log_a (xy) = \log_a x + \log_a y \\
+ \log_a (x/y) = \log_a x - \log_a y \\
+\log_a (x^r) = r\log_a x
+\end{gather*}
+
+Géométrie \\
+\halfline
+\begin{tabular}{@{\tableindent}ll@{}}
+	Cercle & $C = 2\pi r $, $A =\pi r^2$ \\
+	Sphère & $A = 4\pi r^2$, $V = \frac{4}{3}\pi r^3 $ \\
+\end{tabular}
+\extraline
+
+Résolution d'une équation quadratique
+\[ ax^2 + bx + c = 0 \Longrightarrow x = \frac{-b \pm \sqrt{b^2-4ac} }{2a} \]
+
+
+
+
+
+
+\hrulefill
+
+
+\scriptsize
+
+\href{https://github.com/zhouluke/PhysicsFormulas}{Dactylographie}  \copyright\ 2022 Luke Zhou. \\
+D'après le cours PHY 1522 Hiver 2022 de l'Université d'Ottawa. \\
+\href{http://wch.github.io/latexsheet/}{Modèle de document}  \copyright\ 2014 Winston Chang.
+
+
+\end{multicols}
+\end{document}
