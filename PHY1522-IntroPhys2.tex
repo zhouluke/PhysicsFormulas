@@ -242,7 +242,7 @@ Loi des mailles de Kirchoff
 \end{center}
 
 \hrulefill
-\section{Constantes}
+\section{Constantes et conversions}
 Permittivité du vide
 \[ 	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} \quad [\text{ou } \si{{\coulomb^2}/{(\newton\cdot\meter^2)}}] \]
 \[	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2}\]
@@ -260,39 +260,124 @@ Vitesse de la lumière
 \[ c = \SI{3E8}{\meter/\second}  \]
 
 Masse volumique de l'eau
-\[ c = \SI{1000}{\kilogram/\meter^3}  \]
+\[ c_\text{eau} = \SI{1000}{\kilogram/\meter^3}  \]
 
+Pression atmosphérique normale
+\[ P_0 = \SI{1}{\text{atm}} = \SI{101,3}{\kilo\pascal}  \]
+
+Constante des gaz parfaits
+\[ R = \SI{8,314}{\joule/\mole\cdot\kelvin} \]
+
+Nombre d'Avogadro
+\[ N_A = \SI{6,02e23}{\mol^{-1}}\]
+
+Température
+\[ T_K = T_C + \SI{273,15}{\kelvin} \]
 
 \hrulefill
 
 
 \section{Solides et fluides}
 
-Module de Young
-\[ E = \frac{\sigma}{\epsilon} \]
-\[ 
-\sigma = \frac{F_n}{A} \quad \text{(traction)} \qquad\qquad
-\epsilon = \frac{\Delta L}{L_0} \quad \text{(déformation)} 
-\]
-
-Masse volumique
+Masse volumique moyenne
 \[ \rho = \frac{M}{V} \]
 
-Pression hydrostatique
+Modules d'élasticité, en général
+\[ \text{module d'élasticité} = \frac{\text{contrainte}}{\text{déformation}} \]
+
+Module de Young (traction des solides)
+\[ E = \frac{\sigma}{\epsilon} 
+= \frac{{F_\perp}/{A}}{{\Delta L}/{L_0}} 
+\]
+
+Module de rigidité (cisaillement des solides)
+\[ G = \frac{\tau}{\gamma} 
+= \frac{F_\parallel/A}{{\Delta x}/{h}} 
+\]
+
+Module de compressibilité (solides et fluides)
+\[ K = - \left(\frac{\Delta P}{\Delta V / V} \right)\]
+
+
+Pression hydrostatique à la profondeur $h$
 \[ P = P_0 + \rho gh \]
 
-Principe d'Archimède
+Principe d'Archimède : force de flottaison (poussée d'Archimède)
 \[ F_p = \rho_\text{fluide} V_\text{déplacé} g \]
 
-Équations de continuité
+Équations de continuité (fluides)
 \begin{align*}
-	A_1 v_1 &= A_2 v_2 \qquad \text{(incompressible) [\si{\meter^3/\sec]}} \\
-	\rho_1 A_1 v_1 &= \rho_2 A_2 v_2 \qquad \text{(compressible) [\si{\kilogram/\sec}]}
+	A_1 v_1 = A_2 v_2 \qquad &\text{(incompressible) [\si{\meter^3/\sec]}} \\
+	\rho_1 A_1 v_1 = \rho_2 A_2 v_2 \qquad &\text{(compressible) [\si{\kilogram/\sec}]}
 \end{align*}
 
 Équation de Bernoulli
 \[ P + \rho g y + \frac{1}{2}\rho v^2 = \text{constante} \]
 
+\hrulefill
+
+
+\section{Thermodynamique et les gaz parfaits}
+
+Équation d'état d'un gaz parfait (de $N$ molécules ou $n$ moles)
+\[ PV = Nkt = nRT \]
+
+Dilation linéique et volumique
+\[ \Delta L = \alpha L_0 \Delta T 
+\qquad 
+\Delta V = \beta V_0 \Delta T 
+\]
+
+Chaleur (transfert d'énergie)
+\[ \Delta Q = mc\Delta T = nC\Delta T \]
+
+Chaleur latente (changements de phrase)
+\[ \Delta Q = mL \]
+
+Travail effectué \underline{par un gaz} dans un processus quasi statique (système toujours proche d'un état d'équilibre)
+\[ W = \int_{V_i}^{V_f} P\, dV \]
+
+Conventions de signe \\
+\begin{tabular}{@{\tableindent}cl}
+	$W_\text{gaz} > 0$ & le gaz fait du travail \\
+	$W_\text{gaz} < 0$ & le gaz subit du travail \\
+	$Q_\text{gaz} > 0$ & le gaz reçoit de la chaleur \\
+	$Q_\text{gaz} < 0$ & le gaz émet de la chaleur \\
+\end{tabular}
+\halfline
+
+Types de processus et travail effectué par un gaz parfait \\
+\begin{tabular}{@{\tableindent}lll}
+	isobare & $\Delta P=0$  & $W=P\Delta V$  \\
+	isochore & $\Delta V=0$  & $W=0$ \\
+	isotherme & $\Delta T=0$ & $W=nRT\ln(V_f/V_i)$ \\
+	adiabatique & $Q=0$ & $\Delta U = -W$ \\
+\end{tabular}
+\halfline
+
+$1^\text{er}$ principe de la thermodynamique
+\[ \Delta U = Q - W \]
+
+Autres propriétés d'un gaz parfait
+\[ \Delta U = n C_v \Delta T  
+\qquad 
+C_p - C_v = R
+\]
+
+Processus adiabatique quasi statique pour un gaz parfait
+\[ PV^\gamma = \text{constante} \qquad\quad \gamma = \frac{C_p}{C_v} \]
+
+Travail d'un moteur thermique
+\[ W = |Q_c| - |Q_f| \]
+
+Rendement thermique
+\[ \epsilon=\frac{W}{|Q_c|} = 1 - \frac{|Q_f|}{|Q_c|} \]
+
+Coefficient d'amplification frigorifique
+\[ \text{CAF} = \frac{|Q_f|}{W} \]
+
+Facteur calorifique
+\[ \text{FC} = \frac{|Q_c|}{W} \]
 
 \hrulefill
 
@@ -375,7 +460,7 @@ Formes avec numérateur $x\,dx$
 \[ \int \frac{x\,dx}{(a^2-bx)^{3/2}} = \frac{2x}{b\sqrt{a^2-bx}} + \frac{4\sqrt{a^2-bx}}{b^2} \]
 
 %\extraline
-\columnbreak
+
 Formes avec numérateur $x^2\,dx$
 \[ \int \frac{x^2\,dx}{\sqrt{x^2+a^2}} =  \frac{u}{2}\sqrt{x^2+a^2} - \frac{a^2}{2}\ln(x+\sqrt{x^2+a^2}) \]
 %
