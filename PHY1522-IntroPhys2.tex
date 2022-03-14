@@ -109,7 +109,8 @@ v^2 = v_0^2 + 2a\Delta x
 \begin{gather*}
 \Delta x = v_0 \Delta t + \frac{1}{2} a(\Delta t)^2 \\
 \Delta x = v\Delta t - \frac{1}{2} a(\Delta t)^2 \\
-KE = \frac{1}{2} mv^2
+KE = \frac{1}{2} mv^2 \quad
+PE = mgh
 \end{gather*}
 \end{multicols}
 
@@ -183,6 +184,14 @@ Matériaux diélectriques
 \qquad\quad
 \kappa = 1 \text{ {(vide, conducteurs)}}\]
 
+Conditions aux limites entre un conducteur et un diélectrique  (ou le vide)\\
+\halfline
+\begin{tabular}{@{\tableindent}lll@{}}
+	Pour le diélectrique & $ E_\perp = {\rho_s}/{\epsilon}$ & $E_\parallel = 0 $ \\
+	Pour le conducteur  & $\vec{E}_\text{intérieur} = 0 $ &  $Q_\text{intérieur} = 0 $ \\
+\end{tabular}
+\halfline
+
 Condensateurs : capacitance [\si{\farad}] 
 \[ C \equiv \frac{Q}{\Delta V} \equiv \frac{Q}{V_+ - V_-} > 0 
 \qquad \uvec{E}: +Q \to -Q \]
@@ -210,12 +219,33 @@ C_\text{éq} = C_1 + C_2 + \dots  \qquad &\text{(parallèle)} \\
 \section{Courant électrique ($I$ constant)}
 
 Courant [$\si{\ampere} = \si{\coulomb}/\si{\sec}$]
-\[ I \equiv \frac{dq}{dt} \]
+\[ I \equiv \frac{dq}{dt} = n A e v_d \]
 
-Résistance [$\si{\ohm} = \si{\volt/\ampere}$] pour un conducteur rectiligne
+
+Résistance électrique [$\si{\ohm} = \si{\volt/\ampere}$] et résistivité $\rho$ [$\si{\ohm\cdot\meter}$]
 \begin{gather*}
-R = \frac{V}{I}  > 0   
+R = \frac{\Delta V}{I}  > 0   \qquad 
+R = \frac{\rho \ell}{A}
 \end{gather*}
+
+Résistivité en fonction de la température
+\[ \rho = \rho_0[1 + \alpha(T-T_0)] \]
+
+Densité de courant [$\si{\ampere/\meter^2}$] pour un conducteur simple
+\[ J = \frac{I}{A} = \frac{\Delta V}{RA} =  \frac{\Delta V}{\rho \ell} 
+\qquad \vec{J} = n q \vec{v}_d  = \frac{1}{\rho}\vec{E} = \sigma \vec{E} \]
+
+\begin{tabular}{@{\tableindent}ll@{}}
+	$\vec{v}_d$ & Vitesse de dérive [$\si{\metre/\sec}$] \\
+	$\rho$ & Résistivité électrique  [$\si{\ohm\cdot\meter}$] \\
+	$\sigma \equiv 1/\rho$ & Conductivité électrique [$\si{\ohm^{-1}\cdot\meter^{-1}}$] \\
+\end{tabular}
+\halfline
+
+F.é.m [\si{\volt}] et pile réel
+\[ \varepsilon = \frac{W_\text{non électrostatique}}{q} \]
+\[ \Delta V = \varepsilon - rI 
+\qquad \Delta V = \varepsilon + rI \text{ (rechargement)}\]
 
 Combinaisons de résistances
 \begin{align*}
@@ -224,7 +254,7 @@ R_\text{tot} = R_1 + R_2 + \dots \qquad & \text{(série)} \\
 \end{align*}
 
 Loi de Joule : puissance [$\si{\watt} = \si{\joule}/\si{\sec}$]
-\[ P \equiv \frac{dW}{dt} = VI = I^2 R = \frac{V^2}{R}\]
+\[ P \equiv \frac{dW}{dt} = I \Delta V = R I^2  = \frac{\Delta V^2}{R}\]
 
 Loi des nœuds de Kirchoff
 \[ \sum I_\text{entrant} = \sum I_\text{sortant} \]
@@ -265,10 +295,11 @@ Unités de pression
 \[ \SI{1}{\pascal} = \SI{1}{\newton/\meter^2} \]
 
 Unités de travail
-\[ \SI{1}{\joule} = \SI{1}{\kilo\pascal/\litre} \]
+\[ \SI{1}{\joule} = \SI{1}{\kilo\pascal\cdot\litre} \]
 
 Pression atmosphérique normale
-\[ P_0 = \SI{1}{\text{atm}} = \SI{101,3}{\kilo\pascal}  \]
+\[ P_0 = \SI{1}{\text{atm}} = \SI{101,3}{\kilo\pascal}
+= \SI{760}{\mmHg} \]
 
 Nombre d'Avogadro
 \[ N_A = \SI{6,02e23}{\mol^{-1}}\]
@@ -380,11 +411,11 @@ $1^\text{er}$ principe de la thermodynamique
 \[ \Delta U = Q - W \]
 
 Applications du $1^\text{er}$ principe de la thermodynamique \\
-\begin{tabular}{@{\tableindent}p{29mm}<{\raggedright}p{18mm}<{\raggedright}cl}
+\begin{tabular}{@{\tableindent}m{24mm}<{\raggedright}p{18mm}<{\raggedright}cl}
 	système isolé & $Q=0, W=0$ &$\Longrightarrow$ & $\Delta U = 0$ \\
-	processus cyclique & $\Delta U = 0$ &$\Longrightarrow$ & $Q=W$ \\
-	processus isochore & $W=0$ &$\Longrightarrow$ & $\Delta U = Q$ \\
-	processus adiabatique & $Q=0$ &$\Longrightarrow$ & $\Delta U = -W$ \\
+	proc. cyclique & $\Delta U = 0$ &$\Longrightarrow$ & $Q=W$ \\
+	proc. isochore & $W=0$ &$\Longrightarrow$ & $\Delta U = Q$ \\
+	proc. adiabatique & $Q=0$ &$\Longrightarrow$ & $\Delta U = -W$ \\
 	détente libre adiabatique & 
 		$Q=0, W=0$ %\scriptsize{(expansion sans pousser un piston)}
 		&$\Longrightarrow$ & $\Delta U = 0$ \\
@@ -410,7 +441,7 @@ Pression exercée par un gaz parfait
 Vitesse quadratique moyenne des molécules
 \[ v_\text{qm} = \sqrt{\overline{v^2}}
 = \sqrt{\frac{3RT}{M}} 
-= \sqrt{\frac{3RT}{m}} \]
+= \sqrt{\frac{3kT}{m}} \]
 \[ \overline{v^2_x} =  \overline{v^2_y} = \overline{v^2_z} = \frac{1}{3} v^2_\text{qm}  \]
 
 Énergie cinétique moyenne de translation d'une molécule dans un gaz parfait
