@@ -141,7 +141,6 @@ dq = \sigma\, dA
 dq = \rho\, dV
  \qquad
  d\vec{E} = \frac{k}{\kappa} \frac{dq}{r^2 }  \uvec{r} \]
-\[ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infinie)} \]
 
 
 Flux électrique [$\si{\newton\cdot\metre}$] et théorème de Gauss
@@ -150,11 +149,14 @@ Flux électrique [$\si{\newton\cdot\metre}$] et théorème de Gauss
 \qquad\quad
 \Phi_E = \oint \vec{E}\cdot d\vec{A} = \frac{Q_\text{intérieur}}{\kappa \epsilon_0} \]
 
+Champ électrique d'un plan infini
+\[ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infinie)} \]
+
 Potentiel électrique [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \begin{gather*}
-\Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{r} \\
- \vec{E} = -\vec\nabla V = - \left( \frac{\partial V}{\partial x}\uvec{i} + \frac{\partial V}{\partial y}\uvec{j} + \frac{\partial V}{\partial z}\uvec{k} \right) \\
-V(r) = \frac{k}{\kappa}  \frac{q}{r } \quad \text{(charge ponctuelle)}
+	V(r) = \frac{k}{\kappa}  \frac{q}{r } \quad \text{(charge ponctuelle)} \\
+	\Delta V = V_B - V_A  = -\int_A^B \vec{E}\cdot d\vec{r} \\
+	 \vec{E} = -\vec\nabla V = - \left( \frac{\partial V}{\partial x}\uvec{i} + \frac{\partial V}{\partial y}\uvec{j} + \frac{\partial V}{\partial z}\uvec{k} \right) 
 \end{gather*}
 
 Énergie potentielle de deux charges ponctuelles
@@ -163,7 +165,7 @@ V(r) = \frac{k}{\kappa}  \frac{q}{r } \quad \text{(charge ponctuelle)}
 Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vec{E}$
 \[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vec{E}\cdot d\vec{r} = q\Delta V \]
 
-Travail [\si{\joule}] effectué par un champ $\vec{E}$ en déplaçant $q$ 
+Travail [\si{\joule}] effectué par le champ $\vec{E}$ en déplaçant $q$ 
 \[ W_{A\to B} =  -\Delta U_E = q\int_{A}^{B} \vec{E}\cdot d\vec{r} =- q\Delta V \]
 
 Principes de superposition: à un point d'observation...
@@ -256,6 +258,15 @@ q_e = |e| = \SI{1,6E-19}{\coulomb}
 Masse volumique de l'eau
 \[ \rho_\text{eau} = \SI{1000}{\kilogram/\meter^3}  \]
 
+Unités de volume
+\[ \SI{1}{\litre} = \SI{1}{\deci\meter^3} =  \SI{1e-3}{\meter^3} \]
+
+Unités de pression
+\[ \SI{1}{\pascal} = \SI{1}{\newton/\meter^2} \]
+
+Unités de travail
+\[ \SI{1}{\joule} = \SI{1}{\kilo\pascal/\litre} \]
+
 Pression atmosphérique normale
 \[ P_0 = \SI{1}{\text{atm}} = \SI{101,3}{\kilo\pascal}  \]
 
@@ -271,9 +282,6 @@ Constante de Bolzmann
 Échelle de température
 \[ T_K = T_C + \SI{273,15}{\kelvin} \]
 
-Unités de volume
-\[ \SI{1}{\litre} = \SI{1}{\deci\meter^3} =  \SI{1e-3}{\meter^3} \]
-
 Vitesse de la lumière
 \[ c = \SI{3E8}{\meter/\second}  \]
 
@@ -283,7 +291,7 @@ Vitesse de la lumière
 \section{Solides et fluides}
 
 Masse volumique moyenne
-\[ \rho = \frac{M}{V} \]
+\[ \rho = \frac{m}{V} \]
 
 Modules d'élasticité, en général
 \[ \text{module d'élasticité} = \frac{\text{contrainte}}{\text{déformation}} \]
@@ -301,6 +309,8 @@ Module de rigidité (cisaillement des solides)
 Module de compressibilité (solides et fluides)
 \[ K = - \left(\frac{\Delta P}{\Delta V / V} \right)\]
 
+Pression [$\si{\pascal} = \si{\newton/\metre^2}$]
+\[ P = \frac{F_\perp}{A} \]
 
 Pression hydrostatique à la profondeur $h$
 \[ P = P_0 + \rho gh \]
@@ -322,6 +332,13 @@ Principe d'Archimède : force de flottaison (poussée d'Archimède)
 
 \section{Thermodynamique et gaz parfaits}
 
+Principe zéro de la thermodynamique \\
+\halfline
+\begin{tabular}{@{\tableindent}p{0.8\linewidth}}
+	Deux corps en équilibre thermique (même $T$) avec un troisième sont en équilibre thermique entre eux. \\
+\end{tabular}
+\halfline
+	
 Équation d'état d'un gaz parfait (de $N$ molécules ou $n$ moles)
 \[ PV = Nkt = nRT \]
 
@@ -337,7 +354,7 @@ Chaleur (transfert d'énergie)
 Chaleur latente (changements de phase)
 \[ \Delta Q = mL \]
 
-Travail effectué \underline{par un gaz} dans un processus quasi statique (système toujours proche d'un état d'équilibre)
+Travail effectué \underline{par un gaz} dans un processus quasi statique (système toujours proche d'un état d'équilibre) [$\si{\joule} = \si{\kilo\pascal\cdot\litre}$]
 \[ W = \int_{V_i}^{V_f} P\, dV \]
 
 Conventions de signe \\
@@ -375,7 +392,7 @@ Applications du $1^\text{er}$ principe de la thermodynamique \\
 \halfline
 
 Autres propriétés d'un gaz parfait
-\[ \Delta U = n C_v \Delta T  
+\[ \Delta U = n C_V \Delta T  
 \qquad 
 C_P - C_V = R
 \]
@@ -394,14 +411,15 @@ Vitesse quadratique moyenne des molécules
 \[ v_\text{qm} = \sqrt{\overline{v^2}}
 = \sqrt{\frac{3RT}{M}} 
 = \sqrt{\frac{3RT}{m}} \]
+\[ \overline{v^2_x} =  \overline{v^2_y} = \overline{v^2_z} = \frac{1}{3} v^2_\text{qm}  \]
 
 Énergie cinétique moyenne de translation d'une molécule dans un gaz parfait
 \[ K_\text{moy} = \frac{1}{2} mv^2_\text{qm} = \frac{3}{2} kT \]
 
-Énergie interne de $N$ molécules ou $n$ moles d'un gaz parfait
+Énergie interne d'un gaz parfait
 \[ U = \frac{3}{2} NkT = \frac{3}{2} nRT \]
 
-Chaleur spécifique molaire d'un gaz parfait
+Chaleur spécifique molaire d'un gaz parfait monoatomique
 \[ C_V = \frac{3}{2} R 
 \qquad
 C_P = \frac{5}{2} R
@@ -410,19 +428,29 @@ C_P = \frac{5}{2} R
 
 \hrulefill
 
-\section{Cycles et moteurs}
+\section{Cycles, rendement et entropie}
 
 Travail d'un moteur thermique
-\[ W = |Q_c| - |Q_f| \]
+\[ W = |Q_C| - |Q_F| \]
 
-Rendement thermique
-\[ \epsilon=\frac{W}{|Q_c|} = 1 - \frac{|Q_f|}{|Q_c|} \]
+Rendement thermique d'un moteur thermique
+\[ \epsilon=\frac{W}{|Q_C|} = 1 - \frac{|Q_F|}{|Q_C|} \]
 
-Coefficient d'amplification frigorifique
-\[ \text{CAF} = \frac{|Q_f|}{W} \]
+Coefficient d'amplification frigorifique et facteur calorifique
+\[ \text{CAF} = \frac{|Q_F|}{W} \qquad
+\text{FC} = \frac{|Q_C|}{W} \]
 
-Facteur calorifique
-\[ \text{FC} = \frac{|Q_c|}{W} \]
+Rendement thermique du cycle de Carnot
+\[ \epsilon= 1- \frac{T_F}{T_C} \]
+
+$2^\text{e}$ principe de la thermodynamique
+\[ \Delta S \geq 0 \]
+
+\begin{tabular}{@{\tableindent}ll}
+	processus réversible & $\Delta S_\text{isolé} = 0$ \\
+	processus irréversible & $\Delta S_\text{isolé} > 0$ \\
+\end{tabular}
+\halfline
 
 \hrulefill
 
