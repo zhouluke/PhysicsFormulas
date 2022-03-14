@@ -306,9 +306,9 @@ Pression hydrostatique à la profondeur $h$
 \[ P = P_0 + \rho gh \]
 
 Principe d'Archimède : force de flottaison (poussée d'Archimède)
-\[ F_p = \rho_\text{fluide} V_\text{déplacé} g \]
+\[ F_p = \rho_\text{fluide} \, V_\text{déplacé} \, g \]
 
-Équations de continuité (fluides)
+Équations de continuité (fluides ; écoulement laminaire stable)
 \begin{align*}
 	A_1 v_1 = A_2 v_2 \qquad &\text{(incompressible) [\si{\meter^3/\sec]}} \\
 	\rho_1 A_1 v_1 = \rho_2 A_2 v_2 \qquad &\text{(compressible) [\si{\kilogram/\sec}]}
@@ -320,21 +320,21 @@ Principe d'Archimède : force de flottaison (poussée d'Archimède)
 \hrulefill
 
 
-\section{Thermodynamique et les gaz parfaits}
+\section{Thermodynamique et gaz parfaits}
 
 Équation d'état d'un gaz parfait (de $N$ molécules ou $n$ moles)
 \[ PV = Nkt = nRT \]
 
-Dilation linéique et volumique
+Dilation linéique (solides) et volumique (fluides et solides)
 \[ \Delta L = \alpha L_0 \Delta T 
 \qquad 
-\Delta V = \beta V_0 \Delta T 
+\Delta V = \beta V_0 \Delta T  \qquad  \beta = 3\alpha \text{ (solides)}
 \]
 
 Chaleur (transfert d'énergie)
 \[ \Delta Q = mc\Delta T = nC\Delta T \]
 
-Chaleur latente (changements de phrase)
+Chaleur latente (changements de phase)
 \[ \Delta Q = mL \]
 
 Travail effectué \underline{par un gaz} dans un processus quasi statique (système toujours proche d'un état d'équilibre)
@@ -349,26 +349,68 @@ Conventions de signe \\
 \end{tabular}
 \halfline
 
-Types de processus et travail effectué par un gaz parfait \\
-\begin{tabular}{@{\tableindent}lll}
-	isobare & $\Delta P=0$  & $W=P\Delta V$  \\
-	isochore & $\Delta V=0$  & $W=0$ \\
-	isotherme & $\Delta T=0$ & $W=nRT\ln(V_f/V_i)$ \\
-	adiabatique & $Q=0$ & $\Delta U = -W$ \\
+Types de processus et travail effectué \\
+\begin{tabular}{@{\tableindent}llcp{33mm}<{\raggedright}}
+	isobare & $\Delta P=0$  & $ \Longrightarrow$ & $W=P\Delta V$  \\
+	isochore & $\Delta V=0$  & $\Longrightarrow$ & $W=0$ \\
+	isotherme & $\Delta T=0$ & $\Longrightarrow$& $W=nRT\ln(V_f/V_i)$ \scriptsize{(gaz parfait)}\\
+	adiabatique & $Q=0$ & & \\
+	%$\Longrightarrow$ & $\Delta U = -W$ \scriptsize{($1^\text{er}$ principe)} \\
 \end{tabular}
 \halfline
 
 $1^\text{er}$ principe de la thermodynamique
 \[ \Delta U = Q - W \]
 
+Applications du $1^\text{er}$ principe de la thermodynamique \\
+\begin{tabular}{@{\tableindent}p{29mm}<{\raggedright}p{18mm}<{\raggedright}cl}
+	système isolé & $Q=0, W=0$ &$\Longrightarrow$ & $\Delta U = 0$ \\
+	processus cyclique & $\Delta U = 0$ &$\Longrightarrow$ & $Q=W$ \\
+	processus isochore & $W=0$ &$\Longrightarrow$ & $\Delta U = Q$ \\
+	processus adiabatique & $Q=0$ &$\Longrightarrow$ & $\Delta U = -W$ \\
+	détente libre adiabatique & 
+		$Q=0, W=0$ %\scriptsize{(expansion sans pousser un piston)}
+		&$\Longrightarrow$ & $\Delta U = 0$ \\
+\end{tabular}
+\halfline
+
 Autres propriétés d'un gaz parfait
 \[ \Delta U = n C_v \Delta T  
 \qquad 
-C_p - C_v = R
+C_P - C_V = R
 \]
 
 Processus adiabatique quasi statique pour un gaz parfait
-\[ PV^\gamma = \text{constante} \qquad\quad \gamma = \frac{C_p}{C_v} \]
+\[ PV^\gamma = \text{constante} \qquad\quad \gamma = \frac{C_P}{C_V} > 1 \]
+
+\hrulefill
+
+\section{Théorie cinétique}
+
+Pression exercée par un gaz parfait
+\[ P = \frac{1}{3} \rho v^2_\text{qm} \]
+
+Vitesse quadratique moyenne des molécules
+\[ v_\text{qm} = \sqrt{\overline{v^2}}
+= \sqrt{\frac{3RT}{M}} 
+= \sqrt{\frac{3RT}{m}} \]
+
+Énergie cinétique moyenne de translation d'une molécule dans un gaz parfait
+\[ K_\text{moy} = \frac{1}{2} mv^2_\text{qm} = \frac{3}{2} kT \]
+
+Énergie interne de $N$ molécules ou $n$ moles d'un gaz parfait
+\[ U = \frac{3}{2} NkT = \frac{3}{2} nRT \]
+
+Chaleur spécifique molaire d'un gaz parfait
+\[ C_V = \frac{3}{2} R 
+\qquad
+C_P = \frac{5}{2} R
+\qquad 
+\gamma = \frac{C_P}{C_V} = \frac{5}{3} \]
+
+\hrulefill
+
+\section{Cycles et moteurs}
 
 Travail d'un moteur thermique
 \[ W = |Q_c| - |Q_f| \]
