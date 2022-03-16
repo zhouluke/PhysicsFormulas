@@ -151,7 +151,7 @@ Flux électrique [$\si{\newton\cdot\metre}$] et théorème de Gauss
 \Phi_E = \oint \vec{E}\cdot d\vec{A} = \frac{Q_\text{intérieur}}{\kappa \epsilon_0} \]
 
 Champ électrique d'un plan infini
-\[ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infinie)} \]
+\[ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infini)} \]
 
 Potentiel électrique [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \begin{gather*}
@@ -184,11 +184,11 @@ Matériaux diélectriques
 \qquad\quad
 \kappa = 1 \text{ {(vide, conducteurs)}}\]
 
-Conditions aux limites entre un conducteur et un diélectrique  (ou le vide)\\
+À la surface d'un conducteur  \\
 \halfline
 \begin{tabular}{@{\tableindent}lll@{}}
-	Pour le diélectrique & $ E_\perp = {\rho_s}/{\epsilon}$ & $E_\parallel = 0 $ \\
-	Pour le conducteur  & $\vec{E}_\text{intérieur} = 0 $ &  $Q_\text{intérieur} = 0 $ \\
+	À la surface & $ E_\perp = {\rho_s}/{\epsilon}$ & $E_\parallel = 0 $ \\
+	À l'intérieur  & $\vec{E}_\text{intérieur} = 0 $ &  $Q_\text{intérieur} = 0 $ \\
 \end{tabular}
 \halfline
 
@@ -221,7 +221,6 @@ C_\text{éq} = C_1 + C_2 + \dots  \qquad &\text{(parallèle)} \\
 Courant [$\si{\ampere} = \si{\coulomb}/\si{\sec}$]
 \[ I \equiv \frac{dq}{dt} = n A e v_d \]
 
-
 Résistance électrique [$\si{\ohm} = \si{\volt/\ampere}$] et résistivité $\rho$ [$\si{\ohm\cdot\meter}$]
 \begin{gather*}
 R = \frac{\Delta V}{I}  > 0   \qquad 
@@ -242,10 +241,20 @@ Densité de courant [$\si{\ampere/\meter^2}$] pour un conducteur simple
 \end{tabular}
 \halfline
 
-F.é.m [\si{\volt}] et pile réel
-\[ \varepsilon = \frac{W_\text{non électrostatique}}{q} \]
-\[ \Delta V = \varepsilon - rI 
-\qquad \Delta V = \varepsilon + rI \text{ (rechargement)}\]
+F.é.m [\si{\volt}] et pile réelle
+\[ \varepsilon = \frac{W_\text{non élec.}}{q} \qquad
+\Delta V = \varepsilon - rI 
+\qquad \Delta V = \varepsilon + rI \text{ (recharge)}\]
+
+Connexions en série et en parallèle
+\begin{align*}
+	V_\text{éq} = V_1 + V_2 + \dots  & \qquad
+		I_\text{éq} = I_1 = I_2 = \dots   \qquad
+		\text{(série)} \\
+	V_\text{éq} = V_1 = V_2 = \dots  & \qquad
+		I_\text{éq} = I_1 + I_2 + \dots   \qquad
+		\text{(parallèle)}
+\end{align*}
 
 Combinaisons de résistances
 \begin{align*}
@@ -286,7 +295,7 @@ q_e = |e| = \SI{1,6E-19}{\coulomb}
 \end{gather*}
 
 Masse volumique de l'eau
-\[ \rho_\text{eau} = \SI{1000}{\kilogram/\meter^3}  \]
+\[ \rho_\text{eau} = \SI{1000}{\kilogram/\meter^3}  = \SI{1}{\kilogram/\litre} \]
 
 Unités de volume
 \[ \SI{1}{\litre} = \SI{1}{\deci\meter^3} =  \SI{1e-3}{\meter^3} \]
@@ -447,7 +456,7 @@ Vitesse quadratique moyenne des molécules
 Énergie cinétique moyenne de translation d'une molécule dans un gaz parfait
 \[ K_\text{moy} = \frac{1}{2} mv^2_\text{qm} = \frac{3}{2} kT \]
 
-Énergie interne d'un gaz parfait
+Énergie interne d'un gaz parfait monoatomique
 \[ U = \frac{3}{2} NkT = \frac{3}{2} nRT \]
 
 Chaleur spécifique molaire d'un gaz parfait monoatomique
