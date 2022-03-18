@@ -242,9 +242,9 @@ Densité de courant [$\si{\ampere/\meter^2}$] pour un conducteur simple
 \halfline
 
 F.é.m [\si{\volt}] et pile réelle
-\[ \varepsilon = \frac{W_\text{non élec.}}{q} \qquad
-\Delta V = \varepsilon - rI 
-\qquad \Delta V = \varepsilon + rI \text{ (recharge)}\]
+\[ \emf = \frac{W_\text{non élec.}}{q} \qquad
+\Delta V = \emf - rI 
+\qquad \Delta V = \emf + rI \text{ (recharge)}\]
 
 Connexions en série et en parallèle
 \begin{align*}
@@ -271,12 +271,14 @@ Loi des nœuds de Kirchoff
 Loi des mailles de Kirchoff
 \[ \sum \Delta V = 0 \]
 
-\begin{itemize}
-\item Traverser une pile $\emf$ de la borne -- vers + : $\Delta V  = +\emf$
-\item Traverser une pile $\emf$ de la borne + vers -- : $\Delta V  = -\emf$
-\item Traverser $R$ dans le sens du courant $I$ : $\Delta V  = -RI$
-\item Traverser $R$ contre le sens du courant $I$ : $\Delta V  = +RI$
-\end{itemize}
+\begin{tabular}{@{\tableindent}ll@{}}
+	Traverser une pile $\emf$ de la borne -- vers + & $\Delta V  = +\emf$ \\
+	Traverser une pile $\emf$ de la borne + vers -- & $\Delta V  = -\emf$ \\
+ 	Traverser $R$ dans le sens présumé de $I$ & $\Delta V  = -RI$ \\
+	Traverser $R$ contre le sens présumé de $I$ & $\Delta V  = +RI$ \\
+	Traverser $C$ dans le sens présumé de $I$ & $\Delta V  = -Q/C$ \\
+	Traverser $C$ contre le sens présumé de $I$ & $\Delta V  = +Q/C$ 
+\end{tabular}
 
 \begin{center}
 	\includegraphics[width=25mm]{./phy1522/pile.png}
