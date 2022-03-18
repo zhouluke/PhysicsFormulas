@@ -304,7 +304,7 @@ Unités de pression
 \[ \SI{1}{\pascal} = \SI{1}{\newton/\meter^2} \]
 
 Unités de travail
-\[ \SI{1}{\joule} = \SI{1}{\kilo\pascal\cdot\litre} \]
+\[ \SI{1}{\joule} = \SI{1}{\kilo\pascal\cdot\litre} = \SI{1}{\newton\cdot\meter} = \SI{1}{\kilo\gram\cdot\metre^2/\sec^2} \]
 
 Pression atmosphérique normale
 \[ P_0 = \SI{1}{\text{atm}} = \SI{101,3}{\kilo\pascal}
@@ -394,8 +394,11 @@ Chaleur (transfert d'énergie)
 Chaleur latente (changements de phase)
 \[ \Delta Q = mL \]
 
-Travail effectué \underline{par un gaz} dans un processus quasi statique (système toujours proche d'un état d'équilibre) [$\si{\joule} = \si{\kilo\pascal\cdot\litre}$]
+Travail effectué \underline{par} un gaz dans un processus quasi statique (système toujours proche d'un état d'équilibre) [$\si{\joule} = \si{\kilo\pascal\cdot\litre}$]
 \[ W = \int_{V_i}^{V_f} P\, dV \]
+
+\tableindent (quasi statique $\Longrightarrow$ représentable sur un diagramme PV)
+\halfline
 
 Conventions de signe \\
 \begin{tabular}{@{\tableindent}cl}
@@ -406,7 +409,7 @@ Conventions de signe \\
 \end{tabular}
 \halfline
 
-Types de processus et travail effectué \\
+Types de processus \\
 \begin{tabular}{@{\tableindent}llcp{33mm}<{\raggedright}}
 	isobare & $\Delta P=0$  & $ \Longrightarrow$ & $W=P\Delta V$  \\
 	isochore & $\Delta V=0$  & $\Longrightarrow$ & $W=0$ \\
@@ -420,6 +423,7 @@ $1^\text{er}$ principe de la thermodynamique
 \[ \Delta U = Q - W \]
 
 Applications du $1^\text{er}$ principe de la thermodynamique \\
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{@{\tableindent}m{24mm}<{\raggedright}p{18mm}<{\raggedright}cl}
 	système isolé & $Q=0, W=0$ &$\Longrightarrow$ & $\Delta U = 0$ \\
 	proc. cyclique & $\Delta U = 0$ &$\Longrightarrow$ & $Q=W$ \\
@@ -429,6 +433,7 @@ Applications du $1^\text{er}$ principe de la thermodynamique \\
 		$Q=0, W=0$ %\scriptsize{(expansion sans pousser un piston)}
 		&$\Longrightarrow$ & $\Delta U = 0$ \\
 \end{tabular}
+\renewcommand{\arraystretch}{1}
 \halfline
 
 Autres propriétés d'un gaz parfait
@@ -438,7 +443,11 @@ C_P - C_V = R
 \]
 
 Processus adiabatique quasi statique pour un gaz parfait
-\[ PV^\gamma = \text{constante} \qquad TV^{\gamma-1} = \text{constante} \qquad \gamma = \frac{C_P}{C_V} > 1 \]
+\[ PV^\gamma = \text{constante} \qquad TV^{\gamma-1} = \text{constante}  \]
+\[ \gamma = \frac{C_P}{C_V} > 1 
+\qquad 
+W = \frac{1}{\gamma - 1} (P_i V_i - P_f V_f) 
+\]
 
 \hrulefill
 
@@ -458,8 +467,6 @@ Vitesse quadratique moyenne des molécules
 
 Énergie interne d'un gaz parfait monoatomique
 \[ U = \frac{3}{2} NkT = \frac{3}{2} nRT \]
-
-Chaleur spécifique molaire d'un gaz parfait monoatomique
 \[ C_V = \frac{3}{2} R 
 \qquad
 C_P = \frac{5}{2} R
