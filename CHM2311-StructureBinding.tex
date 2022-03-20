@@ -463,61 +463,60 @@ Characters in an irreducible representation
 Symmetry labels
 %
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{@{\tableindent}lp{0.77\linewidth}@{}}
-	A & Function is symmetric w.r.t. $n$-fold rotation about main axis. \\
-	B & Function is anti-symmetric w.r.t. $n$-fold rotation about main axis. \\
-	E or T & Degenerate functions (interconvert with symmetry operations). \\
-	1 or 2 & Function is symmetric (or anti) w.r.t. $C_2$ perpendicular to main axis, OR if missing, a vertical mirror. \\
-	g or u & Function is symmetric (or anti) w.r.t. inversion. \\
-	$'$ or $''$ & Function is symmetric (or anti) w.r.t. horizontal mirror plane. \\
-	$\Sigma^+$ & Linear molecule symmetric w.r.t. $\sigma_v$ \\
-	$\Sigma^-$ & Linear molecule antisymmetric w.r.t. $\sigma_v$  \\
+\begin{tabular}{@{\tableindent}lp{0.76\linewidth}@{}}
+	$A$ & Function is symmetric w.r.t. $n$-fold rotation about main axis. \\
+	$B$ & Function is anti-symmetric w.r.t. $n$-fold rotation about main axis. \\
+	$E, T$ & Degenerate functions (interconvert with symmetry operations): doubly \& triply, respectively. \\
+	1, 2 & Function is symmetric (or anti) w.r.t. $C_2'$ $\perp$ to principle axis, OR if missing, a $\sigma_v$ (specifically not $C_2''$ or $\sigma_v'$). \\
+	$g, u$ & Function is symmetric (or anti) w.r.t. $i$. \\
+	$'$, $''$ & Function is symmetric (or anti) w.r.t. $\sigma_h$. \\
+	$\Sigma^+, \Sigma^-$ & Linear molecule symmetric (or anti) w.r.t. $\sigma_v$ \\
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 \medskip
 
-Assigning symmetry labels to irreducible representations
+Assigning symmetry labels to irreducible representations: go only as far as you need; i.e. until all have unique labels
 \begin{enumerate}
 	\item Look @ character of $E$ in the representation (row):
 	\begin{itemize}
-		\item If $\chi_E=1$, label is A if $C_n = 1$ and B if $C_n=-1$ ($C_n$: principle axis).
-		\item If $\chi_E=2$, label is E.
-		\item If $\chi_E=3$, label is T.
+		\item If $\chi(E)=1$, label is $A$ if $C_n = 1$ and B if $C_n=-1$ ($C_n$: principle axis).
+		\item If $\chi(E)=2$, label is $E$. 
+		\item If $\chi(E)=3$, label is $T$. 
 		\item $D_2$ and $D_{2h}$ have no principle axis; consider the sum of the characters of the $C_2$ axes instead.
 		\item $D_{2d}$, $D_{4d}$, $D_{6d}$ have no principle axis; consider the sum of the characters of the $S_{2n}$ axes, not $C_n$
 	\end{itemize}
 
-	\item If label was A or B (not E or T), consider the character of the $\perp C_2'$ axis (specifically containing outer atoms): 
+	\item If label was $A$ or $B$ (not $E$ or $T$), consider the character of the $\perp C_2'$ axis (specifically containing outer atoms): 
 	\begin{itemize}
-		\item If $\chi_{C_2'}=1$, add subscript 1 to label.
-		\item If $\chi_{C_2'}=-1$, add subscript 2 to label.
+		\item If $\chi(C_2')=1$, add subscript 1 to label.
+		\item If $\chi(C_2')=-1$, add subscript 2 to label.
 	\end{itemize}
 
 	\item If $\nexists$ $C_2'$ (e.g., in point group $C_{nv}$), consider the character of the $\sigma_v$ (not $\sigma_v'$)
 	\begin{itemize}
-		\item If $\chi_{\sigma_v}=1$, add subscript 1 to label.
-		\item If $\chi_{\sigma_v}=-1$, add subscript 2 to label.
+		\item If $\chi(\sigma_v)=1$, add subscript 1 to label.
+		\item If $\chi(\sigma_v)=-1$, add subscript 2 to label.
 	\end{itemize}
 
 	\item If $\nexists$ $C_2', \sigma_v$, then we will not use subscripts 1 \& 2. (e.g., point groups $C_n, C_{nh}, S_{2n}$).
 	
-	\item Look @ character of i.
+	\item Look @ character of $i$.
 	\begin{itemize}
-		\item If $\chi_{i}=1$, add subscript g (gerade) to label.
-		\item If $\chi_{i}=-1$, add subscript u (ungerade) to label.
+		\item If $\chi(i)=1$, add subscript $g$ (gerade) to label.
+		\item If $\chi(i)=-1$, add subscript $u$ (ungerade) to label.
 	\end{itemize}
 
 	\item If more distinction needed, look @ character of $\sigma_h$.
 	\begin{itemize}
-		\item If $\chi_{\sigma_h}=1$, add $'$ to label.
-		\item If $\chi_{\sigma_h}=-1$, add $''$ to label.
+		\item If $\chi(\sigma_h)=1$, add $'$ to label.
+		\item If $\chi(\sigma_h)=-1$, add $''$ to label.
 	\end{itemize}
 \end{enumerate}
 
-Characters for degenerate representations (E, T)
+Characters for degenerate representations ($E, T$)
 \begin{enumerate}
-	\item Perform all symmetry elements for each class (e.g., class $3C_2$ means do all three $c_2$ operations), applied to unit vectors
-	\item Sum up all $x$ \& $y$ coordinates for the transformed points
+	\item Perform all symmetry elements for each class (e.g., class $3C_2$ means do all three $C_2$ operations), applied to unit vectors.
+	\item Sum up all $x$ \& $y$ coordinates for the transformed points.
 \end{enumerate}
 
 Properties of character tables
@@ -525,9 +524,9 @@ Properties of character tables
 	\item Order $h$: total \# of symmetry operations (e.g., $E$ and $3C_4$ make $h=4$)
 	\item  Classes: total \# of symmetry operation \underline{types} (e.g., $E$ and $3C_4$ make order 2)
 	\item \# irreducible representations (rows) = \# classes (columns)
-	\item $\sum [\chi_i (\vec{R})]^2 = h$ for any irreducible representation $\vec{R}$
-	\item Irreducible representations are all orthogonal to each other: $\vec{R_i} \cdot \vec{R_j} = 0, i\neq j$
-	\item All groups include a totally symmetric representation, with character 1 for all operations; this represents the s-orbital
+	\item $\sum [\chi_i ]^2 = h$ for any irreducible representation
+	\item Irreducible representations $A_i$ are all orthogonal to teach other: ${A_i} \cdot {A_j} = 0, i\neq j$ 
+	\item All groups include a totally symmetric representation, with character 1 for all operations; this represents the $s$-orbital
 \end{enumerate}
 
 
