@@ -515,7 +515,11 @@ Assigning symmetry labels to irreducible representations: go only as far as you 
 
 Characters for degenerate representations ($E, T$)
 \begin{enumerate}
-	\item Perform all symmetry elements for each class (e.g., class $3C_2$ means do all three $C_2$ operations), applied to unit vectors.
+	\item Perform all \underline{unique} symmetry elements for each class.
+	\begin{itemize}
+		\item e.g., class $3C_2$ means do all three $C_2$ operations if they're non-coaxial; otherwise, just do one
+		\item Apply the transformations to unit vectors.
+	\end{itemize}
 	\item Sum up all $x$ \& $y$ coordinates for the transformed points.
 \end{enumerate}
 
@@ -529,10 +533,54 @@ Properties of character tables
 	\item All groups include a totally symmetric representation, with character 1 for all operations; this represents the $s$-orbital
 \end{enumerate}
 
-
-
 \hrulefill
 
+\section{Molecular Orbital Theory}
+
+Terms to know
+\begin{itemize}
+	\item Highest Occupied Molecular Orbitals (HOMO)
+	\item Lowest Occupied Molecular Orbitals (LOMO)
+	\item Frontier MOs
+	\item Bonding vs. non-bonding interactions
+	\item Side-to-side vs. end-to-end (head-to-head) vs. orthogonal interactions
+	\item Constructive vs. destructive vs. zero interference
+\end{itemize}
+
+
+
+Bond order
+\[
+\begin{pmatrix}
+	\text{bond} \\
+	\text{order} 
+\end{pmatrix}
+= 
+\frac{
+	\frac{1}{2}
+	\left[
+		\begin{pmatrix}
+			\text{\# of e- in } \\
+			\text{bonding orbitals} 
+		\end{pmatrix}
+		-
+		\begin{pmatrix}
+			\text{\# of e- in } \\
+			\text{antibonding orbitals} 
+		\end{pmatrix}
+	\right]
+}{\text{\# of interations}}
+\]
+
+Second period diatomics: orbital order \underline{w/o orbital mixing}: $B_2, C_2, N_2$
+\[ \sigma_g(2s) < \sigma_u^*(2s) < \mathbf{\sigma_g(2p) < \pi_u(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
+
+Second period diatomics: orbital order \underline{w/ orbital mixing}: $O_2, F_2$
+\[ \sigma_g(2s) < \sigma_u^*(2s) < \mathbf{\pi_u(2p) < \sigma_g(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
+
+This ``crossing over" happens because as we walk across a period, $Z_\text{eff}$ increases, as does the $\Delta E$ between orbital types. When $\Delta E \leq \SI{13}{\electronvolt}$, $s$ and $p$ orbitals can mix.
+
+\hrulefill
 
 \scriptsize
 
