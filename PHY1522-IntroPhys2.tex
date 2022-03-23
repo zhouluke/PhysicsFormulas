@@ -288,6 +288,9 @@ Permittivité du vide
 \[ 	\epsilon_0 = \SI{8,85E-12}{{\farad}/{\meter}} \quad [\text{ou } \si{{\coulomb^2}/{(\newton\cdot\meter^2)}}] \]
 \[	k = {1}/{4\pi\epsilon_0} = \SI{9,00E9}{\newton\cdot\meter^2/\kilogram^2}\]
 
+Perméabilité du vide
+\[ \mu_0 = 4\pi \times 10^{-7} \,\si{H/\meter} \quad [\text{ou }\si{\tesla\cdot\meter/\ampere}] \]
+
 Charge et masse de l'électron
 \begin{gather*}
 q_e = |e| = \SI{1,6E-19}{\coulomb}
@@ -322,8 +325,8 @@ Constante de Bolzmann
 Échelle de température
 \[ T_K = T_C + \SI{273,15}{\kelvin} \]
 
-Vitesse de la lumière
-\[ c = \SI{3E8}{\meter/\second}  \]
+Vitesse de la lumière (dans le vide)
+\[ c = \frac{1}{\sqrt{\mu_0 \epsilon_0}} = \SI{3E8}{\meter/\second}  \]
 
 \hrulefill
 
@@ -516,7 +519,19 @@ $2^\text{e}$ principe de la thermodynamique
 
 \section{Optique géométrique}
 
-Loi de Snell-Descartes {($\theta$ mesuré par rapport aux normales)}
+Vitesse de la lumière (cas général)
+\[ c = \frac{1}{\sqrt{\mu_0 \kappa \epsilon_0}} = \frac{c}{\sqrt{\kappa}} = \frac{c}{n}  
+\qquad
+\kappa=1 \text{ dans le vide}
+\]
+
+Fréquence d'oscillation $\nu$ [Hz] selon la longueur d'onde $\lambda$ [m]
+\[ \nu = \frac{c/n}{\lambda}\]
+
+Réflexion de la lumière {($\theta$ mesuré par rapport au normal)}
+\[ \theta_1 = \theta_2\]
+
+Réfraction : loi de Snell-Descartes {($\theta$ par rapport au normal)}
 \[ n_1 \sin\theta_1 = n_2 \sin\theta_2
 \]
 
@@ -551,7 +566,7 @@ Construction des rayons
 
 \hrulefill
 
-\section{Optique géometrique}
+\section{Optique physique}
 
 Diffraction à travers une fente double : maximums d'intensité et largeur de fente
 \[ d\sin\theta = m\lambda 
