@@ -98,7 +98,7 @@
      \small{Luke Zhou $\cdot$ PHY 1522 $\cdot$ Hiver 2022}
 \end{center}
 
-\section{Cinématique et énergie ($a$ constant)}
+\section{Cinématique ($a$ constant)}
 \begin{multicols}{2}
 \noindent
 \begin{gather*}
@@ -109,8 +109,8 @@ v^2 = v_0^2 + 2a\Delta x
 \begin{gather*}
 \Delta x = v_0 \Delta t + \frac{1}{2} a(\Delta t)^2 \\
 \Delta x = v\Delta t - \frac{1}{2} a(\Delta t)^2 \\
-KE = \frac{1}{2} mv^2 \quad
-PE = mgh
+%KE = \frac{1}{2} mv^2 \quad
+%U_g = mgh
 \end{gather*}
 \end{multicols}
 
@@ -123,7 +123,8 @@ Loi de Coulomb : force électrique [\si{\newton}] (charge ponctuelle)
  = \frac{k}{\kappa} \frac{qQ}{r^2} \uvec{r}  
 \quad \text{(charge ponctuelle)}
  \]
-\tableindent ($\uvec r$ pointe de la charge source $q$ à la charge cible $Q$)
+\tableindent ($\uvec r$ pointe de la charge source $q$ à la charge cible $Q$) \\
+\tableindent ($\kappa = 1$ dans le vide et dans les conducteurs)
 \extraline
 
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$] 
@@ -143,15 +144,17 @@ dq = \rho\, dV
  \qquad
  d\vec{E} = \frac{k}{\kappa} \frac{dq}{r^2 }  \uvec{r} \]
 
-
 Flux électrique [$\si{\newton\cdot\metre}$] et théorème de Gauss
 \[ 
 \Phi_E = \int \vec{E}\cdot d\vec{A}
 \qquad\quad
 \Phi_E = \oint \vec{E}\cdot d\vec{A} = \frac{Q_\text{intérieur}}{\kappa \epsilon_0} \]
 
-Champ électrique d'un plan infini
-\[ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infini)} \]
+Champ électrique : cas spéciaux
+\[ E =  \frac{\lambda}{2\pi\kappa\epsilon_0  r} \quad\text{(fil infini)} \qquad
+ E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infini)} \]
+\[ E =  \frac{kh}{\kappa (R^2 + h^2)^{3/2}} \, Q_\text{tot}  \quad\text{(anneau)} \]
+\[ E = \frac{2\pi\sigma  k}{\kappa}\left( 1- \frac{h}{\sqrt{R^2+h^2}} \right) \quad\text{(disque)} \]
 
 Potentiel électrique [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \begin{gather*}
@@ -163,34 +166,29 @@ Potentiel électrique [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\jou
 Énergie potentielle de deux charges ponctuelles
 \[ U_q = qV = \frac{k}{\kappa}  \frac{qQ}{r} = U_Q\]
 
-Travail [\si{\joule}] effectué par une force extérieure en déplaçant $q$ contre un champ $\vec{E}$
+Principes de superposition: à un point d'observation donné...
+\[ \vec{E} = \sum \vec{E}_i 
+\qquad \vec{F} = \sum \vec{F}_i 
+\qquad V = \sum {V}_i 
+\qquad U = \sum {U}_i \]
+
+Travail [\si{\joule}] effectué \underline{par une force extérieure} en déplaçant $q$ contre un champ $\vec{E}$
 \[ W_{A\to B} = W_\text{nc} = \Delta U_E = -q\int_{A}^{B} \vec{E}\cdot d\vec{r} = q\Delta V \]
 
-Travail [\si{\joule}] effectué par le champ $\vec{E}$ en déplaçant $q$ 
+Travail [\si{\joule}] effectué \underline{par le champ $\vec{E}$} en déplaçant $q$ 
 \[ W_{A\to B} =  -\Delta U_E = q\int_{A}^{B} \vec{E}\cdot d\vec{r} =- q\Delta V \]
 
-Principes de superposition: à un point d'observation...
-\[ \vec{E} = \sum \vec{E}_i 
-\qquad
- \vec{F} = \sum \vec{F}_i 
-\qquad
-V = \sum {V}_i 
-\qquad
-U = \sum {U}_i 
-\]
-
-Matériaux diélectriques
-\[ \epsilon = \kappa \epsilon_0 
-\qquad\quad
-\kappa = 1 \text{ {(vide, conducteurs)}}\]
-
-À la surface d'un conducteur  \\
+Conducteur  en équilibre électrostatique dans un champ $\vec{E}_\text{ext}$ \\
 \halfline
-\begin{tabular}{@{\tableindent}lll@{}}
-	À la surface & $ E_\perp = {\rho_s}/{\epsilon}$ & $E_\parallel = 0 $ \\
-	À l'intérieur  & $\vec{E}_\text{intérieur} = 0 $ &  $Q_\text{intérieur} = 0 $ \\
+\begin{tabular}{@{\tableindent}llll@{}}
+	À la surface & $ E_\perp = {\sigma}/{\epsilon}$ & $E_\parallel = 0 $ & $Q_\text{surf} = Q_\text{tot} $\\
+	À l'intérieur  & $\vec{E}_\text{int} = 0 $ &  $Q_\text{int} = 0 $ & \\
 \end{tabular}
 \halfline
+
+Matériaux diélectriques : permittivité et champ $\vec{E}$ à l'intérieur
+\[ \epsilon = \kappa \epsilon_0 
+\qquad\vec{E}_D = \frac{\vec{E}_\text{ext}}{\kappa}\]
 
 Condensateurs : capacitance [\si{\farad}] 
 \[ C \equiv \frac{Q}{\Delta V} \equiv \frac{Q}{V_+ - V_-} > 0 
@@ -216,7 +214,7 @@ C_\text{éq} = C_1 + C_2 + \dots  \qquad &\text{(parallèle)} \\
 
 \hrulefill
 
-\section{Courant électrique ($I$ constant)}
+\section{Courant électrique $\left(\frac{\partial I}{\partial t} = 0 \right)$}
 
 Courant [$\si{\ampere} = \si{\coulomb}/\si{\sec}$]
 \[ I \equiv \frac{dq}{dt} = n A e v_d \]
@@ -519,14 +517,16 @@ $2^\text{e}$ principe de la thermodynamique
 
 \section{Optique géométrique}
 
-Vitesse de la lumière (cas général)
-\[ c = \frac{1}{\sqrt{\mu_0 \kappa \epsilon_0}} = \frac{c}{\sqrt{\kappa}} = \frac{c}{n}  
+Vitesse de la lumière (cas général), fréquence d'oscillation $\nu$ [Hz] et  longueur d'onde $\lambda$ [m]
+\[ v = \frac{1}{\sqrt{\mu_0 \kappa \epsilon_0}} = \frac{c}{\sqrt{\kappa}} = \frac{c}{n}  
 \qquad
-\kappa=1 \text{ dans le vide}
+% (\kappa=1 \text{ dans le vide})
+%\]
+%\[
+\nu = \frac{c/n}{\lambda}
+\qquad
+\lambda_n = \frac{\lambda_0}{n}
 \]
-
-Fréquence d'oscillation $\nu$ [Hz] selon la longueur d'onde $\lambda$ [m]
-\[ \nu = \frac{c/n}{\lambda}\]
 
 Réflexion : principe de Huygens {($\theta$ par rapport à la normale)}
 \[ \theta_i = \theta_r\]
@@ -585,19 +585,34 @@ Construction des rayons
 
 \section{Optique physique}
 
-Diffraction à travers une fente double : maximums d'intensité et largeur de fente
+Diffraction à travers une \underline{fente double} : \underline{maximums} d'intensité et distance entre les fentes
 \[ d\sin\theta = m\lambda 
-\qquad d = \frac{m\lambda D}{y}
-\qquad (m=0,1,2,3,\dots) \]
+\qquad d  \approx \frac{m\lambda L}{y}
+\qquad (m=0,1,2,\dots) \]
 
-Diffraction à travers une fente simple : minimums d'intensité et largeur de fente
+Diffraction à travers une \underline{fente simple} : \underline{minimums} d'intensité et largeur de fente
 \[ a\sin\theta = m\lambda 
-\qquad a = \frac{m\lambda D}{y}
+\qquad a  \approx \frac{m\lambda L}{y}
 \qquad (m=1,2,3,\dots) \]
 
 Réseau de diffraction : franges claires
 \[ d\sin\theta = m\lambda
 \qquad (m=0,1,2,3,\dots) \]
+
+Approximations aux petits angles
+\[ \sin\theta \approx \theta 
+\qquad \tan\theta \approx \theta
+\qquad \cos\theta \approx 1-\frac{\theta^2}{2} \approx 1 
+\]
+
+Interféromètre de Michelson
+\[ \Delta L = 2(L_1-L_2) \]
+\begin{align*}
+	\Delta L =  m\lambda \quad \text{(constructive)}  \qquad
+	&(m=0,1,2,\dots) \\
+	\Delta L =  \frac{(2m+1)}{2} \lambda  \quad \text{(destructive)} \qquad
+	&(m=0,1,2,\dots)
+\end{align*}
 
 Polarisation de lumière : loi de Malus
 \[ I = I_0 \cos^2\varphi \]
@@ -718,9 +733,9 @@ Résolution d'une équation quadratique
 
 \scriptsize
 
-\href{https://github.com/zhouluke/PhysicsFormulas}{Dactylographie}  \copyright\ 2022 Luke Zhou. \\
+\href{https://github.com/zhouluke/PhysicsFormulas}{Dactylographie  \copyright\ 2022 Luke Zhou.} \\
 D'après le cours PHY 1522 Hiver 2022 de l'Université d'Ottawa. \\
-\href{http://wch.github.io/latexsheet/}{Modèle de document}  \copyright\ 2014 Winston Chang.
+\href{http://wch.github.io/latexsheet/}{Modèle de document \copyright\ 2014 Winston Chang.}
 
 
 \end{multicols}
