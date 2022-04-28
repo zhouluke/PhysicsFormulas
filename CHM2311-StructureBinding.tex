@@ -12,6 +12,8 @@
 
 \usepackage{siunitx}
 \usepackage{physics}
+\usepackage{comment}
+\usepackage{pdflscape}
 
 % English spacing
 \usepackage{icomma}
@@ -131,20 +133,33 @@ Schrödinger Wave Equation
 \[ \left[ \frac{-h^2}{8\pi^2m} +
 V(x,y,z)\right] \Psi(x,y,z) = E\Psi(x,y,z)  \]
 	
+Conditions for wave functions
+\begin{itemize}
+	\item $\psi$ is single-valued at every point
+	\item $\psi$ and its first derivative are continuous
+	\item $\psi \to 0$ as $r \to \infty$
+	\item $\int \psi^2 \, dV = 1$ over all space
+\end{itemize}
+
+Interpretation of wave function
+\[ \psi^2(x,y,z) = P(\text{e- is located at }(x,y,z))  \]
+
 Particle in a box
-\[ \Psi(x) = \sqrt{\frac{2}{a}} \sin\left( \frac{n\pi x}{a} \right)  \qquad n \in \mathbb{N} \]
-\[ E = \frac{n^2h^2}{8ma^2} \]
+\[  E = \frac{n^2h^2}{8ma^2} 
+\qquad
+\Psi(x) = \sqrt{\frac{2}{a}} \sin\left( \frac{n\pi x}{a} \right)  \quad n \in \mathbb{N} \]
 
 Particle on a ring
-\[ \Psi(x) = B \exp \left(\frac{in\pi x}{L} \right)
-\qquad n \in \mathbb{Z}, L = n\lambda  \]
-\[ E = \frac{h^2}{8mL^2} (2n)^2 \]
+\[ E = \frac{h^2}{8mL^2} (2n)^2 
+\qquad
+\Psi(x) = B \exp \left(\frac{in\pi x}{L} \right)
+\quad n \in \mathbb{Z}, L = n\lambda  \]
 
 Hydrogenic wave functions
 \[ \Psi(r,\theta,\phi) = R(r) Y(\theta,\phi) \]
 
 \tableindent N.B. $R(r)$ is usually graphed against $r/a_0$
-
+\halfline
 
 Quantum numbers 
 \begin{tabular}{@{\tableindent}lllp{2.5cm}@{}}
@@ -154,9 +169,9 @@ $m_l$ & Magnetic & $0, \pm 1, \pm 2, \ldots \pm l $ & \scriptsize{orbital orient
 $m_s$ & Spin & $-\frac{1}{2}, +\frac{1}{2} $ &  \scriptsize{angular momentum direction} \\
 \end{tabular}
 
-\extraline
+\halfline
 \tableindent $l$ can also be described with the letters $s, p, d, f, g, \ldots$
-\extraline
+\halfline
 
 Radial \& angular nodes
 
@@ -348,6 +363,7 @@ VSEPR: bond angle trends for molecules with \underline{lone pairs}
 	\begin{itemize}
 		\item  $\downarrow$ e- density on A = $\uparrow$ space occupied by LPs = $\downarrow$ repulsion b/w BP 
 		\item $\therefore$ $\downarrow$ bond angles
+		\item c.f. puppy on a long leash going wild
 	\end{itemize}
 
 \item Central atom A: 
@@ -400,8 +416,8 @@ Valence Bond Theory: Orbital hybridization
 
 \section{Symmetry \& Group Theory}
 
-%Symmetry elements: points, axes, planes
-%\extraline
+Symmetry elements: points, axes, planes
+\halfline
 
 Symmetry operations
 %
@@ -435,7 +451,8 @@ Other terms \& symbols
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
-Point group flow chart
+Point group flow chart: see back
+\begin{comment}
 \vspace{-1.5em}
 \begin{center}
 	\includegraphics[width=\linewidth]{./chm2311/point-group-chart.jpeg}
@@ -443,6 +460,7 @@ Point group flow chart
 \vspace{-1em}
 \tableindent For the group $S_n$, $n$ must be even; otherwise, $S_n = C_{nh}$.
 \extraline
+\end{comment}
 
 Types of matrix representations for an operation
 \begin{itemize}
@@ -457,9 +475,10 @@ Characters in an irreducible representation
 	-1 & Antisymmetric w.r.t the operation \\
 \end{tabular}
 
-\tableindent N.B. We align the principle axis of rotation w/ the $z$-axis.
-\extraline
+\tableindent N.B. The principle axis of rotation is aligned w/ the $z$-axis.
+\halfline
 
+\columnbreak
 Symmetry labels
 %
 \renewcommand{\arraystretch}{1.4}
@@ -543,8 +562,8 @@ Terms to know
 	\item Bonding vs. non-bonding interactions
 	\item Side-to-side vs. end-to-end (head-to-head) vs. orthogonal interactions
 	\item Constructive vs. destructive vs. zero interference
+	\item Atomic orbitals (AOs), group orbitals (GOs), molecular orbitals (MOs)
 \end{itemize}
-
 
 
 Bond order
@@ -576,18 +595,28 @@ Second period diatomics: orbital order \underline{w/o orbital mixing}: $B_2, C_2
 Second period diatomics: orbital order \underline{w/ orbital mixing}: $O_2, F_2$
 \[ \sigma_g(2s) < \sigma_u^*(2s) < \mathbf{\pi_u(2p) < \sigma_g(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
 
-This ``crossing over" happens because as we walk across a period, $Z_\text{eff}$ increases, as does the $\Delta E$ between orbital types. When $\Delta E \leq \SI{13}{\electronvolt}$, $s$ and $p$ orbitals can mix.
+Conditions for orbital mixing
+\begin{itemize}
+	\item This ``crossing over" happens because as we walk across a period, $Z_\text{eff}$ increases, as does the $\Delta E$ between orbital types
+	\item When $\Delta E \leq \SI{13}{\electronvolt}$, $s$ and $p$ orbitals can mix.
+\end{itemize}
 
-Stronger bonds = more virational fine structure = more peaks in photoelectron spectroscopy graph
+Vibrational fine structure
+\begin{itemize}
+	\item Stronger bonds = more vibrational fine structure = more peaks in photoelectron spectroscopy graph
+	\item Non-binding character = no vibrational fine structure
+\end{itemize}
+
 
 Things to remember when drawing molecular orbital (MO) diagrams
 \begin{itemize}
 	\item $\sigma$-bonds: 0 nodes b/w nuclei; $\pi$: 1 node; $\delta$: 2 nodes 
-	\item Atomic orbitals (AOs) \& group orbitals (GOs) interact when $\Delta E \leq \SI{13}{\electronvolt}$
-	\item For interacting AOs/GOs: $\downarrow \Delta E$ b/w AOs/GOs = $\uparrow \Delta E$ b/w bonding \& anti-bonding MOs
+	\item Fewer nodes = more stability = lower E
+	\item AOs \& GOs interact when $\Delta E \leq \SI{13}{\electronvolt}$
+	\item $\downarrow \Delta E$ b/w interacting AOs/GOs = $\uparrow \Delta E$ b/w their bonding \& anti-bonding MOs
 	\begin{itemize}
-			\item Homonuclear diatomics: high separation b/w bonding and anti-bonding MOs
-			\item Heteronuclear diatomics: lower separation b/w bonding and anti-bonding MOs
+			\item Homonuclear diatomics: high $\Delta E$ b/w bonding and anti-bonding MOs
+			\item Heteronuclear diatomics: lower $\Delta E$ b/w bonding and anti-bonding MOs
 	\end{itemize}
 	\item Bonding MOs: more like the lower-energy AO/GO in character
 	\item Anti-bonding MOs: more like the higher-energy AO/GO in character
@@ -609,6 +638,36 @@ Steps in drawing MOs for large molecules
 	\item Combine AOs of the central atom to the GOs having suitable symmetry
 \end{enumerate}
 
+\hrulefill
+\end{multicols}
+
+
+\begin{landscape}
+
+\section*{Figures}
+
+
+
+
+\subsection*{Point Group Chart}
+\begin{center}
+	\href{https://chemistry.stackexchange.com/questions/68996/what-is-the-symmetry-of-the-cuboctahedron-fcc-metal}{
+		\includegraphics[width=18cm]{./chm2311/point-group-chart.jpeg}
+	}
+\end{center}
+
+For the group $S_n$, $n$ must be even; otherwise, $S_n = C_{nh}$.
+\extraline
+
+\subsection*{Unit Circle}
+
+\begin{center}
+	\href{https://www.fotolip.com/unit-circle-6524.html}{
+		\includegraphics[width=12cm]{./chm2311/Unit-Circle.png}
+	}
+\end{center}
+
+
 
 \hrulefill
 
@@ -618,6 +677,6 @@ Steps in drawing MOs for large molecules
 Based on the course CHM 2311 Winter 2022 at the University of Ottawa \\
 \href{http://wch.github.io/latexsheet/}{Document template}  \copyright\ 2014 Winston Chang.
 
+\end{landscape}
 
-\end{multicols}
 \end{document}
