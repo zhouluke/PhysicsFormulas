@@ -171,6 +171,9 @@ Hydrogenic wave functions
 \tableindent N.B. $R(r)$ is usually graphed against $r/a_0$
 \halfline
 
+Bohr radius {(most probable dist b/w nucleus \& e- in a ground-state H atom)}
+\[ a_0 = \SI{52.9}{\pico\metre} \]
+
 Quantum numbers 
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{@{\tableindent}lllp{2.5cm}@{}}
@@ -185,7 +188,7 @@ $m_s$ & Spin & $-\frac{1}{2}, +\frac{1}{2} $ &  \scriptsize{angular momentum dir
 \halfline
 
 Radial \& angular nodes
-\begin{tabular}{@{\tableindent}llp{2.4cm}@{}}
+\begin{tabular}{@{\tableindent}llp{2.4cm}<{\raggedright}@{}}
 \# of radial nodes & $n-l-1$ & $R(r) = 0$ \scriptsize{(spheres)}\\
 \# of angular nodes & $l$ &  $Y(\theta,\phi)=0$ \scriptsize{(planes, cones)} \\
 Total \# of nodes & $n-1$ & 
@@ -194,7 +197,7 @@ Total \# of nodes & $n-1$ &
 
 Electron configurations
 
-\begin{tabular}{@{\tableindent}p{2.5cm}p{4.5cm}@{}}
+\begin{tabular}{@{\tableindent}p{2.5cm}<{\raggedright}p{4.5cm}@{}}
 Aufbau Principle & Fill lower energy levels first: 1s, 2s, 2p, 3s, 3p, \textbf{4s}, \textbf{3d}, 4p, 5s, 4d, 5p, \ldots\\
 Pauli Exclusion Principle & No two e- can have the same set of quantum numbers. \\
 Hund's Rule & Fill degenerate levels separately w/ spins parallel -- this minimizes the energies below \\
@@ -330,7 +333,7 @@ Lewis acid & Electrophile (e- pair acceptor) & atoms lacking full octets
 \end{tabular}
 \halfline
 
-Resonance Theory: things to remember
+Resonance Theory: points to remember
 \begin{itemize}
 	\item When double bonds are next to single bonds, there is potential for the bond types to flip
 	\item The most-stable structures minimize the formal charges on individual atoms
@@ -417,17 +420,17 @@ Valence Bond Theory: Orbital hybridization
 \renewcommand{\arraystretch}{1}
 \begin{tabular}{@{\tableindent}cll@{}}
 	\textsc{Steric \#} & \textsc{Geometry} & \textsc{Hybridization} \\ 
-	2 & Linear & (none) \\
+	2 & Linear & $sp$ \\
 	3 & Trigonal Planar 
-	& $sp$ \\
-	4 & Tetrahedral 
 	& $sp^2$ \\
-	5 & Trigonal Bipyramidal 
+	4 & Tetrahedral 
 	& $sp^3$ \\
-	6 & Octahedral 
+	5 & Trigonal Bipyramidal 
 	& $sp^3d$ \\
-	7 & Pentagonal Bipyramidal & $sp^3d^2$ \\ 
-	8 & Square Antiprismatic & $sp^3d^3$ \\
+	6 & Octahedral 
+	& $sp^3d^2$ \\
+	7 & Pentagonal Bipyramidal & $sp^3d^3$ \\ 
+	8 & Square Antiprismatic & $sp^3d^4$ \\
 \end{tabular}
 \extraline
 \renewcommand{\arraystretch}{1.4}
@@ -478,7 +481,7 @@ Point group flow chart: see back
 Types of representations
 \begin{itemize}
 	\item Matrix representation: for a single operation
-	\item Irreducible representation
+	\item Irreducible representation: a row in the character table
 	\item Reducible representation ($\Gamma$ = $\sum$ of all irreducible representation characters for a given operation)
 \end{itemize}
 
@@ -576,6 +579,7 @@ Terms to know
 	\item Side-to-side vs. end-to-end (head-to-head) vs. orthogonal interactions
 	\item Constructive vs. destructive vs. zero interference
 	\item Atomic orbitals (AOs), group orbitals (GOs), molecular orbitals (MOs)
+	\item Symmetry-adapted linear combinations of orbitals (SALCs)
 \end{itemize}
 
 
@@ -608,7 +612,6 @@ Second period homonuclear diatomics: orbital order \underline{w/o orbital mixing
 Second period homonuclear diatomics: orbital order \underline{w/ orbital mixing}: $O_2, F_2$
 \[ \sigma_g(2s) < \sigma_u^*(2s) < \boldsymbol{\pi_u(2p) < \sigma_g(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
 
-Conditions for orbital mixing
 \begin{itemize}
 	\item ``Crossing over" happens because as we walk across a period, $Z_\text{eff}$ increases, as does the $\Delta E$ between orbital types
 	\item When $\Delta E \leq \SI{13}{\electronvolt}$, $s$ and $p$ orbitals can mix.
@@ -621,7 +624,7 @@ Vibrational fine structure
 \end{itemize}
 
 
-Things to remember when drawing molecular orbital (MO) diagrams
+To remember when drawing molecular orbital (MO) diagrams
 \begin{itemize}
 	\item $\sigma$-bonds: 0 nodes b/w nuclei; $\pi$: 1 node; $\delta$: 2 nodes 
 	\item Fewer nodes = more stability = lower E
@@ -645,10 +648,10 @@ Terms relating to MOs
 
 Steps in drawing MOs for large molecules
 \begin{enumerate}
-	\item Determine the point group of the molecule.
-	\item Determine the point group for each of the central atom's AOs -- consider the whole molecule's point group
-	\item Find the point group for each of the GOs (symmetry-adapted linear combinations of the orbitals; SALCs) 
-	\item Combine AOs of the central atom to the GOs having suitable symmetry
+	\item Determine the point group of the molecule (If $C_{\infty h}$ or  $D_{\infty h}$, use $C_{2h}$ \& $D_{2h}$ instead)
+	\item Determine the point group for each of the central atom's AOs -- consider the molecule's point group
+	\item Find the point group for each of the GOs (SALCs) 
+	\item Combine AOs of the central atom to the GOs having suitable symmetry, as long as $\Delta E \leq \SI{13}{\electronvolt}$
 \end{enumerate}
 
 \hrulefill
