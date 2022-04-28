@@ -110,6 +110,16 @@ Energy emitted by a \underline{hydrogen} atom: Bohr model
  \[ \Delta E = E_{h} - E_{l} = R_H \left(  \frac{1}{n_l^2} - \frac{1}{n_h^2} \right) \] 
  \[ R_H =  \SI{2.179E-18}{\joule} \]
 
+Bohr model: terms to know \\
+\halfline
+\begin{tabular}{@{\tableindent}ll@{}}
+	Ground state & $n = 1$ (lowest energy state) \\
+	Excited state & $n>1$ \\
+	Ion  & $n \to \infty$ \\
+\end{tabular}
+\extraline
+
+
 Hydrogen emission spectra series \\
 \begin{tabular}{@{\tableindent}ll@{}}
 	Lyman series & $n_l = 1$ \\
@@ -151,7 +161,7 @@ Particle in a box
 
 Particle on a ring
 \[ E = \frac{h^2}{8mL^2} (2n)^2 
-\qquad
+\quad
 \Psi(x) = B \exp \left(\frac{in\pi x}{L} \right)
 \quad n \in \mathbb{Z}, L = n\lambda  \]
 
@@ -162,6 +172,7 @@ Hydrogenic wave functions
 \halfline
 
 Quantum numbers 
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{@{\tableindent}lllp{2.5cm}@{}}
 $n$ & Principal & $1, 2, 3, 4, \ldots $ & \scriptsize{orbital size} \\
 $l$ & Angular & $0, 1, 2 \dots  n-1 $ & \scriptsize{orbital shape} \\
@@ -174,7 +185,6 @@ $m_s$ & Spin & $-\frac{1}{2}, +\frac{1}{2} $ &  \scriptsize{angular momentum dir
 \halfline
 
 Radial \& angular nodes
-
 \begin{tabular}{@{\tableindent}llp{2.4cm}@{}}
 \# of radial nodes & $n-l-1$ & $R(r) = 0$ \scriptsize{(spheres)}\\
 \# of angular nodes & $l$ &  $Y(\theta,\phi)=0$ \scriptsize{(planes, cones)} \\
@@ -251,6 +261,8 @@ Periodic trends
 \item Electronegativity: ability of a bonded atom to attracted shared electrons. EN is relative.
 \end{itemize}
 
+
+
 \hrulefill
 
 
@@ -272,8 +284,8 @@ Bohr radius {(most probable dist b/w nucleus \& e- in a ground-state H atom)}
 \[ a_0 = \SI{52.9}{\pico\metre} \]
 
 Conversions
-\[ \SI{1}{\metre} = 10^9 \, \si{\nano\metre} = 10^{12} \, \si{\pico\metre}\]
-\[ \SI{1}{\joule} = \SI{1}{\kilogram\cdot\metre^2/\sec^2}  \]
+\[ \SI{1}{\metre} = 10^9 \, \si{\nano\metre} = 10^{12} \, \si{\pico\metre} \qquad
+\SI{1}{\joule} = \SI{1}{\kilogram\cdot\metre^2/\sec^2}  \]
 
 
 \hrulefill
@@ -289,6 +301,7 @@ Types of bonding
 \end{tabular}
 
 Lewis structures: formal charge
+\renewcommand{\arraystretch}{1}
 \[
 \begin{pmatrix}
 	 \text{\# of valence e-} \\
@@ -307,8 +320,7 @@ Lewis structures: formal charge
 \end{pmatrix}
 \]
 \[ \text{Total charge on molecule or ion} = \text{sum of formal charges} \]
-
-\extraline
+\renewcommand{\arraystretch}{1.4}
 
 Lewis structures: chemical properties
 
@@ -316,16 +328,24 @@ Lewis structures: chemical properties
 Lewis base & Nucleophile (e- pair donor) & -ve formal charges \& lone pairs \\
 Lewis acid & Electrophile (e- pair acceptor) & atoms lacking full octets
 \end{tabular}
-\extraline
+\halfline
+
+Resonance Theory: things to remember
+\begin{itemize}
+	\item When double bonds are next to single bonds, there is potential for the bond types to flip
+	\item The most-stable structures minimize the formal charges on individual atoms
+	\item $\uparrow$ stable of structure = $\uparrow$ contribution to the overall resonance structure
+\end{itemize}
+\halfline
 
 VSEPR notation
 \[ \text{AX}_n\text{E}_m \]
 \tableindent (A: central atom, $n$: \# of bonding pairs, $m$: \# of lone pairs) \\
-\extraline
+\halfline
 
 
 VSEPR (Valence Shell Electron Pair Repulsion Theory): geometries \& shapes
-
+\halfline
 \begin{tabular}{@{\tableindent}cp{0.3\linewidth}<{\raggedright}p{0.4\linewidth}<{\raggedright}@{}}
 \textsc{Steric \#} & \textsc{Geometry} & \textsc{Shapes} \\ 
 2 & Linear (180°) 
@@ -341,7 +361,7 @@ VSEPR (Valence Shell Electron Pair Repulsion Theory): geometries \& shapes
 7 & Pentagonal Bipyramidal & \\ %(72°, 90°)
 8 & Square Antiprismatic & \\ %(70,5°, 99,6°, 109,5°)
 \end{tabular}
-\extraline
+
 
 Lone pair placement:  $\downarrow$ \# of nearest neighbours (in terms of angle)
 \begin{itemize}
@@ -394,7 +414,7 @@ $\pi$ bonds & double/triple bonds & interactions b/w  remaining unhybridized orb
 \extraline
 
 Valence Bond Theory: Orbital hybridization 
-%
+\renewcommand{\arraystretch}{1}
 \begin{tabular}{@{\tableindent}cll@{}}
 	\textsc{Steric \#} & \textsc{Geometry} & \textsc{Hybridization} \\ 
 	2 & Linear & (none) \\
@@ -410,11 +430,12 @@ Valence Bond Theory: Orbital hybridization
 	8 & Square Antiprismatic & $sp^3d^3$ \\
 \end{tabular}
 \extraline
-
+\renewcommand{\arraystretch}{1.4}
 
 \hrulefill
 
 \section{Symmetry \& Group Theory}
+
 
 Symmetry elements: points, axes, planes
 \halfline
@@ -452,33 +473,25 @@ Other terms \& symbols
 \renewcommand{\arraystretch}{1}
 
 Point group flow chart: see back
-\begin{comment}
-\vspace{-1.5em}
-\begin{center}
-	\includegraphics[width=\linewidth]{./chm2311/point-group-chart.jpeg}
-\end{center}
-\vspace{-1em}
-\tableindent For the group $S_n$, $n$ must be even; otherwise, $S_n = C_{nh}$.
-\extraline
-\end{comment}
 
-Types of matrix representations for an operation
+\columnbreak
+Types of representations
 \begin{itemize}
-	\item Matrix representation
+	\item Matrix representation: for a single operation
 	\item Irreducible representation
-	\item Reducible representation ($\Gamma$ = $\sum$ of irreducible representation characters for the operation)
+	\item Reducible representation ($\Gamma$ = $\sum$ of all irreducible representation characters for a given operation)
 \end{itemize}
 
 Characters in an irreducible representation
-\begin{tabular}{@{\tableindent}ll@{}}
+\begin{tabular}{@{\tableindent}lp{0.75\linewidth}@{}}
 	1 & Symmetric w.r.t the operation \\
 	-1 & Antisymmetric w.r.t the operation \\
+	0 & Neither antisymmetric nor symmetric w.r.t the operation \\
 \end{tabular}
 
 \tableindent N.B. The principle axis of rotation is aligned w/ the $z$-axis.
 \halfline
 
-\columnbreak
 Symmetry labels
 %
 \renewcommand{\arraystretch}{1.4}
@@ -589,15 +602,15 @@ Bond order
 }{\text{\# of interations}}
 \]
 
-Second period diatomics: orbital order \underline{w/o orbital mixing}: $B_2, C_2, N_2$
-\[ \sigma_g(2s) < \sigma_u^*(2s) < \mathbf{\sigma_g(2p) < \pi_u(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
+Second period homonuclear diatomics: orbital order \underline{w/o orbital mixing}: $B_2, C_2, N_2$
+\[ \sigma_g(2s) < \sigma_u^*(2s) < \boldsymbol{\sigma_g(2p) < \pi_u(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
 
-Second period diatomics: orbital order \underline{w/ orbital mixing}: $O_2, F_2$
-\[ \sigma_g(2s) < \sigma_u^*(2s) < \mathbf{\pi_u(2p) < \sigma_g(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
+Second period homonuclear diatomics: orbital order \underline{w/ orbital mixing}: $O_2, F_2$
+\[ \sigma_g(2s) < \sigma_u^*(2s) < \boldsymbol{\pi_u(2p) < \sigma_g(2p)} < \pi_g^*(2p) < \sigma_u^*(2p) \]
 
 Conditions for orbital mixing
 \begin{itemize}
-	\item This ``crossing over" happens because as we walk across a period, $Z_\text{eff}$ increases, as does the $\Delta E$ between orbital types
+	\item ``Crossing over" happens because as we walk across a period, $Z_\text{eff}$ increases, as does the $\Delta E$ between orbital types
 	\item When $\Delta E \leq \SI{13}{\electronvolt}$, $s$ and $p$ orbitals can mix.
 \end{itemize}
 
@@ -633,7 +646,7 @@ Terms relating to MOs
 Steps in drawing MOs for large molecules
 \begin{enumerate}
 	\item Determine the point group of the molecule.
-	\item Determine the point group for each of the central atom's orbitals, within the molecule's point group.
+	\item Determine the point group for each of the central atom's AOs -- consider the whole molecule's point group
 	\item Find the point group for each of the GOs (symmetry-adapted linear combinations of the orbitals; SALCs) 
 	\item Combine AOs of the central atom to the GOs having suitable symmetry
 \end{enumerate}
