@@ -11,7 +11,7 @@
 \usepackage{amssymb}
 \usepackage{empheq,amsthm}
 \usepackage[Lenny]{fncychap}
-
+\usepackage{xcolor}
 
 \newcommand{\degr}{\ensuremath{^\circ}}
 
@@ -22,7 +22,7 @@
 
 \title{PHYS 232: Heat \& Waves \\ Waves Study Notes}
 \author{Luke Zhou \\ McGill University}
-\date{Winter 2013}
+\date{Winter 2013 \& Summer 2023}
 
 \begin{document}
 \maketitle
@@ -50,22 +50,15 @@ F(x) &= -k_1x
 When a small mass is attached to the end of a massless spring:
 \[ \boxed{-k_1x = m\frac{d^2x}{dt^2}} \] 
 
-Solve the differential equation to obtain an equation that shows the motion is \textbf{sinusoidal}: \[ \boxed{x = A \sin(\omega t+\varphi_0)} \] %
+The solution to the differential equation gives a \textbf{sinusoidal} function: \[ \boxed{x = A \sin(\omega t+\varphi_0)} \] %
 \begin{center} 
 where \textbf{angular frequency} $\boxed{\omega = \sqrt{k_1/m}}$ \textit{(independent of A and $\varphi_0$)}
 
 Period: $T=\frac{2\pi}{\omega} $; Frequency: $f = \frac{1}{T}=\frac{\omega}{2\pi} $   \\
 \end{center}
 
-Set t = 0 to obtain:
-\begin{empheq}[left=\empheqlbrace]{align*}
-x_0 &= A\sin\varphi_0 \\
-v_0 &=\omega A\cos\varphi_0
-\end{empheq}
-Then:
-\[ A = \sqrt{x_0^2 + \left(\frac{v_o}{\omega}\right)^2} \text{ and } \varphi_0 = \arctan\left(\frac{v_o}{\omega}\right) \]
 
-Real vibrations don't go on forever; SHM models a \textbf{steady state of vibration} - the vibrations must be long-continued in terms of \textit{number of periods elapsed}. 
+Real vibrations don't go on forever; SHM models a \textbf{steady state of vibration}.
 
 More conditions for using a sinusoidal SHM model:
 \begin{multicols}{4}
@@ -253,34 +246,118 @@ The patterns depend on the $\omega_1:\omega_2$ ratio.
 If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repeating pattern will not be produced.
 
 \chapter{Free Vibrations}
-Two components necessary for oscillatory motion:
-\begin{enumerate}
-\item \textbf{Inertial component} to store \textit{kinetic energy}.
-\item \textbf{Elastic component} to store \textit{elastic potential energy}.
-\end{enumerate}
+
+\section{Summary}
+Each of the systems analyzed in this chapter has:
+\begin{itemize}
+	\item a constant representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy
+	\item a constant representing the \textcolor{blue}{inertia} of the system $\longrightarrow$ potential energy
+\end{itemize}
+
+All the systems have an equation of motion of the form:
+\[x = A \cos(\omega t+\alpha)\hspace{0.5cm}\text{where }\omega^2 = \frac{\color{red}{\text{elasticity}}}{\color{blue}\text{inertia}}\]
+
+\subsection{Systems analyzed through a force equation}
+\begin{center}
+	\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{lll}
+	\hline
+	Type of system & Force equation & $\omega^2$ \\ \hline
+	Mass on spring &
+		$\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0$ &
+		$\dfrac{\color{red}{k}}{\color{blue}m}$
+		\\
+	\parbox{3cm}{Mass on wire \footnotesize{(with Young's Modulus $Y$)}} &
+		$\textcolor{blue}{m}\ddot{x} + \textcolor{red}{\frac{AY}{l_0}}x = 0$ &
+		$\dfrac{\color{red}{AY}}{\color{red}{l_0}\color{blue}m} = \dfrac{g}{h}$ 
+		\\
+	Floating objects &
+		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{g\rho A}y = 0$ &
+		$\dfrac{\color{red}{g\rho A}}{\color{blue}m} = \dfrac{g}{h}$ 
+		\\
+	Torsional oscillations &
+		$\textcolor{blue}{I}\ddot{\theta} + \textcolor{red}{c}\theta = 0$ &
+		$\dfrac{\color{red}{c}}{\color{blue}I}$ 
+		\\
+	Spring of air &
+		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{\frac{Ap}{l}}y = 0$ &
+		$\dfrac{\color{red}{Ap}}{\color{red}{l}\color{blue}m}$ 
+		\\
+	\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+$h$ is the change in position that occurs in \emph{static equilibrium} when the mass is first hung or the floating object is first placed in a liquid. To find $h$:
+\[ F_g = F_\text{restoring}\Longrightarrow mg = kh \Longrightarrow h = \frac{mg}{k} \]
+
+\subsection{Systems analyzed through the conservation of energy}
+\begin{center}
+	\renewcommand{\arraystretch}{2.5}
+	\begin{tabular}[t]{lll}
+		\hline
+		Type of system & Energy equation & $\omega^2$ \\ \hline
+		Mass on spring &
+			$\frac{1}{2}\textcolor{blue}{m}\dot{x}^2 + \frac{1}{2}\textcolor{red}{k}x^2 = E $ &
+			$\dfrac{\color{red}{k}}{\color{blue}m}$
+			\\
+		Pendulum &
+			$\frac{1}{2}\textcolor{blue}{I}\dot{\theta}^2 + \frac{1}{2}\textcolor{red}{mgl}\theta^2 = E $ &
+			$\dfrac{\color{red}{mgl}}{\color{blue}{I}} = \dfrac{\color{red}{mgl}}{\color{blue}{ml^2}}= \dfrac{\color{red}{g}}{\color{blue}{l}}$ 
+			\\
+		\parbox{5.5cm}{Pendulum \footnotesize(with radius of gyration $k$, centre of mass at distance $h$ from point of suspension)}&
+			$\frac{1}{2}\textcolor{blue}{m(k^2+h^2)}\dot{\theta}^2 + \frac{1}{2}\textcolor{red}{mgh}\theta^2 = E $ &
+			$\dfrac{\color{red}{gh}}{\color{blue}{k^2+h^2}}$ 
+			\\
+		Water in a U-tube &
+			$\frac{1}{2}\textcolor{blue}{\rho Al}\dot{y} + \frac{1}{2}\textcolor{red}{(2g\rho A)}y^2 = E$ &
+			$\dfrac{\color{red}{2g}}{\color{blue}l}$ 
+			\\
+		Torsional oscillations &
+			$\frac{1}{2}\textcolor{blue}{I}\dot{\theta} + \frac{1}{2}\textcolor{red}{c}\theta^2 = E$ &
+			$\dfrac{\color{red}{c}}{\color{blue}I}$ 
+			\\
+		Springs with mass $M$ &
+			$\frac{1}{2}\textcolor{blue}{\left(m + \frac{1}{3}M \right)}\dot{x} + \frac{1}{2}\textcolor{red}{k}x^2 = E$ &
+			$\dfrac{\color{red}{k}}{\color{blue}{m + M/3}}$ 
+			\\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
 
 \section{Mass on Spring}
-(Assumption: spring is massless.)
+Consider a mass attached to a spring having no mass.
 
-\begin{empheq}[right=\empheqrbrace]{align}
-\text{By Newton's Law: } -kx =m\ddot{x}& \label{eqNL} \\
-\text{By Conservation of Energy: } \frac{1}{2}m\dot{x}^2 + \frac{1}{2}kx^2 = E \label{eqCE}&
-\end{empheq}
+(Note that gravity only changes the equilibrium position of the spring system, without changing the SHM nature of the system.)
 
-Note that (\ref{eqCE}) is the \textit{first integral} of (\ref{eqNL}).
+\begin{align}
+\text{From Newton's Law: }&
+	\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0 \label{eqNL} \\
+\text{From Conservation of Energy: }&
+	\frac{1}{2}\textcolor{blue}{m}\dot{x}^2 + \frac{1}{2}\textcolor{red}{k}x^2 = E \label{eqCE}
+\end{align}
 
-Solve either of the equations to get the expected result: 
-$x = A \sin(\omega t+\varphi_0)$, $\omega = \sqrt{k/m}$
+Note that \eqref{eqCE} is the \textit{first integral} of  \eqref{eqNL}.
+
+Any equation in the form of \eqref{eqCE} or \eqref{eqNL} will have a solution in the following form:
+\[x = A \cos(\omega t+\alpha)\hspace{0.5cm}\text{where }\omega^2 = \frac{\color{red}{k}}{\color{blue}m}\]
+
+\begin{itemize}
+	\item $\color{red}k$ is a constant representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy.
+	\item $\color{blue}m$ is a constant representing the \textcolor{blue}{inertia} of the system $\longrightarrow$ potential energy.
+\end{itemize}
 
 \begin{proof}[Process of solving:\\]
-Rewrite (\ref{eqNL}) in terms of k/m:
+Rewrite \eqref{eqNL} in terms of k/m:
 \begin{align}
 kx+m\ddot{x}&=0 \notag\\
 \frac{k}{m}x+\ddot{x}&=0 \notag\\
 \ddot{x}+\omega^2x &=0 \label{eqxdd}
 \end{align}
 
-In \eqref{eqxdd}, $\ddot{x}$ is a multiple of itself. This is a property of the exponential function, so write: \begin{equation} x=Ce^{pt} \label{eqxCPT} \end{equation} where $p$ is a dimensional constant such that $pt$ is dimensionless, and $C$ is a coefficient.%
+\eqref{eqxdd} implies $\ddot{x}$ is a multiple of $x$. This is a property of the exponential function, so write: \begin{equation} x=Ce^{pt} \label{eqxCPT} \end{equation} where $p$ is a dimensional constant such that $pt$ is dimensionless, and $C$ is a coefficient.%
 
 \begin{align*}
 \intertext{Sub \eqref{eqxCPT} into \eqref{eqxdd}:}
@@ -338,7 +415,6 @@ Let $F$ represent the force \textit{by} a wire \textit{onto} another object:
 \begin{equation} \frac{dF/A}{dl/dl_0} = -Y \Longrightarrow dF = \frac{-AY}{l_0}dl \label{youngs_dF} \end{equation}
 Let $dl = x$ and $dF=F$: \begin{equation} \boxed{F=\frac{-AY}{l_0}x=-kx} \text{ where } k=\frac{-AY}{l_0} \label{youngs_F} \end{equation}
 
-Young's Modulus represents values at 100\% elongation, but materials generally fail at magnitudes much smaller.
 
 Hang $m$ on the end of a wire:
 For small $A$ (as to not exceed the stretch limit), $T=2\pi\sqrt{\frac{ml_0}{AY}}$.
@@ -396,7 +472,7 @@ So, \eqref{eqPendulumE} becomes: \[ \frac{1}{2}ml^2 \left( \frac{d\theta}{dt} \r
 
 \subsection{Pendulum of an Arbitrary Shape}
 %\begin{figure}[h]
-%\includegraphics[scale=0.42]{diablotinx_0.jpg} \caption{dialotinx}
+%\includegraphics[scale=0.42]{diablotinx_0.jpg} \caption{Sexy beast, dialotinx of Proximeety!}
 %\end{figure}
 
 Let its center of mass $C$ be at a dist $h$ from the point of suspension. Let $I$ represent the moment of inertia about the horizontal axis through $O$. Then:
