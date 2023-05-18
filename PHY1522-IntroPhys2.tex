@@ -118,7 +118,7 @@ v^2 = v_0^2 + 2a\Delta x
 
 \section{Électrostatique $\left(\frac{\partial q}{\partial t} = 0 \right)$}
 
-Loi de Coulomb : force électrique [\si{\newton}] (charge ponctuelle)
+Loi de Coulomb : force électrique [\si{\newton}] 
  \[ \vec{F} 
  = \frac{k}{\kappa} \frac{qQ}{r^2} \uvec{r}  
 \quad \text{(charge ponctuelle)}
@@ -126,14 +126,16 @@ Loi de Coulomb : force électrique [\si{\newton}] (charge ponctuelle)
  \[ \uvec{r} = \pm \uvec{i} \cos\theta \pm \uvec{j} \sin\theta \]
 \tableindent ($\uvec r$ pointe de la charge source $q$ à la charge cible $Q$) \\
 \tableindent ($\kappa = 1$ dans le vide et dans les conducteurs)
-\extraline
+\halfline
 
 Champ électrique [$\si{\newton/\coulomb}$, $\si{\volt/\metre}$] 
 \[
 \vec{E} = \frac{\vec{F}}{Q} 
-= \frac{k}{\kappa} \frac{q}{r^2 }  \uvec{r} \quad \text{(charge ponctuelle)}
+\qquad
+\vec{E} = \frac{k}{\kappa} \frac{q}{r^2 }  \uvec{r} \enspace \text{(charge ponctuelle)}
 %\qquad 
 %\vec{u} = \uvec{i}\cos\theta + \uvec{j}\sin\theta 
+\quad \uvec{E} : +\to -
 \]
 
 Distributions continues
@@ -154,8 +156,10 @@ Flux électrique [$\si{\newton\cdot\metre}$] et théorème de Gauss
 Champ électrique : cas particuliers
 \[ E =  \frac{\lambda}{2\pi\kappa\epsilon_0  r} \quad\text{(fil infini)} \qquad
  E = \frac{\sigma}{2\kappa\epsilon_0} \quad\text{(plan infini)} \]
-\[ E =  \frac{kh}{\kappa (R^2 + h^2)^{3/2}} \, Q_\text{tot}  \quad\text{(anneau)} \]
-\[ E = \frac{2\pi\sigma  k}{\kappa}\left( 1- \frac{h}{\sqrt{R^2+h^2}} \right) \quad\text{(disque)} \]
+\[ E =  \frac{kh}{\kappa (R^2 + h^2)^{3/2}} \, Q_\text{tot}  
+	\quad \text{(anneau)} \]
+\[ E = \frac{2\pi\sigma  k}{\kappa}\left( 1- \frac{h}{\sqrt{R^2+h^2}} \right) 
+	\quad \text{(disque)} \]
 
 Potentiel électrique [$\si{\volt} = \si{\newton\cdot\metre/\coulomb} = \si{\joule/\coulomb}$]
 \begin{gather*}
@@ -278,9 +282,11 @@ Loi des mailles de Kirchoff
 	Traverser $R$ contre le sens présumé de $I$ & $\Delta V  = +RI$ 
 \end{tabular}
 
+\vspace{-0.7em}
 \begin{center}
 	\includegraphics[width=25mm]{./phy1522/pile.png}
 \end{center}
+\vspace{-1.5em}
 
 \hrulefill
 \section{Constantes et conversions}

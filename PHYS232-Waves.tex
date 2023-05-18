@@ -1,0 +1,660 @@
+\documentclass[11pt,letterpaper,titlepage,oneside]{book}
+%\documentclass[12pt,letterpaper,titlepage,oneside,twocolumn]{book}
+%\setlength{\columnsep}{distance}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[parfill]{parskip}
+\usepackage{anysize}
+\usepackage{amssymb}
+\usepackage{empheq,amsthm}
+\usepackage[Lenny]{fncychap}
+
+
+\newcommand{\degr}{\ensuremath{^\circ}}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in 
+
+%\setlength{\columnsep}{24pt}
+
+\title{PHYS 232: Heat \& Waves \\ Waves Study Notes}
+\author{Luke Zhou \\ McGill University}
+\date{Winter 2013}
+
+\begin{document}
+\maketitle
+%\belowdisplayskip=0pt 
+%\abovedisplayskip=5pt 
+
+%\setlength{\abovedisplayskip}{0pt}
+%\setlength{\belowdisplayskip}{0pt}
+%\setlength{\abovedisplayshortskip}{0pt}
+%\setlength{\belowdisplayshortskip}{0pt}
+
+\frontmatter
+\tableofcontents 
+
+\mainmatter 
+\chapter{Periodic Motion}
+\section{Simple Harmonic Motion}
+\begin{align*}
+\shortintertext{Restoring forces for a displacement $x$:} 
+F(x) &= -(k_1 + k_2x^2 + k_3x^3 + \cdots) 
+\intertext{For small x, the upper order terms are negligible:} 
+F(x) &= -k_1x 
+\end{align*}
+ 
+When a small mass is attached to the end of a massless spring:
+\[ \boxed{-k_1x = m\frac{d^2x}{dt^2}} \] 
+
+Solve the differential equation to obtain an equation that shows the motion is \textbf{sinusoidal}: \[ \boxed{x = A \sin(\omega t+\varphi_0)} \] %
+\begin{center} 
+where \textbf{angular frequency} $\boxed{\omega = \sqrt{k_1/m}}$ \textit{(independent of A and $\varphi_0$)}
+
+Period: $T=\frac{2\pi}{\omega} $; Frequency: $f = \frac{1}{T}=\frac{\omega}{2\pi} $   \\
+\end{center}
+
+Set t = 0 to obtain:
+\begin{empheq}[left=\empheqlbrace]{align*}
+x_0 &= A\sin\varphi_0 \\
+v_0 &=\omega A\cos\varphi_0
+\end{empheq}
+Then:
+\[ A = \sqrt{x_0^2 + \left(\frac{v_o}{\omega}\right)^2} \text{ and } \varphi_0 = \arctan\left(\frac{v_o}{\omega}\right) \]
+
+Real vibrations don't go on forever; SHM models a \textbf{steady state of vibration} - the vibrations must be long-continued in terms of \textit{number of periods elapsed}. 
+
+More conditions for using a sinusoidal SHM model:
+\begin{multicols}{4}
+\begin{itemize}
+\item Small amplitudes
+\item Simple systems
+\item No damping
+\item $F_{restoring} \propto x$ %
+\end{itemize} %
+\end{multicols} %
+
+\section{Rotating Vector Representation}
+Represent SHM as the geometrical projection of the \textit{x-component} of uniform circular motion (use polar coordinates, where CCW is positive):
+\begin{empheq}[left=\empheqlbrace]{align*}
+\theta &= \omega t + \alpha \\
+x&=A\cos\theta=A\cos(\omega t + \alpha)
+\end{empheq}
+
+Trig identity to convert from cos to sin: \[ \cos\theta=\sin\left(\theta + \frac{\pi}{2}\right) \]
+%\[ \leadsto \varphi_0 = \alpha + \frac{\pi}{2} \]
+%
+\subsection{Extra axis}
+\begin{empheq}[right=\empheqrbrace]{align*}
+\text{Only \textit{x} is the \textit{measureable} component: } x &= r\cos\theta \\
+\text{The y-component is \textit{ficticious}: } y &= r\sin\theta
+\end{empheq}
+
+\subsection{Rotations with $j$} 
+\begin{align*} %
+\mathbf{r}&=\mathbf{i}x+\mathbf{j}y  \\
+\text{Rewrite as } \mathbf{r}&=x+\mathbf{j}y 
+\end{align*}
+Reinterpret $\mathbf{j}y$ as ``move a dist of \textit{y} along the y-axis"
+
+Remove vector notation: \[ \boxed{z=x+jy} \]
+Reinterpret $\mathit{j}$ as \textit{``90$^\circ$ rotation CCW from x-axis"} 
+
+So, $\mathit{j^2}$ represents two 90$^\circ$ rotations CCW from x-axis.
+\[ \boxed{j^2=-1; j=\sqrt{-1}} \]
+
+Thus, $z=x+jy$ can be considered:
+\begin{itemize}
+\item Geometrically: as a vector of length $x=\sqrt{x^2+y^2}$ at an angle $\theta = \arctan(\frac{y}{x})$ to the x-axis
+\item As a complex \# (with $j$)
+\end{itemize}
+
+\section{The Complex Exponential}
+General Taylor series: $f(x)=\sum_{n=0}^\infty \frac{x^n}{n!} f^{(n)}(0)$ 
+
+Use Taylor series for sin \& cos to obtain: 
+\[ \cos\theta + j\sin\theta = 1+j\theta+\frac{(j\theta)^2}{2!}+\frac{(j\theta)^3}{3!}+\dots+\frac{(j\theta)^n}{n!}+\dots \]
+
+Then, use the Taylor series for $e^{j\theta}$:
+\[ \boxed{\cos\theta + j\sin\theta = e^{j\theta}} \]
+
+To \textit{rotate} the vector rep'd by complex \# $z$ an angle of $+\theta$, multiply by $\boxed{e^{j\theta}}$.
+
+\subsection{Derivatives}
+When analyzing periodic displacements, sometimes we get a differential equation of motion with terms involving the velocity \&/or acceleration.
+
+Using the trigonometric functions:
+\begin{empheq}[right=\empheqrbrace]{align*}
+x&=A \cos(\omega t+\alpha) \\
+\frac{dx}{dt}&=-\omega A \sin(\omega t+\alpha) \\
+\frac{d^2x}{dt^2}&=-\omega^2 A \cos(\omega t+\alpha) 
+\end{empheq}
+Leads to an awkward mix of sin \& cos terms when the derivatives are subbed into the differential equation.
+
+Using the complex exponential:
+\begin{empheq}[right=\empheqrbrace]{align*}
+z=A \cos(\omega t+\alpha)+jA \sin(\omega t+\alpha) &= Ae^{j(\omega t+\alpha)} \\
+\frac{dz}{dt}=j\omega Ae^{j(\omega t+\alpha)} &= j\omega z \\
+\frac{d^2z}{dt^2}=(j\omega)^2 Ae^{j(\omega t+\alpha)} &= -\omega^2 z 
+\end{empheq}
+
+Each $\frac{d}{dt}$ creates a phase shift of $+\pi/2$ (graphically, the vector undergoes a rotation). 
+
+Physically meaningful projections of the complex exponential's derivatives: %
+\begin{multicols}{3} %
+\begin{center}
+$x=\Re(z)$ \\
+$\frac{dx}{dt}=\Re(j\omega z)$ \\
+$\frac{d^2x}{dt^2} = \Re(-\omega^2 z)$
+\end{center}
+\end{multicols} %
+
+\chapter{Superposition of Periodic Motions}
+The resultant of 2+ harmonic oscillators is the sum of the individual vibrations, if the system is \textbf{linear} (that is, if $F_{restoring}\propto x$).
+
+\section{In 1D}
+
+\subsection{Two Vibrations of Same Frequency}
+Consider:
+\begin{empheq}[left=\empheqlbrace]{align*}
+OP_1: x_1&=A_1\cos(\omega t + \alpha_1) \\
+OP_2: x_2&=A_2\cos(\omega t + \alpha_2)
+\end{empheq}
+Combined vibration: \[ OP: x = A\cos(\omega t+\alpha) \]
+
+All 3 vectors $OP_1, OP_2$ \& $OP$ rotate at the same frequency. 
+
+Let $\beta = \angle P_1OP$.
+
+Phase constant of the combined vib'n: $\alpha = \alpha_1 + \beta$
+
+\subsubsection{Using complex exponentials}
+\begin{align*}
+z = z_1 + z_2 &= A_1 e^{j(\omega t+\alpha_1)} + A_2 e^{j(\omega t+\alpha_2)} \\
+&=e^{j(\omega t+\alpha_1)}[A_1 + A_2e^{j(\alpha_2 - \alpha_1)}]
+\end{align*} %
+%
+\subsubsection{Special Case: Equal Amplitudes} 
+
+Let \textbf{phase difference} $\delta = \alpha_2-\alpha_1$ \\
+From geometry: $ A=2A_1\cos\beta = 2A_1\cos(\delta/2)$
+
+Application: alternating maxima/minimae superposition pattern from two sources converging at a far away point, at any point on line $OB$ (as shown).
+
+\subsection{Two Vibrations of Different Frequencies}
+Let the initial phase shifts of both vibrations be zero.
+Consider:
+\begin{empheq}[left=\empheqlbrace]{align*}
+x_1&=A_1\cos(\omega_1 t) \\ 
+x_2&=A_2\cos(\omega_2 t)
+\end{empheq}
+
+Combined vibration displacement $OX$: \[ 0 \leq OX \leq A_1+A_2 \]
+
+The combined motion will only be periodic if the periods of the component vibrations are \textbf{commensurable} - i.e. $\exists  (n_1$ \& $n_2)\in \mathbb{Z} $ such that $ T = n_1 T_1 = n_2 T_2 $ (use the smallest values of $n_1$ \& $n_2$ possible). 
+
+\subsubsection{Beats}  
+If the two frequencies are close in frequency: \textbf{beats} will be produced.
+
+Combined vibration will be a disturbance with $\omega=\frac{\omega_1+\omega_2}{2}$, but with an \textit{amplitude that varies periodically with time}.
+
+Add the $x_1$ \& $x_2$ from above. Use the trig identities for $\cos(\theta+\varphi)$ and $\cos(\theta-\varphi)$ to yield:
+\[ x = 2A\cos\left(\frac{\omega_1-\omega_2}{2} t\right)\cos\left(\frac{\omega_2+\omega_1}{2} t\right) \]
+This is only physically meaningful if $|\omega_1-\omega_2| \ll |\omega_1+\omega_2|$.
+
+Combined displacement can be fitted within an envelope:
+\[ x = \pm 2A\cos\left(\frac{\omega_1-\omega_2}{2} t\right) \]
+
+Node-to-node (see diagram): this is half a cycle (a time equal to $\frac{2\pi}{|\omega_1-\omega_2|}$.) \\
+So, the aurally observed \textbf{beat frequency} is $|\omega_1-\omega_2|$.
+
+\subsection{Many Vibrations of Same Frequency \& Amplitude}
+Let the component vibrations have equal, successive phase differences ($\delta$):
+\[ x = A_0\cos(\omega t) \]
+Resultant: \[ X = A\cos(\omega t + \alpha) \]
+
+The combining vectors form a polygon that can be inscribed inside a circle.
+Each $A_0$ subtends an angle of $\delta$. The resultant vector $A$ subtends an angle $N\delta$.
+So:
+\begin{empheq}[left=\empheqlbrace]{align*}
+A &= N\delta=2R\sin(N\delta/2) \\
+A_0 &= 2R\sin(\delta/2) 
+\end{empheq}
+
+Solve to get: 
+\[ A =A_0 \frac{\sin(N\delta/2)}{\sin(\delta/2)} \] 
+
+\begin{align*}
+\intertext{Phase angle $\alpha$ of the combined oscillation: angle between resultant vector \& the 1st vector}
+\alpha &= \angle COB - \angle COP \\
+&= (90\degr - \delta/2)-(90\degr - N\delta/2) \tag{By properties of isosceles triangles} \\
+&= \frac{(N-1)\delta}{2}
+\end{align*}
+
+Putting it all together:
+\[ \boxed{X = A_0 \frac{\sin(N\delta/2)}{\sin(\delta/2)} \cos\left[\omega t + \frac{(N-1)\delta}{2}\right]} \]
+
+\section{In 2D: Two Vibrations at $\perp$ Angles}
+The resultant motion has \textit{two} real components - $x$ and $y$:
+\begin{empheq}[left=\empheqlbrace]{align*}
+x&=A_1 \cos(\omega t) \\
+y&=A_2 \cos(\omega t + \delta)
+\end{empheq}
+
+Depending on the value of $\delta$, we'll get different path patterns described by these \textit{parametric equations}. (Be mindful of the direction of tracing - CCW or CW.)
+
+(Study the analytical/mathematical and semicircle-sketching methods to determine the pattern)
+
+\subsubsection{Different Frequencies: Lissajous Figures} 
+The patterns depend on the $\omega_1:\omega_2$ ratio.
+If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repeating pattern will not be produced.
+
+\chapter{Free Vibrations}
+Two components necessary for oscillatory motion:
+\begin{enumerate}
+\item \textbf{Inertial component} to store \textit{kinetic energy}.
+\item \textbf{Elastic component} to store \textit{elastic potential energy}.
+\end{enumerate}
+
+\section{Mass on Spring}
+(Assumption: spring is massless.)
+
+\begin{empheq}[right=\empheqrbrace]{align}
+\text{By Newton's Law: } -kx =m\ddot{x}& \label{eqNL} \\
+\text{By Conservation of Energy: } \frac{1}{2}m\dot{x}^2 + \frac{1}{2}kx^2 = E \label{eqCE}&
+\end{empheq}
+
+Note that (\ref{eqCE}) is the \textit{first integral} of (\ref{eqNL}).
+
+Solve either of the equations to get the expected result: 
+$x = A \sin(\omega t+\varphi_0)$, $\omega = \sqrt{k/m}$
+
+\begin{proof}[Process of solving:\\]
+Rewrite (\ref{eqNL}) in terms of k/m:
+\begin{align}
+kx+m\ddot{x}&=0 \notag\\
+\frac{k}{m}x+\ddot{x}&=0 \notag\\
+\ddot{x}+\omega^2x &=0 \label{eqxdd}
+\end{align}
+
+In \eqref{eqxdd}, $\ddot{x}$ is a multiple of itself. This is a property of the exponential function, so write: \begin{equation} x=Ce^{pt} \label{eqxCPT} \end{equation} where $p$ is a dimensional constant such that $pt$ is dimensionless, and $C$ is a coefficient.%
+
+\begin{align*}
+\intertext{Sub \eqref{eqxCPT} into \eqref{eqxdd}:}
+\frac{d^2}{dt^2}(Ce^{pt})+\omega^2Ce^{pt}&=0\\
+p^2Ce^{pt}+\omega^2Ce^{pt}&=0 \\
+Ce^{pt}(p^2+\omega^2) &=0 \\
+\intertext{Take $p^2 + \omega^2 =0$ (this way, any $C$ or $t$ will satisfy the above)}
+p^2 &= -\omega^2 \\
+p &= \pm j\omega
+\intertext{Accept both roots, but give each a different $C$: ($C_1$ going CCW and $C_2$ going CW)}
+\intertext{So, \eqref{eqxdd} becomes: $x=C_1e^{j\omega t}+C_2e^{-j\omega t}$}
+\end{align*}
+%
+\paragraph{Constraint} Oscillation should be along the x-axis alone. For this to be possible, the y-components of $C_1$ and $C_2$ must cancel: $C_1=C_2$ (see diagram)
+
+For non-real $C_1$, $C_2$: \\
+\indent $C_1$ is rotated $\alpha$ w.r.t. direction defined by $\omega t$ \\
+\indent To satisfy $C_1=C_2$, $C_2$ must be rotated $-\alpha$ w.r.t. $-\omega t$
+%
+\begin{align*}
+\text{So: } x&=Ce^{j(\omega t +\alpha)} + Ce^{-j(\omega t +\alpha)} \\
+&= 2C\cos(\omega t + \alpha) \\
+&\equiv Acos(\omega t + \alpha) %
+\end{align*}
+\end{proof}
+%
+Can also express as: $x=\Re(z); z=Acos(\omega t + \alpha)$ \\
+Total energy of the system: $\boxed{E=\frac{1}{2}kA^2}$
+
+\section{Elastic Spring/Rod}
+When a spring is released:
+\begin{enumerate}
+\item The wire is twisted about its vertical axis.
+\item Change in the coils' curvature, due to tightening/loosening.
+\end{enumerate}
+Combined, these two effects determine the value of $k$ in $F=-kx$.
+
+\subsection{Young's Modulus}
+Consider a system simpler than a spring - an elastic rod or wire.
+
+Apply a force to one end (e.g. by hanging a mass off one end). Let the other end remain fixed. When the wire/rod is in \textit{static equilibrium}:
+\begin{enumerate}
+\item Define $\boxed{\text{strain} = \frac{\Delta l}{l_0}}$, where $\Delta l$ is the extension of the wire. Note that $\Delta l \propto l_0$
+The displacement of any point along the rod is proportional to its position from the fixed end (the same magnitude of tension $\Delta P$ is applied to every point through the rod).
+
+\item For rods of the same material but of different cross-sectional area $A$: \\
+To give them the same strain, $F \propto A$
+\[\boxed{ \text{Stress} = \frac{\Delta P}{A} = \frac{F}{A} = \text{Pressure} } \]
+
+\item For small strain, \[\boxed{ \frac{\text{stress}}{\text{strain}}=const=Y }.\]
+This constant is called \textbf{Young's Modulus of elasticity}.
+\end{enumerate}
+
+Let $F$ represent the force \textit{by} a wire \textit{onto} another object:
+\begin{equation} \frac{dF/A}{dl/dl_0} = -Y \Longrightarrow dF = \frac{-AY}{l_0}dl \label{youngs_dF} \end{equation}
+Let $dl = x$ and $dF=F$: \begin{equation} \boxed{F=\frac{-AY}{l_0}x=-kx} \text{ where } k=\frac{-AY}{l_0} \label{youngs_F} \end{equation}
+
+Young's Modulus represents values at 100\% elongation, but materials generally fail at magnitudes much smaller.
+
+Hang $m$ on the end of a wire:
+For small $A$ (as to not exceed the stretch limit), $T=2\pi\sqrt{\frac{ml_0}{AY}}$.
+
+Let $h$ = increase of length when static equilibrium is reached after the mass is hung on:
+\[ mg=\frac{AY}{l_0}h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
+\begin{equation}
+T=2\pi\sqrt{\frac{h}{g}} \label{elWireT}
+\end{equation} 
+This expression doesn't require knowledge of the characteristics of the wire or the mass.
+Notice: it's in a similar form to the expression for the period of a pendulum (to be seen later).
+
+\section{Floating Objects}
+Floating objects also undergo vertical periodic motion.
+
+Let the floating object (of mass $m$) have a constant cross-sectional area over the part that intersects the liquid surface.
+
+Let $\rho$ \& $A$ represent, respectively, the liquid's density and the area of the object's cross section. 
+
+Let $y$ represent the vertical displacement of the hydrometer above equilibrium position. Then, the volume of liquid displaced is $Ay$. 
+
+So, by Newton's Law:
+\[ m\frac{d^2y}{dt^2} = -g\rho Ay \]
+
+Yields: \begin{equation} \omega = \sqrt{\frac{g\rho A}{m}} \text{ and } T = 2\pi\sqrt{\frac{m}{g\rho A}} \label{floatingWT} \end{equation}
+
+\subsection{Large Floating Objects}
+Consider a boat. Approximate its mass with $ m = \rho Ah$ (where $\rho$ represents, this time, the density of water. Sub into \eqref{floatingWT}:
+\begin{equation} T = 2\pi\sqrt{\frac{h}{g}} \end{equation}
+
+This is analogous to the period of an elastic wire, seen earlier in \eqref{elWireT}. 
+
+\section{The Pendulum}
+Displacement is specified by $\theta$. 
+
+In problem solving, use Conservation of Energy (between gravitational potential \& kinetic energies).
+
+Assume small $\theta$ such that $x \ll y$. By geometry:
+\[ x^2=2ly-y^2 \approx 2ly \Longrightarrow y \approx \frac{x^2}{2l} \] %
+
+By Conservation of Energy:
+\begin{align}
+\frac{1}{2} mv^2 + mgy &= E \text{ where } v^2=\left( \frac{dx}{dt} \right)^2 + \left(\frac{dy}{dt} \right)^2 \notag
+\intertext{Use the previously mentioned approximations:}
+\frac{1}{2} m \left( \frac{dx}{dt} \right)^2 + \frac{1}{2} \frac{mg}{l} x^2 &= E \label{eqPendulumE} %
+\end{align} %
+Notice that \eqref{eqPendulumE} matches \eqref{eqCE} - i.e. it defines SHO.
+
+Rewrite in terms of $\theta$. Let:
+\begin{empheq}[left=\empheqlbrace]{align*}
+v &= l\left(\frac{d\theta}{dt}\right) \\
+y &= l(1-\cos\theta) \approx \frac{1}{2}l\theta ^2
+\end{empheq}
+So, \eqref{eqPendulumE} becomes: \[ \frac{1}{2}ml^2 \left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} mgl\theta^2 = E  \]
+
+\subsection{Pendulum of an Arbitrary Shape}
+%\begin{figure}[h]
+%\includegraphics[scale=0.42]{diablotinx_0.jpg} \caption{dialotinx}
+%\end{figure}
+
+Let its center of mass $C$ be at a dist $h$ from the point of suspension. Let $I$ represent the moment of inertia about the horizontal axis through $O$. Then:
+\begin{empheq}[left=\empheqlbrace]{align*}
+PE &= \frac{1}{2} mgh\theta^2 \\
+KE &= \frac{1}{2} I\left( \frac{d\theta}{dt} \right)^2
+\end{empheq}
+So, \begin{equation} \frac{1}{2} I\left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} mgh\theta^2 = E \label{pendulumEO}\end{equation}
+
+Using the \textit{parallel axis theorem}, rewrite using the moment of inertia through an axis going through $C$: $I_C = mk^2$, where $k$ is the \textit{radius of gyration}:
+\begin{empheq}[left=\empheqlbrace]{align*}
+KE_{COM} &= \frac{1}{2} mk^2 \left( \frac{d\theta}{dt} \right)^2 \\
+KE_{linear} &= \frac{1}{2} m \left(h\frac{d\theta}{dt} \right)^2
+\end{empheq}
+
+Then, \eqref{pendulumEO} becomes:
+\[ \frac{1}{2} mk^2 \left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} m \left(h\frac{d\theta}{dt} \right)^2 + \frac{1}{2} mgh\theta^2 = E \]
+and:
+\begin{empheq}[left=\empheqlbrace]{align}
+\omega^2 &= \frac{gh}{h^2+k^2} \notag \\
+T &= 2\pi\left(\frac{h^2+k^2}{gh}\right)^{1/2} \label{pendulumT}
+\end{empheq}
+
+The period of a pendulum \eqref{pendulumT} is analogous to the period of an elastic wire \eqref{elWireT}.
+
+\section{Liquid in a U-Tube}
+Examine the vertical displacement $y$ of the liquid surface from equilibrium.
+
+Let $l, A, \rho$ represent, respectively: total length of liquid column, cross sectional area, and liquid density.
+
+Then, the total mass of the liquid is $m=\rho Al$. Assume all parts of the liquid move with speed $dy/dx$/
+
+When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} a height of $y$. This liquid displacement is associated with a change of potential energy of
+\[ U = g\rho Ay^2 \]
+
+By Conservation of Energy:
+\[ \frac{1}{2}\rho Al \left( \frac{dy}{dt} \right)^2 + g\rho Ay^2 = E  \] 
+
+Thus:
+\begin{align}
+\omega^2 &= \frac{2g}{l} \notag \\
+T &= 2\pi\sqrt{\frac{l}{2g}} = \pi\sqrt{\frac{2l}{g}} \label{utubeT}
+\end{align}
+
+Again, the period of liquid in a U-tube \eqref{utubeT} matches the period of an elastic wire \eqref{elWireT}.
+
+\section{Torsional Oscillations}
+If the torque $M \propto$ angular displacement $\theta$ between two ends of an object,
+\[ M=-c\theta \tag*{where $c$ is the torsion constant of the system.} \]
+
+Stored potential energy: \[ U= -\int M d\theta = \frac{1}{2} c\theta^2 \]
+
+If one end has a moment of inertia $I$ and the inertia of the twisted system itself is negligible, then by energy conservation:
+\[ \frac{1}{2}I\left( \frac{d\theta}{dt}\right)^2 + \frac{1}{2} c\theta^2 = E \]
+
+Thus:
+\begin{equation}
+\omega^2 = \frac{c}{I} \text{ and } T = 2\pi\sqrt{\frac{I}{c}} \label{torsionalT}
+\end{equation}
+
+\subsection{Shear Modulus}
+Apply a horizontal force $P$ to the board in a). Two of the sides change from rectangles to parallelograms. Define an \textbf{angle of shear, $\alpha$}:
+\[ \alpha = \frac{x}{l} \]
+
+Let $F=-P$ represent the force exerted \textit{by the sheared material} onto the board.
+
+Define a \textbf{shear modulus} or \textbf{modulus of rigidity}, $n$:
+\[ n = \frac{-F/A}{\alpha} \]
+or
+\begin{equation} \boxed{dF = -nA d\alpha = \frac{-nA}{l}dx} \label{shear_dF} \end{equation}
+
+Notice that \eqref{shear_dF} for \textit{shear deformations} is analogous to \eqref{youngs_dF} and \eqref{youngs_F} for \textit{longitudinal deformations}.
+
+(Another modulus also exists: the \textbf{bulk modulus}, $K$, which describes the resistance of a material to changes in volume.)
+
+\subsection{Restoring Torques}
+Refer to the figure in b).
+
+Two disks of radius $r$ on spindles are connected by two rectangular strips of material.
+
+Twist one spindle through a small $\theta$; the end of each strip is moved transversely through a distance $r\theta$.
+
+The angle of shear is thus: \[ \alpha = \frac{r\theta}{l} \]
+
+Sub into \eqref{shear_dF} to find the restoring force tangential to the disk by each strip (if they have a cross-sectional area of $A$:
+\[ F = -nA\frac{r\theta}{l} \]
+
+There is a torque of magnitude $rF$ exerted about the axis of twist by each strip.
+
+\subsubsection{Thin Walled Tube}
+Refer to the figure in c).
+
+Let the mean radius be $r$ and the wall thickness be $\Delta r$.
+
+Consider it a whole collection of thin strips parallel to the axis of the cylinder, all contributing restoring torques about the axis.
+
+So, when the tube is given a relative twist through $\theta$, the torque $\Delta M$ provided is:
+\begin{align}
+\Delta M &= -\frac{nAr^2\theta}{l}
+\intertext{But here, $A=2\pi r \Delta r$:}
+\Delta M &= -\frac{2\pi nr^3\Delta r}{l} \theta \label{thinTube_dM}
+\end{align}
+
+\subsubsection{Solid Tube}
+To find the torque provided by a \textit{solid} tube or cylinder, integrate or sum the above in \eqref{thinTube_dM} to obtain:
+\begin{equation} \boxed{M = -\frac{\pi nr^4}{2l} \theta} \end{equation}
+
+\section{``The Spring of Air"}
+Consider a closed piston-gas system, as pictured. Let $m$ represent the mass of the movable piston, and let $p$ represent the pressure of the gas inside the tube.
+
+When the piston moves a distance of $y$ from equilibrium position, the pressure inside changes by $\Delta p$:
+\[ F = A\Delta p \]
+
+Calculate the pressure change, using \emph{Boyle's Law}:
+\begin{align*}
+pV &= \text{const} \\
+p\Delta V + V\Delta p &= 0 \tag{a bit like the product rule for differentiation}
+\end{align*}
+
+But, $\Delta V = Ay \Longrightarrow V = Al$ \\
+So: \[ \Delta p = -\frac{py}{l} \]
+Thus: \begin{equation} \boxed{ F=-\frac{Ap}{l}y } \label{pistonF} \end{equation}
+
+Compare \eqref{pistonF} with \eqref{youngs_F} for stretching/compressing a solid rod. Here, the $p$ is analogous to $Y$.
+
+\subsection{Bulk Modulus}
+\begin{align}
+K &= -\frac{dp}{dV/V} \notag \\
+&= -V\frac{dp}{dV}
+\end{align}
+
+Remember that Boyle's law requires \emph{isothermal} (constant temperature) conditions. So, define: \begin{equation} K_{isothermal} = p \label{Kisothermal} \end{equation} 
+ 
+When a gas is compressed, \textit{it becomes warmer} because of the work being done on it (although this effect was ignored when deriving the expression for a small change in pressure and for the restoring force).
+
+$P \propto$ mean-squared molecular speed, so the heating results in a greater restoring force than otherwise, and the elastic modulus of the gas column is larger than the $p$ predicted by \eqref{Kisothermal}.
+
+Under completely \textbf{adiabatic} conditions (closed system; no heat flow in/out of the gas):
+\begin{equation} pV^\gamma \end{equation}
+
+Becomes:
+\begin{align}
+\ln p + \gamma\ln V &= \text{const} \notag \\
+\frac{1}{p}\frac{dp}{dV} + \frac{\gamma}{V} &= 0 \notag \\
+K_{adiabatic} = -V \frac{dp}{dV} &= \gamma p \label{Kadiabatic}
+\end{align}
+
+Elasticity is enhanced under adiabatic conditions, and therefore the \textit{frequency} of vibrations is increased.
+
+\section{Oscillations Involving Massive Springs}
+Consider: a mass $m$ on a uniform spring of total mass $M$ and spring constant $k$.
+
+Each point on the spring undergoes a displacement proportional to their distances from the fixed end (just like in static extension).
+
+Let the relaxed length of the spring be $l$. Let the distance from the fixed end be $s$ $(0 \leq s \leq l)$. 
+
+Consider an infinitesimal segment of the spring between $s$ and $s + ds$.
+
+Its mass is: \[ dM = \frac{M}{l} ds \] 
+
+Its displacement is \[ \frac{s}{l} x \]
+
+Its kinetic energy is \[ dK = \frac{1}{2}\left( \frac{M}{l} ds \right) \left( \frac{s}{l} \frac{dx}{dt} \right)^2 = \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2 s^2 ds \]
+
+Integrate, treating $dx/dt$ as a constant:
+\begin{align*}
+K_{spring} &= \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2  \int_0^{l} s^2 ds \\
+&= \frac{1}{6}M\left(\frac{dx}{dt}\right)^2
+\end{align*}
+
+So, the energy-conservation statement for the whole system becomes:
+\[ \frac{1}{2}m\left(\frac{dx}{dt}\right) + \frac{1}{6}M\left( \frac{dx}{dt}\right)^2 + \frac{1}{2}kx^2 = E \]
+giving
+\[ \omega^2 = \frac{k}{m + M/3} \]
+
+This is the equivalent of taking a massless spring, and then adding a mass of $m + M/3$ to the end.
+
+
+\section{The Decay of Free Oscillations}
+
+\section{Large Damping}
+
+%\chapter{Forced Vibrations \& Resonance}
+%Cock, cock, teabag! 8=====|)
+
+%\chapter{Free Vibrations}
+\section{Damping}
+Resistive forces, for small $v$: \[ F=-bv \]
+
+Equation of motion:
+\[ m\ddot{x} = -kx - b\dot{x} \]
+\[ \ddot{x} + \gamma \dot{x} + {\omega_0}^2 x = 0 \]
+where
+\[ {\omega_0}^2 = k/m \text{ \& } \gamma = b/m \]
+
+Solution:
+\[ x = A e^{-\gamma t/2} \cos(\omega t + \alpha) \]
+where
+\[ \omega ^2 = \omega_0^2 - \frac{\gamma^2}{4} \]
+
+Amplitude:
+\[ A(t) = A_0 e^{-\gamma t/2} \]
+
+Total energy:
+\[ E(t) = \frac{1}{2}kA^2 = \frac{1}{2}kA_0^2 e^{-\gamma t} = E_0 e^{-\gamma t} \]
+
+Quality value:
+\[ Q = \frac{\omega_0}{\gamma} \]
+
+\subsection{Very Large Damping}
+\subsubsection{Overdamping ($ \omega_0 \ll \gamma/2 $)}
+\[ x = A_1 e^{-(\gamma/2 + \beta)t} + A_2 e^{-(\gamma/2-\beta)t} \]
+where \[ \beta = \left(\frac{\gamma^2}{4}-\omega_0^2 \right)^{1/2} \]
+
+\subsubsection{Critical Damping ($ \omega_0 = \gamma/2 $)}
+\[ x = (A + Bt) e^{\gamma t/2}\]
+
+\chapter{Forced Vibrations \& Resonance}
+\section{Forced Oscillations w/ Damping}
+Driving force:
+\[ F(t) = F_0 \cos(\omega t) \]
+
+Two stages:
+\begin{enumerate}
+\item \textbf{Transient state}: original system's ''natural" motion slowly damping out; driving force beginning to take over
+\item \textbf{Steady state}: system oscillates at the \emph{driving force's frequency}, $\omega$
+\end{enumerate}
+
+\subsubsection{Steady State}
+
+Equation of motion:
+\[ m\ddot{x} = -kx - b\dot{x} + F_0 \cos(\omega t) \]
+\[ \ddot{x} + \gamma\dot{x} + \omega_0^2 = F_0 \cos(\omega t) \]
+
+Results: 
+\[ x = A \cos (\omega t - \delta) \]
+\[ A(\omega) = \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}} \]
+\[ \tan \delta (\omega) = \frac{\gamma\omega}{\omega_0^2 - \omega^2}\]
+
+Independent of adjustable initial starting conditions!
+
+\subsubsection{Transient Effects}
+For $t<0$, let the object be at rest (i.e. it only starts moving at $t=0$).
+\begin{align*}
+x &= steady + transient \\
+x &= A \cos (\omega t - \delta) + B e^{-\gamma t/2} \cos(\omega' + \beta)
+\end{align*}
+
+The transient part (system's ''natural" motion) dies out over time due to damping; after then, the steady state takes over. 
+
+Transient part of the equation accounts for adjustable initial conditions!
+
+A \emph{beat pattern} may be produced during this stage if $\omega'$ (system's freq w/ damping) and $\omega$ are similar.
+
+\section{Power}
+Power required to keep a driven oscillator going at the same amplitude:
+\[ P = \frac{dW}{dt} = F\frac{dx}{dt} = Fv \]
+
+\chapter{Coupled Oscillators \& Normal Modes}
+
+\end{document}
