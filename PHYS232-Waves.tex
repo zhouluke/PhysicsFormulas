@@ -12,6 +12,7 @@
 \usepackage{empheq,amsthm}
 \usepackage[Lenny]{fncychap}
 \usepackage{xcolor}
+\usepackage{cancel}
 
 \newcommand{\degr}{\ensuremath{^\circ}}
 
@@ -248,14 +249,26 @@ If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repea
 \chapter{Free Vibrations}
 
 \section{Summary}
-Each of the systems analyzed in this chapter has:
+Any physical system that undergoes SHM is associated with...
 \begin{itemize}
-	\item a constant representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy
-	\item a constant representing the \textcolor{blue}{inertia} of the system $\longrightarrow$ potential energy
+	\item a constant $\color{red}{k}$ representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy
+	\item a constant $\color{blue}{m}$ representing the \textcolor{blue}{inertia} of the system $\longrightarrow$ potential energy
 \end{itemize}
 
-All the systems have an equation of motion of the form:
-\[x = A \cos(\omega t+\alpha)\hspace{0.5cm}\text{where }\omega^2 = \frac{\color{red}{\text{elasticity}}}{\color{blue}\text{inertia}}\]
+Consider the motion of a mass on a spring, which can be described using...
+\begin{align}
+	\text{Newton's Law: }&
+	\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0 \label{eqNL} \\
+	\text{Conservation of Energy: }&
+	\frac{1}{2}\textcolor{blue}{m}\dot{x}^2 + \frac{1}{2}\textcolor{red}{k}x^2 = E \label{eqCE}
+\end{align}
+
+Any equation matching either of the forms above\footnote{\eqref{eqCE} also happens to be the \textit{first integral} of  \eqref{eqNL}.} automatically has as a solution:
+\begin{equation}
+\boxed{x = A \cos(\omega t+\alpha)\hspace{0.5cm}\text{where }\omega^2 = \frac{\color{red}{k}}{\color{blue}m}} \label{eqSHMsoln}
+\end{equation}
+
+Some of the \textbf{simple harmonic oscillators} in this chapter are analyzed through comparison with \eqref{eqNL}, while others, with \eqref{eqCE}.
 
 \subsection{Systems analyzed through a force equation}
 \begin{center}
@@ -267,7 +280,7 @@ All the systems have an equation of motion of the form:
 		$\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0$ &
 		$\dfrac{\color{red}{k}}{\color{blue}m}$
 		\\
-	\parbox{3cm}{Mass on wire \footnotesize{(with Young's Modulus $Y$)}} &
+	\parbox{4cm}{Mass on wire \\\footnotesize{(with Young's Modulus $Y$)}} &
 		$\textcolor{blue}{m}\ddot{x} + \textcolor{red}{\frac{AY}{l_0}}x = 0$ &
 		$\dfrac{\color{red}{AY}}{\color{red}{l_0}\color{blue}m} = \dfrac{g}{h}$ 
 		\\
@@ -279,17 +292,35 @@ All the systems have an equation of motion of the form:
 		$\textcolor{blue}{I}\ddot{\theta} + \textcolor{red}{c}\theta = 0$ &
 		$\dfrac{\color{red}{c}}{\color{blue}I}$ 
 		\\
-	Spring of air &
+	\parbox{3.5cm}{Spring of air \\\footnotesize{(isothermal conditions)}} &
 		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{\frac{Ap}{l}}y = 0$ &
 		$\dfrac{\color{red}{Ap}}{\color{red}{l}\color{blue}m}$ 
+		\\
+	\parbox{3.5cm}{Spring of air \\\footnotesize{(adiabatic conditions)}} &
+		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{\frac{A\gamma p}{l}}y = 0$ &
+		$\dfrac{\color{red}{A\gamma p}}{\color{red}{l}\color{blue}m}$ 
 		\\
 	\hline
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 \end{center}
 
-$h$ is the change in position that occurs in \emph{static equilibrium} when the mass is first hung or the floating object is first placed in a liquid. To find $h$:
+
+\subsubsection{Effects of gravity}
+$h$ is the change in position that occurs when the mass is first hung or the floating object is first placed in a liquid and the system reaches \emph{static equilibrium}. To find $h$:
 \[ F_g = F_\text{restoring}\Longrightarrow mg = kh \Longrightarrow h = \frac{mg}{k} \]
+
+Gravity only changes the equilibrium position of a system, without changing the fact it undergoes SHM:
+\begin{align*}
+	F_\text{net} &= -F_\text{restoring} + F_g \\
+	m\ddot{x} &= -kx + mg \\
+	& = -k(x - \frac{mg}{k}) \\
+	& = -k(x - h) \\
+	\intertext{Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,}
+	m\ddot{y} &= -ky \\
+	m\ddot{y} + ky &= 0 
+\end{align*}
+i.e. we still have SHM.
 
 \subsection{Systems analyzed through the conservation of energy}
 \begin{center}
@@ -317,7 +348,7 @@ $h$ is the change in position that occurs in \emph{static equilibrium} when the 
 			$\frac{1}{2}\textcolor{blue}{I}\dot{\theta} + \frac{1}{2}\textcolor{red}{c}\theta^2 = E$ &
 			$\dfrac{\color{red}{c}}{\color{blue}I}$ 
 			\\
-		Springs with mass $M$ &
+		\parbox{5cm}{Massive springs \\\footnotesize{(with mass $M$)}} &
 			$\frac{1}{2}\textcolor{blue}{\left(m + \frac{1}{3}M \right)}\dot{x} + \frac{1}{2}\textcolor{red}{k}x^2 = E$ &
 			$\dfrac{\color{red}{k}}{\color{blue}{m + M/3}}$ 
 			\\
@@ -327,85 +358,64 @@ $h$ is the change in position that occurs in \emph{static equilibrium} when the 
 \end{center}
 
 
-\section{Mass on Spring}
-Consider a mass attached to a spring having no mass.
+\section{Solving for the equation of motion}
 
-(Note that gravity only changes the equilibrium position of the spring system, without changing the SHM nature of the system.)
-
+\begin{proof}[Solving for the solution]
+Rewrite \eqref{eqNL} in terms of $k/m$:
 \begin{align}
-\text{From Newton's Law: }&
-	\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0 \label{eqNL} \\
-\text{From Conservation of Energy: }&
-	\frac{1}{2}\textcolor{blue}{m}\dot{x}^2 + \frac{1}{2}\textcolor{red}{k}x^2 = E \label{eqCE}
+m\ddot{x} + kx &= 0 \notag\\
+\ddot{x} + \frac{k}{m}x &= 0 \notag\\
+\ddot{x} + \omega^2x  &= 0 \label{eqxdd}
 \end{align}
 
-Note that \eqref{eqCE} is the \textit{first integral} of  \eqref{eqNL}.
-
-Any equation in the form of \eqref{eqCE} or \eqref{eqNL} will have a solution in the following form:
-\[x = A \cos(\omega t+\alpha)\hspace{0.5cm}\text{where }\omega^2 = \frac{\color{red}{k}}{\color{blue}m}\]
-
-\begin{itemize}
-	\item $\color{red}k$ is a constant representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy.
-	\item $\color{blue}m$ is a constant representing the \textcolor{blue}{inertia} of the system $\longrightarrow$ potential energy.
-\end{itemize}
-
-\begin{proof}[Process of solving:\\]
-Rewrite \eqref{eqNL} in terms of k/m:
-\begin{align}
-kx+m\ddot{x}&=0 \notag\\
-\frac{k}{m}x+\ddot{x}&=0 \notag\\
-\ddot{x}+\omega^2x &=0 \label{eqxdd}
-\end{align}
-
-\eqref{eqxdd} implies $\ddot{x}$ is a multiple of $x$. This is a property of the exponential function, so write: \begin{equation} x=Ce^{pt} \label{eqxCPT} \end{equation} where $p$ is a dimensional constant such that $pt$ is dimensionless, and $C$ is a coefficient.%
+\eqref{eqxdd} implies $\ddot{x}$ is a multiple of $x$. This is a property of the exponential function, so write: 
+\begin{equation}
+	x=Ce^{pt} \label{eqxCPT}
+\end{equation}
+where $p$ is a dimensional constant such that $pt$ is dimensionless, and $C$ is a coefficient.
 
 \begin{align*}
 \intertext{Sub \eqref{eqxCPT} into \eqref{eqxdd}:}
-\frac{d^2}{dt^2}(Ce^{pt})+\omega^2Ce^{pt}&=0\\
+\frac{d^2}{dt^2}(Ce^{pt})+\omega^2(Ce^{pt}) &= 0\\
 p^2Ce^{pt}+\omega^2Ce^{pt}&=0 \\
 Ce^{pt}(p^2+\omega^2) &=0 \\
-\intertext{Take $p^2 + \omega^2 =0$ (this way, any $C$ or $t$ will satisfy the above)}
+\Longrightarrow p^2 + \omega^2 &= 0 \\
 p^2 &= -\omega^2 \\
 p &= \pm j\omega
-\intertext{Accept both roots, but give each a different $C$: ($C_1$ going CCW and $C_2$ going CW)}
-\intertext{So, \eqref{eqxdd} becomes: $x=C_1e^{j\omega t}+C_2e^{-j\omega t}$}
 \end{align*}
-%
-\paragraph{Constraint} Oscillation should be along the x-axis alone. For this to be possible, the y-components of $C_1$ and $C_2$ must cancel: $C_1=C_2$ (see diagram)
 
-For non-real $C_1$, $C_2$: \\
-\indent $C_1$ is rotated $\alpha$ w.r.t. direction defined by $\omega t$ \\
-\indent To satisfy $C_1=C_2$, $C_2$ must be rotated $-\alpha$ w.r.t. $-\omega t$
-%
+Because we have two roots, \eqref{eqxCPT} should be more generally written as:
+\[ x = Ce^{pt}= C_1e^{j\omega t}+C_2e^{-j\omega t} \]
+
+In other words, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular speed $\omega$.
+
+In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$:  [ADD DIAGRAM]
+
+For the $y$-components to cancel, we need $C_1=C_2$. Hence,
 \begin{align*}
-\text{So: } x&=Ce^{j(\omega t +\alpha)} + Ce^{-j(\omega t +\alpha)} \\
+x
+&=Ce^{j(\omega t +\alpha)} + Ce^{-j(\omega t +\alpha)} \\
+&=C[\cos(\omega t + \alpha) + j\sin(\omega t + \alpha) + \cos(-(\omega t + \alpha)) + j\sin(-(\omega t + \alpha))] \\
+&=C[\cos(\omega t + \alpha) + \cancel{j\sin(\omega t + \alpha)} + \cos(\omega t + \alpha) - \cancel{j\sin(\omega t + \alpha)}] \\
 &= 2C\cos(\omega t + \alpha) \\
-&\equiv Acos(\omega t + \alpha) %
+&\equiv Acos(\omega t + \alpha) \hspace{0.5cm}\text{where }A=2C
 \end{align*}
+
+This is why, for SHM in general, we can assume solutions of the type:
+\begin{equation}
+	x=\Re(z) \hspace{0.5cm}\text{where }z=Acos(\omega t + \alpha)
+\end{equation}
 \end{proof}
-%
-Can also express as: $x=\Re(z); z=Acos(\omega t + \alpha)$ \\
-Total energy of the system: $\boxed{E=\frac{1}{2}kA^2}$
 
-\section{Elastic Spring/Rod}
-When a spring is released:
-\begin{enumerate}
-\item The wire is twisted about its vertical axis.
-\item Change in the coils' curvature, due to tightening/loosening.
-\end{enumerate}
-Combined, these two effects determine the value of $k$ in $F=-kx$.
 
-\subsection{Young's Modulus}
-Consider a system simpler than a spring - an elastic rod or wire.
+\section{Elastic Rod \& Young's Modulus}
 
 Apply a force to one end (e.g. by hanging a mass off one end). Let the other end remain fixed. When the wire/rod is in \textit{static equilibrium}:
 \begin{enumerate}
-\item Define $\boxed{\text{strain} = \frac{\Delta l}{l_0}}$, where $\Delta l$ is the extension of the wire. Note that $\Delta l \propto l_0$
-The displacement of any point along the rod is proportional to its position from the fixed end (the same magnitude of tension $\Delta P$ is applied to every point through the rod).
+\item Define $\boxed{\text{strain} = \frac{\Delta l}{l_0}}$, where $\Delta l$ is the extension of the wire. 
 
 \item For rods of the same material but of different cross-sectional area $A$: \\
-To give them the same strain, $F \propto A$
-\[\boxed{ \text{Stress} = \frac{\Delta P}{A} = \frac{F}{A} = \text{Pressure} } \]
+\[\boxed{ \text{Stress} = \frac{\Delta F}{A}} \]
 
 \item For small strain, \[\boxed{ \frac{\text{stress}}{\text{strain}}=const=Y }.\]
 This constant is called \textbf{Young's Modulus of elasticity}.
