@@ -254,7 +254,7 @@ If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repea
 
 \chapter{Free Vibrations}
 
-\section{Summary}
+\section{Overview}
 Any physical system that undergoes SHM is associated with...
 \begin{itemize}
 	\item a constant $\color{red}{k}$ representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy
@@ -316,7 +316,7 @@ Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analy
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{phys232/Ch3-g-new-eqm} \caption{Gravity changes the equilibrium position of a SHO.}\label{fig:ch3-g-new-eqm-pos}
+	\includegraphics[scale=0.5]{phys232/Ch3-g-new-eqm} \caption{Gravity shifts the equilibrium position of a SHO by a distance $h$.}\label{fig:ch3-g-new-eqm-pos}
 \end{figure}
 
 Gravity only changes the equilibrium position of a SHO, without changing the fact it undergoes SHM:
@@ -416,7 +416,8 @@ x
 &=C[\cos(\omega t + \alpha) + j\sin(\omega t + \alpha) + \cos(-(\omega t + \alpha)) + j\sin(-(\omega t + \alpha))] \\
 &=C[\cos(\omega t + \alpha) + \cancel{j\sin(\omega t + \alpha)} + \cos(\omega t + \alpha) - \cancel{j\sin(\omega t + \alpha)}] \\
 &= 2C\cos(\omega t + \alpha) \\
-&\equiv Acos(\omega t + \alpha) \where A=2C
+\therefore
+x &= Acos(\omega t + \alpha) \where A=2C
 \end{align*}
 
 This is why, for SHM in general, we can assume solutions of the type:
@@ -426,46 +427,56 @@ This is why, for SHM in general, we can assume solutions of the type:
 \end{proof}
 
 
-\section{Elastic Rod \& Young's Modulus}
+\section{Elastic Wire \& Young's Modulus}
 
-Apply a force to one end (e.g. by hanging a mass off one end). Let the other end remain fixed. When the wire/rod is in \textit{static equilibrium}:
-\begin{enumerate}
-\item Define $\boxed{\text{strain} = \frac{\Delta l}{l_0}}$, where $\Delta l$ is the extension of the wire. 
+Apply a force $F_\text{app}$ to one end (e.g., by hanging a mass off it) and let the other end remain fixed. When the wire/rod is in \textit{static equilibrium}, let us define two quantities:
 
-\item For rods of the same material but of different cross-sectional area $A$: \\
-\[\boxed{ \text{Stress} = \frac{\Delta F}{A}} \]
+\[  \text{strain} = \frac{x}{l_0} \where\text{$x$ is the extension of the wire}  \]
 
-\item For small strain, \[\boxed{ \frac{\text{stress}}{\text{strain}}=const=Y }.\]
-This constant is called \textbf{Young's Modulus of elasticity}.
-\end{enumerate}
+\[ \text{stress} = \frac{F_\text{app}}{A} \where\text{$A$ is the cross-sectional area} \]
 
-Let $F$ represent the force \textit{by} a wire \textit{onto} another object:
-\begin{equation} \frac{dF/A}{dl/dl_0} = -Y \Longrightarrow dF = \frac{-AY}{l_0}dl \label{youngs_dF} \end{equation}
-Let $dl = x$ and $dF=F$: \begin{equation} \boxed{F=\frac{-AY}{l_0}x=-kx} \text{ where } k=\frac{-AY}{l_0} \label{youngs_F} \end{equation}
+The ratio between these two quantities is a constant $Y$, which we call \textbf{Young's Modulus of elasticity} for the material\footnote{... as long as the strain is small enough, such that the material is not permanently deformed when stretched.}:
+\[\boxed{ Y = \frac{\text{stress}}{\text{strain}} = \text{const} } \]
+
+Let us consider the force $F = -F_\text{app}$ exerted \emph{by} the rod \emph{on} another object. Hence,
+\begin{align*}
+	& -Y = \frac{F/A}{x/l_0} \\
+	& \boxed{\therefore F = \textcolor{blue}{\frac{-AY}{l_0}} x \label{youngs_F}}
+\end{align*}
 
 
-Hang $m$ on the end of a wire:
-For small $A$ (as to not exceed the stretch limit), $T=2\pi\sqrt{\frac{ml_0}{AY}}$.
+Once a mass $m$ is hung on one end:
+\[ T = 2\pi\sqrt{\frac{\color{red} m \color{blue}l_0}{\color{blue} AY}} \htab\htab
+f =\frac{1}{2\pi} \sqrt{\frac{\color{blue} AY}{\color{red} m \color{blue}l_0}} \]
 
-Let $h$ = increase of length when static equilibrium is reached after the mass is hung on:
-\[ mg=\frac{AY}{l_0}h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
+We can rewrite this in terms of properties more easily measured at static equilibrium, such as $h$, the increase of length reached at static equilibrium after the mass is attached.
+\[ \textcolor{red}{m}g=\textcolor{blue}{\frac{AY}{l_0}} h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
 \begin{equation}
-T=2\pi\sqrt{\frac{h}{g}} \label{elWireT}
+T=2\pi\sqrt{\frac{h}{g}} \htab\htab
+f=\frac{1}{2\pi} \sqrt{\frac{g}{h}}
+ \label{elWireT}
 \end{equation} 
-This expression doesn't require knowledge of the characteristics of the wire or the mass.
-Notice: it's in a similar form to the expression for the period of a pendulum (to be seen later).
+
+Remark: these forms are similar to those for a pendulum (to be seen later).
 
 \section{Floating Objects}
-Floating objects also undergo vertical periodic motion.
+Let the floating object (of mass $m$) have a constant cross-sectional area $A$ parallel to the liquid surface.
 
-Let the floating object (of mass $m$) have a constant cross-sectional area over the part that intersects the liquid surface.
+Recall:
+\begin{align*}
+	 F_\text{buoyancy} &= \text{weight of liquid displaced by the floating object} \\
+	 F_b & = g\rho_l Ay
+\end{align*}
 
-Let $\rho$ \& $A$ represent, respectively, the liquid's density and the area of the object's cross section. 
+where...
+\begin{itemize}
+	\item $\rho_l$: density of the liquid
+	\item $y$: vertical displacement of the object above equilibrium position
+\end{itemize}
 
-Let $y$ represent the vertical displacement of the hydrometer above equilibrium position. Then, the volume of liquid displaced is $Ay$. 
 
-So, by Newton's Law:
-\[ m\frac{d^2y}{dt^2} = -g\rho Ay \]
+By Newton's Law:
+\[ \textcolor{red}{m}\frac{d^2y}{dt^2} = -\textcolor{blue}{g\rho A}y \]
 
 Yields: \begin{equation} \omega = \sqrt{\frac{g\rho A}{m}} \text{ and } T = 2\pi\sqrt{\frac{m}{g\rho A}} \label{floatingWT} \end{equation}
 
