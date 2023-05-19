@@ -13,8 +13,12 @@
 \usepackage[Lenny]{fncychap}
 \usepackage{xcolor}
 \usepackage{cancel}
+\usepackage[justification=centering]{caption}
+\usepackage{hyperref}
 
 \newcommand{\degr}{\ensuremath{^\circ}}
+\newcommand{\htab}{\hspace{0.5cm}}
+\newcommand{\where}{\htab\text{where }}
 
 \oddsidemargin 0.0in
 \evensidemargin 0.0in 
@@ -246,6 +250,8 @@ Depending on the value of $\delta$, we'll get different path patterns described 
 The patterns depend on the $\omega_1:\omega_2$ ratio.
 If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repeating pattern will not be produced.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Free Vibrations}
 
 \section{Summary}
@@ -265,10 +271,10 @@ Consider the motion of a mass on a spring, which can be described using...
 
 Any equation matching either of the forms above\footnote{\eqref{eqCE} also happens to be the \textit{first integral} of  \eqref{eqNL}.} automatically has as a solution:
 \begin{equation}
-\boxed{x = A \cos(\omega t+\alpha)\hspace{0.5cm}\text{where }\omega^2 = \frac{\color{red}{k}}{\color{blue}m}} \label{eqSHMsoln}
+\boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\color{red}{k}}{\color{blue}m}} \label{eqSHMsoln}
 \end{equation}
 
-Some of the \textbf{simple harmonic oscillators} in this chapter are analyzed through comparison with \eqref{eqNL}, while others, with \eqref{eqCE}.
+Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{eqNL}, while others, with \eqref{eqCE}.
 
 \subsection{Systems analyzed through a force equation}
 \begin{center}
@@ -307,20 +313,27 @@ Some of the \textbf{simple harmonic oscillators} in this chapter are analyzed th
 
 
 \subsubsection{Effects of gravity}
-$h$ is the change in position that occurs when the mass is first hung or the floating object is first placed in a liquid and the system reaches \emph{static equilibrium}. To find $h$:
-\[ F_g = F_\text{restoring}\Longrightarrow mg = kh \Longrightarrow h = \frac{mg}{k} \]
 
-Gravity only changes the equilibrium position of a system, without changing the fact it undergoes SHM:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{phys232/Ch3-g-new-eqm} \caption{Gravity changes the equilibrium position of a SHO.}\label{fig:ch3-g-new-eqm-pos}
+\end{figure}
+
+Gravity only changes the equilibrium position of a SHO, without changing the fact it undergoes SHM:
+
 \begin{align*}
 	F_\text{net} &= -F_\text{restoring} + F_g \\
 	m\ddot{x} &= -kx + mg \\
 	& = -k(x - \frac{mg}{k}) \\
-	& = -k(x - h) \\
+	& = -k(x - h) \where h=\frac{mg}{k}\\
 	\intertext{Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,}
 	m\ddot{y} &= -ky \\
-	m\ddot{y} + ky &= 0 
+	m\ddot{y} + ky &= 0  \longrightarrow \text{still SHM!}
 \end{align*}
-i.e. we still have SHM.
+
+We can interpret $h$ as the change in position that occurs when the mass is first hung or the floating object is first placed in a liquid and the system reaches \emph{static equilibrium} (see Figure \ref{fig:ch3-g-new-eqm-pos}).
+\[ F_g = F_\text{restoring}\Longrightarrow mg = kh \Longrightarrow h = \frac{mg}{k} \]
+
 
 \subsection{Systems analyzed through the conservation of energy}
 \begin{center}
@@ -358,7 +371,7 @@ i.e. we still have SHM.
 \end{center}
 
 
-\section{Solving for the equation of motion}
+\section{Solving for the equation of motion of a harmonic oscillator}
 
 \begin{proof}[Solving for the solution]
 Rewrite \eqref{eqNL} in terms of $k/m$:
@@ -384,12 +397,17 @@ p^2 &= -\omega^2 \\
 p &= \pm j\omega
 \end{align*}
 
-Because we have two roots, \eqref{eqxCPT} should be more generally written as:
-\[ x = Ce^{pt}= C_1e^{j\omega t}+C_2e^{-j\omega t} \]
+Because we have two possibilities for $p$, our solution to \eqref{eqxdd} could have been written more generally as:
+\[ x = C_1e^{j\omega t}+C_2e^{-j\omega t} \]
 
-In other words, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular speed $\omega$.
+Geometrically, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular displacement $\omega t$ (see Figure \ref{fig:ch3-complex-sols}a).
 
-In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$:  [ADD DIAGRAM]
+In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$ (see Figure \ref{fig:ch3-complex-sols}b).
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{eqxdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For $OX$ to be a harmonic oscillation, $C1=C2$.}\label{fig:ch3-complex-sols}
+\end{figure}
 
 For the $y$-components to cancel, we need $C_1=C_2$. Hence,
 \begin{align*}
@@ -398,12 +416,12 @@ x
 &=C[\cos(\omega t + \alpha) + j\sin(\omega t + \alpha) + \cos(-(\omega t + \alpha)) + j\sin(-(\omega t + \alpha))] \\
 &=C[\cos(\omega t + \alpha) + \cancel{j\sin(\omega t + \alpha)} + \cos(\omega t + \alpha) - \cancel{j\sin(\omega t + \alpha)}] \\
 &= 2C\cos(\omega t + \alpha) \\
-&\equiv Acos(\omega t + \alpha) \hspace{0.5cm}\text{where }A=2C
+&\equiv Acos(\omega t + \alpha) \where A=2C
 \end{align*}
 
 This is why, for SHM in general, we can assume solutions of the type:
 \begin{equation}
-	x=\Re(z) \hspace{0.5cm}\text{where }z=Acos(\omega t + \alpha)
+	x=\Re(z) \where z=Acos(\omega t + \alpha)
 \end{equation}
 \end{proof}
 
@@ -481,10 +499,6 @@ y &= l(1-\cos\theta) \approx \frac{1}{2}l\theta ^2
 So, \eqref{eqPendulumE} becomes: \[ \frac{1}{2}ml^2 \left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} mgl\theta^2 = E  \]
 
 \subsection{Pendulum of an Arbitrary Shape}
-%\begin{figure}[h]
-%\includegraphics[scale=0.42]{diablotinx_0.jpg} \caption{Sexy beast, dialotinx of Proximeety!}
-%\end{figure}
-
 Let its center of mass $C$ be at a dist $h$ from the point of suspension. Let $I$ represent the moment of inertia about the horizontal axis through $O$. Then:
 \begin{empheq}[left=\empheqlbrace]{align*}
 PE &= \frac{1}{2} mgh\theta^2 \\
