@@ -603,17 +603,26 @@ Then, \eqref{ch3:eq-pendulumEO} becomes:
 This result is analogous to what we found for an elastic wire (Equation~\ref{ch3:eq-elastic-wire-result}).
 
 \section{Liquid in a U-Tube} \label{ch3:sec-uTube}
-Examine the vertical displacement $y$ of the liquid surface from equilibrium.
 
-Let $l, A, \rho$ represent, respectively: total length of liquid column, cross sectional area, and liquid density.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{phys232/Ch3-utube.png} \caption{Oscillating liquid column in a U-tube.}\label{ch3:fig-utube}
+\end{figure}
 
-Then, the total mass of the liquid is $m=\rho Al$. Assume all parts of the liquid move with speed $dy/dx$/
+Examine the vertical displacement $y$ of the liquid surface from equilibrium. Define:
+\begin{itemize}
+	\item $l$: total length of liquid column
+	\item $A$: cross sectional area
+	\item $\rho$: liquid density
+\end{itemize}
 
-When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} a height of $y$. This liquid displacement is associated with a change of potential energy of
-\[ U = g\rho Ay^2 \]
+When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} by the same height $y$. The mass of the liquid that moves is $g\rho Ay$. 
 
-By Conservation of Energy:
-\[ \frac{1}{2}\rho Al \left( \frac{dy}{dt} \right)^2 + g\rho Ay^2 = E  \] 
+Assume all parts of the liquid move with speed $dy/dx$. So,
+\[ KE = \frac{1}{2} \left(\frac{dy}{dx}\right)^2 \andd
+PE = g\rho Ay^2 \]
+\[ \Longrightarrow \frac{1}{2} \mcol{\rho Al} \left( \frac{dy}{dt} \right)^2 
++ \frac{1}{2} \kcol{(2g\rho A)} y^2 = E  \] 
 
 Thus:
 \begin{equation}
