@@ -1,5 +1,5 @@
 \documentclass[11pt,letterpaper,titlepage,oneside]{book}
-%\documentclass[12pt,letterpaper,titlepage,oneside,twocolumn]{book}
+%\documentclass[10pt,letterpaper,titlepage,oneside,twocolumn]{book}
 %\setlength{\columnsep}{distance}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -20,6 +20,7 @@
 \newcommand{\htab}{\hspace{0.5cm}}
 \newcommand{\hhtab}{\htab\htab}
 \newcommand{\where}{\htab\text{where }}
+\newcommand{\andd}{\htab\text{and}\htab}
 
 \newcommand{\kcol}[1]{\textcolor{blue}{#1}}
 \newcommand{\mcol}[1]{\textcolor{red}{#1}}
@@ -154,6 +155,16 @@ $\frac{d^2x}{dt^2} = \Re(-\omega^2 z)$
 \end{center}
 \end{multicols} %
 
+
+\section{Small angle approximations}
+When $\theta$ is small and measured in radians,
+\begin{align}
+	\sin\theta &\approx \theta \label{ch1:eq-small-angle-sin} \\
+	\tan\theta &\approx \theta  \label{ch1:eq-small-angle-tan} \\
+	\cos\theta &\approx 1-\frac{\theta^2}{2} \label{ch1:eq-small-angle-cos}
+\end{align}
+
+
 \chapter{Superposition of Periodic Motions}
 The resultant of 2+ harmonic oscillators is the sum of the individual vibrations, if the system is \textbf{linear} (that is, if $F_{restoring}\propto x$).
 
@@ -268,17 +279,17 @@ Any physical system that undergoes SHM is associated with...
 Consider the motion of a mass on a spring, which can be described using...
 \begin{align}
 	\text{Newton's Law: }&
-	\mcol{m}\ddot{x} + \kcol{k}x = 0 \label{eqNL} \\
+	\mcol{m}\ddot{x} + \kcol{k}x = 0 \label{ch3:eq-NL} \\
 	\text{Conservation of Energy: }&
-	\frac{1}{2}\mcol{m}\dot{x}^2 + \frac{1}{2}\kcol{k}x^2 = E \label{eqCE}
+	\frac{1}{2}\mcol{m}\dot{x}^2 + \frac{1}{2}\kcol{k}x^2 = E \label{ch3:eq-CE}
 \end{align}
 
-Any equation matching either of the forms above\footnote{\eqref{eqCE} also happens to be the \textit{first integral} of  \eqref{eqNL}.} automatically has as a solution:
+Any equation matching either of the forms above\footnote{\eqref{ch3:eq-CE} also happens to be the \textit{first integral} of  \eqref{ch3:eq-NL}.} automatically has as a solution:
 \begin{equation}
-\boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\kcol{k}}{\mcol{m}}} \label{eqSHMsoln}
+\boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\kcol{k}}{\mcol{m}}} \label{ch3:eq-SHM-soln}
 \end{equation}
 
-Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{eqNL}, while others, with \eqref{eqCE}.
+Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{ch3:eq-NL}, while others, with \eqref{ch3:eq-CE}.
 
 The systems have differing elastic and inertial constants, and thus different $\omega^2$. For all of them, however:
 \begin{equation}
@@ -328,10 +339,10 @@ The systems have differing elastic and inertial constants, and thus different $\
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{phys232/Ch3-g-new-eqm} \caption{Gravity shifts the equilibrium position of a SHO by a distance $h$.}\label{fig:ch3-g-new-eqm-pos}
+	\includegraphics[scale=0.4]{phys232/Ch3-g-new-eqm} \caption{Gravity shifts the equilibrium position of a SHO by a distance $h$.}\label{ch3:fig-g-new-eqm-pos}
 \end{figure}
 
-Gravity only changes the equilibrium position of a SHO, without changing the fact it undergoes SHM:
+Gravity only changes the equilibrium position of a SHO, without changing the amplitude, period, or frequency:
 \begin{align*}
 	F_\text{net} &= -F_\text{restoring} + F_g \\
 	m\ddot{x} &= -kx + mg \\
@@ -344,7 +355,7 @@ Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,
 	&m\ddot{y} + ky = 0  \Longrightarrow \text{still SHM!}
 \end{align*}
 
-We can interpret $h$ as the change in position that occurs when the mass is first hung or the floating object is first placed in a liquid and the system reaches \emph{static equilibrium} (see Figure \ref{fig:ch3-g-new-eqm-pos}).
+We can interpret $h$ as the change in position that occurs when the mass is first hung or the floating object is first placed in a liquid and the system reaches \emph{static equilibrium} (see Figure \ref{ch3:fig-g-new-eqm-pos}).
 \[ F_g = F_\text{restoring}\Longrightarrow mg = kh \Longrightarrow h = \frac{mg}{k} \]
 
 
@@ -387,21 +398,21 @@ We can interpret $h$ as the change in position that occurs when the mass is firs
 \section{Solving for the equation of motion of a harmonic oscillator}
 
 \begin{proof}[Solving for the solution]
-Rewrite \eqref{eqNL} in terms of $k/m$:
+Rewrite \eqref{ch3:eq-NL} in terms of $k/m$:
 \begin{align}
 m\ddot{x} + kx &= 0 \notag\\
 \ddot{x} + \frac{k}{m}x &= 0 \notag\\
-\ddot{x} + \omega^2x  &= 0 \label{eqxdd}
+\ddot{x} + \omega^2 x  &= 0 \label{ch3:eq-xdd}
 \end{align}
 
-\eqref{eqxdd} implies $\ddot{x}$ is a multiple of $x$. This is a property of the exponential function, so write: 
+\eqref{ch3:eq-xdd} implies $\ddot{x}$ is a multiple of $x$. This is a property of the exponential function, so write: 
 \begin{equation}
-	x=Ce^{pt} \label{eqxCPT}
+	x=Ce^{pt} \label{ch3:eq-xCPT}
 \end{equation}
 where $p$ is a dimensional constant such that $pt$ is dimensionless, and $C$ is a coefficient.
 %
 \begin{align*}
-\intertext{Sub \eqref{eqxCPT} back into \eqref{eqxdd}:}
+\intertext{Sub \eqref{ch3:eq-xCPT} back into \eqref{ch3:eq-xdd}:}
 \frac{d^2}{dt^2}(Ce^{pt})+\omega^2(Ce^{pt}) &= 0\\
 p^2Ce^{pt}+\omega^2Ce^{pt}&=0 \\
 Ce^{pt}(p^2+\omega^2) &=0 \\
@@ -410,17 +421,17 @@ p^2 &= -\omega^2 \\
 p &= \pm j\omega
 \end{align*}
 
-Because we have two possibilities for $p$, our solution to \eqref{eqxdd} could have been written more generally as:
+Because we have two possibilities for $p$, our solution to \eqref{ch3:eq-xdd} could have been written more generally as:
 \[ x = C_1e^{j\omega t}+C_2e^{-j\omega t} \]
 
 
-Geometrically, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular displacement $\omega t$ (see Figure \ref{fig:ch3-complex-sols}a).
+Geometrically, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular displacement $\omega t$ (see Figure~\ref{ch3:fig-complex-sols}a).
 
-In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$ (see Figure \ref{fig:ch3-complex-sols}b).
+In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$ (see Figure~\ref{ch3:fig-complex-sols}b).
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{eqxdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For $OX$ to be a harmonic oscillation, $C1=C2$.}\label{fig:ch3-complex-sols}
+	\includegraphics[scale=0.8]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{ch3:eq-xdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For $OX$ to be a harmonic oscillation, $C1=C2$.}\label{ch3:fig-complex-sols}
 \end{figure}
 
 
@@ -456,7 +467,7 @@ The ratio between these two quantities is a constant $Y$, which we call \textbf{
 Let us consider the force $F = -F_\text{app}$ exerted \emph{by} the rod \emph{on} another object. Hence,
 \begin{align*}
 	& -Y = \frac{F/A}{x/l_0} \\
-	& \boxed{\therefore F = \kcol{\frac{-AY}{l_0}} x \label{youngs_F}}
+	& \boxed{\therefore F = \kcol{\frac{-AY}{l_0}} x \label{ch3:eq-youngs-F}}
 \end{align*}
 
 
@@ -466,16 +477,16 @@ Once a mass $m$ is hung on one end:
 We can rewrite this in terms of properties more easily measured at static equilibrium, such as $h$, the increase of length reached at static equilibrium after the mass is attached.
 \[ \mcol{m}g=\kcol{\frac{AY}{l_0}} h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
 \begin{equation}
-\therefore \omega^2 = \frac{g}{h}  \label{elWireT}
+\therefore \omega^2 = \frac{g}{h}  \label{ch3:eq-elastic-wire-result}
 \end{equation} 
 
-Remark: this form is similar to that for a pendulum (to be seen later).
+Remark: this result is similar to that for a simple pendulum (Equation~\ref{ch3:eq-simple-pendulum-result}).
 
 \section{Floating Objects}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{phys232/Ch3-floating.png} \caption{Floating object at a vertical displacement of $y$ from its equilibrium position.}\label{fig:ch3-floating}
+	\includegraphics[scale=0.6]{phys232/Ch3-floating.png} \caption{Floating object at a vertical displacement of $y$ from its equilibrium position.}\label{ch3:fig-floating}
 \end{figure}
 
 Let the floating object (of mass $m$) have a constant cross-sectional area $A$ parallel to the liquid surface.
@@ -502,81 +513,94 @@ h = \frac{m}{\rho A} \]
 \[ \therefore \omega^2 = \frac{g}{h} \]
 
 
-This is analogous to the $\omega^2$ of an elastic wire, seen earlier in \eqref{elWireT}. 
+This is analogous to the $\omega^2$ of an elastic wire, seen earlier in \eqref{ch3:eq-elastic-wire-result}. 
 
 
 \section{The Pendulum}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{phys232/Ch3-pendulum.png} \caption{(a) Simple pendulum; (b) pendulum of arbitrary shape.}\label{fig:ch3-pendulum}
+	\includegraphics[scale=0.6]{phys232/Ch3-pendulum.png} \caption{(a) Simple pendulum; (b) pendulum of arbitrary shape with its centre of mass at $C$.}\label{ch3:fig-pendulum}
 \end{figure}
 
 Let $\theta$ represent the angular displacement of the pendulum. Assume small $\theta$ such that $y \ll x$. 
 
 
 \subsection{Simple Pendulum}
-By the Pythagorean Theorem (see Figure~\ref{fig:ch3-pendulum}):
+By the Pythagorean Theorem (see Figure~\ref{ch3:fig-pendulum}):
 \begin{align}
 l^2 &= x^2 + (l-y)^2  \notag \\	
 \cancel{l^2} &= x^2 + \cancel{l^2} - 2ly + y^2 \notag \\
 x^2 &= 2ly - {y^2} \notag \\
 x^2 &\approx 2ly  \notag \\
-\Longrightarrow y &\approx \frac{x^2}{2l} \label{eq:ch3-pendulum-pythag}
+\Longrightarrow y &\approx \frac{x^2}{2l} \label{ch3:eq-pendulum-pythag}
 \end{align}
 
 In addition,
 \begin{equation}
 v^2=\left( \frac{dx}{dt} \right)^2 + \left(\frac{dy}{dt} \right)^2
-\approx  \left( \frac{dx}{dt} \right)^2 \label{eq:ch3-pendulum-v2}
+\approx  \left( \frac{dx}{dt} \right)^2 \label{ch3:eq-pendulum-v2}
 \end{equation}
 
-By the Conservation of Energy and using the approximations \eqref{eq:ch3-pendulum-pythag} and  \eqref{eq:ch3-pendulum-v2}:
+By the Conservation of Energy and using the approximations \eqref{ch3:eq-pendulum-pythag} and  \eqref{ch3:eq-pendulum-v2}:
 \begin{align}
 \frac{1}{2} mv^2 + mgy &= E \notag \\
-\frac{1}{2} \mcol{m} \left( \frac{dx}{dt} \right)^2 + \frac{1}{2} \kcol{\frac{mg}{l}} x^2 &= E  \label{eq:ch3-pendulum-E}
+\frac{1}{2} \mcol{m} \left( \frac{dx}{dt} \right)^2 + \frac{1}{2} \kcol{\frac{mg}{l}} x^2 &= E  \label{ch3:eq-pendulum-E}
 \end{align}
 
 
-We can rewrite this result in terms of $\theta$. Substitute:
-\begin{empheq}[left=\empheqlbrace]{align*}
-v &= l\left(\frac{d\theta}{dt}\right) \\
-y &= l(1-\cos\theta) \approx \frac{1}{2}l\theta ^2
-\end{empheq}
+We can rewrite this result in terms of $\theta$. Substitute\footnote{Use the small angle approximation $\cos\theta \approx 1-\frac{\theta^2}{2}$, from Equation~\eqref{ch1:eq-small-angle-cos}}:
+\begin{equation*}
+v = l\left(\frac{d\theta}{dt}\right) \andd
+y = l(1-\cos\theta) \approx \frac{1}{2}l\theta ^2
+\end{equation*}
 
-So, \eqref{eq:ch3-pendulum-E} becomes:
+So, \eqref{ch3:eq-pendulum-E} becomes:
 \begin{equation}
-	\frac{1}{2} \mcol{ml^2} \left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} \kcol{mgl} \theta^2 = E \label{eq:ch3-pendulum-E-theta}
+	\frac{1}{2} \mcol{ml^2} \left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} \kcol{mgl} \theta^2 = E \label{ch3:eq-pendulum-E-theta}
 \end{equation}
 
-Both \eqref{eq:ch3-pendulum-E} and \eqref{eq:ch3-pendulum-E-theta} imply that:
-\[ \therefore \omega^2 = \frac{g}{l} \]
+Both \eqref{ch3:eq-pendulum-E} and \eqref{ch3:eq-pendulum-E-theta} imply that:
+\begin{equation}
+	\therefore \omega^2 = \frac{g}{l} \label{ch3:eq-simple-pendulum-result}
+\end{equation}
 
 
 \subsection{Pendulum of an Arbitrary Shape}
-Let its center of mass $C$ be at a dist $h$ from the point of suspension $O$. (This is useful because when finding the PE of the pendulum, we can use the position of the CM)
+Let its center of mass $C$ be at a dist $h$ from the point of suspension $O$\footnote{This allows us to find the PE of the pendulum using the height of the CM.}, as shown in Figure~\ref{ch3:fig-pendulum}b.
+
+\subsubsection{Using the moment of inertia w.r.t. the point of suspension}
 
 Let $I$ represent the moment of inertia \emph{with respect to $O$}. Then:
-\begin{empheq}[left=\empheqlbrace]{align*}
-PE &= \frac{1}{2} mgh\theta^2 \\
-KE &= \frac{1}{2} I\left( \frac{d\theta}{dt} \right)^2
-\end{empheq}
-So, \begin{equation} \frac{1}{2} I\left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} mgh\theta^2 = E \label{pendulumEO}\end{equation}
+\begin{equation*}
+PE = \frac{1}{2} mgh\theta^2 \andd
+KE = \frac{1}{2} I\left( \frac{d\theta}{dt} \right)^2
+\end{equation*}
 
-Using the \textit{parallel axis theorem}, rewrite using the moment of inertia through an axis going through $C$: $I_C = mk^2$, where $k$ is the \textit{radius of gyration}:
-\begin{empheq}[left=\empheqlbrace]{align*}
-KE_{COM} &= \frac{1}{2} mk^2 \left( \frac{d\theta}{dt} \right)^2 \\
-KE_{linear} &= \frac{1}{2} m \left(h\frac{d\theta}{dt} \right)^2
-\end{empheq}
+So,
+\begin{equation} \frac{1}{2} \mcol{I}\left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} \kcol{mgh}\theta^2 = E \label{ch3:eq-pendulumEO}
+\end{equation}
 
-Then, \eqref{pendulumEO} becomes:
-\[ \frac{1}{2} mk^2 \left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} m \left(h\frac{d\theta}{dt} \right)^2 + \frac{1}{2} mgh\theta^2 = E \]
-and:
-\begin{empheq}[left=\empheqlbrace]{align}
-\omega^2 &= \frac{gh}{h^2+k^2} \notag \\
-T &= 2\pi\left(\frac{h^2+k^2}{gh}\right)^{1/2} \label{pendulumT}
-\end{empheq}
+\subsubsection{Using the moment of inertia w.r.t. the centre of mass}
+From the \emph{parallel axis theorem} -- at point $C$, we have:
+\begin{align*}
+	I_C &= I_\text{CM} + mh^2 \\
+	&= mk^2 + mh^2
+\end{align*}
 
-The period of a pendulum \eqref{pendulumT} is analogous to the period of an elastic wire \eqref{elWireT}.
+where $k$ is the \emph{radius of gyration}. Thus,
+\begin{align*}
+	KE_C %&= \frac{1}{2} ( I_\text{CM} + mh^2 ) \left( \frac{d\theta}{dt} \right)^2 \\
+	&= \frac{1}{2} m(k^2 + h^2 ) \left( \frac{d\theta}{dt} \right)^2
+\end{align*}
+
+Then, \eqref{ch3:eq-pendulumEO} becomes:
+\[ \frac{1}{2} \mcol{m(k^2+h^2)} \left( \frac{d\theta}{dt} \right)^2  + \frac{1}{2} \kcol{mgh}\theta^2 = E \]
+
+\begin{equation*}
+	\therefore \omega^2 = \frac{\kcol{gh}}{\mcol{m(k^2+h^2)}}
+\end{equation*}
+
+This result is analogous to what we found for an elastic wire (Equation~\ref{ch3:eq-elastic-wire-result}).
 
 \section{Liquid in a U-Tube}
 Examine the vertical displacement $y$ of the liquid surface from equilibrium.
@@ -592,12 +616,11 @@ By Conservation of Energy:
 \[ \frac{1}{2}\rho Al \left( \frac{dy}{dt} \right)^2 + g\rho Ay^2 = E  \] 
 
 Thus:
-\begin{align}
-\omega^2 &= \frac{2g}{l} \notag \\
-T &= 2\pi\sqrt{\frac{l}{2g}} = \pi\sqrt{\frac{2l}{g}} \label{utubeT}
-\end{align}
+\begin{equation}
+\omega^2 = \frac{2g}{l} \label{ch3:eq-utube-result}
+\end{equation}
 
-Again, the period of liquid in a U-tube \eqref{utubeT} matches the period of an elastic wire \eqref{elWireT}.
+Again, the result for a U-tube \eqref{ch3:eq-utube-result} is comparable to that for an elastic wire \eqref{ch3:eq-elastic-wire-result}.
 
 \section{Torsional Oscillations}
 If the torque $M \propto$ angular displacement $\theta$ between two ends of an object,
@@ -624,7 +647,7 @@ Define a \textbf{shear modulus} or \textbf{modulus of rigidity}, $n$:
 or
 \begin{equation} \boxed{dF = -nA d\alpha = \frac{-nA}{l}dx} \label{shear_dF} \end{equation}
 
-Notice that \eqref{shear_dF} for \textit{shear deformations} is analogous to \eqref{youngs_dF} and \eqref{youngs_F} for \textit{longitudinal deformations}.
+Notice that \eqref{shear_dF} for \textit{shear deformations} is analogous to \eqref{youngs_dF} and \eqref{ch3:eq-youngs-F} for \textit{longitudinal deformations}.
 
 (Another modulus also exists: the \textbf{bulk modulus}, $K$, which describes the resistance of a material to changes in volume.)
 
@@ -676,7 +699,7 @@ But, $\Delta V = Ay \Longrightarrow V = Al$ \\
 So: \[ \Delta p = -\frac{py}{l} \]
 Thus: \begin{equation} \boxed{ F=-\frac{Ap}{l}y } \label{pistonF} \end{equation}
 
-Compare \eqref{pistonF} with \eqref{youngs_F} for stretching/compressing a solid rod. Here, the $p$ is analogous to $Y$.
+Compare \eqref{pistonF} with \eqref{ch3:eq-youngs-F} for stretching/compressing a solid rod. Here, the $p$ is analogous to $Y$.
 
 \subsection{Bulk Modulus}
 \begin{align}
