@@ -18,7 +18,11 @@
 
 \newcommand{\degr}{\ensuremath{^\circ}}
 \newcommand{\htab}{\hspace{0.5cm}}
+\newcommand{\hhtab}{\htab\htab}
 \newcommand{\where}{\htab\text{where }}
+
+\newcommand{\kcol}{blue}
+\newcommand{\mcol}{red}
 
 \oddsidemargin 0.0in
 \evensidemargin 0.0in 
@@ -257,24 +261,32 @@ If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repea
 \section{Overview}
 Any physical system that undergoes SHM is associated with...
 \begin{itemize}
-	\item a constant $\color{red}{k}$ representing the \textcolor{red}{elasticity} of the system $\longrightarrow$ kinetic energy
-	\item a constant $\color{blue}{m}$ representing the \textcolor{blue}{inertia} of the system $\longrightarrow$ potential energy
+	\item a constant $\color{\kcol}{k}$ representing the \textcolor{\kcol}{elasticity} of the system $\longrightarrow$ kinetic energy
+	\item a constant $\color{\mcol}{m}$ representing the \textcolor{\mcol}{inertia} of the system $\longrightarrow$ potential energy
 \end{itemize}
 
 Consider the motion of a mass on a spring, which can be described using...
 \begin{align}
 	\text{Newton's Law: }&
-	\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0 \label{eqNL} \\
+	\textcolor{\mcol}{m}\ddot{x} + \textcolor{\kcol}{k}x = 0 \label{eqNL} \\
 	\text{Conservation of Energy: }&
-	\frac{1}{2}\textcolor{blue}{m}\dot{x}^2 + \frac{1}{2}\textcolor{red}{k}x^2 = E \label{eqCE}
+	\frac{1}{2}\textcolor{\mcol}{m}\dot{x}^2 + \frac{1}{2}\textcolor{\kcol}{k}x^2 = E \label{eqCE}
 \end{align}
 
 Any equation matching either of the forms above\footnote{\eqref{eqCE} also happens to be the \textit{first integral} of  \eqref{eqNL}.} automatically has as a solution:
 \begin{equation}
-\boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\color{red}{k}}{\color{blue}m}} \label{eqSHMsoln}
+\boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\color{\kcol}{k}}{\color{\mcol}m}} \label{eqSHMsoln}
 \end{equation}
 
 Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{eqNL}, while others, with \eqref{eqCE}.
+
+The systems have differing elastic and inertial constants, and thus different $\omega^2$. For all of them, however:
+\begin{equation}
+	\boxed{
+		\omega^2 = \frac{\color{\kcol}{\text{elasticity}}}{\color{\mcol}\text{inertia}} \htab\htab 
+		T = \frac{2\pi}{\omega} \htab\htab 
+		f = \frac{\omega}{2\pi}}
+\end{equation}
 
 \subsection{Systems analyzed through a force equation}
 \begin{center}
@@ -283,28 +295,28 @@ Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analy
 	\hline
 	Type of system & Force equation & $\omega^2$ \\ \hline
 	Mass on spring &
-		$\textcolor{blue}{m}\ddot{x} + \textcolor{red}{k}x = 0$ &
-		$\dfrac{\color{red}{k}}{\color{blue}m}$
+		$\textcolor{\mcol}{m}\ddot{x} + \textcolor{\kcol}{k}x = 0$ &
+		$\dfrac{\color{\kcol}{k}}{\color{\mcol}m}$
 		\\
 	\parbox{4cm}{Mass on wire \\\footnotesize{(with Young's Modulus $Y$)}} &
-		$\textcolor{blue}{m}\ddot{x} + \textcolor{red}{\frac{AY}{l_0}}x = 0$ &
-		$\dfrac{\color{red}{AY}}{\color{red}{l_0}\color{blue}m} = \dfrac{g}{h}$ 
+		$\textcolor{\mcol}{m}\ddot{x} + \textcolor{\kcol}{\frac{AY}{l_0}}x = 0$ &
+		$\dfrac{\color{\kcol}{AY}}{\color{\kcol}{l_0}\color{\mcol}m} = \dfrac{g}{h}$ 
 		\\
 	Floating objects &
-		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{g\rho A}y = 0$ &
-		$\dfrac{\color{red}{g\rho A}}{\color{blue}m} = \dfrac{g}{h}$ 
+		$\textcolor{\mcol}{m}\ddot{y} + \textcolor{\kcol}{g\rho A}y = 0$ &
+		$\dfrac{\color{\kcol}{g\rho A}}{\color{\mcol}m} = \dfrac{g}{h}$ 
 		\\
 	Torsional oscillations &
-		$\textcolor{blue}{I}\ddot{\theta} + \textcolor{red}{c}\theta = 0$ &
-		$\dfrac{\color{red}{c}}{\color{blue}I}$ 
+		$\textcolor{\mcol}{I}\ddot{\theta} + \textcolor{\kcol}{c}\theta = 0$ &
+		$\dfrac{\color{\kcol}{c}}{\color{\mcol}I}$ 
 		\\
 	\parbox{3.5cm}{Spring of air \\\footnotesize{(isothermal conditions)}} &
-		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{\frac{Ap}{l}}y = 0$ &
-		$\dfrac{\color{red}{Ap}}{\color{red}{l}\color{blue}m}$ 
+		$\textcolor{\mcol}{m}\ddot{y} + \textcolor{\kcol}{\frac{Ap}{l}}y = 0$ &
+		$\dfrac{\color{\kcol}{Ap}}{\color{\kcol}{l}\color{\mcol}m}$ 
 		\\
 	\parbox{3.5cm}{Spring of air \\\footnotesize{(adiabatic conditions)}} &
-		$\textcolor{blue}{m}\ddot{y} + \textcolor{red}{\frac{A\gamma p}{l}}y = 0$ &
-		$\dfrac{\color{red}{A\gamma p}}{\color{red}{l}\color{blue}m}$ 
+		$\textcolor{\mcol}{m}\ddot{y} + \textcolor{\kcol}{\frac{A\gamma p}{l}}y = 0$ &
+		$\dfrac{\color{\kcol}{A\gamma p}}{\color{\kcol}{l}\color{\mcol}m}$ 
 		\\
 	\hline
 \end{tabular}
@@ -342,28 +354,28 @@ We can interpret $h$ as the change in position that occurs when the mass is firs
 		\hline
 		Type of system & Energy equation & $\omega^2$ \\ \hline
 		Mass on spring &
-			$\frac{1}{2}\textcolor{blue}{m}\dot{x}^2 + \frac{1}{2}\textcolor{red}{k}x^2 = E $ &
-			$\dfrac{\color{red}{k}}{\color{blue}m}$
+			$\frac{1}{2}\textcolor{\mcol}{m}\dot{x}^2 + \frac{1}{2}\textcolor{\kcol}{k}x^2 = E $ &
+			$\dfrac{\color{\kcol}{k}}{\color{\mcol}m}$
 			\\
 		Pendulum &
-			$\frac{1}{2}\textcolor{blue}{I}\dot{\theta}^2 + \frac{1}{2}\textcolor{red}{mgl}\theta^2 = E $ &
-			$\dfrac{\color{red}{mgl}}{\color{blue}{I}} = \dfrac{\color{red}{mgl}}{\color{blue}{ml^2}}= \dfrac{\color{red}{g}}{\color{blue}{l}}$ 
+			$\frac{1}{2}\textcolor{\mcol}{I}\dot{\theta}^2 + \frac{1}{2}\textcolor{\kcol}{mgl}\theta^2 = E $ &
+			$\dfrac{\color{\kcol}{mgl}}{\color{\mcol}{I}} = \dfrac{\color{\kcol}{mgl}}{\color{\mcol}{ml^2}}= \dfrac{\color{\kcol}{g}}{\color{\mcol}{l}}$ 
 			\\
 		\parbox{5.5cm}{Pendulum \footnotesize(with radius of gyration $k$, centre of mass at distance $h$ from point of suspension)}&
-			$\frac{1}{2}\textcolor{blue}{m(k^2+h^2)}\dot{\theta}^2 + \frac{1}{2}\textcolor{red}{mgh}\theta^2 = E $ &
-			$\dfrac{\color{red}{gh}}{\color{blue}{k^2+h^2}}$ 
+			$\frac{1}{2}\textcolor{\mcol}{m(k^2+h^2)}\dot{\theta}^2 + \frac{1}{2}\textcolor{\kcol}{mgh}\theta^2 = E $ &
+			$\dfrac{\color{\kcol}{gh}}{\color{\mcol}{k^2+h^2}}$ 
 			\\
 		Water in a U-tube &
-			$\frac{1}{2}\textcolor{blue}{\rho Al}\dot{y} + \frac{1}{2}\textcolor{red}{(2g\rho A)}y^2 = E$ &
-			$\dfrac{\color{red}{2g}}{\color{blue}l}$ 
+			$\frac{1}{2}\textcolor{\mcol}{\rho Al}\dot{y} + \frac{1}{2}\textcolor{\kcol}{(2g\rho A)}y^2 = E$ &
+			$\dfrac{\color{\kcol}{2g}}{\color{\mcol}l}$ 
 			\\
 		Torsional oscillations &
-			$\frac{1}{2}\textcolor{blue}{I}\dot{\theta} + \frac{1}{2}\textcolor{red}{c}\theta^2 = E$ &
-			$\dfrac{\color{red}{c}}{\color{blue}I}$ 
+			$\frac{1}{2}\textcolor{\mcol}{I}\dot{\theta} + \frac{1}{2}\textcolor{\kcol}{c}\theta^2 = E$ &
+			$\dfrac{\color{\kcol}{c}}{\color{\mcol}I}$ 
 			\\
 		\parbox{5cm}{Massive springs \\\footnotesize{(with mass $M$)}} &
-			$\frac{1}{2}\textcolor{blue}{\left(m + \frac{1}{3}M \right)}\dot{x} + \frac{1}{2}\textcolor{red}{k}x^2 = E$ &
-			$\dfrac{\color{red}{k}}{\color{blue}{m + M/3}}$ 
+			$\frac{1}{2}\textcolor{\mcol}{\left(m + \frac{1}{3}M \right)}\dot{x} + \frac{1}{2}\textcolor{\kcol}{k}x^2 = E$ &
+			$\dfrac{\color{\kcol}{k}}{\color{\mcol}{m + M/3}}$ 
 			\\
 		\hline
 	\end{tabular}
@@ -441,50 +453,48 @@ The ratio between these two quantities is a constant $Y$, which we call \textbf{
 Let us consider the force $F = -F_\text{app}$ exerted \emph{by} the rod \emph{on} another object. Hence,
 \begin{align*}
 	& -Y = \frac{F/A}{x/l_0} \\
-	& \boxed{\therefore F = \textcolor{blue}{\frac{-AY}{l_0}} x \label{youngs_F}}
+	& \boxed{\therefore F = \textcolor{\kcol}{\frac{-AY}{l_0}} x \label{youngs_F}}
 \end{align*}
 
 
 Once a mass $m$ is hung on one end:
-\[ T = 2\pi\sqrt{\frac{\color{red} m \color{blue}l_0}{\color{blue} AY}} \htab\htab
-f =\frac{1}{2\pi} \sqrt{\frac{\color{blue} AY}{\color{red} m \color{blue}l_0}} \]
+\[ \omega^2 = \sqrt{\frac{\color{\kcol} AY}{\color{\mcol} m \color{\kcol}l_0}} \]
 
 We can rewrite this in terms of properties more easily measured at static equilibrium, such as $h$, the increase of length reached at static equilibrium after the mass is attached.
-\[ \textcolor{red}{m}g=\textcolor{blue}{\frac{AY}{l_0}} h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
+\[ \textcolor{\mcol}{m}g=\textcolor{\kcol}{\frac{AY}{l_0}} h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
 \begin{equation}
-T=2\pi\sqrt{\frac{h}{g}} \htab\htab
-f=\frac{1}{2\pi} \sqrt{\frac{g}{h}}
- \label{elWireT}
+\omega^2 = \frac{g}{h}  \label{elWireT}
 \end{equation} 
 
-Remark: these forms are similar to those for a pendulum (to be seen later).
+Remark: this form is similar to that for a pendulum (to be seen later).
 
 \section{Floating Objects}
 Let the floating object (of mass $m$) have a constant cross-sectional area $A$ parallel to the liquid surface.
 
 Recall:
-\begin{align*}
-	 F_\text{buoyancy} &= \text{weight of liquid displaced by the floating object} \\
-	 F_b & = g\rho_l Ay
-\end{align*}
+\[ F_\text{buoyancy} = \text{weight of liquid displaced by the floating object} \]
+\[ \boxed{F_b  = \textcolor{\kcol}{g\rho A}y} \]
 
 where...
 \begin{itemize}
-	\item $\rho_l$: density of the liquid
+	\item $\rho$: density of the liquid
 	\item $y$: vertical displacement of the object above equilibrium position
 \end{itemize}
 
 
 By Newton's Law:
-\[ \textcolor{red}{m}\frac{d^2y}{dt^2} = -\textcolor{blue}{g\rho A}y \]
+\[ \textcolor{\mcol}{m}\frac{d^2y}{dt^2} = -\textcolor{\kcol}{g\rho A}y \]
+\[ \therefore \omega^2 = \frac{\textcolor{\kcol}{g\rho A}}{\textcolor{\mcol}m} \]
 
-Yields: \begin{equation} \omega = \sqrt{\frac{g\rho A}{m}} \text{ and } T = 2\pi\sqrt{\frac{m}{g\rho A}} \label{floatingWT} \end{equation}
+We can, again, rewrite $\omega^2$ in terms of $h$, the change in equilibrium position when the object is placed in the liquid and reaches static eqm:
+\[ \textcolor{\mcol}{m}\cancel{g}=\textcolor{\kcol}{\cancel{g}\rho A} h
+\Longrightarrow
+h = \frac{m}{\rho A} \]
+\[\omega^2 = \frac{g}{h} \]
 
-\subsection{Large Floating Objects}
-Consider a boat. Approximate its mass with $ m = \rho Ah$ (where $\rho$ represents, this time, the density of water. Sub into \eqref{floatingWT}:
-\begin{equation} T = 2\pi\sqrt{\frac{h}{g}} \end{equation}
 
-This is analogous to the period of an elastic wire, seen earlier in \eqref{elWireT}. 
+This is analogous to the $\omega^2$ of an elastic wire, seen earlier in \eqref{elWireT}. 
+
 
 \section{The Pendulum}
 Displacement is specified by $\theta$. 
