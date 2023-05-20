@@ -776,7 +776,7 @@ The \emph{linear mass density} of the spring is $ \lambda = {M}/{l} $.
 Consider an infinitesimal segment of the spring initially at a distance $s$ from the fixed end $(0 \leq s \leq l)$, with a width $ds$. Its mass is:
 \[ dM = \lambda\,ds = \frac{M}{l}\,ds \] 
 
-Each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement of the segment is
+\paragraph{Assumption} Each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement of the segment is
 \[ \text{displacement} = \frac{s}{l} \, x \Longrightarrow
 \text{speed} = \frac{s}{l} \frac{dx}{dt} 
 \]
@@ -798,6 +798,7 @@ So, the energy-conservation statement for the whole system becomes:
 
 This is the equivalent of taking a massless spring (see Equation~\ref{ch3:eq-SHM-soln}), and then adding a mass of $m + M/3$ to the end.
 
+In reality, our model holds only when $M \ll m$. Otherwise, the force along the spring is not constant -- we can no longer assume that the elongation of a point is proportional to its distance from the fixed end.
 
 \section{The Decay of Free Oscillations}
 
