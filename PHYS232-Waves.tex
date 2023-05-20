@@ -272,15 +272,15 @@ If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repea
 \section{Overview}
 Any physical system that undergoes SHM is associated with...
 \begin{itemize}
-	\item a constant $\kcol{k}$ representing the \kcol{elasticity} of the system $\longrightarrow$ kinetic energy
-	\item a constant $\mcol{m}$ representing the \mcol{inertia} of the system $\longrightarrow$ potential energy
+	\item a constant representing the \kcol{elasticity} of the system $\longrightarrow$ kinetic energy
+	\item a constant representing the \mcol{inertia} of the system $\longrightarrow$ potential energy
 \end{itemize}
 
-Consider the motion of a mass on a spring, which can be described using...
+Consider the motion of a mass $m$ on a spring with spring constant $k$:
 \begin{align}
-	\text{Newton's Law: }&
+	\text{From Newton's Law: }&
 	\mcol{m}\ddot{x} + \kcol{k}x = 0 \label{ch3:eq-NL} \\
-	\text{Conservation of Energy: }&
+	\text{From Conservation of Energy: }&
 	\frac{1}{2}\mcol{m}\dot{x}^2 + \frac{1}{2}\kcol{k}x^2 = E \label{ch3:eq-CE}
 \end{align}
 
@@ -291,7 +291,7 @@ Any equation matching either of the forms above\footnote{\eqref{ch3:eq-CE} also 
 
 Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{ch3:eq-NL}, while others, with \eqref{ch3:eq-CE}.
 
-The systems have differing elastic and inertial constants, and thus different $\omega^2$. For all of them, however:
+Although the systems have differing elastic and inertial constants, it will always be true that:
 \begin{equation}
 	\boxed{
 		\omega^2 = \frac{\kcol{\text{elasticity}}}{\mcol{\text{inertia}}} \hhtab 
@@ -469,7 +469,7 @@ The ratio between these two quantities is a constant $Y$, which we call \textbf{
 Let us consider the force $F = -F_\text{app}$ exerted \emph{by} the rod \emph{on} another object. Hence,
 \begin{align}
 	& Y = \frac{-F/A}{x/l_0} \notag \\
-	& \boxed{\therefore F = \kcol{\frac{-AY}{l_0}} x } \label{ch3:eq-Youngs-F}
+	& \boxed{F = \kcol{\frac{-AY}{l_0}} x } \label{ch3:eq-Youngs-F}
 \end{align}
 
 
@@ -625,9 +625,8 @@ PE = g\rho Ay^2 \]
 \[ \Longrightarrow \frac{1}{2} \mcol{\rho Al} \left( \frac{dy}{dt} \right)^2 
 + \frac{1}{2} \kcol{(2g\rho A)} y^2 = E  \] 
 
-Thus:
 \begin{equation}
-\omega^2 = \frac{\kcol{2g}}{\mcol{l}} \label{ch3:eq-utube-result}
+\therefore \omega^2 = \frac{\kcol{2g}}{\mcol{l}} \label{ch3:eq-utube-result}
 \end{equation}
 
 Again, the result for a U-tube \eqref{ch3:eq-utube-result} is comparable to that for an elastic wire \eqref{ch3:eq-elastic-wire-result}.
@@ -734,7 +733,7 @@ Compare \eqref{ch3:eq-pistonF} with \eqref{ch3:eq-Youngs-F} for stretching a rod
 More formally, the \textbf{bulk modulus} of a specimen is defined by:
 \begin{align*}
 	K &= -\frac{dp}{dV/V} \notag \\
-	&= -V\frac{dp}{dV}
+	\Aboxed{K &= -V\frac{dp}{dV}}
 \end{align*}
 
 \subsection{Adiabatic conditions}
@@ -758,37 +757,46 @@ K_\text{adiabatic} &= -V \frac{dp}{dV} \\
 
 Because elasticity is enhanced under adiabatic conditions, and the frequency of vibrations is increased too:
 \begin{equation*}
-	\omega^2_\text{isothermal} \propto \kcol{p} \hhtab\hhtab
+	\therefore
+	\omega^2_\text{isothermal} \propto \kcol{p} \andd
 	\omega^2_\text{adiabatic} \propto \kcol{\gamma p}
 \end{equation*}
 
 \section{Oscillations Involving Massive Springs} \label{ch3:sec-massive-springs}
-Suppose this time the spring itself has a mass of $M$. Suppose it has a spring contant $k$ and that there is a mass $m$ attached to it.
 
-Each point on the spring undergoes a displacement proportional to its distance from the fixed end (just like in static extension).
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{phys232/Ch3-massive-spring.png} \caption{Uniform extension of a massive spring.}\label{ch3:fig-massive-spring}
+\end{figure}
 
-Let the relaxed length of the spring be $l$. Let the distance from the fixed end be $s$ $(0 \leq s \leq l)$. 
+Suppose this time the spring itself has a mass of $M$. Suppose that it has a spring contant $k$ and that there is a mass $m$ attached to it. Let the equilibrium length of the spring be $l$.
 
-Consider an infinitesimal segment of the spring between $s$ and $s + ds$.
+The \emph{linear mass density} of the spring is $ \lambda = {M}/{l} $.
 
-Its mass is: \[ dM = \frac{M}{l} ds \] 
+Consider an infinitesimal segment of the spring initially at a distance $s$ from the fixed end $(0 \leq s \leq l)$, with a width $ds$. Its mass is:
+\[ dM = \lambda\,ds = \frac{M}{l}\,ds \] 
 
-Its displacement is \[ \frac{s}{l} x \]
+Each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement of the segment is
+\[ \text{displacement} = \frac{s}{l} \, x \Longrightarrow
+\text{speed} = \frac{s}{l} \frac{dx}{dt} 
+\]
 
-Its kinetic energy is \[ dK = \frac{1}{2}\left( \frac{M}{l} ds \right) \left( \frac{s}{l} \frac{dx}{dt} \right)^2 = \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2 s^2 ds \]
+Its kinetic energy is \[ dK = \frac{1}{2}\left( \frac{M}{l} ds \right) \left( \frac{s}{l} \frac{dx}{dt} \right)^2 = \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2 s^2 \, ds \]
 
-Integrate, treating $dx/dt$ as a constant:
+For the kinetic energy of the whole spring, integrate, treating $dx/dt$ as a constant:
 \begin{align*}
-K_{spring} &= \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2  \int_0^{l} s^2 ds \\
+K_\text{spring} &= \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2  \int_0^{l} s^2 \, ds \\
 &= \frac{1}{6}M\left(\frac{dx}{dt}\right)^2
 \end{align*}
 
 So, the energy-conservation statement for the whole system becomes:
-\[ \frac{1}{2}m\left(\frac{dx}{dt}\right) + \frac{1}{6}M\left( \frac{dx}{dt}\right)^2 + \frac{1}{2}kx^2 = E \]
-giving
-\[ \omega^2 = \frac{k}{m + M/3} \]
+\begin{align*}
+\frac{1}{2}m\left(\frac{dx}{dt}\right)^2 + \frac{1}{6}M\left( \frac{dx}{dt}\right)^2 + \frac{1}{2}kx^2 &= E  \\
+\frac{1}{2} \mcol{\left( m + \frac{M}{3} \right)} \left(\frac{dx}{dt}\right)^2 + \frac{1}{2} \kcol{k} x^2 &= E
+\end{align*}
+\[ \therefore \omega^2 = \frac{\kcol{k}}{\mcol{m+M/3}} \]
 
-This is the equivalent of taking a massless spring, and then adding a mass of $m + M/3$ to the end.
+This is the equivalent of taking a massless spring (see Equation~\ref{ch3:eq-SHM-soln}), and then adding a mass of $m + M/3$ to the end.
 
 
 \section{The Decay of Free Oscillations}
