@@ -652,7 +652,7 @@ Thus:
 \omega^2 = \frac{\kcol{c}}{\mcol{I}}
 \end{equation*}
 
-\subsection{Shear \& Shear Modulus}
+\subsection{Shear \& the shear modulus}
 Apply a horizontal force $F_\text{app}$ to the board in Figure~\ref{ch3:fig-shear-torsion}a. Two of the sides change from rectangles to parallelograms. Define an \textbf{angle of shear, $\alpha$}:
 \[ \alpha = \frac{x}{l} \]
 
@@ -667,16 +667,14 @@ Let us consider the force $F=-F_\text{app}$ exerted \emph{by} the sheared materi
 	\boxed{F = \kcol{\frac{-nA}{l}} x}  \label{ch3:eq-torsional-F}
 \end{equation}
 
-Notice that \eqref{ch3:eq-torsional-F} for \textit{shear deformations} is analogous to \eqref{ch3:eq-Youngs-F} for \textit{longitudinal deformations}.
-
-(Another modulus also exists: the \textbf{bulk modulus}, $K$, which describes the resistance of a material to changes in volume.)
+Notice that \eqref{ch3:eq-torsional-F} for {shear deformations} is comparable to \eqref{ch3:eq-Youngs-F} for {longitudinal deformations}\footnote{Another modulus also exists: the \textbf{bulk modulus}, $K$, which describes the resistance of a material to changes in volume -- more about this in Section~\ref{ch3:sec-bulk-modulus}.}.
 
 \subsection{Torque due to shear}
 Refer to Figure~\ref{ch3:fig-shear-torsion}b, where two disks of radius $r$ on spindles are connected by two rectangular strips of material, each with cross-sectional area $A$.
 
-Twist one spindle through a small $\theta$; the end of each strip is moved transversely through a distance $r\theta$. The angle of shear is thus: \[ \alpha = \frac{r\theta}{l} \]
+Twist one spindle through a small $\theta$; the end of each strip undergoes shear through a distance $x=r\theta$. 
 
-Substituting this result into \eqref{ch3:eq-torsional-F}, we find that the restoring force $\Delta F$ exerted by each strip tangentially to the disk is:
+Substituting this into \eqref{ch3:eq-torsional-F}, we see that the restoring force $\Delta F$ exerted by each strip tangentially to the disk is:
 \[ \Delta F = -\kcol{nA\frac{r}{l}} \theta \]
 
 Hence, there is a restoring torque exerted by \emph{each} strip about the axis of twist:
@@ -700,51 +698,73 @@ To find the torque provided by a \textit{solid} tube or cylinder, consider multi
 \end{equation*}
 
 \section{``The Spring of Air"} \label{ch3:sec-air}
-Consider a closed piston-gas system, as pictured. Let $m$ represent the mass of the movable piston, and let $p$ represent the pressure of the gas inside the tube.
 
-When the piston moves a distance of $y$ from equilibrium position, the pressure inside changes by $\Delta p$:
-\[ F = A\Delta p \]
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{phys232/Ch3-air.png} \caption{Piston in a vertical air column.}\label{ch3:fig-air}
+\end{figure}
 
-Calculate the pressure change, using \emph{Boyle's Law}:
+Consider a closed piston-gas system, as pictured in Figure~\ref{ch3:fig-air} Let $m$ represent the mass of the movable piston, and $p$, the pressure of the gas inside the tube.
+
+When the piston moves a distance of $y$ from equilibrium position $l$, the pressure of the gas changes by $\Delta p$.
+
+\subsection{Isothermal conditions}
+Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies:
 \begin{align*}
 pV &= \text{const} \\
-p\Delta V + V\Delta p &= 0 \tag{a bit like the product rule for differentiation}
+p\Delta V + V\Delta p &= 0 \tag*{(cf. the product rule for differentiation)}
 \end{align*}
 
-But, $\Delta V = Ay \Longrightarrow V = Al$ \\
-So: \[ \Delta p = -\frac{py}{l} \]
-Thus: \begin{equation} \boxed{ F=-\frac{Ap}{l}y } \label{pistonF} \end{equation}
+But... the equilibrium volume was $V = Al$ and the change in volume is $\Delta V = Ay$.
+\[ p(Ay) + (Al)\Delta p = 0 \]
+\[ \Delta p = -\frac{py}{l} \]
 
-Compare \eqref{pistonF} with \eqref{ch3:eq-youngs-F} for stretching/compressing a solid rod. Here, the $p$ is analogous to $Y$.
+Because $F=PA$:
+\begin{equation}
+	\boxed{F=-\kcol{\frac{Ap}{l}} y } \label{ch3:eq-pistonF}
+\end{equation}
 
-\subsection{Bulk Modulus}
-\begin{align}
-K &= -\frac{dp}{dV/V} \notag \\
-&= -V\frac{dp}{dV}
-\end{align}
+\subsection{Bulk Modulus} \label{ch3:sec-bulk-modulus}
 
-Remember that Boyle's law requires \emph{isothermal} (constant temperature) conditions. So, define: \begin{equation} K_{isothermal} = p \label{Kisothermal} \end{equation} 
- 
-When a gas is compressed, \textit{it becomes warmer} because of the work being done on it (although this effect was ignored when deriving the expression for a small change in pressure and for the restoring force).
+Compare \eqref{ch3:eq-pistonF} with \eqref{ch3:eq-Youngs-F} for stretching a rod. Here, $p$ plays a role analogous to $Y$. We can call $p$ the \textbf{isothermal bulk modulus} of the gas:
+\begin{equation*}
+	K_\text{isothermal} = p
+\end{equation*}
 
-$P \propto$ mean-squared molecular speed, so the heating results in a greater restoring force than otherwise, and the elastic modulus of the gas column is larger than the $p$ predicted by \eqref{Kisothermal}.
+More formally, the \textbf{bulk modulus} of a specimen is defined by:
+\begin{align*}
+	K &= -\frac{dp}{dV/V} \notag \\
+	&= -V\frac{dp}{dV}
+\end{align*}
 
-Under completely \textbf{adiabatic} conditions (closed system; no heat flow in/out of the gas):
-\begin{equation} pV^\gamma \end{equation}
+\subsection{Adiabatic conditions}
 
-Becomes:
-\begin{align}
-\ln p + \gamma\ln V &= \text{const} \notag \\
-\frac{1}{p}\frac{dp}{dV} + \frac{\gamma}{V} &= 0 \notag \\
-K_{adiabatic} = -V \frac{dp}{dV} &= \gamma p \label{Kadiabatic}
-\end{align}
+In general, $K_\text{isothermal}$ is not a good descriptor of the elasticity of an air column.
+\begin{itemize}
+	\item When a gas is compressed, it becomes \emph{warmer} because of the work being done on it.
+	\item Heating results in a greater restoring force.
+	\item We expect a higher value than $p$ for the elasticity of the gas.
+\end{itemize}
 
-Elasticity is enhanced under adiabatic conditions, and therefore the \textit{frequency} of vibrations is increased.
+In \textbf{adiabatic conditions} (closed system; no flow of heat in/out of the gas), we have:
+\begin{align*}
+pV^\gamma &= \text{constant} \\
+\Longrightarrow \ln p + \gamma\ln V &= \text{const} \tag{taking $\ln$ of both sides} \\
+\Longrightarrow \frac{1}{p}\frac{dp}{dV} + \frac{\gamma}{V} &= 0 \tag{integrating both sides} \\
+K_\text{adiabatic} &= -V \frac{dp}{dV} \\
+\Aboxed{K_\text{adiabatic} &= \gamma p}
+\end{align*}
+
+Because elasticity is enhanced under adiabatic conditions, and the frequency of vibrations is increased too:
+\begin{equation*}
+	\omega^2_\text{isothermal} \propto \kcol{p} \hhtab\hhtab
+	\omega^2_\text{adiabatic} \propto \kcol{\gamma p}
+\end{equation*}
 
 \section{Oscillations Involving Massive Springs} \label{ch3:sec-massive-springs}
-Consider: a mass $m$ on a uniform spring of total mass $M$ and spring constant $k$.
+Suppose this time the spring itself has a mass of $M$. Suppose it has a spring contant $k$ and that there is a mass $m$ attached to it.
 
-Each point on the spring undergoes a displacement proportional to their distances from the fixed end (just like in static extension).
+Each point on the spring undergoes a displacement proportional to its distance from the fixed end (just like in static extension).
 
 Let the relaxed length of the spring be $l$. Let the distance from the fixed end be $s$ $(0 \leq s \leq l)$. 
 
