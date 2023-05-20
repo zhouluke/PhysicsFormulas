@@ -691,7 +691,7 @@ Let the radius be $r$ and the wall thickness be $\Delta r$. This means the cross
 \end{equation}
 
 \subsubsection{Solid Tube}
-To find the torque provided by a \textit{solid} tube or cylinder, consider multiple rings. Integrate \eqref{ch3:eq-thinTube_dtau} to obtain:
+We can model a \textit{solid} tube or cylinder as multiple thin-walled tubes. Integrate \eqref{ch3:eq-thinTube_dtau} to obtain, as a total restoring torque:
 \begin{equation*}
 	\boxed{\tau = -\kcol{\frac{\pi nr^4}{2l}} \theta}
 \end{equation*}
@@ -762,11 +762,11 @@ Because elasticity is enhanced under adiabatic conditions, and the frequency of 
 	\omega^2_\text{adiabatic} \propto \kcol{\gamma p}
 \end{equation*}
 
-\section{Oscillations Involving Massive Springs} \label{ch3:sec-massive-springs}
+\section{Massive Springs} \label{ch3:sec-massive-springs}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{phys232/Ch3-massive-spring.png} \caption{Uniform extension of a massive spring.}\label{ch3:fig-massive-spring}
+	\includegraphics[scale=0.8]{phys232/Ch3-massive-spring.png} \caption{Uniform extension of a massive spring with mass $M$.}\label{ch3:fig-massive-spring}
 \end{figure}
 
 Suppose this time the spring itself has a mass of $M$. Suppose that it has a spring contant $k$ and that there is a mass $m$ attached to it. Let the equilibrium length of the spring be $l$.
@@ -776,8 +776,8 @@ The \emph{linear mass density} of the spring is $ \lambda = {M}/{l} $.
 Consider an infinitesimal segment of the spring initially at a distance $s$ from the fixed end $(0 \leq s \leq l)$, with a width $ds$. Its mass is:
 \[ dM = \lambda\,ds = \frac{M}{l}\,ds \] 
 
-\paragraph{Assumption} Each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement of the segment is
-\[ \text{displacement} = \frac{s}{l} \, x \Longrightarrow
+\paragraph{Assumption} Each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement and speed of the segment are:
+\[ \text{displacement} = \frac{s}{l} \, x \andd
 \text{speed} = \frac{s}{l} \frac{dx}{dt} 
 \]
 
@@ -802,25 +802,33 @@ In reality, our model holds only when $M \ll m$. Otherwise, the force along the 
 
 \section{The Decay of Free Oscillations}
 
-\section{Large Damping}
+In general, resistive forces act in a direction opposite to $\vec{v}$ and have magnitude:
+\[ F_b = b_1v + b_2v^2\]
 
-%\chapter{Forced Vibrations \& Resonance}
-%Cock, cock, teabag! 8=====|)
+When $v$ is small in comparison to $b_1/b_2$, we can make an approximation:
+\begin{equation*}
+	\boxed{\vec{F}_b = b\vec{v}}
+\end{equation*}
 
-%\chapter{Free Vibrations}
-\section{Damping}
-Resistive forces, for small $v$: \[ F=-bv \]
-
-Equation of motion:
-\[ m\ddot{x} = -kx - b\dot{x} \]
-\[ \ddot{x} + \gamma \dot{x} + {\omega_0}^2 x = 0 \]
+For our mass-spring system with damping, our statement of Newton's Law becomes:
+\begin{align*}
+	m\ddot{x} &= -kx - bv \\
+	m\ddot{x} + b\dot{v} + kx &= 0 \\
+	\ddot{x} + \gamma \dot{v} + \omega_0^2 x &= 0
+\end{align*}
 where
-\[ {\omega_0}^2 = k/m \text{ \& } \gamma = b/m \]
+\[ \boxed{\gamma = \frac{b}{m} \andd \omega_0 = \frac{k}{m}} \]
+
+Interpretation:
+\begin{itemize}
+	\item $\gamma$: damping constant (with dimensions of frequency)
+	\item $\omega_0^2$: angular frequency of the system if damping were absent
+\end{itemize}
 
 Solution:
-\[ x = A e^{-\gamma t/2} \cos(\omega t + \alpha) \]
-where
-\[ \omega ^2 = \omega_0^2 - \frac{\gamma^2}{4} \]
+\[
+\boxed{ x = A e^{-\gamma t/2} \cos(\omega t + \alpha) \where \omega ^2 = \omega_0^2 - \frac{\gamma^2}{4} }
+\]
 
 Amplitude:
 \[ A(t) = A_0 e^{-\gamma t/2} \]
@@ -831,7 +839,7 @@ Total energy:
 Quality value:
 \[ Q = \frac{\omega_0}{\gamma} \]
 
-\subsection{Very Large Damping}
+\subsection{Large Damping}
 \subsubsection{Overdamping ($ \omega_0 \ll \gamma/2 $)}
 \[ x = A_1 e^{-(\gamma/2 + \beta)t} + A_2 e^{-(\gamma/2-\beta)t} \]
 where \[ \beta = \left(\frac{\gamma^2}{4}-\omega_0^2 \right)^{1/2} \]
