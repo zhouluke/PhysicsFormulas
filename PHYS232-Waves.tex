@@ -457,18 +457,20 @@ This is why, for SHM in general, we can assume solutions of the type:
 
 Apply a force $F_\text{app}$ to one end (e.g., by hanging a mass off it) and let the other end remain fixed. When the wire/rod is in \textit{static equilibrium}, let us define two quantities:
 
-\[  \text{strain} = \frac{x}{l_0} \where\text{$x$ is the extension of the wire}  \]
-
 \[ \text{stress} = \frac{F_\text{app}}{A} \where\text{$A$ is the cross-sectional area} \]
 
+\[  \text{strain} = \frac{x}{l_0} \where\text{$x$ is the extension of the wire}  \]
+
 The ratio between these two quantities is a constant $Y$, which we call \textbf{Young's modulus of elasticity} for the material\footnote{... as long as the strain is small enough, such that the material is not permanently deformed when stretched.}:
-\[\boxed{ Y = \frac{\text{stress}}{\text{strain}} = \text{const} } \]
+\begin{equation}
+	\boxed{ Y = \frac{\text{stress}}{\text{strain}} = \text{const}} \label{ch3:eq-Youngs-Modulus}
+\end{equation}
 
 Let us consider the force $F = -F_\text{app}$ exerted \emph{by} the rod \emph{on} another object. Hence,
-\begin{align*}
-	& -Y = \frac{F/A}{x/l_0} \\
-	& \boxed{\therefore F = \kcol{\frac{-AY}{l_0}} x \label{ch3:eq-youngs-F}}
-\end{align*}
+\begin{align}
+	& Y = \frac{-F/A}{x/l_0} \notag \\
+	& \boxed{\therefore F = \kcol{\frac{-AY}{l_0}} x } \label{ch3:eq-Youngs-F}
+\end{align}
 
 
 Once a mass $m$ is hung on one end:
@@ -609,88 +611,93 @@ This result is analogous to what we found for an elastic wire (Equation~\ref{ch3
 	\includegraphics[scale=0.8]{phys232/Ch3-utube.png} \caption{Oscillating liquid column in a U-tube.}\label{ch3:fig-utube}
 \end{figure}
 
-Examine the vertical displacement $y$ of the liquid surface from equilibrium. Define:
+Examine the vertical displacement $y$ of the liquid surface from equilibrium in a U-tube with uniform cross-sectional area $A$. Define:
 \begin{itemize}
 	\item $l$: total length of liquid column
-	\item $A$: cross sectional area
 	\item $\rho$: liquid density
 \end{itemize}
 
-When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} by the same height $y$. The mass of the liquid that moves is $g\rho Ay$. 
+When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} by the same height $y$. The mass of the liquid that moves is $\rho Ay$. 
 
-Assume all parts of the liquid move with speed $dy/dx$. So,
-\[ KE = \frac{1}{2} \left(\frac{dy}{dx}\right)^2 \andd
+Assume the whole liquid, which has mass $\rho Al$, moves with speed $dy/dt$. So,
+\[ KE = \frac{1}{2} \rho Al \left(\frac{dy}{dx}\right)^2 \andd
 PE = g\rho Ay^2 \]
 \[ \Longrightarrow \frac{1}{2} \mcol{\rho Al} \left( \frac{dy}{dt} \right)^2 
 + \frac{1}{2} \kcol{(2g\rho A)} y^2 = E  \] 
 
 Thus:
 \begin{equation}
-\omega^2 = \frac{2g}{l} \label{ch3:eq-utube-result}
+\omega^2 = \frac{\kcol{2g}}{\mcol{l}} \label{ch3:eq-utube-result}
 \end{equation}
 
 Again, the result for a U-tube \eqref{ch3:eq-utube-result} is comparable to that for an elastic wire \eqref{ch3:eq-elastic-wire-result}.
 
 \section{Torsional Oscillations} \label{ch3:sec-torsional}
-If the torque $M \propto$ angular displacement $\theta$ between two ends of an object,
-\[ M=-c\theta \where\text{$c$ is the torsion constant of the system.} \]
 
-Stored potential energy: \[ U= -\int M d\theta = \frac{1}{2} c\theta^2 \]
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{phys232/Ch3-shear-torsion.png} \caption{(a) Shear deformation of a rectantular block; (b) Torque on rectangular strips during shear deformation; (c) A twisted tube can be considered as a collection of strips undergoing shear.}\label{ch3:fig-shear-torsion}
+\end{figure}
 
-If one end has a moment of inertia $I$ and the inertia of the twisted system itself is negligible, then by energy conservation:
-\[ \frac{1}{2}I\left( \frac{d\theta}{dt}\right)^2 + \frac{1}{2} c\theta^2 = E \]
+If the torque $\tau \propto$ angular displacement $\theta$ between two ends of an object,
+\[ \tau=-\kcol{c}\theta \where\text{$c$ is the torsion constant of the system.} \]
+
+Stored potential energy: \[ U= -\int \tau d\theta = \frac{1}{2} \kcol{c}\theta^2 \]
+
+If one end has a moment of inertia $\mcol{I}$ and the inertia of the twisted system itself is negligible, then by the conservation of energy:
+\[ \frac{1}{2} \mcol{I} \left( \frac{d\theta}{dt}\right)^2 + \frac{1}{2} \kcol{c}\theta^2 = E \]
 
 Thus:
-\begin{equation}
-\omega^2 = \frac{c}{I} \text{ and } T = 2\pi\sqrt{\frac{I}{c}} \label{torsionalT}
-\end{equation}
+\begin{equation*}
+\omega^2 = \frac{\kcol{c}}{\mcol{I}}
+\end{equation*}
 
-\subsection{Shear Modulus}
-Apply a horizontal force $P$ to the board in a). Two of the sides change from rectangles to parallelograms. Define an \textbf{angle of shear, $\alpha$}:
+\subsection{Shear \& Shear Modulus}
+Apply a horizontal force $F_\text{app}$ to the board in Figure~\ref{ch3:fig-shear-torsion}a. Two of the sides change from rectangles to parallelograms. Define an \textbf{angle of shear, $\alpha$}:
 \[ \alpha = \frac{x}{l} \]
 
-Let $F=-P$ represent the force exerted \textit{by the sheared material} onto the board.
+It turns out that, just like when we stretch an elastic wire (Section~\ref{ch3:sec-wire}), the ratio between stress and the ``angular strain" is a constant.
 
-Define a \textbf{shear modulus} or \textbf{modulus of rigidity}, $n$:
-\[ n = \frac{-F/A}{\alpha} \]
-or
-\begin{equation} \boxed{dF = -nA d\alpha = \frac{-nA}{l}dx} \label{shear_dF} \end{equation}
+We call this the \textbf{shear modulus} or \textbf{modulus of rigidity}, $n$, for the material (cf. Equation~\ref{ch3:eq-Youngs-Modulus}):
+\[  n= \frac{F_\text{app}/A}{\alpha} = \text{const} \]
 
-Notice that \eqref{shear_dF} for \textit{shear deformations} is analogous to \eqref{youngs_dF} and \eqref{ch3:eq-youngs-F} for \textit{longitudinal deformations}.
+Let us consider the force $F=-F_\text{app}$ exerted \emph{by} the sheared material \emph{onto} the board. Hence,
+\[  n = \frac{-F/A}{x/l} \]
+\begin{equation}
+	\boxed{F = \kcol{\frac{-nA}{l}} x}  \label{ch3:eq-torsional-F}
+\end{equation}
+
+Notice that \eqref{ch3:eq-torsional-F} for \textit{shear deformations} is analogous to \eqref{ch3:eq-Youngs-F} for \textit{longitudinal deformations}.
 
 (Another modulus also exists: the \textbf{bulk modulus}, $K$, which describes the resistance of a material to changes in volume.)
 
-\subsection{Restoring Torques}
-Refer to the figure in b).
+\subsection{Torque due to shear}
+Refer to Figure~\ref{ch3:fig-shear-torsion}b, where two disks of radius $r$ on spindles are connected by two rectangular strips of material, each with cross-sectional area $A$.
 
-Two disks of radius $r$ on spindles are connected by two rectangular strips of material.
+Twist one spindle through a small $\theta$; the end of each strip is moved transversely through a distance $r\theta$. The angle of shear is thus: \[ \alpha = \frac{r\theta}{l} \]
 
-Twist one spindle through a small $\theta$; the end of each strip is moved transversely through a distance $r\theta$.
+Substituting this result into \eqref{ch3:eq-torsional-F}, we find that the restoring force $\Delta F$ exerted by each strip tangentially to the disk is:
+\[ \Delta F = -\kcol{nA\frac{r}{l}} \theta \]
 
-The angle of shear is thus: \[ \alpha = \frac{r\theta}{l} \]
-
-Sub into \eqref{shear_dF} to find the restoring force tangential to the disk by each strip (if they have a cross-sectional area of $A$:
-\[ F = -nA\frac{r\theta}{l} \]
-
-There is a torque of magnitude $rF$ exerted about the axis of twist by each strip.
+Hence, there is a restoring torque exerted by \emph{each} strip about the axis of twist:
+\begin{align*}
+	\Delta\tau &= r\,dF  \notag \\
+	&= -\frac{nAr^2\theta}{l} 
+\end{align*}
 
 \subsubsection{Thin Walled Tube}
-Refer to the figure in c).
+Refer to Figure~\ref{ch3:fig-shear-torsion}c, where we will consider a twisted, thin-walled tube as a collection of many strips, each undergoing shear and contributing restoring torques about the axis of twist.
 
-Let the mean radius be $r$ and the wall thickness be $\Delta r$.
-
-Consider it a whole collection of thin strips parallel to the axis of the cylinder, all contributing restoring torques about the axis.
-
-So, when the tube is given a relative twist through $\theta$, the torque $\Delta M$ provided is:
-\begin{align}
-\Delta M &= -\frac{nAr^2\theta}{l}
-\intertext{But here, $A=2\pi r \Delta r$:}
-\Delta M &= -\frac{2\pi nr^3\Delta r}{l} \theta \label{thinTube_dM}
-\end{align}
+Let the radius be $r$ and the wall thickness be $\Delta r$. This means the cross-sectional area is $A=2\pi r \Delta r$. The restoring torque from a \emph{thin ring of strips} is thus:
+\begin{equation}
+\Delta \tau = -\frac{2\pi nr^3\Delta r}{l} \theta  \label{ch3:eq-thinTube_dtau}
+\end{equation}
 
 \subsubsection{Solid Tube}
-To find the torque provided by a \textit{solid} tube or cylinder, integrate or sum the above in \eqref{thinTube_dM} to obtain:
-\begin{equation} \boxed{M = -\frac{\pi nr^4}{2l} \theta} \end{equation}
+To find the torque provided by a \textit{solid} tube or cylinder, consider multiple rings. Integrate \eqref{ch3:eq-thinTube_dtau} to obtain:
+\begin{equation*}
+	\boxed{\tau = -\kcol{\frac{\pi nr^4}{2l}} \theta}
+\end{equation*}
 
 \section{``The Spring of Air"} \label{ch3:sec-air}
 Consider a closed piston-gas system, as pictured. Let $m$ represent the mass of the movable piston, and let $p$ represent the pressure of the gas inside the tube.
