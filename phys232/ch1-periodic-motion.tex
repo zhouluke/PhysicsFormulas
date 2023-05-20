@@ -1,0 +1,115 @@
+\chapter{Periodic Motion}
+\section{Simple Harmonic Motion}
+\begin{align*}
+\shortintertext{Restoring forces for a displacement $x$:} 
+F(x) &= -(k_1 + k_2x^2 + k_3x^3 + \cdots) 
+\intertext{For small x, the upper order terms are negligible:} 
+F(x) &= -k_1x 
+\end{align*}
+ 
+When a small mass is attached to the end of a massless spring:
+\[ \boxed{-k_1x = m\frac{d^2x}{dt^2}} \] 
+
+The solution to the differential equation gives a \textbf{sinusoidal} function: \[ \boxed{x = A \sin(\omega t+\varphi_0)} \] %
+\begin{center} 
+where \textbf{angular frequency} $\boxed{\omega = \sqrt{k_1/m}}$ \textit{(independent of A and $\varphi_0$)}
+
+Period: $T=\frac{2\pi}{\omega} $; Frequency: $f = \frac{1}{T}=\frac{\omega}{2\pi} $   \\
+\end{center}
+
+
+Real vibrations don't go on forever; SHM models a \textbf{steady state of vibration}.
+
+More conditions for using a sinusoidal SHM model:
+\begin{multicols}{4}
+\begin{itemize}
+\item Small amplitudes
+\item Simple systems
+\item No damping
+\item $F_{restoring} \propto x$ %
+\end{itemize} %
+\end{multicols} %
+
+\section{Rotating Vector Representation}
+Represent SHM as the geometrical projection of the \textit{x-component} of uniform circular motion (use polar coordinates, where CCW is positive):
+\begin{empheq}[left=\empheqlbrace]{align*}
+\theta &= \omega t + \alpha \\
+x&=A\cos\theta=A\cos(\omega t + \alpha)
+\end{empheq}
+
+Trig identity to convert from cos to sin: \[ \cos\theta=\sin\left(\theta + \frac{\pi}{2}\right) \]
+%\[ \leadsto \varphi_0 = \alpha + \frac{\pi}{2} \]
+%
+\subsection{Extra axis}
+\begin{empheq}[right=\empheqrbrace]{align*}
+\text{Only \textit{x} is the \textit{measureable} component: } x &= r\cos\theta \\
+\text{The y-component is \textit{ficticious}: } y &= r\sin\theta
+\end{empheq}
+
+\subsection{Rotations with $j$} 
+\begin{align*} %
+\mathbf{r}&=\mathbf{i}x+\mathbf{j}y  \\
+\text{Rewrite as } \mathbf{r}&=x+\mathbf{j}y 
+\end{align*}
+Reinterpret $\mathbf{j}y$ as ``move a dist of \textit{y} along the y-axis"
+
+Remove vector notation: \[ \boxed{z=x+jy} \]
+Reinterpret $\mathit{j}$ as \textit{``90$^\circ$ rotation CCW from x-axis"} 
+
+So, $\mathit{j^2}$ represents two 90$^\circ$ rotations CCW from x-axis.
+\[ \boxed{j^2=-1; j=\sqrt{-1}} \]
+
+Thus, $z=x+jy$ can be considered:
+\begin{itemize}
+\item Geometrically: as a vector of length $x=\sqrt{x^2+y^2}$ at an angle $\theta = \arctan(\frac{y}{x})$ to the x-axis
+\item As a complex \# (with $j$)
+\end{itemize}
+
+\section{The Complex Exponential}
+General Taylor series: $f(x)=\sum_{n=0}^\infty \frac{x^n}{n!} f^{(n)}(0)$ 
+
+Use Taylor series for sin \& cos to obtain: 
+\[ \cos\theta + j\sin\theta = 1+j\theta+\frac{(j\theta)^2}{2!}+\frac{(j\theta)^3}{3!}+\dots+\frac{(j\theta)^n}{n!}+\dots \]
+
+Then, use the Taylor series for $e^{j\theta}$:
+\[ \boxed{\cos\theta + j\sin\theta = e^{j\theta}} \]
+
+To \textit{rotate} the vector rep'd by complex \# $z$ an angle of $+\theta$, multiply by $\boxed{e^{j\theta}}$.
+
+\subsection{Derivatives}
+When analyzing periodic displacements, sometimes we get a differential equation of motion with terms involving the velocity \&/or acceleration.
+
+Using the trigonometric functions:
+\begin{empheq}[right=\empheqrbrace]{align*}
+x&=A \cos(\omega t+\alpha) \\
+\frac{dx}{dt}&=-\omega A \sin(\omega t+\alpha) \\
+\frac{d^2x}{dt^2}&=-\omega^2 A \cos(\omega t+\alpha) 
+\end{empheq}
+Leads to an awkward mix of sin \& cos terms when the derivatives are subbed into the differential equation.
+
+Using the complex exponential:
+\begin{empheq}[right=\empheqrbrace]{align*}
+z=A \cos(\omega t+\alpha)+jA \sin(\omega t+\alpha) &= Ae^{j(\omega t+\alpha)} \\
+\frac{dz}{dt}=j\omega Ae^{j(\omega t+\alpha)} &= j\omega z \\
+\frac{d^2z}{dt^2}=(j\omega)^2 Ae^{j(\omega t+\alpha)} &= -\omega^2 z 
+\end{empheq}
+
+Each $\frac{d}{dt}$ creates a phase shift of $+\pi/2$ (graphically, the vector undergoes a rotation). 
+
+Physically meaningful projections of the complex exponential's derivatives: %
+\begin{multicols}{3} %
+\begin{center}
+$x=\Re(z)$ \\
+$\frac{dx}{dt}=\Re(j\omega z)$ \\
+$\frac{d^2x}{dt^2} = \Re(-\omega^2 z)$
+\end{center}
+\end{multicols} %
+
+
+\section{Small angle approximations}
+When $\theta$ is small and measured in radians,
+\begin{align}
+	\sin\theta &\approx \theta \label{ch1:eq-small-angle-sin} \\
+	\tan\theta &\approx \theta  \label{ch1:eq-small-angle-tan} \\
+	\cos\theta &\approx 1-\frac{\theta^2}{2} \label{ch1:eq-small-angle-cos}
+\end{align}

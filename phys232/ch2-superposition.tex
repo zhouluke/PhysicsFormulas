@@ -1,0 +1,99 @@
+\chapter{Superposition of Periodic Motions}
+The resultant of 2+ harmonic oscillators is the sum of the individual vibrations, if the system is \textbf{linear} (that is, if $F_{restoring}\propto x$).
+
+\section{In 1D}
+
+\subsection{Two Vibrations of Same Frequency}
+Consider:
+\begin{empheq}[left=\empheqlbrace]{align*}
+OP_1: x_1&=A_1\cos(\omega t + \alpha_1) \\
+OP_2: x_2&=A_2\cos(\omega t + \alpha_2)
+\end{empheq}
+Combined vibration: \[ OP: x = A\cos(\omega t+\alpha) \]
+
+All 3 vectors $OP_1, OP_2$ \& $OP$ rotate at the same frequency. 
+
+Let $\beta = \angle P_1OP$.
+
+Phase constant of the combined vib'n: $\alpha = \alpha_1 + \beta$
+
+\subsubsection{Using complex exponentials}
+\begin{align*}
+z = z_1 + z_2 &= A_1 e^{j(\omega t+\alpha_1)} + A_2 e^{j(\omega t+\alpha_2)} \\
+&=e^{j(\omega t+\alpha_1)}[A_1 + A_2e^{j(\alpha_2 - \alpha_1)}]
+\end{align*} %
+%
+\subsubsection{Special Case: Equal Amplitudes} 
+
+Let \textbf{phase difference} $\delta = \alpha_2-\alpha_1$ \\
+From geometry: $ A=2A_1\cos\beta = 2A_1\cos(\delta/2)$
+
+Application: alternating maxima/minimae superposition pattern from two sources converging at a far away point, at any point on line $OB$ (as shown).
+
+\subsection{Two Vibrations of Different Frequencies}
+Let the initial phase shifts of both vibrations be zero.
+Consider:
+\begin{empheq}[left=\empheqlbrace]{align*}
+x_1&=A_1\cos(\omega_1 t) \\ 
+x_2&=A_2\cos(\omega_2 t)
+\end{empheq}
+
+Combined vibration displacement $OX$: \[ 0 \leq OX \leq A_1+A_2 \]
+
+The combined motion will only be periodic if the periods of the component vibrations are \textbf{commensurable} - i.e. $\exists  (n_1$ \& $n_2)\in \mathbb{Z} $ such that $ T = n_1 T_1 = n_2 T_2 $ (use the smallest values of $n_1$ \& $n_2$ possible). 
+
+\subsubsection{Beats}  
+If the two frequencies are close in frequency: \textbf{beats} will be produced.
+
+Combined vibration will be a disturbance with $\omega=\frac{\omega_1+\omega_2}{2}$, but with an \textit{amplitude that varies periodically with time}.
+
+Add the $x_1$ \& $x_2$ from above. Use the trig identities for $\cos(\theta+\varphi)$ and $\cos(\theta-\varphi)$ to yield:
+\[ x = 2A\cos\left(\frac{\omega_1-\omega_2}{2} t\right)\cos\left(\frac{\omega_2+\omega_1}{2} t\right) \]
+This is only physically meaningful if $|\omega_1-\omega_2| \ll |\omega_1+\omega_2|$.
+
+Combined displacement can be fitted within an envelope:
+\[ x = \pm 2A\cos\left(\frac{\omega_1-\omega_2}{2} t\right) \]
+
+Node-to-node (see diagram): this is half a cycle (a time equal to $\frac{2\pi}{|\omega_1-\omega_2|}$.) \\
+So, the aurally observed \textbf{beat frequency} is $|\omega_1-\omega_2|$.
+
+\subsection{Many Vibrations of Same Frequency \& Amplitude}
+Let the component vibrations have equal, successive phase differences ($\delta$):
+\[ x = A_0\cos(\omega t) \]
+Resultant: \[ X = A\cos(\omega t + \alpha) \]
+
+The combining vectors form a polygon that can be inscribed inside a circle.
+Each $A_0$ subtends an angle of $\delta$. The resultant vector $A$ subtends an angle $N\delta$.
+So:
+\begin{empheq}[left=\empheqlbrace]{align*}
+A &= N\delta=2R\sin(N\delta/2) \\
+A_0 &= 2R\sin(\delta/2) 
+\end{empheq}
+
+Solve to get: 
+\[ A =A_0 \frac{\sin(N\delta/2)}{\sin(\delta/2)} \] 
+
+\begin{align*}
+\intertext{Phase angle $\alpha$ of the combined oscillation: angle between resultant vector \& the 1st vector}
+\alpha &= \angle COB - \angle COP \\
+&= (90\degr - \delta/2)-(90\degr - N\delta/2) \tag{By properties of isosceles triangles} \\
+&= \frac{(N-1)\delta}{2}
+\end{align*}
+
+Putting it all together:
+\[ \boxed{X = A_0 \frac{\sin(N\delta/2)}{\sin(\delta/2)} \cos\left[\omega t + \frac{(N-1)\delta}{2}\right]} \]
+
+\section{In 2D: Two Vibrations at $\perp$ Angles}
+The resultant motion has \textit{two} real components - $x$ and $y$:
+\begin{empheq}[left=\empheqlbrace]{align*}
+x&=A_1 \cos(\omega t) \\
+y&=A_2 \cos(\omega t + \delta)
+\end{empheq}
+
+Depending on the value of $\delta$, we'll get different path patterns described by these \textit{parametric equations}. (Be mindful of the direction of tracing - CCW or CW.)
+
+(Study the analytical/mathematical and semicircle-sketching methods to determine the pattern)
+
+\subsubsection{Different Frequencies: Lissajous Figures} 
+The patterns depend on the $\omega_1:\omega_2$ ratio.
+If $\omega_1$ and $\omega_2$ are not \textit{commensuable}, a periodically repeating pattern will not be produced.

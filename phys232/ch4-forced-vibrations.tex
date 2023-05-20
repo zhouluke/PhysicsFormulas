@@ -1,0 +1,40 @@
+\chapter{Forced Vibrations \& Resonance}
+\section{Forced Oscillations w/ Damping}
+Driving force:
+\[ F(t) = F_0 \cos(\omega t) \]
+
+Two stages:
+\begin{enumerate}
+\item \textbf{Transient state}: original system's ''natural" motion slowly damping out; driving force beginning to take over
+\item \textbf{Steady state}: system oscillates at the \emph{driving force's frequency}, $\omega$
+\end{enumerate}
+
+\subsubsection{Steady State}
+
+Equation of motion:
+\[ m\ddot{x} = -kx - b\dot{x} + F_0 \cos(\omega t) \]
+\[ \ddot{x} + \gamma\dot{x} + \omega_0^2 = F_0 \cos(\omega t) \]
+
+Results: 
+\[ x = A \cos (\omega t - \delta) \]
+\[ A(\omega) = \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}} \]
+\[ \tan \delta (\omega) = \frac{\gamma\omega}{\omega_0^2 - \omega^2}\]
+
+Independent of adjustable initial starting conditions!
+
+\subsubsection{Transient Effects}
+For $t<0$, let the object be at rest (i.e. it only starts moving at $t=0$).
+\begin{align*}
+x &= steady + transient \\
+x &= A \cos (\omega t - \delta) + B e^{-\gamma t/2} \cos(\omega' + \beta)
+\end{align*}
+
+The transient part (system's ''natural" motion) dies out over time due to damping; after then, the steady state takes over. 
+
+Transient part of the equation accounts for adjustable initial conditions!
+
+A \emph{beat pattern} may be produced during this stage if $\omega'$ (system's freq w/ damping) and $\omega$ are similar.
+
+\section{Power}
+Power required to keep a driven oscillator going at the same amplitude:
+\[ P = \frac{dW}{dt} = F\frac{dx}{dt} = Fv \]
