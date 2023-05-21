@@ -152,9 +152,11 @@ p^2 &= -\omega^2 \\
 p &= \pm j\omega
 \end{align*}
 
-Because we have two possibilities for $p$, our solution to \eqref{ch3:eq-xdd} could have been written more generally as\footnote{In general, when working with second-order differential equations like \eqref{ch3:eq-xdd}, we need to introduce two constants -- one for each level of integration. These constants could be $C_1, C_2$, or as we will see, $A$ and $\alpha$.}:
-\[ x = C_1e^{j\omega t}+C_2e^{-j\omega t} \]
-
+Because we have two possibilities for $p$, we can write a more-general solution for \eqref{ch3:eq-xdd}%
+\footnote{In general, when working with second-order differential equations like \eqref{ch3:eq-xdd}, we need to introduce two constants -- one for each level of integration. These constants could be $C_1, C_2$, or as we will see, $A$ and $\alpha$.}:
+\begin{equation}
+	 x = C_1e^{j\omega t}+C_2e^{-j\omega t}	\label{ch3:eq-complex-general-sol}
+\end{equation}
 
 Geometrically, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular displacement $\omega t$ (see Figure~\ref{ch3:fig-complex-sols}a).
 
@@ -559,7 +561,7 @@ Interpretation:
 	\item $\omega_0$: angular frequency of the system if \emph{damping were absent}
 \end{itemize}
 
-The solution to \eqref{ch3:eq-damping-NL} is:
+The solution to \eqref{ch3:eq-damping-NL} when there is \textbf{underdamping} $(\omega_0>\gamma/2)$ is:
 \begin{equation}
 \boxed{
 	 x = A_0 e^{-\gamma t/2} \cos(\omega t + \alpha) \where \omega ^2 = \omega_0^2 - \frac{\gamma^2}{4} 
@@ -569,7 +571,7 @@ The solution to \eqref{ch3:eq-damping-NL} is:
 We can interpret $\omega$ as the angular frequency of the \emph{damped oscillator}.
 
 
-\subsection{Solving for the equation of motion with damping}
+\subsection{Underdamping $(\omega_0 > \gamma/2)$}
 \begin{proof}[Solving for the equation of motion]
 Assume $x$ is the real part of a rotating vector $z$. So:
 \begin{equation*}
@@ -588,7 +590,7 @@ Substitute to obtain:
 	\Longrightarrow (-p^2 + jp \gamma + \omega_0^2) &= 0 \label{ch3:eq-damping-pj}
 \end{align}
 
-$p$ cannot be a purely real number -- if that were the case, $jp\gamma$ would have nothing to cancel it. So, assume:
+$p$ cannot be a purely real number -- if that were the case, $jp\gamma$ would not get cancelled. So, assume:
 \begin{equation} 
 	p = n + js \where \text{$n,s$ are real} \label{ch3:eq-damping-p}
 \end{equation}
@@ -624,13 +626,13 @@ x = A_0 e^{-\gamma t/2} \cos(\omega t+\alpha) \where \omega^2 = \omega_0^2 - \fr
 \end{proof}
 
 
-\subsection{Remarks on the graph for damped free oscillations}
+\subsection{Remarks on the graph for underdamped free oscillations}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-damping.png} \caption{Rapidly damped harmonic oscillations.}\label{ch3:fig-damping}
+	\includegraphics[scale=0.7]{phys232/Ch3-underdamping.png} \caption{Rapidly underdamped harmonic oscillations.}\label{ch3:fig-underdamping}
 \end{figure}
 
-Our solution \eqref{ch3:eq-damping-solution} is plotted in Figure~\ref{ch3:fig-damping}. Notice that:
+Our solution \eqref{ch3:eq-damping-solution} is plotted in Figure~\ref{ch3:fig-underdamping}. Notice that:
 \begin{itemize}
 	\item A half-period $(\Delta t = \pi/2)$ elapses between zeroes, as well as between successive maxima and minima.
 	\item However, the extrema are now only \emph{approximately halfway} between the zeroes.
@@ -682,10 +684,37 @@ Therefore, for the amplitude to fall to $A_0/e$, we need $Q/\pi$ cycles of oscil
 Because $\gamma=\omega_0/Q$ \eqref{ch3:eq-Q-def}, \eqref{ch3:eq-damping-NL} becomes:
 \[ \boxed{ \ddot{x} + \frac{\omega_0}{Q}\dot{x} + \omega_0^2 x = 0 } \]
 
-\subsection{Large Damping}
+
+\subsection{Large Damping $(\omega_0 \leq \gamma/2)$}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{phys232/Ch3-damped-oscillators-graph.png} \caption{Three cases of damping: (a) underdamping $(\omega_0>\gamma/2)$; (b) overdamping $(\omega_0<\gamma/2)$; (c) critical damping $(\omega_0=\gamma/2)$} \label{ch3:fig-damping}
+\end{figure}
+
+
 \subsubsection{Overdamping ($ \omega_0 \ll \gamma/2 $)}
-\[ x = A_1 e^{-(\gamma/2 + \beta)t} + A_2 e^{-(\gamma/2-\beta)t} \]
-where \[ \beta = \left(\frac{\gamma^2}{4}-\omega_0^2 \right)^{1/2} \]
+The motion is no longer oscillatory -- see Figure~\ref{ch3:fig-damping}b.
+
+Recall that the solution to \eqref{ch3:eq-damping-NL} was of the form:
+\[ 	x = \Re\left[ A_0 e^{-\gamma t/2} e^{j(\omega t+\alpha)} \right] \]
+where
+\[ \omega^2 = \omega_0^2 - \frac{\gamma^2}{4} \]
+\[ \Longrightarrow \omega^2 =  -\left( \frac{\gamma^2}{4} - \omega_0^2 \right)  \]
+
+Solving for $\omega$:
+\[ \omega = \pm j\sqrt{ \frac{\gamma^2}{4}-\omega_0^2  } = \pm j\beta \]
+
+Because of the two possibilities for $\omega$, we can write our solution more generally as%
+\footnote{This is the same reasoning we used to obtain the ``more-general" solution in \eqref{ch3:eq-complex-general-sol}}:
+\[ \boxed{ \therefore
+x = A_1 e^{-(\gamma/2 + \beta)t} + A_2 e^{-(\gamma/2-\beta)t} 
+\where \beta = \sqrt{\frac{\gamma^2}{4}-\omega_0^2} 
+} \]
+
+Note that $\beta$ is only defined when $\omega_0^2 < \gamma^2/4$.
 
 \subsubsection{Critical Damping ($ \omega_0 = \gamma/2 $)}
-\[ x = (A + Bt) e^{\gamma t/2}\]
+\[ \boxed{x = (A + Bt) e^{\gamma t/2}} \]
+
+When a force is applied to a critically damped system at rest, there will be a smooth approach to a new equilibrium position without oscillation or overshoot -- see Figure~\ref{ch3:fig-damping}c.
