@@ -1,6 +1,6 @@
 \chapter{Free Vibrations}
 
-\section{Overview}
+\section{Overview} \label{ch3:sec-simple-springs}
 Any physical system that undergoes SHM is associated with...
 \begin{itemize}
 	\item a constant representing the \kcol{elasticity} of the system $\longrightarrow$ kinetic energy
@@ -128,7 +128,7 @@ We can interpret $h$ as the change in position that occurs when the mass is firs
 
 \section{Solving for the equation of motion of a harmonic oscillator}
 
-\begin{proof}[Solving for the solution]
+\begin{proof}[Solving for the equation of motion]
 Rewrite \eqref{ch3:eq-NL} in terms of $k/m$:
 \begin{align}
 m\ddot{x} + kx &= 0 \notag\\
@@ -152,7 +152,7 @@ p^2 &= -\omega^2 \\
 p &= \pm j\omega
 \end{align*}
 
-Because we have two possibilities for $p$, our solution to \eqref{ch3:eq-xdd} could have been written more generally as:
+Because we have two possibilities for $p$, our solution to \eqref{ch3:eq-xdd} could have been written more generally as\footnote{In general, when working with second-order differential equations like \eqref{ch3:eq-xdd}, we need to introduce two constants -- one for each level of integration. These constants could be $C_1, C_2$, or as we will see, $A$ and $\alpha$.}:
 \[ x = C_1e^{j\omega t}+C_2e^{-j\omega t} \]
 
 
@@ -162,11 +162,11 @@ In order to produce a harmonic oscillation along the $x$-axis, the $y$-component
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{ch3:eq-xdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For $OX$ to be a harmonic oscillation, $C1=C2$.}\label{ch3:fig-complex-sols}
+	\includegraphics[scale=0.7]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{ch3:eq-xdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For the length $OX$ to represent a harmonic oscillation, $C1=C2$.}\label{ch3:fig-complex-sols}
 \end{figure}
 
 
-For the $y$-components to cancel, we need $C_1=C_2$. Hence\footnote{Reminder: $\cos(-\theta)=cos\theta$ and $\sin(-\theta)=-\sin\theta$},
+For the $y$-components to cancel, we need $C_1=C_2$. Hence\footnote{Reminder: $\cos(-\theta)=\cos\theta$ and $\sin(-\theta)=-\sin\theta$}, using Euler's identity \eqref{ch1:eq-eulers-identity},
 \begin{align*}
 x
 &=Ce^{j(\omega t +\alpha)} + Ce^{-j(\omega t +\alpha)} \\
@@ -531,44 +531,156 @@ This is the equivalent of taking a massless spring (see Equation~\ref{ch3:eq-SHM
 
 In reality, our model holds only when $M \ll m$. Otherwise, the force along the spring is not constant -- we can no longer assume that the elongation of a point is proportional to its distance from the fixed end.
 
-\section{The Decay of Free Oscillations}
+\section{Decay (Damping) of Free Oscillations}
 
 In general, resistive forces act in a direction opposite to $\vec{v}$ and have magnitude:
 \[ F_b = b_1v + b_2v^2\]
 
 When $v$ is small in comparison to $b_1/b_2$, we can make an approximation:
 \begin{equation*}
-	\boxed{\vec{F}_b = b\vec{v}}
+	\boxed{\vec{F}_b = -b\vec{v}}
 \end{equation*}
 
-For our mass-spring system with damping, our statement of Newton's Law becomes:
-\begin{align*}
-	m\ddot{x} &= -kx - bv \\
-	m\ddot{x} + b\dot{v} + kx &= 0 \\
-	\ddot{x} + \gamma \dot{v} + \omega_0^2 x &= 0
-\end{align*}
+If our mass-spring system (cf. Section~\ref{ch3:sec-simple-springs}) had damping, our statement of Newton's Law would have been:
+\begin{align}
+	m\ddot{x} &= -kx - bv \notag \\
+	m\ddot{x} + b\dot{v} + kx &= 0 \notag  \\
+	\Aboxed{\ddot{x} + \gamma \dot{x} + \omega_0^2 x &= 0} \label{ch3:eq-damping-NL}
+\end{align}
 where
 \[ \boxed{\gamma = \frac{b}{m} \andd \omega_0 = \frac{k}{m}} \]
 
 Interpretation:
 \begin{itemize}
 	\item $\gamma$: damping constant (with dimensions of frequency)
-	\item $\omega_0^2$: angular frequency of the system if damping were absent
+	\begin{itemize}
+		\item We will also that see it represents the reciprocal of the time required for the energy to decrease to $1/e$ of its initial value (Section~\ref{ch3:sec-quality-factor})
+	\end{itemize}
+	\item $\omega_0$: angular frequency of the system if \emph{damping were absent}
 \end{itemize}
 
-Solution:
-\[
-\boxed{ x = A e^{-\gamma t/2} \cos(\omega t + \alpha) \where \omega ^2 = \omega_0^2 - \frac{\gamma^2}{4} }
-\]
+The solution to \eqref{ch3:eq-damping-NL} is:
+\begin{equation}
+\boxed{
+	 x = A_0 e^{-\gamma t/2} \cos(\omega t + \alpha) \where \omega ^2 = \omega_0^2 - \frac{\gamma^2}{4} 
+}	\label{ch3:eq-damping-solution}
+\end{equation}
 
-Amplitude:
+We can interpret $\omega$ as the angular frequency of the \emph{damped oscillator}.
+
+
+\subsection{Solving for the equation of motion with damping}
+\begin{proof}[Solving for the equation of motion]
+Assume $x$ is the real part of a rotating vector $z$. So:
+\begin{equation*}
+	\ddot{z} + \gamma \dot{z} + \omega_0^2 z = 0
+\end{equation*}
+
+Assume the following solution\footnote{Note that this assumed solution contains two constants -- this takes into account that \eqref{ch3:eq-damping-NL} is a second-order differential equation.}:
+\begin{equation}
+z=A_0 e^{j(pt+\alpha)} \label{ch3:eq-damping-assumed-z}
+\end{equation}
+
+Substitute to obtain:
+\begin{align}
+	(A_0 j^2 p^2 e^{j(pt+\alpha)}) + \gamma (A_0 jpe^{j(pt+\alpha)}) + \omega_0^2 (A_0 e^{j(pt+\alpha)}) &= 0 \notag \\
+	A_0 e^{j(pt+\alpha)}(-p^2 + jp \gamma + \omega_0^2) &= 0 \notag \\
+	\Longrightarrow (-p^2 + jp \gamma + \omega_0^2) &= 0 \label{ch3:eq-damping-pj}
+\end{align}
+
+$p$ cannot be a purely real number -- if that were the case, $jp\gamma$ would have nothing to cancel it. So, assume:
+\begin{equation} 
+	p = n + js \where \text{$n,s$ are real} \label{ch3:eq-damping-p}
+\end{equation}
+\[ \Longrightarrow p^2 = n^2 + 2jns - s^2 \]
+
+Substitute into \eqref{ch3:eq-damping-pj}:
+\begin{align}
+	 (-(n^2 + 2jns - s^2) + j \gamma (n+js) + \omega_0^2) &= 0 \notag \\
+	-n^2 - 2jns + s^2 + nj \gamma - s \gamma + \omega_0^2 &= 0 \notag \\
+	\underbrace{(-n^2 + s^2  - s \gamma + \omega_0^2)}_\text{real part} +  \underbrace{j(-2ns + n \gamma)}_\text{imaginary part} &= 0 \label{ch3:eq-damping-real-imag}
+\end{align}
+
+Both the real and the imaginary parts of \eqref{ch3:eq-damping-real-imag} must equal zero:
+\begin{align*}
+	\text{Real part: } & -n^2 + s^2  - s \gamma + \omega_0^2 = 0 \\
+	\text{Imaginary part: } &-2ns + n \gamma = 0 
+\end{align*}
+
+From the imaginary part,
+\[ s=\frac{\gamma}{2}\]
+Substitute this into the real part to obtain:
+\[ n^2 = \omega_0^2 - \frac{\gamma^2}{4} \]
+
+Returning to our assumed solution for $z$ \eqref{ch3:eq-damping-assumed-z}, substitute in our expressions for $s$ and $n$:
+\begin{align*}
+	z&=A_0 e^{j((n+js)t+\alpha)}  \\
+	z &= A_0 e^{-st} e^{j(nt+\alpha)} \\
+	z &= A_0 e^{-st} [ \cos(nt+\alpha) + j\sin(nt+\alpha)  ]
+\end{align*}
+\[ 	\Longrightarrow x = \Re(z) = A_0 e^{-st}\cos(nt+\alpha) \]
+\[ \therefore 
+x = A_0 e^{-\gamma t/2} \cos(\omega t+\alpha) \where \omega^2 = \omega_0^2 - \frac{\gamma^2}{4} \]
+\end{proof}
+
+
+\subsection{Remarks on the graph for damped free oscillations}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{phys232/Ch3-damping.png} \caption{Rapidly damped harmonic oscillations.}\label{ch3:fig-damping}
+\end{figure}
+
+Our solution \eqref{ch3:eq-damping-solution} is plotted in Figure~\ref{ch3:fig-damping}. Notice that:
+\begin{itemize}
+	\item A half-period $(\Delta t = \pi/2)$ elapses between zeroes, as well as between successive maxima and minima.
+	\item However, the extrema are now only \emph{approximately halfway} between the zeroes.
+\end{itemize}
+
+\subsection{Small Damping $(\gamma \ll \omega)$ \& Quality Factor}
+
+When the damping is small (i.e. if  $\gamma \ll \omega$), the motion approximates to SHM at a constant amplitude over a number of cycles around time $t$.
+
+Amplitude around time $t$:
 \[ A(t) = A_0 e^{-\gamma t/2} \]
 
-Total energy:
-\[ E(t) = \frac{1}{2}kA^2 = \frac{1}{2}kA_0^2 e^{-\gamma t} = E_0 e^{-\gamma t} \]
+Total energy around time $t$:
+\begin{align*}
+E(t) = \frac{1}{2}kA^2 
+	&= \frac{1}{2}kA_0^2 e^{-\gamma t} \\
+\Aboxed{\therefore E(t) &= E_0 e^{-\gamma t} }
+\end{align*}
+i.e. the total energy decays exponentially.
 
-Quality value:
-\[ Q = \frac{\omega_0}{\gamma} \]
+\subsubsection{Quality Factor} \label{ch3:sec-quality-factor}
+We can also interpret $\gamma$ as representing the reciprocal of the time required for the energy to decrease to $1/e$ of its initial value. Let us examine why.
+
+We can define a \textbf{quality value} to describe the amount of damping:
+\begin{equation}
+	\boxed{Q = \frac{\omega_0}{\gamma}} 
+	\Longrightarrow 
+	\gamma = \frac{\omega_0}{Q}
+	\label{ch3:eq-Q-def}
+\end{equation}
+
+We can rewrite \eqref{ch3:eq-damping-solution} in terms of $Q$:
+\begin{equation}
+	\omega^2 = \omega_0^2 \left(1- \frac{1}{4Q^2}\right) \label{ch3:eq-damping-sol-with-Q}
+\end{equation}
+
+\eqref{ch3:eq-damping-sol-with-Q} implies that for large $Q$ (i.e. as $Q \to \infty$), $\omega \to \omega_0$. 
+Combining \eqref{ch3:eq-Q-def} with \eqref{ch3:eq-damping-solution} gives:
+\[ x = A_o e^{-\omega_0 t/2Q} \cos(\omega_0 t + \alpha) \]
+\[ \Longrightarrow A(t) = A_o e^{-\omega_0 t/2Q} \]
+
+Re-express $t$ in terms of the number of cycles $n$. We have:
+\[ t = \frac{2\pi n}{\omega} \approx \frac{2\pi n}{\omega_0} \]
+\[ \Longrightarrow A(n) \approx A_0 e^{-n\pi/Q} \]
+
+Therefore, for the amplitude to fall to $A_0/e$, we need $Q/\pi$ cycles of oscillation.
+
+\paragraph{Another rewriting we can do}
+Because $\gamma=\omega_0/Q$ \eqref{ch3:eq-Q-def}, \eqref{ch3:eq-damping-NL} becomes:
+\[ \boxed{ \ddot{x} + \frac{\omega_0}{Q}\dot{x} + \omega_0^2 x = 0 } \]
 
 \subsection{Large Damping}
 \subsubsection{Overdamping ($ \omega_0 \ll \gamma/2 $)}
