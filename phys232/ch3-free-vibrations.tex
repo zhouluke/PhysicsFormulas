@@ -283,7 +283,7 @@ By the Conservation of Energy and using the approximations \eqref{ch3:eq-pendulu
 \end{align}
 
 
-We can rewrite this result in terms of $\theta$. Substitute\footnote{Use the small angle approximation $\cos\theta \approx 1-\frac{\theta^2}{2}$, from Equation~\eqref{ch1:eq-small-angle-cos}}:
+We can rewrite this result in terms of $\theta$ by substituting in\footnote{Use the small angle approximation $\cos\theta \approx 1-\frac{\theta^2}{2}$, from Equation~\eqref{ch1:eq-small-angle-cos}}:
 \begin{equation*}
 v = l\left(\frac{d\theta}{dt}\right) \andd
 y = l(1-\cos\theta) \approx \frac{1}{2}l\theta ^2
@@ -301,28 +301,27 @@ Both \eqref{ch3:eq-pendulum-E} and \eqref{ch3:eq-pendulum-E-theta} imply that:
 
 
 \subsection{Pendulum of an Arbitrary Shape} \label{ch3:sec-complex-pendulum}
-Let its center of mass $C$ be at a dist $h$ from the point of suspension $O$\footnote{This allows us to find the PE of the pendulum using the height of the CM.}, as shown in Figure~\ref{ch3:fig-pendulum}b.
+Consider a pendulum of arbitrary shape suspended at point $O$, with center of mass $C$. Suppose these points are separated by a distance $h$, as shown in Figure~\ref{ch3:fig-pendulum}b.
 
-\subsubsection{With respect to an axis passing through the point of suspension}
-
-Let $I$ represent the moment of inertia \emph{about an axis passing through $O$}. Then:
+Let $I_O$ represent the moment of inertia \emph{about an axis passing through $O$}. Then:
 \begin{equation*}
-PE = \frac{1}{2} mgh\theta^2 \andd
-KE = \frac{1}{2} I\left( \frac{d\theta}{dt} \right)^2
+KE = \frac{1}{2} \mcol{I_O}\left( \frac{d\theta}{dt} \right)^2 \andd
+PE = \frac{1}{2} \kcol{mgh}\theta^2 
 \end{equation*}
+Note that $PE_\text{pendulum} = PE_\text{centre of mass}$. The above assumes $PE = 0$ at the lowest height reached by the CM.
 \begin{equation} 
 	\Longrightarrow
-	\frac{1}{2} \mcol{I}\left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} \kcol{mgh}\theta^2 = E \label{ch3:eq-pendulumEO}
+	\frac{1}{2} \mcol{I_O}\left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} \kcol{mgh}\theta^2 = E \label{ch3:eq-pendulumEO}
 \end{equation}
 
-\subsubsection{With respect to an axis passing through the centre of mass}
-From the \emph{parallel axis theorem} -- for an axis passsing through point $C$, we have:
+\subsubsection{Re-expressing the result in terms of $I_\text{CM}$}
+From the \emph{parallel axis theorem}: recalling that the distance $OC$ is $h$, we have:
 \begin{align*}
-	I_C &= I_\text{CM} + mh^2 \\
+	I_O &= I_\text{CM} + mh^2 \\
 	&= mk^2 + mh^2
 \end{align*}
 
-where $k$ is the \emph{radius of gyration}\footnote{The radius of gyration $k$ is the length of a simple pendulum that could ``replace" the complex pendulum, while keeping the same mass.}. Thus,
+where $k$ is the \emph{radius of gyration}\footnote{The radius of gyration $k$ is the length of a simple pendulum (consisting of a point mass and a light cord) that could ``replace" the complex pendulum while still keeping the same mass $m$.}. Thus,
 \begin{align*}
 	KE_C %&= \frac{1}{2} ( I_\text{CM} + mh^2 ) \left( \frac{d\theta}{dt} \right)^2 \\
 	&= \frac{1}{2} m(k^2 + h^2 ) \left( \frac{d\theta}{dt} \right)^2
@@ -415,7 +414,7 @@ Hence, there is a restoring torque exerted by \emph{each} strip about the axis o
 	&= -\frac{nAr^2\theta}{l} 
 \end{align*}
 
-\subsubsection{Thin Walled Tube}
+\subsubsection{Thin-Walled Tube}
 Refer to Figure~\ref{ch3:fig-shear-torsion}c, where we will consider a twisted, thin-walled tube as a collection of many strips, each undergoing shear and contributing restoring torques about the axis of twist.
 
 Let the radius be $r$ and the wall thickness be $\Delta r$. This means the cross-sectional area is $A=2\pi r \Delta r$. The restoring torque from a \emph{thin ring of strips} is thus:
