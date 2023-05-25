@@ -128,8 +128,11 @@ Recall \eqref{ch4:eq-no-b}:
 
 Visualize the driving force $F_0 \cos(\omega t)$ as the real component of $F_0 e^{j\omega t}$.
 
-Assume $x=\Re(z)$, where:
-\[ z = Ae^{j(\omega t+\alpha)}\]
+Assume $x$ is the real part of a rotating vector $z$, such that:
+\[ m\ddot{z} + kz = F_0 e^{j\omega t}\]
+
+Assume the following solution:
+\[z = Ae^{j(\omega t+\alpha)} \]
 
 Substitute in \eqref{ch4:eq-acc-forced-no-b}:
 \begin{align*}
@@ -141,14 +144,24 @@ Substitute in \eqref{ch4:eq-acc-forced-no-b}:
 \end{align*}
 
 Comparing the real and imaginary components on each side:
+\begin{align*}
+	\text{Real part: } & A(\omega_0^2 - \omega^2 ) = \frac{F_0}{m} \cos\alpha \\
+	\text{Imaginary part: } & \frac{F_0}{m} \sin\alpha = 0 
+\end{align*}
 
+From the imaginary part, $\alpha = n\pi, n\in\mathbb{Z}$. From the real part, we obtain:
+\begin{align*}
+	A(\omega_0^2 - \omega^2 ) &= \frac{F_0}{m} \\
+	\therefore
+	A &= \frac{F_0/m}{\omega_0^2 - \omega^2 }
+\end{align*}
+which is the same result obtained in \eqref{ch4:soln-no-b}.
 
 \section{Forced Oscillations with Damping}
 
-\subsubsection{Steady State}
+Let us continue to examine only the \emph{steady state}.
 
 Equation of motion:
-\[ m\ddot{x} = -kx - b\dot{x} + F_0 \cos(\omega t) \]
 \[ \ddot{x} + \gamma\dot{x} + \omega_0^2 = F_0 \cos(\omega t) \]
 
 Results: 
