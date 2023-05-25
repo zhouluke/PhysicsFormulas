@@ -15,14 +15,12 @@ Consider the motion of a mass $m$ on a spring with spring constant $k$:
 	\frac{1}{2}\mcol{m}\dot{x}^2 + \frac{1}{2}\kcol{k}x^2 = E \label{ch3:eq-CE}
 \end{align}
 
-Any equation matching either of the forms above\footnote{\eqref{ch3:eq-CE} also happens to be the \textit{first integral} of  \eqref{ch3:eq-NL}.} automatically has as a solution:
+Any equation matching either of the forms above\footnote{Notice that \eqref{ch3:eq-NL} happens to be the \textit{first derivative} of  \eqref{ch3:eq-CE}.} automatically has as a solution:
 \begin{equation}
 \boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\kcol{k}}{\mcol{m}}} \label{ch3:eq-SHM-soln}
 \end{equation}
 
-Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{ch3:eq-NL}, while others, with \eqref{ch3:eq-CE}.
-
-Although the systems have differing elastic and inertial constants, it will always be true that:
+Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{ch3:eq-NL}, while others, with \eqref{ch3:eq-CE}. Although the systems have differing elastic and inertial constants, they share the following similarities:
 \begin{equation}
 	\boxed{
 		\omega^2 = \frac{\kcol{\text{elasticity}}}{\mcol{\text{inertia}}} \hhtab 
@@ -30,7 +28,33 @@ Although the systems have differing elastic and inertial constants, it will alwa
 		f = \frac{\omega}{2\pi}}
 \end{equation}
 
-\subsection{Systems analyzed using a force equation}
+\subsection{Effects of gravity}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{phys232/Ch3-g-new-eqm} \caption{Gravity shifts the equilibrium position of a SHO by a distance $h=mg/k$.}\label{ch3:fig-g-new-eqm-pos}
+\end{figure}
+
+Gravity only changes the equilibrium position of a SHO, without changing the amplitude, period, or frequency:
+\begin{align*}
+	m\ddot{x} &= -kx + mg \\
+	& = -k(x - \frac{mg}{k}) \\
+	& = -k(x - h) \where h=\frac{mg}{k}
+\end{align*}
+Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,
+\begin{align*}
+	&m\ddot{y} = -ky \\
+	&m\ddot{y} + ky = 0 
+\end{align*}
+i.e. we still have SHM!
+
+We can interpret $h$ as the initial change in position that occurs when the mass is hung or the floating object is placed in a liquid, and the system reaches \emph{static equilibrium} (see Figure \ref{ch3:fig-g-new-eqm-pos}).
+\[ mg = kh \Longrightarrow \boxed{h = \frac{mg}{k}} \]
+
+
+\subsection{Overview of the systems analyzed}
+
+\subsubsection*{Systems analyzed using a force equation}
 \begin{center}
 	\renewcommand{\arraystretch}{2.5}
 \begin{tabular}{lll}
@@ -61,41 +85,17 @@ Although the systems have differing elastic and inertial constants, it will alwa
 		$\dfrac{\kcol{A\gamma p}}{\kcol{l}\mcol{m}}$ 
 		\\
 	\hline
-\end{tabular}
+	\end{tabular}
 \renewcommand{\arraystretch}{1}
 \end{center}
 
-
-\subsubsection{Effects of gravity}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.4]{phys232/Ch3-g-new-eqm} \caption{Gravity shifts the equilibrium position of a SHO by a distance $h$.}\label{ch3:fig-g-new-eqm-pos}
-\end{figure}
-
-Gravity only changes the equilibrium position of a SHO, without changing the amplitude, period, or frequency:
-\begin{align*}
-	F_\text{net} &= -F_\text{restoring} + F_g \\
-	m\ddot{x} &= -kx + mg \\
-	& = -k(x - \frac{mg}{k}) \\
-	& = -k(x - h) \where h=\frac{mg}{k}
-\end{align*}
-Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,
-\begin{align*}
-	&m\ddot{y} = -ky \\
-	&m\ddot{y} + ky = 0  \Longrightarrow \text{still SHM!}
-\end{align*}
-
-We can interpret $h$ as the change in position that occurs when the mass is first hung or the floating object is first placed in a liquid and the system reaches \emph{static equilibrium} (see Figure \ref{ch3:fig-g-new-eqm-pos}).
-\[ F_g = F_\text{restoring}\Longrightarrow mg = kh \Longrightarrow h = \frac{mg}{k} \]
-
-
-\subsection{Systems analyzed using the conservation of energy}
+\subsubsection*{Systems analyzed using the conservation of energy}
 \begin{center}
-	\renewcommand{\arraystretch}{2.5}
-	\begin{tabular}[t]{lll}
-		\hline
-		Type of system & Energy equation & $\omega^2$ \\ \hline
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{lll}
+	\hline
+	Type of system & Energy equation & $\omega^2$ \\ \hline
+	\hline
 		Mass on spring &
 			$\frac{1}{2}\mcol{m}\dot{x}^2 + \frac{1}{2}\kcol{k}x^2 = E $ &
 			$\dfrac{\kcol{k}}{\mcol{m}}$
