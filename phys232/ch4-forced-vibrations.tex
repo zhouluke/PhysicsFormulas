@@ -78,50 +78,70 @@ These cases are summarized in Figure~\ref{ch4:no-damping-pendula}.
 
 \subsection{Responant response when $\omega = \omega_0$}
 
-We will now examine why the resonant amplitude is much greater than otherwise.
+We will now examine why the resonant amplitude is much greater than what we obtain when $\omega\neq \omega_0$.
 
 \begin{proof}[Finding the steady-state solution]
 Because we are in the steady state, assume that the natural oscillations are not present:
-\begin{align*}
-	x &= C\cos(\omega t) \\
+\begin{align}
+	x &= C\cos(\omega t) \notag \\
 	\Longrightarrow
-	\ddot{x} &= -\omega^2 C\cos(\omega t)
-\end{align*}
+	\ddot{x} &= -\omega^2 C\cos(\omega t)	\label{ch4:eq-acc-forced-no-b}
+\end{align}
 
 Substitute this into \eqref{ch4:eq-no-b}:
 \begin{align*}
 	-m\omega^2 C\cancel{\cos(\omega t)} + kC\cancel{\cos(\omega t)} &= F_0\cancel {\cos(\omega t)} \\
 	C(k-m\omega^2) &= F_0
 \end{align*}
-\begin{equation}
-	 C = \frac{F_0}{k-m\omega^2} = \frac{F_0/m}{\omega_0^2-\omega^2} \label{ch4:C-no-b}
-\end{equation}
+\begin{equation*}
+	 C = \frac{F_0}{k-m\omega^2} = \frac{F_0/m}{\omega_0^2-\omega^2} 
+\end{equation*}
 
-\eqref{ch4:C-no-b} is plotted in Figure~\ref{ch4:no-damping-C}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.7]{phys232/Ch4-forced-no-damping-C.png} \caption{Amplitude of forced oscillations (no damping) as a function of the driving frequency $\omega$.}\label{ch4:no-damping-C}
-\end{figure}
-
-We can reexpress this solution in terms of $A=|C|$ and a value of $\alpha$ to represent the phase lag between $x$ and the driving force:
+To avoid working with negative values of $C$, let $A=|C|$. To represent the phase lag between $x$ and the driving force, introduce $\alpha$:
 \begin{equation}
 	\therefore
-	x = A \cos(\omega t + \alpha)  \where \alpha = 
+	\boxed{
+	x = A \cos(\omega t + \alpha) 
+	\where
+	\alpha = 
 	\begin{cases}
 		0 & \text{if } \omega<\omega_0 \\
 		\pi & \text{if } \omega>\omega_0
 	\end{cases}
-	\label{ch4:A-no-b}
+	\andd
+	A = \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
+	}
+	\label{ch4:soln-no-b}
 \end{equation}
 
-\begin{figure}
+\eqref{ch4:soln-no-b} is plotted in Figure~\ref{ch4:no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:no-damping-A}
 \end{figure}
-
-\eqref{ch4:A-no-b} is plotted in Figure~\ref{ch4:no-damping-A}.
-
 \end{proof}
+
+\subsection{Resonant response, using complex exponentials}
+Recall \eqref{ch4:eq-no-b}:
+\[ m\ddot{x} + kx = F_0 \cos(\omega t) \]
+
+Visualize the driving force $F_0 \cos(\omega t)$ as the real component of $F_0 e^{j\omega t}$.
+
+Assume $x=\Re(z)$, where:
+\[ z = Ae^{j(\omega t+\alpha)}\]
+
+Substitute in \eqref{ch4:eq-acc-forced-no-b}:
+\begin{align*}
+	(-m\omega^2 A + kA)e^{j(\cancel{\omega t} + \alpha)} &= F_0 \, \cancel{e^{j\omega t}} \\
+	A(-\omega^2 + \omega_0^2)e^{j\alpha} &= \frac{F_0}{m} \\
+	A(\omega_0^2 - \omega^2 ) &= \frac{F_0}{m} e^{-j\alpha} \\
+	\Longrightarrow
+	\underbrace{A(\omega_0^2 - \omega^2 )}_\text{real} &= \underbrace{\frac{F_0}{m} \cos\alpha}_\text{real} - \underbrace{j\frac{F_0}{m} \sin\alpha}_\text{imaginary}
+\end{align*}
+
+Comparing the real and imaginary components on each side:
+
 
 \section{Forced Oscillations with Damping}
 
