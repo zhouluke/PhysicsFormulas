@@ -34,12 +34,12 @@ Force equation:
 	\mcol{m}\ddot{x} + \kcol{k}x &= F_0 \cos(\omega t)	\label{ch4:eq-no-b}
 \end{align}
 
-The behaviour or the system is illustrated in Figure~\ref{ch4:no-damping-pendula}.
+The behaviour or the system is illustrated in Figure~\ref{ch4:fig-no-damping-pendula}.
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.6]{phys232/Ch4-forced-no-damping-pendula.png} 
-	\caption{The motion of simple pendula undergoing horizontal forced oscillations when (a) $\omega<\omega_0$ and (b) $\omega>\omega_0$.}\label{ch4:no-damping-pendula}
+	\caption{The motion of simple pendula undergoing horizontal forced oscillations when (a) $\omega<\omega_0$ and (b) $\omega>\omega_0$.}\label{ch4:fig-no-damping-pendula}
 \end{figure}
 
 \paragraph{Case (a): $\omega < \omega_0$}
@@ -70,7 +70,7 @@ If the driving force's frequency is much higher than the natural frequency...
 	\item We expect a higher acceleration (since $\ddot{x} \propto \omega^2$).
 	\item So, the $\mcol{m}\ddot{x}$ term dominates over $\kcol{k}x$; i.e. the response is controlled by the \mcol{inertia} of the string.
 	\item We expect a relatively small $A$, opposite in phase with the driving force -- i.e. the driving force leads the displacement by a phase difference of $\alpha=180$.%
-	\footnote{Notice that in Figure~\ref{ch4:no-damping-pendula}b, when $F$ is to the left, $x$ is to the right; when $F$ is to the right, $x$ is to the left.}
+	\footnote{Notice that in Figure~\ref{ch4:fig-no-damping-pendula}b, when $F$ is to the left, $x$ is to the right; when $F$ is to the right, $x$ is to the left.}
 \end{itemize}
 
 
@@ -112,16 +112,16 @@ where
 	\andd
 	A = \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
 	}
-	\label{ch4:soln-no-b}
+	\label{ch4:eq-soln-no-b}
 \end{equation}
 
 
 \begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.5]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:no-damping-A}
+	\includegraphics[scale=0.5]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:fig-no-damping-A}
 \end{marginfigure}
 
-The results in \eqref{ch4:soln-no-b} are plotted in Figure~\ref{ch4:no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
+The results in \eqref{ch4:eq-soln-no-b} are plotted in Figure~\ref{ch4:fig-no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
 
 
 \subsection{Resonant response, using complex exponentials}
@@ -129,8 +129,7 @@ Recall \eqref{ch4:eq-no-b}:
 \[ m\ddot{x} + kx = F_0 \cos(\omega t) \]
 
 Visualize the driving force $F_0 \cos(\omega t)$ as the real component of $F_0 e^{j\omega t}$.
-
-Assume $x$ is the real part of a rotating vector $z$, such that:
+Assume $x=\Re(z)$, such that:
 \[ m\ddot{z} + kz = F_0 e^{j\omega t}\]
 
 Assume the following solution:
@@ -158,23 +157,67 @@ From the imaginary part, $\alpha = n\pi, n\in\mathbb{Z}$. Thus, $\cos\alpha=0$ i
 	A &= \frac{F_0/m}{\omega_0^2 - \omega^2 }
 \end{align*}
 
-... which is the same result as \eqref{ch4:soln-no-b}.
+... which is the same result as \eqref{ch4:eq-soln-no-b}.
 
-\section{Forced Oscillations with Damping: Steady State}
+\section{Forced Oscillations with Damping}
 
-Let us continue to examine only the \emph{steady state}.
+Let us continue to examine only the \emph{steady state} for now.
 
 Equation of motion:
-\[ \ddot{x} + \gamma\dot{x} + \omega_0^2 = F_0 \cos(\omega t) \]
+\[ \ddot{x} + \gamma\dot{x} + \omega_0^2 x = F_0 \cos(\omega t) \]
 
-Results: 
+Assume $x=\Re(z)$, such that:
+\[ \ddot{z} + \gamma\dot{z} + \omega_0^2 z = F_0 e^{j\omega t} \]
+
+Assume the following solution:
+\[ z = Ae^{j\omega t - \delta} \where x=\Re(z)\]
+
+Hence, by substitution:
+\begin{align}
+	[-m\omega^2 A + j\gamma\omega A + kA] e^{j(\cancel{\omega t} - \delta)} &= F_0 \, \cancel{e^{j\omega t}} \notag \\
+	[A(-\omega^2 + \omega_0^2) + j\gamma\omega A] e^{-j\delta} &= \frac{F_0}{m} \notag \\
+	A(\omega_0^2 - \omega^2 ) + j\gamma\omega A &= \frac{F_0}{m} e^{j\delta} \label{ch4:eq-forced-with-b-NL}
+\end{align}
+
+\eqref{ch4:eq-forced-with-b-NL} is represented visually in Figure~\ref{ch4:fig-damping-vectors}. Note that the two sides of the equation bring us to the same point, such that a closed triangle is formed.
+
+\begin{marginfigure}
+	\centering
+	\includegraphics[scale=0.65]{phys232/Ch4-forced-damping-vectors.png} \caption{Graphical representation of \eqref{ch4:eq-forced-with-b-NL}.}	\label{ch4:fig-damping-vectors}
+\end{marginfigure}
+
+From the geometry of the triangle:
+\begin{align*}
+	A(\omega_0^2 - \omega^2 ) &= \frac{F_0}{m} \cos\delta \\
+	\gamma\omega A &= \frac{F_0}{m} \sin\delta
+\end{align*}
+
+Therefore: 
 \[ x = A \cos (\omega t - \delta) \]
-\[ A(\omega) = \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}} \]
-\[ \tan \delta (\omega) = \frac{\gamma\omega}{\omega_0^2 - \omega^2}\]
+where
+\begin{equation}
+\boxed{
+	A(\omega) = \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}}
+	\htab
+	\tan \delta (\omega) = \frac{\gamma\omega}{\omega_0^2 - \omega^2}
+}
+\label{ch4:eq-soln-b}
+\end{equation}
 
-Independent of adjustable initial starting conditions!
+\begin{marginfigure}
+	\centering
+	\includegraphics[scale=0.5]{phys232/Ch4-forced-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (with damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:fig-damping-A}
+\end{marginfigure}
 
-\subsection{Transient Effects}
+The results in \eqref{ch4:eq-soln-b} are plotted in Figure~\ref{ch4:fig-damping-A}. Observations:
+\begin{itemize}
+	\item The curves generally resemble their counterparts in Figure~\ref{ch4:fig-no-damping-A}, where there was no damping.
+	\item The phase lag $\delta$ now increases continuously from 0° to 180°. We have $\delta=90$° when $\omega=\omega_0$.
+	\item The maximum altitude is actually attained at a frequency $\omega_m$ somewhat less than $\omega_0$; in practical applications, however, this difference is usually negligibly small.
+\end{itemize}
+
+
+\section{Transient Effects}
 For $t<0$, let the object be at rest (i.e. it only starts moving at $t=0$).
 \begin{align*}
 x &= steady + transient \\

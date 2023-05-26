@@ -40,11 +40,9 @@ Gravity only changes the equilibrium position of a SHO, without changing the amp
 	m\ddot{x} &= -kx + mg \\
 	& = -k(x - \frac{mg}{k}) \\
 	& = -k(x - h) \where h=\frac{mg}{k}
-\end{align*}
-Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,
-\begin{align*}
-	&m\ddot{y} = -ky \\
-	&m\ddot{y} + ky = 0 
+\intertext{Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,}
+	m\ddot{y} &= -ky \\
+	m\ddot{y} + ky &= 0 
 \end{align*}
 i.e. we still have SHM!
 
@@ -402,7 +400,7 @@ Let us consider the force $F=-F_\text{app}$ exerted \emph{by} the sheared materi
 
 Notice that \eqref{ch3:eq-torsional-F} for {shear deformations} is comparable to \eqref{ch3:eq-Youngs-F} for {longitudinal deformations}\footnote{Another modulus also exists: the \textbf{bulk modulus}, $K$, which describes the resistance of a material to changes in volume -- more about this in Section~\ref{ch3:sec-bulk-modulus}.}.
 
-\subsection{Torque due to shear}
+\subsection{Torque as shear}
 Refer to Figure~\ref{ch3:fig-shear-torsion}b, where two disks of radius $r$ on spindles are connected by two rectangular strips of material, each with cross-sectional area $A$.
 
 Twist one spindle through a small $\theta$; the end of each strip undergoes shear through a distance $x=r\theta$. 
@@ -446,7 +444,7 @@ Let $m$ represent the mass of the movable piston, and $p$, the pressure of the g
 When the piston moves a distance of $y$ from equilibrium position $l$, the pressure of the gas changes by $\Delta p$.
 
 \subsection{Isothermal conditions}
-Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies\footnote{Recall also the product rule for differentiation}:
+Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies\footnote{Recall also the product rule for differentiation: $(gk)'=g'k+kg'$}:
 \begin{align*}
 pV &= \text{const} \\
 p\Delta V + V\Delta p &= 0
@@ -507,21 +505,23 @@ Because elasticity is enhanced under adiabatic conditions, and the frequency of 
 	\includegraphics[scale=0.75]{phys232/Ch3-massive-spring.png} \caption{Uniform extension of a massive spring with mass $M$.}\label{ch3:fig-massive-spring}
 \end{figure}
 
-Suppose this time the spring itself has a mass of $M$. Suppose that it has a spring contant $k$ and that there is a mass $m$ attached to it. Let the equilibrium length of the spring be $l$.
+Suppose this time the spring itself has a mass of $M$, a spring contant $k$. Suppose one end is fixed, while the other has a mass $m$ attached.
+
+Let the equilibrium length of the spring be $l$.
 
 The \emph{linear mass density} of the spring is $ \lambda = {M}/{l} $.
 
 Consider an infinitesimal segment of the spring initially at a distance $s$ from the fixed end $(0 \leq s \leq l)$, with a width $ds$. Its mass is:
 \[ dM = \lambda\,ds = \frac{M}{l}\,ds \] 
 
-\paragraph{Assumption} Each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement and speed of the segment are:
+Assumption: each point on the spring undergoes a displacement proportional to its distance from the fixed end (Figure~\ref{ch3:fig-massive-spring}). So, the displacement and speed of the segment are:
 \[ \text{displacement} = \frac{s}{l} \, x \andd
 \text{speed} = \frac{s}{l} \frac{dx}{dt} 
 \]
 
 Its kinetic energy is \[ dK = \frac{1}{2}\left( \frac{M}{l} ds \right) \left( \frac{s}{l} \frac{dx}{dt} \right)^2 = \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2 s^2 \, ds \]
 
-For the kinetic energy of the whole spring, integrate, treating $dx/dt$ as a constant:
+To find the kinetic energy of the whole spring, integrate, treating $dx/dt$ as a constant:
 \begin{align*}
 K_\text{spring} &= \frac{M}{2l^3} \left( \frac{dx}{dt} \right)^2  \int_0^{l} s^2 \, ds \\
 &= \frac{1}{6}M\left(\frac{dx}{dt}\right)^2
@@ -689,7 +689,7 @@ Because $\gamma=\omega_0/Q$ \eqref{ch3:eq-Q-def}, \eqref{ch3:eq-damping-NL} beco
 \[ \boxed{ \ddot{x} + \frac{\omega_0}{Q}\dot{x} + \omega_0^2 x = 0 } \]
 
 
-\subsection{Overdamping ($ \omega_0 < \gamma/2 $}
+\subsection{Overdamping ($ \omega_0 < \gamma/2 $)}
 
 \begin{figure}
 	\centering
