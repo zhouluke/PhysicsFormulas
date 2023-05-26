@@ -1,5 +1,4 @@
-\documentclass{tufte-book}
-%\documentclass[11pt,letterpaper,titlepage,oneside]{book}
+\documentclass[twoside]{tufte-book}
 \hypersetup{colorlinks}
 
 \usepackage[english]{babel}
@@ -8,15 +7,14 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage[parfill]{parskip}
-%\usepackage{anysize}
 \usepackage{amssymb}
 \usepackage{empheq,amsthm}
-%\usepackage[Lenny]{fncychap}
 \usepackage{xcolor}
 \usepackage{cancel}
-%\usepackage[justification=centering]{caption}
 \usepackage{hyperref}
+\usepackage{url}
 
+\setcounter{secnumdepth}{3}
 
 \newcommand{\degr}{\ensuremath{^\circ}}
 \newcommand{\htab}{\hspace{0.5cm}}
@@ -24,22 +22,68 @@
 \newcommand{\where}{\htab\text{where }}
 \newcommand{\andd}{\htab\text{and}\htab}
 
-\newcommand{\kcol}[1]{\textcolor{blue}{#1}}
+\newcommand{\kcol}[1]{\textcolor{teal}{#1}}
 \newcommand{\mcol}[1]{\textcolor{red}{#1}}
 
-\title{PHYS 232: Heat \& Waves \\ Waves Study Notes}
-\author{Luke Zhou \\ McGill University}
+\title[PHYS~232: Waves Study Notes]{%
+	\setlength{\parindent}{0pt}%
+	PHYS~232: \par Heat \& Waves}
+\gdef\subtitle{Waves Study Notes}
+\author[Luke~Zhou]{Luke~Zhou}
+\gdef\institution{McGill University}
 \date{Winter 2013 \& Summer 2023}
 
+\renewcommand{\maketitlepage}[0]{%
+	{%
+		\rmfamily%
+		\begin{fullwidth}%
+			\fontsize{22}{20}\selectfont\par\noindent\textcolor{darkgray}{{\thanklessauthor}}%
+			\vspace{11.5pc}%
+			\fontsize{36}{40}\selectfont\par\noindent\textcolor{darkgray}{{\thanklesstitle}}%
+			\fontsize{30}{40}\selectfont\par\noindent\textcolor{darkgray}{{\subtitle}}%
+			\vfill%
+			\fontsize{18}{16}\selectfont\par\noindent\textcolor{darkgray}{{\institution}}%
+			\fontsize{18}{16}\selectfont\par\noindent\textcolor{darkgray}{{\thedate}}%
+		\end{fullwidth}%
+	}
+	\thispagestyle{empty}%
+	\clearpage%
+}
+
+\titleformat{\chapter}%
+{\huge\rmfamily\itshape\color{black}}% format applied to label+text
+{\llap{\colorbox{black}{\parbox{1.5cm}{\hfill\itshape\huge\color{white}\thechapter}}}}% label
+{4pt}% horizontal separation between label and title body
+{}% before the title body
+[]% after the title body
+
+\titleformat{\section}%
+{\LARGE\rmfamily\itshape\color{black}}% format applied to label+text
+{\llap{\colorbox{darkgray}{\parbox{1.5cm}{\hfill\itshape\LARGE\color{white}\thesection}}}}% label
+{4pt}% horizontal separation between label and title body
+{}% before the title body
+[]% after the title body
+
+\titleformat{\subsection}%
+{\Large\rmfamily\itshape\color{black}}% format applied to label+text
+{\llap{\colorbox{lightgray}{\parbox{1.5cm}{\hfill\itshape\Large\color{black}\thesubsection}}}}% label
+{4pt}% horizontal separation between label and title body
+{}% before the title body
+[]% after the title body
+
+\let\cleardoublepage=\clearpage
+
+\setcounter{tocdepth}{1}
+
 \begin{document}
-\maketitle
+\maketitlepage
 
 \frontmatter
 \tableofcontents 
 
 \mainmatter 
 
-
+\setlength{\parindent}{0pt}
 
 \include{phys232/ch1-periodic-motion}
 \include{phys232/ch2-superposition}

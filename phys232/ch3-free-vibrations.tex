@@ -30,7 +30,7 @@ Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analy
 
 \subsection{Effects of gravity}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{phys232/Ch3-g-new-eqm} \caption{Gravity shifts the equilibrium position of a SHO by a distance $h=mg/k$.}\label{ch3:fig-g-new-eqm-pos}
 \end{figure}
@@ -54,8 +54,9 @@ We can interpret $h$ as the initial change in position that occurs when the mass
 
 \subsection{Overview of the systems analyzed}
 
-\begin{center}
-	\renewcommand{\arraystretch}{2.5}
+\begin{fullwidth}
+\centering
+\renewcommand{\arraystretch}{2.5}
 \begin{tabular}{lll}
 	\hline
 	Type of system & Equation & $\omega^2$ \\ \hline\hline
@@ -92,7 +93,7 @@ We can interpret $h$ as the initial change in position that occurs when the mass
 			$\frac{1}{2}\mcol{I}\dot{\theta}^2 + \frac{1}{2}\kcol{mgl}\theta^2 = E $ &
 			$\dfrac{\kcol{mgl}}{\mcol{I}} = \dfrac{\kcol{mgl}}{\mcol{ml^2}}= \dfrac{\kcol{g}}{\mcol{l}}$ 
 			\\
-		\parbox{5.5cm}{	\hyperref[ch3:sec-complex-pendulum]{Arbitrary pendulum} \footnotesize(with radius of gyration $k$, centre of mass at distance $h$ from point of suspension)}&
+		\parbox{5cm}{\hyperref[ch3:sec-complex-pendulum]{Arbitrary pendulum} \footnotesize(with radius of gyration $k$, centre of mass at distance $h$ from point of suspension)}&
 			$\frac{1}{2}\mcol{m(k^2+h^2)}\dot{\theta}^2 + \frac{1}{2}\kcol{mgh}\theta^2 = E $ &
 			$\dfrac{\kcol{gh}}{\mcol{k^2+h^2}}$ 
 			\\
@@ -111,7 +112,7 @@ We can interpret $h$ as the initial change in position that occurs when the mass
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}
-\end{center}
+\end{fullwidth}
 
 
 \section{Solving for the equation of motion of a harmonic oscillator}
@@ -150,9 +151,9 @@ Geometrically, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW
 
 In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$ (see Figure~\ref{ch3:fig-complex-sols}b).
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{ch3:eq-xdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For the length $OX$ to represent a harmonic oscillation, $C1=C2$.}
+	\includegraphics[scale=0.5]{phys232/Ch3-adding-complex-solutions.png} \caption{Superposition of complex solutions of \eqref{ch3:eq-xdd} with (a) $\alpha=0$ and (b) $\alpha\neq 0$. For the length $OX$ to represent a harmonic oscillation, $C1=C2$.}
 	\label{ch3:fig-complex-sols}
 \end{figure}
 
@@ -161,8 +162,10 @@ For the $y$-components to cancel, we need $C_1=C_2$. Hence\footnote{Reminder: $\
 \begin{align*}
 x
 &=Ce^{j(\omega t +\alpha)} + Ce^{-j(\omega t +\alpha)} \\
-&=C[\cos(\omega t + \alpha) + j\sin(\omega t + \alpha) + \cos(-(\omega t + \alpha)) + j\sin(-(\omega t + \alpha))] \\
-&=C[\cos(\omega t + \alpha) + \cancel{j\sin(\omega t + \alpha)} + \cos(\omega t + \alpha) - \cancel{j\sin(\omega t + \alpha)}] \\
+&=C[\cos(\omega t + \alpha) + j\sin(\omega t + \alpha) \\
+&\hhtab\hhtab + \cos(-(\omega t + \alpha)) + j\sin(-(\omega t + \alpha))] \\
+&=C[\cos(\omega t + \alpha) + \cancel{j\sin(\omega t + \alpha)} \\
+& \hhtab\hhtab + \cos(\omega t + \alpha) - \cancel{j\sin(\omega t + \alpha)}] \\
 &= 2C\cos(\omega t + \alpha) \\
 \therefore
 x &= Acos(\omega t + \alpha) \where A=2C
@@ -208,10 +211,12 @@ Remark: this result is similar to that for a simple pendulum (Equation~\ref{ch3:
 
 \section{Floating Objects} \label{ch3:sec-floating}
 
-\begin{figure}[h]
+\begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.6]{phys232/Ch3-floating.png} \caption{Floating object at a vertical displacement of $y$ from its equilibrium position.}\label{ch3:fig-floating}
-\end{figure}
+	\includegraphics[scale=0.6]{phys232/Ch3-floating.png}
+	\caption{Floating object at a vertical displacement of $y$ from its equilibrium position.}
+	\label{ch3:fig-floating}
+\end{marginfigure}
 
 Let the floating object (of mass $m$) have a constant cross-sectional area $A$ parallel to the liquid surface.
 
@@ -241,7 +246,7 @@ This is analogous to the $\omega^2$ of an elastic wire, seen earlier in \eqref{c
 
 
 \section{The Pendulum}
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[scale=0.6]{phys232/Ch3-pendulum.png} \caption{(a) Simple pendulum; (b) pendulum of arbitrary shape with its centre of mass at $C$.}\label{ch3:fig-pendulum}
 \end{figure}
@@ -327,9 +332,11 @@ This result is analogous to what we found for an elastic wire (Equation~\ref{ch3
 
 \section{Liquid in a U-Tube} \label{ch3:sec-uTube}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
-	\includegraphics[scale=0.8]{phys232/Ch3-utube.png} \caption{Oscillating liquid column in a U-tube.}\label{ch3:fig-utube}
+	\includegraphics[scale=0.8]{phys232/Ch3-utube.png}
+	\caption{Oscillating liquid column in a U-tube.}
+	\label{ch3:fig-utube}
 \end{figure}
 
 Examine the vertical displacement $y$ of the liquid surface from equilibrium in a U-tube with uniform cross-sectional area $A$. Define:
@@ -356,7 +363,9 @@ Again, the result for a U-tube \eqref{ch3:eq-utube-result} is comparable to that
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-shear-torsion.png} \caption{(a) Shear deformation of a rectantular block; (b) Torque on rectangular strips during shear deformation; (c) A twisted tube can be considered as a collection of strips undergoing shear.}\label{ch3:fig-shear-torsion}
+	\includegraphics[scale=0.55]{phys232/Ch3-shear-torsion.png}
+	\caption{(a) Shear deformation of a rectantular block; (b) Torque on rectangular strips during shear deformation; (c) A twisted tube can be considered as a collection of strips undergoing shear.}
+	\label{ch3:fig-shear-torsion}
 \end{figure}
 
 If the torque $\tau \propto$ angular displacement $\theta$ between two ends of an object,
@@ -419,10 +428,12 @@ We can model a \textit{solid} tube or cylinder as multiple thin-walled tubes. In
 
 \section{``The Spring of Air"} \label{ch3:sec-air}
 
-\begin{figure}
+\begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-air.png} \caption{Piston in a vertical air column.}\label{ch3:fig-air}
-\end{figure}
+	\includegraphics[scale=0.8]{phys232/Ch3-air.png}
+	\caption{Piston in a vertical air column.}
+	\label{ch3:fig-air}
+\end{marginfigure}
 
 Consider a closed piston-gas system, as pictured in Figure~\ref{ch3:fig-air} Let $m$ represent the mass of the movable piston, and $p$, the pressure of the gas inside the tube.
 
@@ -432,7 +443,7 @@ When the piston moves a distance of $y$ from equilibrium position $l$, the press
 Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies:
 \begin{align*}
 pV &= \text{const} \\
-p\Delta V + V\Delta p &= 0 \tag*{(cf. the product rule for differentiation)}
+p\Delta V + V\Delta p &= 0
 \end{align*}
 
 But... the equilibrium volume was $V = Al$ and the change in volume is $\Delta V = Ay$.
@@ -485,9 +496,9 @@ Because elasticity is enhanced under adiabatic conditions, and the frequency of 
 
 \section{Massive Springs} \label{ch3:sec-massive-springs}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
-	\includegraphics[scale=0.8]{phys232/Ch3-massive-spring.png} \caption{Uniform extension of a massive spring with mass $M$.}\label{ch3:fig-massive-spring}
+	\includegraphics[scale=0.75]{phys232/Ch3-massive-spring.png} \caption{Uniform extension of a massive spring with mass $M$.}\label{ch3:fig-massive-spring}
 \end{figure}
 
 Suppose this time the spring itself has a mass of $M$. Suppose that it has a spring contant $k$ and that there is a mass $m$ attached to it. Let the equilibrium length of the spring be $l$.
@@ -615,9 +626,9 @@ x = A_0 e^{-\gamma t/2} \cos(\omega t+\alpha) \where \omega^2 = \omega_0^2 - \fr
 
 
 \subsection{Remarks on the graph for underdamped free oscillations}
-\begin{figure}[h]
+\begin{figure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-underdamping.png} \caption{Rapidly underdamped harmonic oscillations.}\label{ch3:fig-underdamping}
+	\includegraphics[scale=0.55]{phys232/Ch3-underdamping.png} \caption{Rapidly underdamped harmonic oscillations.}\label{ch3:fig-underdamping}
 \end{figure}
 
 Our solution \eqref{ch3:eq-damping-solution} is plotted in Figure~\ref{ch3:fig-underdamping}. Notice that:
@@ -675,7 +686,7 @@ Because $\gamma=\omega_0/Q$ \eqref{ch3:eq-Q-def}, \eqref{ch3:eq-damping-NL} beco
 
 \subsection{Large Damping $(\omega_0 \leq \gamma/2)$}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[scale=0.7]{phys232/Ch3-damped-oscillators-graph.png} \caption{Three cases of damping: (a) underdamping $(\omega_0>\gamma/2)$; (b) overdamping $(\omega_0<\gamma/2)$; (c) critical damping $(\omega_0=\gamma/2)$} \label{ch3:fig-damping}
 \end{figure}

@@ -54,9 +54,9 @@ If the driving force's frequency is much higher than the natural frequency...
 
 These cases are summarized in Figure~\ref{ch4:no-damping-pendula}.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch4-forced-no-damping-pendula.png} 
+	\includegraphics[scale=0.6]{phys232/Ch4-forced-no-damping-pendula.png} 
 	\caption{The motion of simple pendula undergoing horizontal forced oscillations when (a) $\omega<\omega_0$ and (b) $\omega>\omega_0$.}\label{ch4:no-damping-pendula}
 \end{figure}
 
@@ -96,9 +96,12 @@ Substitute this into \eqref{ch4:eq-no-b}:
 To avoid working with negative values of $C$, let $A=|C|$. To represent the phase lag between $x$ and the driving force, introduce $\alpha$:
 \begin{equation}
 	\therefore
-	\boxed{
 	x = A \cos(\omega t + \alpha) 
-	\where
+	\label{ch4:soln-no-b}
+\end{equation}
+where
+\begin{equation}
+	\boxed{
 	\alpha = 
 	\begin{cases}
 		0 & \text{if } \omega<\omega_0 \\
@@ -107,12 +110,12 @@ To avoid working with negative values of $C$, let $A=|C|$. To represent the phas
 	\andd
 	A = \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
 	}
-	\label{ch4:soln-no-b}
 \end{equation}
+
 
 \eqref{ch4:soln-no-b} is plotted in Figure~\ref{ch4:no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[scale=0.7]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:no-damping-A}
 \end{figure}
