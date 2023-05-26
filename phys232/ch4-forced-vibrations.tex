@@ -25,7 +25,7 @@ The system will initially have the tendency to vibrate at $\omega_0$, but it wil
 \end{enumerate}
 
 \section{Forced Oscillations without Damping: Steady State}
-We will consider the \emph{steady state} of a forced oscillation with negligible damping, ignoring the fact that we need damping to get past the transient state.
+We will consider the \emph{steady state} of a forced oscillation with \emph{negligible damping}, ignoring the fact that we need damping to get past the transient state.
 
 Force equation:
 \begin{align}
@@ -34,25 +34,7 @@ Force equation:
 	\mcol{m}\ddot{x} + \kcol{k}x &= F_0 \cos(\omega t)	\label{ch4:eq-no-b}
 \end{align}
 
-\paragraph{Case (a): $\omega < \omega_0$}
-If the driving force's frequency is much lower than the natural frequency...
-\begin{itemize}
-	\item We expect a low acceleration (since $\ddot{x} \propto \omega^2$).
-	\item So, the $\kcol{k}x$ term dominates over $\mcol{m}\ddot{x}$.
-	\item The response is controlled by the \kcol{stiffness} of the string.
-	\item Since $F_0 \approx kA$, the amplitiude will be $A\approx F_0/k$
-\end{itemize}
-
-\paragraph{Case (b): $\omega > \omega_0$}
-If the driving force's frequency is much higher than the natural frequency...
-\begin{itemize}
-	\item We expect a higher acceleration (since $\ddot{x} \propto \omega^2$).
-	\item So, the $\mcol{m}\ddot{x}$ term dominates over $\kcol{k}x$.
-	\item The response is controlled by the \mcol{inertia} of the string.
-	\item We expect a relatively small $A$, opposite in phase with the driving force (since $x$ is 180°  out of phase from $\ddot{x}$)\footnote{Notice that in Figure~\ref{ch4:no-damping-pendula}b, when $F$ is to the left, $x$ is to the right; when $F$ is to the right, $x$ is to the left.}
-\end{itemize}
-
-These cases are summarized in Figure~\ref{ch4:no-damping-pendula}.
+The behaviour or the system is illustrated in Figure~\ref{ch4:no-damping-pendula}.
 
 \begin{figure}
 	\centering
@@ -60,31 +42,52 @@ These cases are summarized in Figure~\ref{ch4:no-damping-pendula}.
 	\caption{The motion of simple pendula undergoing horizontal forced oscillations when (a) $\omega<\omega_0$ and (b) $\omega>\omega_0$.}\label{ch4:no-damping-pendula}
 \end{figure}
 
-\begin{center}
-\begin{tabular}{cccc}
-	\hline
-	\multicolumn{2}{c}{Case} & $A$ & \parbox{3cm}{\centering Phase difference $\alpha$ b/w $x$ \& $F$}  \\
-	\hline\hline
-	(a) & $\omega < \omega_0$ & large & 0° \\
-	(b) & $\omega > \omega_0$ & small & 180° \\
-	\hline
-\end{tabular}
-\end{center}
+\paragraph{Case (a): $\omega < \omega_0$}
+If the driving force's frequency is much lower than the natural frequency...
+\begin{itemize}
+	\item We expect a low acceleration (since $\ddot{x} \propto \omega^2$).
+	\item So, the $\kcol{k}x$ term dominates over $\mcol{m}\ddot{x}$; i.e. the response is controlled by the \kcol{stiffness} of the string.
+	\item The phase delay between the driving force and the displacement is $\alpha=0$.
+	\item Thus, $F_0 \approx kA$, and the amplitiude will be $A\approx F_0/k$
+\end{itemize}
+
+\begin{marginfigure}
+	\normalsize
+	\begin{tabular}{ccc}
+		\hline
+		Case & $A$ & {$\alpha$}  \\
+		\hline
+		$\omega < \omega_0$ & large & 0° \\
+		$\omega > \omega_0$ & small & 180° \\
+		\hline \\
+	\end{tabular}
+	\caption{Summary of cases~(a) and (b). Note that $\alpha$ represents the phase difference by which the driving force \emph{leads} the displacement.}
+\end{marginfigure}
+
+\paragraph{Case (b): $\omega > \omega_0$}
+If the driving force's frequency is much higher than the natural frequency...
+\begin{itemize}
+	\item We expect a higher acceleration (since $\ddot{x} \propto \omega^2$).
+	\item So, the $\mcol{m}\ddot{x}$ term dominates over $\kcol{k}x$; i.e. the response is controlled by the \mcol{inertia} of the string.
+	\item We expect a relatively small $A$, opposite in phase with the driving force -- i.e. the driving force leads the displacement by a phase difference of $\alpha=180$.%
+	\footnote{Notice that in Figure~\ref{ch4:no-damping-pendula}b, when $F$ is to the left, $x$ is to the right; when $F$ is to the right, $x$ is to the left.}
+\end{itemize}
 
 
-\subsection{Responant response when $\omega = \omega_0$}
 
-We will now examine why the resonant amplitude is much greater than what we obtain when $\omega\neq \omega_0$.
 
-\begin{proof}[Finding the steady-state solution]
-Because we are in the steady state, assume that the natural oscillations are not present:
+\subsection{Responant response ($\omega = \omega_0$)}
+
+We will now examine why the we obtain a much higher amplitude (the \textbf{resonant amplitude}) when $\omega = \omega_0$.
+
+Assume we are in the steady state; i.e. the natural oscillations are not present. Hence:
 \begin{align}
 	x &= C\cos(\omega t) \notag \\
 	\Longrightarrow
 	\ddot{x} &= -\omega^2 C\cos(\omega t)	\label{ch4:eq-acc-forced-no-b}
 \end{align}
 
-Substitute this into \eqref{ch4:eq-no-b}:
+Substitute \eqref{ch4:eq-acc-forced-no-b} into \eqref{ch4:eq-no-b}:
 \begin{align*}
 	-m\omega^2 C\cancel{\cos(\omega t)} + kC\cancel{\cos(\omega t)} &= F_0\cancel {\cos(\omega t)} \\
 	C(k-m\omega^2) &= F_0
@@ -93,12 +96,11 @@ Substitute this into \eqref{ch4:eq-no-b}:
 	 C = \frac{F_0}{k-m\omega^2} = \frac{F_0/m}{\omega_0^2-\omega^2} 
 \end{equation*}
 
-To avoid working with negative values of $C$, let $A=|C|$. To represent the phase lag between $x$ and the driving force, introduce $\alpha$:
-\begin{equation}
+To avoid working with negative values of $C$, let $A=|C|$. Use $\alpha$ again to represent the phase difference by which the driving force leads $x$.
+\begin{equation*}
 	\therefore
 	x = A \cos(\omega t + \alpha) 
-	\label{ch4:soln-no-b}
-\end{equation}
+\end{equation*}
 where
 \begin{equation}
 	\boxed{
@@ -110,16 +112,17 @@ where
 	\andd
 	A = \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
 	}
+	\label{ch4:soln-no-b}
 \end{equation}
 
 
-\eqref{ch4:soln-no-b} is plotted in Figure~\ref{ch4:no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
-
-\begin{figure}
+\begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:no-damping-A}
-\end{figure}
-\end{proof}
+	\includegraphics[scale=0.5]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:no-damping-A}
+\end{marginfigure}
+
+The results in \eqref{ch4:soln-no-b} are plotted in Figure~\ref{ch4:no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
+
 
 \subsection{Resonant response, using complex exponentials}
 Recall \eqref{ch4:eq-no-b}:
@@ -144,17 +147,18 @@ Substitute in \eqref{ch4:eq-acc-forced-no-b}:
 
 Comparing the real and imaginary components on each side:
 \begin{align*}
-	\text{Real part: } & A(\omega_0^2 - \omega^2 ) = \frac{F_0}{m} \cos\alpha \\
-	\text{Imaginary part: } & \frac{F_0}{m} \sin\alpha = 0 
+	\text{Real part: } \htab & A(\omega_0^2 - \omega^2 ) = \frac{F_0}{m} \cos\alpha \\
+	\text{Imaginary part: } \htab & \frac{F_0}{m} \sin\alpha = 0 
 \end{align*}
 
-From the imaginary part, $\alpha = n\pi, n\in\mathbb{Z}$. From the real part, we obtain:
+From the imaginary part, $\alpha = n\pi, n\in\mathbb{Z}$. Thus, $\cos\alpha=0$ in the real part, and we obtain:
 \begin{align*}
 	A(\omega_0^2 - \omega^2 ) &= \frac{F_0}{m} \\
 	\therefore
 	A &= \frac{F_0/m}{\omega_0^2 - \omega^2 }
 \end{align*}
-which is the same result obtained in \eqref{ch4:soln-no-b}.
+
+... which is the same result as \eqref{ch4:soln-no-b}.
 
 \section{Forced Oscillations with Damping: Steady State}
 

@@ -59,7 +59,7 @@ We can interpret $h$ as the initial change in position that occurs when the mass
 \renewcommand{\arraystretch}{2.5}
 \begin{tabular}{lll}
 	\hline
-	Type of system & Equation & $\omega^2$ \\ \hline\hline
+	Type of system & Equation & $\omega^2$ \\ \hline
 	Mass on spring &
 		$\mcol{m}\ddot{x} + \kcol{k}x = 0$ &
 		$\dfrac{\kcol{k}}{\mcol{m}}$
@@ -339,13 +339,13 @@ This result is analogous to what we found for an elastic wire (Equation~\ref{ch3
 	\label{ch3:fig-utube}
 \end{figure}
 
-Examine the vertical displacement $y$ of the liquid surface from equilibrium in a U-tube with uniform cross-sectional area $A$. Define:
-\begin{itemize}
-	\item $l$: total length of liquid column
-	\item $\rho$: liquid density
-\end{itemize}
+Examine the vertical displacement $y$ of the liquid surface from equilibrium in a U-tube with uniform cross-sectional area $A$.
 
-When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} by the same height $y$. The mass of the liquid that moves is $\rho Ay$. 
+Define $l$, the total length of the liquid column, and $\rho$, the liquid's density.
+
+When liquid \textit{rises} a height of $y$ in one end, the liquid in the other end \textit{sinks} by the same height $y$. The mass%
+\footnote{Recall that density = mass/volume, so $m=\rho V=\rho Ay$.}
+of the liquid that moves is $\rho Ay$. 
 
 Assume the whole liquid, which has mass $\rho Al$, moves with speed $dy/dt$. So,
 \[ KE = \frac{1}{2} \rho Al \left(\frac{dy}{dx}\right)^2 \andd
@@ -361,13 +361,6 @@ Again, the result for a U-tube \eqref{ch3:eq-utube-result} is comparable to that
 
 \section{Torsional Oscillations} \label{ch3:sec-torsional}
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.55]{phys232/Ch3-shear-torsion.png}
-	\caption{(a) Shear deformation of a rectantular block; (b) Torque on rectangular strips during shear deformation; (c) A twisted tube can be considered as a collection of strips undergoing shear.}
-	\label{ch3:fig-shear-torsion}
-\end{figure}
-
 If the torque $\tau \propto$ angular displacement $\theta$ between two ends of an object,
 \[ \tau=-\kcol{c}\theta \where\text{$c$ is the torsion constant of the system.} \]
 
@@ -381,13 +374,24 @@ Thus:
 \omega^2 = \frac{\kcol{c}}{\mcol{I}}
 \end{equation*}
 
-\subsection{Shear \& the shear modulus}
-Apply a horizontal force $F_\text{app}$ to the board in Figure~\ref{ch3:fig-shear-torsion}a. Two of the sides change from rectangles to parallelograms. Define an \textbf{angle of shear, $\alpha$}:
+
+\subsection{Shear Modulus}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.55]{phys232/Ch3-shear-torsion.png}
+	\caption{(a) Shear deformation of a rectantular block; (b) Torque on rectangular strips during shear deformation; (c) A twisted tube can be considered as a collection of strips undergoing shear.}
+	\label{ch3:fig-shear-torsion}
+\end{figure}
+
+When we apply a horizontal force $F_\text{app}$ to the board in Figure~\ref{ch3:fig-shear-torsion}a, two of the sides change from rectangles to parallelograms. This is called a \textbf{shear deformation}.
+
+Define an \textbf{angle of shear, $\alpha$}:
 \[ \alpha = \frac{x}{l} \]
 
 It turns out that, just like when we stretch an elastic wire (Section~\ref{ch3:sec-wire}), the ratio between stress and the ``angular strain" is a constant.
 
-We call this the \textbf{shear modulus} or \textbf{modulus of rigidity}, $n$, for the material (cf. Equation~\ref{ch3:eq-Youngs-Modulus}):
+We call this the \textbf{shear modulus} or \textbf{modulus of rigidity} $n$ for the material (cf. Equation~\ref{ch3:eq-Youngs-Modulus}):
 \[  n= \frac{F_\text{app}/A}{\alpha} = \text{const} \]
 
 Let us consider the force $F=-F_\text{app}$ exerted \emph{by} the sheared material \emph{onto} the board. Hence,
@@ -435,12 +439,14 @@ We can model a \textit{solid} tube or cylinder as multiple thin-walled tubes. In
 	\label{ch3:fig-air}
 \end{marginfigure}
 
-Consider a closed piston-gas system, as pictured in Figure~\ref{ch3:fig-air} Let $m$ represent the mass of the movable piston, and $p$, the pressure of the gas inside the tube.
+Consider a closed piston-gas system, as pictured in Figure~\ref{ch3:fig-air}.
+
+Let $m$ represent the mass of the movable piston, and $p$, the pressure of the gas inside the tube.
 
 When the piston moves a distance of $y$ from equilibrium position $l$, the pressure of the gas changes by $\Delta p$.
 
 \subsection{Isothermal conditions}
-Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies:
+Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies\footnote{Recall also the product rule for differentiation}:
 \begin{align*}
 pV &= \text{const} \\
 p\Delta V + V\Delta p &= 0
@@ -462,7 +468,7 @@ Compare \eqref{ch3:eq-pistonF} with \eqref{ch3:eq-Youngs-F} for stretching a rod
 	K_\text{isothermal} = p
 \end{equation*}
 
-More formally, the \textbf{bulk modulus} of a specimen is defined by:
+More formally, the \textbf{bulk modulus} of a specimen is defined as:
 \begin{align*}
 	K &= -\frac{dp}{dV/V} \notag \\
 	\Aboxed{K &= -V\frac{dp}{dV}}
@@ -604,8 +610,8 @@ Substitute into \eqref{ch3:eq-damping-pj}:
 
 Both the real and the imaginary parts of \eqref{ch3:eq-damping-real-imag} must equal zero:
 \begin{align*}
-	\text{Real part: } & -n^2 + s^2  - s \gamma + \omega_0^2 = 0 \\
-	\text{Imaginary part: } &-2ns + n \gamma = 0 
+	\text{Real part: } \htab & -n^2 + s^2  - s \gamma + \omega_0^2 = 0 \\
+	\text{Imaginary part: } \htab &-2ns + n \gamma = 0 
 \end{align*}
 
 From the imaginary part,

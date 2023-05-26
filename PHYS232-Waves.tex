@@ -12,9 +12,10 @@
 \usepackage{xcolor}
 \usepackage{cancel}
 \usepackage{hyperref}
-\usepackage{url}
+\usepackage{enumitem}
 
-\setcounter{secnumdepth}{3}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
 
 \newcommand{\degr}{\ensuremath{^\circ}}
 \newcommand{\htab}{\hspace{0.5cm}}
@@ -71,9 +72,16 @@
 {}% before the title body
 []% after the title body
 
-\let\cleardoublepage=\clearpage
+\titleformat{\subsubsection}%
+{\Large\rmfamily\itshape\color{black}}% format applied to label+text
+{\llap{\colorbox{lightgray}{\parbox{1.5cm}{\hfill\itshape\Large\color{black}\thesubsection}}}}% label
+{4pt}% horizontal separation between label and title body
+{}% before the title body
+[]% after the title body
 
-\setcounter{tocdepth}{1}
+\let\cleardoublepage=\clearpage
+\setlist[itemize]{leftmargin=1cm}
+
 
 \begin{document}
 \maketitlepage
