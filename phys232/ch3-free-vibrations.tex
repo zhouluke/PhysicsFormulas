@@ -308,7 +308,7 @@ Note that $PE_\text{pendulum} = PE_\text{centre of mass}$. The above assumes $PE
 	\frac{1}{2} \mcol{I_O}\left( \frac{d\theta}{dt} \right)^2 + \frac{1}{2} \kcol{mgh}\theta^2 = E \label{ch3:eq-pendulumEO}
 \end{equation}
 
-\subsubsection{Re-expressing the result in terms of $I_\text{CM}$}
+\paragraph{Re-expressing the result in terms of $I_\text{CM}$}
 From the \emph{parallel axis theorem}: recalling that the distance $OC$ is $h$, we have:
 \begin{align*}
 	I_O &= I_\text{CM} + mh^2 \\
@@ -416,7 +416,7 @@ Hence, there is a restoring torque exerted by \emph{each} strip about the axis o
 	&= -\frac{nAr^2\theta}{l} 
 \end{align*}
 
-\subsubsection{Thin-Walled Tube}
+\paragraph{Thin-Walled Tube}
 Refer to Figure~\ref{ch3:fig-shear-torsion}c, where we will consider a twisted, thin-walled tube as a collection of many strips, each undergoing shear and contributing restoring torques about the axis of twist.
 
 Let the radius be $r$ and the wall thickness be $\Delta r$. This means the cross-sectional area is $A=2\pi r \Delta r$. The restoring torque from a \emph{thin ring of strips} is thus:
@@ -424,7 +424,7 @@ Let the radius be $r$ and the wall thickness be $\Delta r$. This means the cross
 \Delta \tau = -\frac{2\pi nr^3\Delta r}{l} \theta  \label{ch3:eq-thinTube_dtau}
 \end{equation}
 
-\subsubsection{Solid Tube}
+\paragraph{Solid Tube}
 We can model a \textit{solid} tube or cylinder as multiple thin-walled tubes. Integrate \eqref{ch3:eq-thinTube_dtau} to obtain, as a total restoring torque:
 \begin{equation*}
 	\boxed{\tau = -\kcol{\frac{\pi nr^4}{2l}} \theta}
@@ -631,7 +631,6 @@ x = A_0 e^{-\gamma t/2} \cos(\omega t+\alpha) \where \omega^2 = \omega_0^2 - \fr
 \end{proof}
 
 
-\subsection{Remarks on the graph for underdamped free oscillations}
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.55]{phys232/Ch3-underdamping.png} \caption{Rapidly underdamped harmonic oscillations.}\label{ch3:fig-underdamping}
@@ -643,9 +642,9 @@ Our solution \eqref{ch3:eq-damping-solution} is plotted in Figure~\ref{ch3:fig-u
 	\item However, the extrema are now only \emph{approximately halfway} between the zeroes.
 \end{itemize}
 
-\subsection{Small Damping $(\gamma \ll \omega)$ \& Quality Factor}
+\paragraph{Very Small Damping $(\gamma \ll \omega)$}
 
-When the damping is small (i.e. if  $\gamma \ll \omega$), the motion approximates to SHM at a constant amplitude over a number of cycles around time $t$.
+When the damping is very small, the motion approximates to SHM at a constant amplitude over a number of cycles around time $t$.
 
 Amplitude around time $t$:
 \[ A(t) = A_0 e^{-\gamma t/2} \]
@@ -658,7 +657,7 @@ E(t) = \frac{1}{2}kA^2
 \end{align*}
 i.e. the total energy decays exponentially.
 
-\subsubsection{Quality Factor} \label{ch3:sec-quality-factor}
+\paragraph{Quality Factor} \label{ch3:sec-quality-factor}
 We can also interpret $\gamma$ as representing the reciprocal of the time required for the energy to decrease to $1/e$ of its initial value. Let us examine why.
 
 We can define a \textbf{quality value} to describe the amount of damping:
@@ -690,15 +689,14 @@ Because $\gamma=\omega_0/Q$ \eqref{ch3:eq-Q-def}, \eqref{ch3:eq-damping-NL} beco
 \[ \boxed{ \ddot{x} + \frac{\omega_0}{Q}\dot{x} + \omega_0^2 x = 0 } \]
 
 
-\subsection{Large Damping $(\omega_0 \leq \gamma/2)$}
+\subsection{Overdamping ($ \omega_0 < \gamma/2 $}
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.7]{phys232/Ch3-damped-oscillators-graph.png} \caption{Three cases of damping: (a) underdamping $(\omega_0>\gamma/2)$; (b) overdamping $(\omega_0<\gamma/2)$; (c) critical damping $(\omega_0=\gamma/2)$} \label{ch3:fig-damping}
+	\includegraphics[scale=0.6]{phys232/Ch3-damped-oscillators-graph.png} \caption{Three cases of damping: (a) underdamping $(\omega_0>\gamma/2)$; (b) overdamping $(\omega_0<\gamma/2)$; (c) critical damping $(\omega_0=\gamma/2)$} \label{ch3:fig-damping}
 \end{figure}
 
 
-\subsubsection{Overdamping ($ \omega_0 \ll \gamma/2 $)}
 The motion is no longer oscillatory -- see Figure~\ref{ch3:fig-damping}b.
 
 Recall that the solution to \eqref{ch3:eq-damping-NL} was of the form:
@@ -719,7 +717,7 @@ x = A_1 e^{-(\gamma/2 + \beta)t} + A_2 e^{-(\gamma/2-\beta)t}
 
 Note that $\beta$ is only defined when $\omega_0^2 < \gamma^2/4$.
 
-\subsubsection{Critical Damping ($ \omega_0 = \gamma/2 $)}
+\subsection{Critical Damping ($ \omega_0 = \gamma/2 $)}
 \[ \boxed{x = (A + Bt) e^{\gamma t/2}} \]
 
 When a force is applied to a critically damped system at rest, there will be a smooth approach to a new equilibrium position without oscillation or overshoot -- see Figure~\ref{ch3:fig-damping}c.

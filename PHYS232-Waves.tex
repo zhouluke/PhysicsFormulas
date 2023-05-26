@@ -72,6 +72,8 @@
 {}% before the title body
 []% after the title body
 
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
 \titleformat{\subsubsection}%
 {\Large\rmfamily\itshape\color{black}}% format applied to label+text
 {\llap{\colorbox{lightgray}{\parbox{1.5cm}{\hfill\itshape\Large\color{black}\thesubsection}}}}% label
