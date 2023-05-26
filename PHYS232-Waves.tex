@@ -1,20 +1,22 @@
-\documentclass[11pt,letterpaper,titlepage,oneside]{book}
-%\documentclass[10pt,letterpaper,titlepage,oneside,twocolumn]{book}
-%\setlength{\columnsep}{distance}
+\documentclass{tufte-book}
+%\documentclass[11pt,letterpaper,titlepage,oneside]{book}
+\hypersetup{colorlinks}
+
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage[parfill]{parskip}
-\usepackage{anysize}
+%\usepackage{anysize}
 \usepackage{amssymb}
 \usepackage{empheq,amsthm}
-\usepackage[Lenny]{fncychap}
+%\usepackage[Lenny]{fncychap}
 \usepackage{xcolor}
 \usepackage{cancel}
-\usepackage[justification=centering]{caption}
+%\usepackage[justification=centering]{caption}
 \usepackage{hyperref}
+
 
 \newcommand{\degr}{\ensuremath{^\circ}}
 \newcommand{\htab}{\hspace{0.5cm}}
@@ -25,24 +27,12 @@
 \newcommand{\kcol}[1]{\textcolor{blue}{#1}}
 \newcommand{\mcol}[1]{\textcolor{red}{#1}}
 
-\oddsidemargin 0.0in
-\evensidemargin 0.0in 
-
-%\setlength{\columnsep}{24pt}
-
 \title{PHYS 232: Heat \& Waves \\ Waves Study Notes}
 \author{Luke Zhou \\ McGill University}
 \date{Winter 2013 \& Summer 2023}
 
 \begin{document}
 \maketitle
-%\belowdisplayskip=0pt 
-%\abovedisplayskip=5pt 
-
-%\setlength{\abovedisplayskip}{0pt}
-%\setlength{\belowdisplayskip}{0pt}
-%\setlength{\abovedisplayshortskip}{0pt}
-%\setlength{\belowdisplayshortskip}{0pt}
 
 \frontmatter
 \tableofcontents 
@@ -50,14 +40,11 @@
 \mainmatter 
 
 
+
 \include{phys232/ch1-periodic-motion}
-
 \include{phys232/ch2-superposition}
-
 \include{phys232/ch3-free-vibrations}
-
 \include{phys232/ch4-forced-vibrations}
-
 \include{phys232/ch5-coupled-oscillators}
 
 
