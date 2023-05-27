@@ -22,16 +22,18 @@
 \newcommand{\hhtab}{\htab\htab}
 \newcommand{\where}{\htab\text{where }}
 \newcommand{\andd}{\htab\text{and}\htab}
+\newcommand{\so}{\hspace{0.25cm}\ensuremath{\Longrightarrow}\hspace{0.25cm}}
 
 \newcommand{\kcol}[1]{\textcolor{teal}{#1}}
 \newcommand{\mcol}[1]{\textcolor{red}{#1}}
+
 
 \title[PHYS~232: Waves Study Notes]{%
 	\setlength{\parindent}{0pt}%
 	PHYS~232: \par Heat \& Waves}
 \gdef\subtitle{Waves Study Notes}
 \author[Luke~Zhou]{Luke~Zhou}
-\gdef\institution{McGill University}
+\gdef\institution{Based on a course given @ McGill University}
 \date{Winter 2013 \& Summer 2023}
 
 \renewcommand{\maketitlepage}[0]{%
@@ -72,14 +74,10 @@
 {}% before the title body
 []% after the title body
 
-\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-
-\titleformat{\subsubsection}%
-{\Large\rmfamily\itshape\color{black}}% format applied to label+text
-{\llap{\colorbox{lightgray}{\parbox{1.5cm}{\hfill\itshape\Large\color{black}\thesubsection}}}}% label
-{4pt}% horizontal separation between label and title body
-{}% before the title body
-[]% after the title body
+\def\mathnote#1{%
+	\tag*{\rlap{\hspace\marginparsep\smash{\parbox[t]{\marginparwidth}{%
+					\footnotesize[#1]}}}}
+}
 
 \let\cleardoublepage=\clearpage
 \setlist[itemize]{leftmargin=1cm}
@@ -94,6 +92,7 @@
 \mainmatter 
 
 \setlength{\parindent}{0pt}
+\raggedbottom
 
 \include{phys232/ch1-periodic-motion}
 \include{phys232/ch2-superposition}

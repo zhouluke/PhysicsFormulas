@@ -26,7 +26,10 @@ Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analy
 		\omega^2 = \frac{\kcol{\text{elasticity}}}{\mcol{\text{inertia}}} \hhtab 
 		T = \frac{2\pi}{\omega} \hhtab 
 		f = \frac{\omega}{2\pi}}
+	\label{ch3:eq-def-omega-sq}
 \end{equation}
+
+\eqref{ch3:eq-def-omega-sq} implies that the angular frequency $\omega$, period $T$ and frequency $f$ are \emph{independent of the initial configuration of the system} -- the amplitude $A$ and initial phase $\alpha$!
 
 \subsection{Effects of gravity}
 
@@ -38,16 +41,15 @@ Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analy
 Gravity only changes the equilibrium position of a SHO, without changing the amplitude, period, or frequency:
 \begin{align*}
 	m\ddot{x} &= -kx + mg \\
-	& = -k(x - \frac{mg}{k}) \\
-	& = -k(x - h) \where h=\frac{mg}{k}
-\intertext{Let $y=x-h$. This implies $\ddot{y} = \ddot{x}$. Therefore,}
+	& = -k(x - \frac{mg}{k})
+\intertext{Let $y=x-mg/k$. This implies $\ddot{y} = \ddot{x}$. Therefore,}
 	m\ddot{y} &= -ky \\
 	m\ddot{y} + ky &= 0 
 \end{align*}
 i.e. we still have SHM!
 
-We can interpret $h$ as the initial change in position that occurs when the mass is hung or the floating object is placed in a liquid, and we wait for the system to reach \emph{static equilibrium} (see Figure~\ref{ch3:fig-g-new-eqm-pos}).
-\[ mg = kh \Longrightarrow \boxed{h = \frac{mg}{k}} \]
+We can interpret $h = mg/k$ as the initial change in position that occurs when the mass is hung or the floating object is placed in a liquid, and we wait for the system to reach \emph{static equilibrium} (see Figure~\ref{ch3:fig-g-new-eqm-pos}).
+\[ mg = kh \so \boxed{h = \frac{mg}{k}} \]
 
 
 \subsection{Overview of the systems analyzed}
@@ -147,7 +149,7 @@ Because we have two possibilities for $p$, we can write a more-general solution 
 
 Geometrically, $x$ is the sum of two vectors: one with length $C_1$ rotating CCW and another with length $C_2$ going CW, both with the same angular displacement $\omega t$ (see Figure~\ref{ch3:fig-complex-sols}a).
 
-In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also the case when we have an initial phase angle $\alpha\neq 0$ (see Figure~\ref{ch3:fig-complex-sols}b).
+In order to produce a harmonic oscillation along the $x$-axis, the $y$-components of the vectors must cancel. This is also true in the more general case with initial phase angle $\alpha\neq 0$ (see Figure~\ref{ch3:fig-complex-sols}b).
 
 \begin{figure}
 	\centering
@@ -156,14 +158,17 @@ In order to produce a harmonic oscillation along the $x$-axis, the $y$-component
 \end{figure}
 
 
-For the $y$-components to cancel, we need $C_1=C_2$. Hence\footnote{Reminder: $\cos(-\theta)=\cos\theta$ and $\sin(-\theta)=-\sin\theta$}, using Euler's identity \eqref{ch1:eq-eulers-identity},
+We can see that for the $y$-components to cancel%
+\footnote{Or, algebraically: $C_{1y} = C_{2y}$ implies $C_1\sin(\omega t+\alpha) = C_2\sin(\omega t+\alpha)$. So, $C_1 = C_2$.}%
+, we need $C_1=C_2$.
+
+We can also see that $OX$ is twice the length of the $x$-component of the $C_1$ and $C_2$ vectors%
+\footnote{Or, algebraically: we can use Euler's identity \eqref{ch1:eq-eulers-identity} and the fact that $\cos(-\theta)=\cos\theta$ and $\sin(-\theta)=-\sin\theta$.}.
+Hence, we can write:
+
 \begin{align*}
 x
 &=Ce^{j(\omega t +\alpha)} + Ce^{-j(\omega t +\alpha)} \\
-&=C[\cos(\omega t + \alpha) + j\sin(\omega t + \alpha) \\
-&\hhtab\hhtab + \cos(-(\omega t + \alpha)) + j\sin(-(\omega t + \alpha))] \\
-&=C[\cos(\omega t + \alpha) + \cancel{j\sin(\omega t + \alpha)} \\
-& \hhtab\hhtab + \cos(\omega t + \alpha) - \cancel{j\sin(\omega t + \alpha)}] \\
 &= 2C\cos(\omega t + \alpha) \\
 \therefore
 x &= Acos(\omega t + \alpha) \where A=2C
@@ -235,7 +240,7 @@ By Newton's Law:
 
 We can, again, rewrite $\omega^2$ in terms of $h$, the change in equilibrium position when the object is placed in the liquid and reaches static eqm:
 \[ \mcol{m}\cancel{g}=\kcol{\cancel{g}\rho A} h
-\Longrightarrow
+\so
 h = \frac{m}{\rho A} \]
 \[ \therefore \omega^2 = \frac{g}{h} \]
 
@@ -330,14 +335,14 @@ This result is analogous to what we found for an elastic wire (Equation~\ref{ch3
 
 \section{Liquid in a U-Tube} \label{ch3:sec-uTube}
 
-\begin{figure}
+Examine the vertical displacement $y$ of the liquid surface from equilibrium in a U-tube with uniform cross-sectional area $A$ -- see Figure~\ref{ch3:fig-utube}.
+
+\begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.8]{phys232/Ch3-utube.png}
+	\includegraphics[scale=0.6]{phys232/Ch3-utube.png}
 	\caption{Oscillating liquid column in a U-tube.}
 	\label{ch3:fig-utube}
-\end{figure}
-
-Examine the vertical displacement $y$ of the liquid surface from equilibrium in a U-tube with uniform cross-sectional area $A$.
+\end{marginfigure}
 
 Define $l$, the total length of the liquid column, and $\rho$, the liquid's density.
 
@@ -444,10 +449,10 @@ Let $m$ represent the mass of the movable piston, and $p$, the pressure of the g
 When the piston moves a distance of $y$ from equilibrium position $l$, the pressure of the gas changes by $\Delta p$.
 
 \subsection{Isothermal conditions}
-Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies\footnote{Recall also the product rule for differentiation: $(gk)'=g'k+kg'$}:
+Under {isothermal} (constant temperature) conditions, \emph{Boyle's Law} applies:
 \begin{align*}
 pV &= \text{const} \\
-p\Delta V + V\Delta p &= 0
+p\Delta V + V\Delta p &= 0 \mathnote{c.f. the product rule for differentiation: $(gk)'=g'k+kg'$}
 \end{align*}
 
 But... the equilibrium volume was $V = Al$ and the change in volume is $\Delta V = Ay$.
@@ -466,7 +471,7 @@ Compare \eqref{ch3:eq-pistonF} with \eqref{ch3:eq-Youngs-F} for stretching a rod
 	K_\text{isothermal} = p
 \end{equation*}
 
-More formally, the \textbf{bulk modulus} of a specimen is defined as:
+More formally, the \textbf{bulk modulus} of a specimen describes the resistance of a material to changes in volume and is defined as:
 \begin{align*}
 	K &= -\frac{dp}{dV/V} \notag \\
 	\Aboxed{K &= -V\frac{dp}{dV}}
@@ -484,8 +489,8 @@ In general, $K_\text{isothermal}$ is not a good descriptor of the elasticity of 
 In \textbf{adiabatic conditions} (closed system; no flow of heat in/out of the gas), we have:
 \begin{align*}
 pV^\gamma &= \text{constant} \\
-\Longrightarrow \ln p + \gamma\ln V &= \text{const} \tag{taking $\ln$ of both sides} \\
-\Longrightarrow \frac{1}{p}\frac{dp}{dV} + \frac{\gamma}{V} &= 0 \tag{integrating both sides} 
+\Longrightarrow \ln p + \gamma\ln V &= \text{const} \mathnote{taking $\ln$ of both sides} \\
+\Longrightarrow \frac{1}{p}\frac{dp}{dV} + \frac{\gamma}{V} &= 0 \mathnote{integrating both sides} 
 \intertext{By the definition of $K_\text{adiabatic}$,}
 K_\text{adiabatic} &= -V \frac{dp}{dV} \\
 \Aboxed{K_\text{adiabatic} &= \gamma p}
