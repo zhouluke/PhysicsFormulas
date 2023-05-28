@@ -20,16 +20,21 @@ Any equation matching either of the forms above\footnote{Notice that \eqref{ch3:
 \boxed{x = A \cos(\omega t+\alpha)\where\omega^2 = \frac{\kcol{k}}{\mcol{m}}} \label{ch3:eq-SHM-soln}
 \end{equation}
 
-Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{ch3:eq-NL}, while others, with \eqref{ch3:eq-CE}. Although the systems have differing elastic and inertial constants, they share the following similarities:
+Some of the \textbf{simple harmonic oscillators} (SHO) in this chapter are analyzed through comparison with \eqref{ch3:eq-NL}, while others, with \eqref{ch3:eq-CE}. 
+
+Although the systems have different elastic and inertial constants, their angular frequency $\omega$, period $T$ and frequency $f$ are calculated the same way:
 \begin{equation}
 	\boxed{
-		\omega^2 = \frac{\kcol{\text{elasticity}}}{\mcol{\text{inertia}}} \hhtab 
+		\omega^2 = \frac{\kcol{\text{elasticity}}}{\mcol{\text{inertia}}} 
+	}
+	\hhtab 
+	\boxed{
 		T = \frac{2\pi}{\omega} \hhtab 
 		f = \frac{\omega}{2\pi}}
 	\label{ch3:eq-def-omega-sq}
 \end{equation}
 
-\eqref{ch3:eq-def-omega-sq} implies that the angular frequency $\omega$, period $T$ and frequency $f$ are \emph{independent of the initial configuration of the system} -- the amplitude $A$ and initial phase $\alpha$!
+\eqref{ch3:eq-def-omega-sq} implies that $\omega$, $T$ and $f$ are \emph{independent of the initial configuration of the system}; i.e. the amplitude $A$ and initial phase $\alpha$!
 
 \subsection{Effects of gravity}
 
@@ -205,7 +210,9 @@ Once a mass $m$ is hung on one end:
 \[ \omega^2 = \sqrt{\frac{\kcol AY}{\mcol m \kcol{l_0}}} \]
 
 We can rewrite this in terms of properties more easily measured at static equilibrium, such as $h$, the increase of length reached at static equilibrium after the mass is attached.
-\[ \mcol{m}g=\kcol{\frac{AY}{l_0}} h \Longrightarrow \frac{ml_0}{AY}=\frac{h}{g} \]
+\[ \mcol{m}g=\kcol{\frac{AY}{l_0}} h 
+\so
+\frac{ml_0}{AY}=\frac{h}{g} \]
 \begin{equation}
 \therefore \omega^2 = \frac{g}{h}  \label{ch3:eq-elastic-wire-result}
 \end{equation} 

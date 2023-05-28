@@ -100,23 +100,23 @@ Substitute \eqref{ch4:eq-acc-forced-no-b} into \eqref{ch4:eq-no-b}:
 	 C = \frac{F_0}{k-m\omega^2} = \frac{F_0/m}{\omega_0^2-\omega^2} 
 \end{equation*}
 
-To avoid working with negative values of $C$, let $A=|C|$. Use $\alpha$ again to represent the phase difference by which the driving force leads $x$.
-\begin{equation*}
-	\therefore
-	x = A \cos(\omega t + \alpha) 
-\end{equation*}
-where
+To avoid working with negative values of $C$, let $A=|C|$. Use $\alpha$ again to represent the phase difference by which the driving force leads $x$. Therefore:
 \begin{equation}
-	\boxed{
-	\alpha = 
-	\begin{cases}
-		0 & \text{if } \omega<\omega_0 \\
-		\pi & \text{if } \omega>\omega_0
-	\end{cases}
-	\andd
-	A = \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
-	}
-	\label{ch4:eq-soln-no-b}
+\boxed{
+	\begin{split}
+		x &= A \cos(\omega t + \alpha)  \\
+		\text{where }
+		\alpha &= 
+		\begin{cases}
+			0 & \text{if } \omega<\omega_0 \\
+			\pi & \text{if } \omega>\omega_0
+		\end{cases}
+		\\
+		\text{and }
+		A &= \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
+	\end{split}
+}
+\label{ch4:eq-soln-no-b}
 \end{equation}
 
 
@@ -196,15 +196,16 @@ From the geometry of the triangle:
 	\gamma\omega A &= \frac{F_0}{m} \sin\delta \label{ch4:eq-damping-vectors-y}
 \end{align}
 
-Therefore: 
-\[ x = A \cos (\omega t - \delta) \]
-where%
-\footnote{Our expression for $\tan\delta(\omega)$ comes from dividing \eqref{ch4:eq-damping-vectors-y} by \eqref{ch4:eq-damping-vectors-x}. Our result for $A(\omega)$ comes from using the trigonometric identity $\cos^2\theta+\sin^2\theta=1$ after summing the square of the two equations.}
+Therefore:%
+\footnote{Our expression for $\tan\delta(\omega)$ comes from dividing \eqref{ch4:eq-damping-vectors-y} by \eqref{ch4:eq-damping-vectors-x}. Our result for $A(\omega)$ comes from using the trigonometric identity $\cos^2\theta+\sin^2\theta=1$ after summing the square of the two equations.}%
 \begin{equation}
 \boxed{
-	A(\omega) = \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}}
-	\htab
-	\tan \delta (\omega) = \frac{\gamma\omega}{\omega_0^2 - \omega^2}
+	\begin{split}
+		x &= A \cos (\omega t - \delta) \\
+		\text{where }
+		A(\omega) &= \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}} \\
+		\tan \delta (\omega) &= \frac{\gamma\omega}{\omega_0^2 - \omega^2}
+	\end{split}
 }
 \label{ch4:eq-soln-b}
 \end{equation}
@@ -272,23 +273,100 @@ Searching for the maximum value of $A(\omega)$ in \eqref{ch4:eq-soln-b}, we obta
 \begin{equation}
 \boxed{
 	\omega_m = \omega_0 \left( 1-\frac{1}{2Q^2} \right)^{1/2} \andd
-	A_m = A_0 \frac{Q}{\left( 1-\frac{1}{4Q^2} \right)^{1/2}} 	\label{ch4:eq-damping-Am}
-}
+	A_m = A_0 \frac{Q}{\left( 1-\frac{1}{4Q^2} \right)^{1/2}} 
+}	\label{ch4:eq-damping-Am}
 \end{equation}
 where $A_0=F_0/k$, i.e. the amplitude obtained for $\omega\to 0$.
 
-\section{Transient Effects}
-For $t<0$, let the object be at rest (i.e. it only starts moving at $t=0$).
-\begin{align*}
-x &= steady + transient \\
-x &= A \cos (\omega t - \delta) + B e^{-\gamma t/2} \cos(\omega' + \beta)
-\end{align*}
+\section{Transient State}
+Suppose that for $t<0$, our system is at rest at position $x=0$, and that at $t=0$, the driving force is turned on.
 
-The transient part (system's ''natural" motion) dies out over time due to damping; after then, the steady state takes over. 
+\subsection{No damping}
+Without damping, the motion of the system is described by \eqref{ch4:eq-no-b}:
+\begin{align}
+	\mcol{m}\ddot{x} + \kcol{k}x &= F_0 \cos(\omega t) \notag \\
+	\Longrightarrow \ddot{x} + \omega_0^2 x &= F_0 \cos(\omega t) 	\label{ch4:eq-no-b-omega2}
+\end{align}
 
-Transient part of the equation accounts for adjustable initial conditions!
+Its solution was \eqref{ch4:eq-soln-no-b}:
+\[ x(t) = \frac{F_0/m} {\omega_0^2 - \omega^2} \cos(\omega t) \]
 
-A \emph{beat pattern} may be produced during this stage if $\omega'$ (system's freq w/ damping) and $\omega$ are similar.
+This solution is impossible, as it gives $x(0) \neq 0$. 
+Assume instead a different solution: 
+$$x = x_1 + x_2$$
+where $x_1$ is a solution to \eqref{ch4:eq-no-b-omega2}, and $x_2$ is a solution to the equation of free vibration, such that:
+\begin{equation*}
+	\dder{x_1}{t} + \omega_0^2 x_1 = F_0 \cos(\omega t)  \andd
+	\dder{x_2}{t} + \omega_0^2 x_2 = 0
+\end{equation*}
+
+Adding the two equations gives:
+\[ \dder{(x_1+x_2)}{t} + \omega_0^2(x_1+x_2) = \frac{F_0}{m} \cos(\omega t) \]
+
+This shows that $(x_1+x_2)$ is a more general solution to \eqref{ch4:eq-no-b-omega2} than $x_1$ alone. In addition, $x_2$ gives us two adjustable constants -- amplitude%
+\footnote{``B" stands for ``beginning".}
+$B$ and initial phase $\beta$.
+
+Let us propose the following solution:
+\begin{equation}
+	x = \underbrace{B\cos(\omega_0 t + \beta)}_\text{free vibration} + \underbrace{C\cos(\omega t)}_\text{driving force}
+	\where
+	C = \frac{F_0/m}{\omega_0^2 - \omega^2}
+	\label{ch4:eq-transient-no-b-proposed-sol}
+\end{equation}
+
+Since $x(0)=0$, \eqref{ch4:eq-transient-no-b-proposed-sol} becomes:
+\[ 0 = B\cos\beta + C \]
+
+And since $\dot{x}(0) = 0 = -B\omega_0 \cos(\omega_0 t + \beta) - \omega C \sin(\omega t)$:
+\[ 0 = -B\omega_0 \sin\beta \]
+
+If we take $\beta=0$, we get $B=-C$. Therefore:
+\begin{equation}
+\boxed{
+	x = C(\cos(\omega t) - \cos(\omega_0 t))
+	\where
+	C = \frac{F_0/m}{\omega_0^2 - \omega^2}
+}
+\label{ch4:eq-transient-no-b-sol}
+\end{equation}
+
+Observations about \eqref{ch4:eq-transient-no-b-sol}:
+\begin{itemize}
+	\item This is an example of beats.
+	\item Without damping, these beats would continue on indefinitely, and no steady state would ever be reached.
+\end{itemize}
+
+The conditions just after $t=0$ now make sense; if $\omega t, \omega_0 t \ll 1$, we have%
+\footnote{By the small angle approximation in \eqref{ch1:eq-small-angle-cos}: $\cos\theta \approx 1-\theta^2/2$}:
+\begin{equation*}
+	\cos(\omega t) \approx 1 - \frac{\omega^2 t^2}{2} \andd \cos(\omega_0 t) \approx 1 - \frac{\omega_0^2 t^2}{2}
+\end{equation*}
+\begin{equation*}
+	\Longrightarrow
+	x \approx \frac{F_0/m}{\omega_0^2 - \omega^2} \frac{(\omega_0^2 - \omega^2)t^2}{2} 
+	\approx \frac{1}{2} \frac{F_0}{m} t^2
+\end{equation*}
+
+This tells us that before the restoring forces come into play, we have displacement $x$ in the same direction as the driving force, with acceleration $F_0/m$.
+
+\subsection{With damping}
+
+Our solution is:
+\begin{equation}
+\boxed{
+	\begin{split}
+		&x = \underbrace{Be^{-\gamma t/2} \cos(\omega_1 t + \beta)}_\text{transient} + \underbrace{A\cos(\omega t - \delta)}_\text{driving force}
+		\\
+		&\text{where }
+		\omega_1 = \left(\omega_0^2 - \frac{\gamma^2}{4} \right)^{1/2}
+	\end{split}
+}	\label{ch4:eq-transient-with-b-sol}
+\end{equation}
+
+Note that the transient part of \eqref{ch4:eq-transient-with-b-sol} accounts for our adjustable initial conditions $A, \delta$, given by \eqref{ch4:eq-soln-b}.
+
+
 
 \section{Power}
 Power required to keep a driven oscillator going at the same amplitude:
