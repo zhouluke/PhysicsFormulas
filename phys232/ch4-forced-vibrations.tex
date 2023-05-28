@@ -23,7 +23,7 @@ The system will initially have the tendency to vibrate at $\omega_0$, but it wil
 	\item \textbf{Steady state}: only the the driving vibration remains, so the system oscillates at $\omega$
 \end{enumerate}
 
-\section{Forced Oscillations without Damping: Steady State}
+\section{Forced Oscillations without Damping: Steady State}	\label{ch4:sec:no-damping-steady}
 We will consider the \emph{steady state} of a forced oscillation with \emph{negligible damping}, ignoring the fact that we need damping to get past the transient state.
 
 Force equation:
@@ -100,11 +100,11 @@ Substitute \eqref{ch4:eq-acc-forced-no-b} into \eqref{ch4:eq-no-b}:
 	 C = \frac{F_0}{k-m\omega^2} = \frac{F_0/m}{\omega_0^2-\omega^2} 
 \end{equation*}
 
-To avoid working with negative values of $C$, let $A=|C|$. Use $\alpha$ again to represent the phase difference by which the driving force leads $x$. Therefore:
+Therefore, using $\alpha$ again to represent the phase difference by which the driving force leads $x$, our displacement is given by:
 \begin{equation}
 \boxed{
 	\begin{split}
-		x &= A \cos(\omega t + \alpha)  \\
+		x &= C \cos(\omega t + \alpha)  \\
 		\text{where }
 		\alpha &= 
 		\begin{cases}
@@ -113,7 +113,7 @@ To avoid working with negative values of $C$, let $A=|C|$. Use $\alpha$ again to
 		\end{cases}
 		\\
 		\text{and }
-		A &= \left| \frac{F_0/m}{\omega_0^2-\omega^2}  \right| 
+		C &= \frac{F_0/m}{\omega_0^2-\omega^2}
 	\end{split}
 }
 \label{ch4:eq-soln-no-b}
@@ -122,10 +122,12 @@ To avoid working with negative values of $C$, let $A=|C|$. Use $\alpha$ again to
 
 \begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.5]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:fig-no-damping-A}
+	\includegraphics[scale=0.5]{phys232/Ch4-forced-no-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (no damping) as a function of $\omega$; (b) Phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:fig-no-damping-A}
 \end{marginfigure}
 
-The results in \eqref{ch4:eq-soln-no-b} are plotted in Figure~\ref{ch4:fig-no-damping-A}. Notice that as $\omega\to\omega_0$, $C\to \infty$.
+The results in \eqref{ch4:eq-soln-no-b} are plotted in Figure~\ref{ch4:fig-no-damping-A}, where $A=|C|$.
+
+Notice that as $\omega\to\omega_0$, $A\to \infty$.
 
 
 \subsection{Resonant response, using complex exponentials}
@@ -163,7 +165,7 @@ From the imaginary part, $\alpha = n\pi, n\in\mathbb{Z}$. Thus, $\cos\alpha=0$ i
 
 ... which is the same result as \eqref{ch4:eq-soln-no-b}.
 
-\section{Forced Oscillations with Damping: Steady State}
+\section{Forced Oscillations with Damping: Steady State}	\label{ch4:sec:damping-steady}
 
 Let us continue to examine only the \emph{steady state} for now.
 
@@ -212,7 +214,7 @@ Therefore:%
 
 \begin{marginfigure}
 	\centering
-	\includegraphics[scale=0.5]{phys232/Ch4-forced-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (with damping) as a function of $\omega$; (b) phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:fig-damping-A}
+	\includegraphics[scale=0.5]{phys232/Ch4-forced-damping-A.png} \caption{(a) Absolute amplitude of forced oscillations (with damping) as a function of $\omega$; (b) Phase lag of $x$ with respect to the driving force, as a function of $\omega$.}	\label{ch4:fig-damping-A}
 \end{marginfigure}
 
 The results in \eqref{ch4:eq-soln-b} are plotted in Figure~\ref{ch4:fig-damping-A}. Observations:
@@ -257,7 +259,7 @@ We often graph $A$ and $\delta$ with respect to $\omega/\omega_0$, rather than $
 \begin{fullwidth}
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.6]{phys232/Ch4-A-delta-vs-Q.png} \caption{(a) Amplitude as a function of $\omega$ for different values of $Q$; (b) phase difference $\delta$ as a function of $\omega$ for different values of $Q$.}	\label{ch4:fig-A-delta-vs-Q}
+	\includegraphics[scale=0.6]{phys232/Ch4-A-delta-vs-Q.png} \caption{(a) Amplitude as a function of $\omega$ for different values of $Q$; (b) Phase difference $\delta$ as a function of $\omega$ for different values of $Q$.}	\label{ch4:fig-A-delta-vs-Q}
 \end{figure}
 \end{fullwidth}
 
@@ -369,5 +371,68 @@ Note that the transient part of \eqref{ch4:eq-transient-with-b-sol} accounts for
 
 
 \section{Power}
-Power required to keep a driven oscillator going at the same amplitude:
-\[ P = \frac{dW}{dt} = F\frac{dx}{dt} = Fv \]
+Power required to keep a driven oscillator going at the \emph{same amplitude}:
+\[ P = \der{W}{t} = F\,\der{x}{t} = Fv \]
+
+\subsection{No damping}
+For the steady state of an undamped driven system, we had found \eqref{ch4:eq-soln-no-b}:
+\begin{align*}
+	F &= F_0 \cos(\omega t) \\
+	x &= \frac{F_0/m}{\omega_0^2-\omega^2} \cos(\omega t) = C\cos(\omega t)
+	\intertext{Hence:}
+	v &= -\omega C \sin(\omega t) \\
+	\therefore
+	P &= -\omega C F_0 \sin(\omega t) \cos(\omega t) 
+	= -\frac{1}{2} \omega C F_0 \sin(2\omega t)
+\end{align*}
+
+As expected, the required mean power input over a cycle is zero, since there are no dissipative effects. In fact, $P>0$ for half a cycle and $P<0$ for the other half.
+
+\subsection{With damping}
+For the steady state of an undamped driven system, we had found \eqref{ch4:eq-soln-b}:
+\begin{align*}
+	x &= A \cos (\omega t - \delta)
+	\where
+	A = \frac{F_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}} \\
+	\Longrightarrow
+	v &= -\omega A \sin (\omega t - \delta) \\
+	&= -v_0 \sin (\omega t - \delta)
+\end{align*}
+
+where $v_0 = \omega A$ represents the maximum value of $v$ for given values of $F_0$ and $\omega$. We have:
+\begin{align*}
+v_0(\omega) 
+&= \frac{F_0\omega_0/m}{[(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2]^{1/2}} \\
+&= \frac{F_0\omega_0/k}{\left[(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} \right]^{1/2}}
+\end{align*}
+
+$v_0$ has a maximum at \emph{exactly} $\omega = \omega_0$. This phenomenon is called \textbf{velocity resonance}. 
+
+The required power input is:
+\begin{align*}
+	P &= -F_0 v_0 \cos(\omega t) \sin(\omega t-\delta) \\
+	&= -F_0 v_0 \cos(\omega t) [\sin(\omega t)\cos\delta - \cos(\omega t)\sin\delta] \\
+	&= -(F_0 v_0 \cos\delta) \sin(\omega t) \cos(\omega t) + (F_0 v_0 \sin\delta) \cos^2(\omega t)
+\end{align*}
+
+The average power over a cycle is%
+\footnote{Note that, over a cycle, the average value of $\sin\theta\cos\theta = 0$, and the average value of $cos^2\theta = 1/2.$}:
+\begin{align*}
+	\overline{P}
+	&= 0 + \frac{1}{2} (F_0 v_0 \sin\delta)  \\
+	&= \frac{1}{2} (\omega A F_0 \sin\delta)  \\
+	&= \frac{F_0^2 \omega_0 Q}{2k}
+	\frac{1}{\left[(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} \right]^{1/2}}
+\end{align*}
+
+$\overline{P}$, just like $v_0$, has a maximium at \emph{exactly} $\omega = \omega_0$. 
+\[ P_\text{max} = \frac{F_0^2\omega_0 Q}{2k} = \frac{QF_0^2}{2m\omega_0}\]
+
+The variation of $\overline{P}$ with respect to $\omega$ for different values of $Q$ is shown in Figure~\ref{ch4:fig-P-vs-w-Q}a.
+
+\begin{fullwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.6]{phys232/Ch4-P-w-vs-Q.png} \caption{(a) $\overline{P}$ as a function of $\omega$ for different values of $Q$; (b) Sharpness of resonance curve as measured by the power input.}	\label{ch4:fig-P-w-vs-Q}
+	\end{figure}
+\end{fullwidth}
