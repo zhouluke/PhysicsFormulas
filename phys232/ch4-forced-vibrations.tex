@@ -17,14 +17,14 @@ We will see that...
 	\item This phenomenon is known as \textbf{resonance}.
 \end{itemize}
 
-The system will initially have the tendency to vibrate at $\omega_0$, but it will eventiually vibrate at $\omega$. We thus have two stages:
+The system will initially have the tendency to vibrate at $\omega_0$, but it will ultimately vibrate at our imposed frequency, $\omega$. We thus have two stages:
 \begin{enumerate}
 	\item \textbf{Transient state}: we have a superposition of oscillations at frequencies $\omega$ and $\omega_0$. The free vibration gradually gets damped away until...
-	\item \textbf{Steady state}: only the the driving vibration remains, so the system oscillates at $\omega$
+	\item \textbf{Steady state}: only the the driven vibration remains, so the system oscillates at $\omega$
 \end{enumerate}
 
 \section{Forced Oscillations without Damping: Steady State}	\label{ch4:sec:no-damping-steady}
-We will consider the \emph{steady state} of a forced oscillation with \emph{negligible damping}, ignoring the fact that we need damping to get past the transient state.
+We will consider the \emph{steady state} of a forced oscillation with \emph{negligible damping}, ignoring the fact that we need damping to get past the transient state in the first place.
 
 Force equation:
 \begin{align}
@@ -219,10 +219,10 @@ Therefore:%
 
 The results in \eqref{ch4:eq-soln-b} are plotted in Figure~\ref{ch4:fig-damping-A}. Observations:
 \begin{itemize}
-	\item The curves generally resemble their counterparts in Figure~\ref{ch4:fig-no-damping-A}, where there was no damping.
-	\item The phase lag $\delta$ now increases continuously from 0° to 180°. We have $\delta=90$° when $\omega=\omega_0$.
+	\item For the most part, the curves resemble their counterparts in Figure~\ref{ch4:fig-no-damping-A}, the case where there was no damping.
+	\item The phase lag $\delta$ now increases continuously from 0° to 180° rather than ``jumping". We have $\delta=90$° when $\omega=\omega_0$.
 	\item The maximum altitude is actually attained at a frequency $\omega_m$, which is somewhat less than $\omega_0$; in practical applications, this difference is negligible.
-	\item $A(\omega)$ and $\delta(\omega)$ are independent of adjustable initial starting conditions.
+	\item $A(\omega)$ and $\delta(\omega)$ are independent of adjustable initial starting conditions -- i.e. the properties of the steady state are independent of $x_0$ and $\dot{x}_0$.
 \end{itemize}
 
 \subsection{Effects of varying the resistive term}
@@ -249,14 +249,20 @@ We often graph $A$ and $\delta$ with respect to $\omega/\omega_0$, rather than $
 	\frac{\omega_0/\omega}
 		{\left[
 			\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}\right)^2 + \frac{1}{Q^2}
-		\right]^{1/2}} \mathnote{multiplied numerator \& denominator by $\omega_0$ \& moved $\omega$ into the numerator} \notag \\
-	&= \frac{F_0}{k}
-	\frac{\omega_0/\omega}
-		{\left[
-			\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}\right)^2 + \frac{1}{Q^2}
-		\right]^{1/2}} 	\mathnote{since $k=m\omega^2$}	\label{ch4:eq-damped-A-vs-w/w0}
-\intertext{and}
-	\tan\delta &= \frac{1/Q}{\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}}  \mathnote{divided numerator \& denominator by $\omega\omega_0$}	\label{ch4:eq-damped-d-vs-w/w0}
+		\right]^{1/2}}
+		\mathnote{multiplied numerator \& denominator by $\omega_0$ \& moved $\omega$ into the numerator} \notag \\
+	\Aboxed{
+		A &= \frac{F_0}{k}
+		\frac{\omega_0/\omega}
+			{\left[
+				\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}\right)^2 + \frac{1}{Q^2}
+			\right]^{1/2}}
+	} \mathnote{since $k=m\omega^2$}	
+	\intertext{and}
+	\Aboxed{
+		\tan\delta &= \frac{1/Q}{\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}}
+	}  \mathnote{divided numerator \& denominator by $\omega\omega_0$}
+	\label{ch4:eq-damped-vs-w/w0} 
 \end{align}
 
 \begin{fullwidth}
@@ -419,13 +425,13 @@ The required power input is:
 \end{align*}
 
 The average power over a cycle is%
-\footnote{Note that, over a cycle, the average value of $\sin\theta\cos\theta = 0$, and the average value of $cos^2\theta = 1/2.$}:
+\footnote{Note that, over a cycle, the average value of $\sin\theta\cos\theta$ is $0$, and the average value of $\cos^2\theta$ is $1/2$.}:
 \begin{align*}
 	\overline{P}
 	&= 0 + \frac{1}{2} (F_0 v_0 \sin\delta)  \\
 	&= \frac{1}{2} (\omega A F_0 \sin\delta)  \\
 	&= \frac{F_0^2 \omega_0 Q}{2k}
-	\frac{1}{\left[(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} \right]^{1/2}}
+	\frac{1}{(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} }
 \end{align*}
 
 $\overline{P}$, just like $v_0$, has a maximium at \emph{exactly} $\omega = \omega_0$. 
