@@ -250,19 +250,19 @@ We often graph $A$ and $\delta$ with respect to $\omega/\omega_0$, rather than $
 		{\left[
 			\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}\right)^2 + \frac{1}{Q^2}
 		\right]^{1/2}}
-		\mathnote{multiplied numerator \& denominator by $\omega_0$ \& moved $\omega$ into the numerator} \notag \\
+		\mathnote{multiplied numerator \& denominator by $\omega_0$ \& moved $\omega$ into the numerator} \notag
+	\shortintertext{Now, since $k=m\omega^2$:}
 	\Aboxed{
 		A &= \frac{F_0}{k}
 		\frac{\omega_0/\omega}
 			{\left[
 				\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}\right)^2 + \frac{1}{Q^2}
 			\right]^{1/2}}
-	} \mathnote{since $k=m\omega^2$}	
-	\intertext{and}
+	} \label{ch4:eq-damped-A-vs-w/w0}
+	\shortintertext{And dividing the numerator \& denominator for $\tan\delta$ in \eqref{ch4:eq-soln-b} by $\omega\omega_0$:}
 	\Aboxed{
 		\tan\delta &= \frac{1/Q}{\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}}
-	}  \mathnote{divided numerator \& denominator by $\omega\omega_0$}
-	\label{ch4:eq-damped-vs-w/w0} 
+	}  \label{ch4:eq-damped-d-vs-w/w0} 
 \end{align}
 
 \begin{fullwidth}
@@ -388,7 +388,7 @@ For the steady state of an undamped driven system, we had found \eqref{ch4:eq-so
 \begin{align*}
 	F &= F_0 \cos(\omega t) \\
 	x &= \frac{F_0/m}{\omega_0^2-\omega^2} \cos(\omega t) = C\cos(\omega t)
-	\intertext{Hence:}
+	\shortintertext{Hence:}
 	v &= -\omega C \sin(\omega t) \\
 	\therefore
 	P &= -\omega C F_0 \sin(\omega t) \cos(\omega t) 
@@ -424,15 +424,39 @@ The required power input is:
 	&= -(F_0 v_0 \cos\delta) \sin(\omega t) \cos(\omega t) + (F_0 v_0 \sin\delta) \cos^2(\omega t)
 \end{align*}
 
-The average power over a cycle is%
+So, the average power over a cycle is%
 \footnote{Note that, over a cycle, the average value of $\sin\theta\cos\theta$ is $0$, and the average value of $\cos^2\theta$ is $1/2$.}:
-\begin{align*}
+\begin{align}
 	\overline{P}
-	&= 0 + \frac{1}{2} (F_0 v_0 \sin\delta)  \\
-	&= \frac{1}{2} (\omega A F_0 \sin\delta)  \\
-	&= \frac{F_0^2 \omega_0 Q}{2k}
-	\frac{1}{(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} }
-\end{align*}
+	&= 0 + \frac{1}{2} (F_0 v_0 \sin\delta)  \notag \\
+	&= \frac{1}{2} (\omega A F_0 \sin\delta) \notag \\
+	&= \frac{1}{2} (\omega A F_0)  \sin \left[
+		\arctan
+			\frac{1/Q}{ \frac{\omega_0}{\omega} - \frac{\omega}{\omega_0} }
+		\right]  \mathnote{substituting in \eqref{ch4:eq-damped-d-vs-w/w0}} 
+		\notag \\
+	&= \frac{1}{2} 
+			\left(
+			\cancel{\omega}   \,
+			\frac{F_0}{k}
+				\frac{\omega_0/\cancel{\omega}}
+				{\left[
+					\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}\right)^2 + \frac{1}{Q^2}
+					\right]^{1/2}}
+			\, F_0
+			\right)
+			\frac{1/Q}{ 
+				\left[
+					\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0} \right)^2 + \frac{1}{Q^2}
+				\right]^{1/2}
+				} 
+			\mathnote{substituting in \eqref{ch4:eq-damped-A-vs-w/w0} and resolving $\sin(\arctan(\cdot))$ by visualizing a right-angle triangle} 
+			\notag \\
+	\Aboxed{
+		\overline{P} &= \frac{F_0^2 \omega_0}{2kQ}
+		\frac{1}{(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} }
+	} \label{ch4:eq-avg-P}
+\end{align}
 
 $\overline{P}$, just like $v_0$, has a maximium at \emph{exactly} $\omega = \omega_0$. 
 \[ P_\text{max} = \frac{F_0^2\omega_0 Q}{2k} = \frac{QF_0^2}{2m\omega_0}\]
