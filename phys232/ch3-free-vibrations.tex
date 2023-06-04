@@ -1,6 +1,6 @@
 \chapter{Free Vibrations} \label{ch:free-vibrations}
 
-\section{Overview} \label{ch3:sec-simple-springs}
+\section{Overview: Simple Harmonic Oscillators} \label{ch3:sec-simple-springs}
 Any physical system that undergoes SHM is associated with...
 \begin{itemize}
 	\item a constant representing the \kcol{elasticity} of the system $\longrightarrow$ kinetic energy
@@ -46,7 +46,7 @@ Although the systems have different elastic and inertial constants, their angula
 Gravity only changes the equilibrium position of a SHO, without changing the amplitude, period, or frequency:
 \begin{align*}
 	m\ddot{x} &= -kx + mg \\
-	& = -k(x - \frac{mg}{k})
+	& = -k \left(x - \frac{mg}{k} \right)
 \shortintertext{Let $y=x-mg/k$. This implies $\ddot{y} = \ddot{x}$. Therefore,}
 	m\ddot{y} &= -ky \\
 	m\ddot{y} + ky &= 0 
@@ -123,11 +123,11 @@ We can interpret $h = mg/k$ as the initial change in position that occurs when t
 \section{Solving for the equation of motion of a harmonic oscillator}
 
 \begin{proof}[Solving for the equation of motion]
-Rewrite \eqref{ch3:eq-NL} in terms of $k/m$:
+Rewrite \eqref{ch3:eq-NL} in terms of $\omega^2 = k/m$:
 \begin{align}
 m\ddot{x} + kx &= 0 \notag\\
-\ddot{x} + \frac{k}{m}x &= 0 \notag\\
-\ddot{x} + \omega^2 x  &= 0 \label{ch3:eq-xdd}
+\ddot{x} + \omega^2 x  &= 0 
+\label{ch3:eq-xdd}
 \end{align}
 
 \eqref{ch3:eq-xdd} implies $\ddot{x}$ is a multiple of $x$. This is a property of the exponential function, so write: 
@@ -146,8 +146,8 @@ p^2 &= -\omega^2 \\
 p &= \pm j\omega
 \end{align*}
 
-Because we have two possibilities for $p$, we can write a more-general solution for \eqref{ch3:eq-xdd}%
-\footnote{In general, when working with second-order differential equations like \eqref{ch3:eq-xdd}, we need to introduce two constants -- one for each level of integration. These constants could be $C_1, C_2$, or as we will see, $A$ and $\alpha$.}:
+Because $x_1 = C_1e^{j\omega t}$ and $x_2 = C_2e^{-j\omega t}$ are both solutions to \eqref{ch3:eq-xdd}, their sum should be a solution too%
+\footnote{In general, when working with second-order differential equations like \eqref{ch3:eq-xdd}, we need to introduce two constants -- one for each level of integration. These constants could be $C_1, C_2$, or $x_0, v_0$, or as we will see, $A$ and $\alpha$.}:
 \begin{equation}
 	 x = C_1e^{j\omega t}+C_2e^{-j\omega t}	\label{ch3:eq-complex-general-sol}
 \end{equation}
@@ -181,7 +181,7 @@ x &= Acos(\omega t + \alpha) \where A=2C
 
 This is why, for SHM in general, we can assume solutions of the type:
 \begin{equation}
-	x=\Re(z) \where z=Acos(\omega t + \alpha)
+	x=\Re(z) \where z=e^{\omega t + \alpha}
 \end{equation}
 \end{proof}
 
@@ -189,7 +189,6 @@ This is why, for SHM in general, we can assume solutions of the type:
 \section{Elastic Wire \& Young's Modulus} \label{ch3:sec-wire}
 
 Apply a force $F_\text{app}$ to one end (e.g., by hanging a mass off it) and let the other end remain fixed. When the wire/rod is in \textit{static equilibrium}, let us define two quantities:
-
 \[ \text{stress} = \frac{F_\text{app}}{A} \where\text{$A$ is the cross-sectional area} \]
 
 \[  \text{strain} = \frac{x}{l_0} \where\text{$x$ is the extension of the wire}  \]
@@ -265,7 +264,9 @@ Let $\theta$ represent the angular displacement of the pendulum. Assume small $\
 
 
 \subsection{Simple Pendulum} \label{ch3:sec-simple-pendulum}
-By the Pythagorean Theorem (see Figure~\ref{ch3:fig-pendulum}):
+By the Pythagorean Theorem%
+\footnote{Or, by small angle approximations: $y=l-l\cos\theta = l(1-\cos\theta) \approx \theta^2/2$, but because $\theta\approx x/l$, $y \approx x^2/2l$.}
+(see Figure~\ref{ch3:fig-pendulum}):
 \begin{align}
 l^2 &= x^2 + (l-y)^2  \notag \\	
 \cancel{l^2} &= x^2 + \cancel{l^2} - 2ly + y^2 \notag \\

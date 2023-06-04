@@ -415,7 +415,9 @@ v_0(\omega)
 &= \frac{F_0\omega_0/k}{\left[(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} \right]^{1/2}}
 \end{align*}
 
-$v_0$ has a maximum at \emph{exactly} $\omega = \omega_0$. This phenomenon is called \textbf{velocity resonance}. 
+$v_0$ has a maximum at \emph{exactly}%
+\footnote{In contrast with amplitude, which had its maximum at $\omega_m < \omega_0$ (cf.~Section~\ref{ch4:sec:damping-steady}).}
+$\omega = \omega_0$. This phenomenon is called \textbf{velocity resonance}. 
 
 The required power input is:
 \begin{align*}
@@ -451,21 +453,103 @@ So, the average power over a cycle is%
 				\right]^{1/2}
 				} 
 			\mathnote{substituting in \eqref{ch4:eq-damped-A-vs-w/w0} and resolving $\sin(\arctan(\cdot))$ by visualizing a right-angle triangle} 
-			\notag \\
-	\Aboxed{
-		\overline{P} &= \frac{F_0^2 \omega_0}{2kQ}
-		\frac{1}{(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2)^2 + \frac{1}{Q^2} }
-	} \label{ch4:eq-avg-P}
+			\notag
 \end{align}
 
+Therefore:
+\begin{equation}
+	\boxed{
+		\overline{P} = \frac{F_0^2 \omega_0}{2kQ}
+		\frac{1}{\left(\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}^2 \right)^2 + \frac{1}{Q^2} }
+	} \label{ch4:eq-avg-P}
+\end{equation}
+	
+
 $\overline{P}$, just like $v_0$, has a maximium at \emph{exactly} $\omega = \omega_0$. 
-\[ P_\text{max} = \frac{F_0^2\omega_0 Q}{2k} = \frac{QF_0^2}{2m\omega_0}\]
+\begin{equation}
+	\overline{P}_\text{max} = \frac{F_0^2\omega_0 Q}{2k} = \frac{QF_0^2}{2m\omega_0}	\label{ch4:eq-P-max}
+\end{equation}
+
 
 The variation of $\overline{P}$ with respect to $\omega$ for different values of $Q$ is shown in Figure~\ref{ch4:fig-P-w-vs-Q}a.
 
 \begin{fullwidth}
 	\begin{figure}
 		\centering
-		\includegraphics[scale=0.65]{phys232/Ch4-P-w-vs-Q.png} \caption{(a) $\overline{P}$ as a function of $\omega$ for different values of $Q$; (b) Sharpness of resonance curve as measured by the power input.}	\label{ch4:fig-P-w-vs-Q}
+		\includegraphics[scale=0.6]{phys232/Ch4-P-w-vs-Q.png} \caption{(a) $\overline{P}$ as a function of $\omega$ for different values of $Q$; (b) Sharpness of resonance curve as measured by the power input.}	\label{ch4:fig-P-w-vs-Q}
 	\end{figure}
 \end{fullwidth}
+
+Observations:
+\begin{itemize}
+	\item $\overline{P}\to 0$ for very low or high frequencies.
+	\item The curves are nearly symmetrical about the maximum, except for low $Q$.
+\end{itemize}
+
+\subsection{Width of resonance response curve with damping}
+
+Notice how most of the resonance is contained within a narrow band of frequencies close to $\omega_0$.
+
+By convention, we take as endpoints for the band the $\omega$-values that give $\overline{P}(\omega)=\frac{1}{2} \overline{P}_\text{max}$.
+
+To see this in action, let us first note that:
+\begin{align*}
+	\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}
+	&= \frac{\omega_0^2-\omega^2}{\omega\omega_0}
+	= \frac{(\omega_0+\omega)(\omega_0-\omega)}{\omega\omega_0} 
+	\intertext{When $\omega\approx\omega_0$:}
+	\frac{\omega_0}{\omega} - \frac{\omega}{\omega_0}
+	&\approx \frac{2\omega_0 (\omega_0-\omega)}{\omega_0^2}
+	=  \frac{2 (\omega_0-\omega)}{\omega_0}
+\end{align*}
+
+Thus:
+\begin{align*}
+	\overline{P} 
+	&\approx \frac{F_0^2 \omega_0}{2kQ}
+		\frac{1}{ \frac{4 (\omega_0-\omega)^2}{\omega_0^2} + \frac{1}{Q^2} } \\
+	&\approx \frac{F_0^2 (\omega_0/Q)}{2(k/\omega_0^2)}
+	\frac{1}{ 4 (\omega_0-\omega)^2 + (\omega_0/Q)^2 } \\
+	&\approx \frac{\gamma F_0^2 }{2m}
+	\frac{1}{ 4 (\omega_0-\omega)^2 + \gamma^2 } 
+	\mathnote{$\gamma = \omega_0/Q$, $m = k/\omega_0^2$}
+\end{align*}
+
+Compare this to our result for $\overline{P}_\text{max}$, from Equation~\ref{ch4:eq-P-max}:
+\[ 	\overline{P}_\text{max} = \frac{QF_0^2}{2m\omega_0} \]
+
+So, the frequencies $\omega_0 \pm \Delta\omega$ at which $\overline{P}(\omega)$ falls to half of the maximum value $\overline{P}(\omega_0)$ are given by:
+\[ 4(\Delta \omega)^2 = \gamma^2
+\so
+\boxed{2\,\Delta\omega \approx \frac{\omega_0}{Q} = \gamma } \]
+
+We see that the width of the resonance curve for the \emph{driven} oscillator, as measured by the power input, is the reciprocal of the time needed for the \emph{free} oscillations to decay to $1/e$ of their original energy, which was%
+\footnote{see Section~\ref{ch3:sec-quality-factor}}
+$1/\gamma$:
+\[ T_{1/e, \text{ free}} = \frac{1}{\gamma} \approx \frac{1}{2 \,\Delta\omega}  \]
+
+Thus,
+\[ \boxed{\text{narrow resonance response} \Longleftrightarrow \text{slow decay of free oscillations}} \]
+
+Definition of \textbf{narrow resonance repsonse}:
+\[ \frac{2\,\Delta\omega}{\omega_0} \ll 1 \]
+
+Definition of \textbf{slow decay}:
+\[ \frac{2\pi\gamma}{\omega_0} \ll 1 \]
+
+Both these conditions are equivalent to saying $Q$ is large.
+
+The definition for slow decay comes from:
+\begin{align*}
+	E &= E_0 e^{-(\omega_0/Q)t} = E_0 e^{-\gamma t} \\
+	dE & = -\gamma E_0 e^{-\gamma t} \, dt  \\
+	\frac{dE}{E} & = -\gamma \, \frac{\cancel{E_0 e^{-\gamma t}}}{\cancel{E_0 e^{-\gamma t}}} \, dt  
+	\shortintertext{So, the energy loss in one cycle is:}
+	\frac{\Delta E}{E} & \approx -\gamma\,\Delta t \approx -\frac{2\pi\gamma}{\omega_0}
+\end{align*}
+
+In general: 
+\begin{itemize}
+	\item If a system exhibits, in \emph{free oscillation}, an exponential loss of energy with time...
+	\item Its \emph{driven response} has resonance characteristics.
+\end{itemize}
